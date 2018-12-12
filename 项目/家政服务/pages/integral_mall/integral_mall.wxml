@@ -1,0 +1,39 @@
+<view class="head_img">
+      <swiper circular = "true"  duration="500" interval="1500" indicator-dots="true" indicator-color="#fff" indicator-active-color="#000">
+      <block wx:for="{{imgs}}" wx:key="*this">
+        <swiper-item>
+          <image bindtap='service' data-id='{{item.productid}}' src="{{item.imgaddress}}" mode='aspectFill' class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper> 
+</view>
+<view class='user_info'>
+    <view class='users'>
+        <view class='rel'>
+            <image class='ab udlr' mode='aspectFill' src='{{user_info.headaddress}}'></image>
+        </view>
+        <view>{{user_info.username}}</view>
+    </view>
+    <view class='integral'>
+        <view>
+            <image mode='aspectFill' src='../images/jf.png'></image>
+            可用碳币
+        </view>
+        <view>{{user_info.integral}}</view>
+    </view>
+</view>
+<view class='shoping_list'>
+    <view class='list_info'  bindtap='service' wx:for="{{score_list}}" wx:key="*this" data-id='{{item.productid}}'>
+        <view>
+            <image mode='aspectFill' src='{{item.imgurl}}'></image>
+        </view>  
+        <view>{{item.productname}}</view>
+        <view class='integrals rel'>
+            <view class='rel'>
+                <image class='ab udlr' mode='aspectFill' src='../images/jf.png'></image>
+            </view>
+            <view>{{item.priceintegral}}</view>
+            <text class='ab ud'>确认兑换</text>
+        </view>
+    </view>
+</view>

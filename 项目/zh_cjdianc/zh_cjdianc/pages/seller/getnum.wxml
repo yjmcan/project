@@ -1,0 +1,40 @@
+<!--zh_cjdianc/pages/seller/getnum.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='main' style='background:{{color}}'>
+    <view class="top">
+      <image mode='aspectFill' src="{{storeinfo.logo}}"></image>
+      <view class='topname' style='color:{{color}}'>{{storeinfo.name}}</view>
+    </view>
+    <view class="xx">
+      <view class="hyuan1" style='background:{{color}}'></view>
+      <view class="hyuan2" style='background:{{color}}'></view>
+    </view>
+    <view class="bottom" style='border-color:{{color}}'>
+      <view class='pdlist'>
+        <!-- <view class='pdlisthd' style="background:{{color}}">
+          <view>桌位类型</view>
+          <view>等待桌数</view>
+        </view> -->
+        <scroll-view style='height:550rpx;background:#f5f5f5' scroll-y='true'>
+          <view wx:for='{{tableinfo}}' style='background:{{activeIndex==index?color:""}};color:{{activeIndex==index?"#fff":""}}' class='pdlistbd {{activeIndex==index?"czactive":""}}' bindtap='select' data-index='{{index}}'>
+            <view class='pdlistbdv'>
+              <view>{{item.typename}}</view>
+              <!-- <view>{{item.}}</view> -->
+            </view>
+            <!-- <view class='pdlistbdv'>
+              <view style='color:{{color}};font-weight: bold;'>{{item.wait}}</view>
+              <view>桌</view>
+            </view> -->
+          </view>
+        </scroll-view>
+      </view>
+      <view class='footer'>
+        <button formType="submit" style="background:{{color}}">立即取号</button>
+      </view>
+      <view class='flex-row flex-y-center cxqh'>
+        <image src='../../img/bangz.png'></image>
+        <view>过号请重新取号，谢谢配合！</view>
+      </view>
+    </view>
+  </view>
+</form>

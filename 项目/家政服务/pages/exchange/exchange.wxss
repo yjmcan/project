@@ -1,0 +1,65 @@
+.recovery {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+}
+
+.recovery>view {
+  flex: 3;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.select {
+  height: 100%;
+  border-bottom: 2rpx solid #ec8a0d;
+  color: #ec8a0d;
+  font-weight: 600;
+}
+
+.recovery>view text {
+  display: inline-block;
+}
+
+.order {
+  margin-top: 20rpx;
+  height: auto;
+  width: 100%;
+  background: #fff;
+}
+
+.order>view {
+  width: 90%;
+  height: 80rpx;
+  position: relative;
+  font-size: 26rpx;
+  color: #666;
+  margin: 0 auto 0;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.order>view text:nth-child(1) {
+  float: left;
+}
+
+.order>view text:nth-child(2) {
+  float: right;
+  margin-right: 50rpx;
+}
+
+.order>view image {
+  position: absolute;
+  width: 16rpx;
+  height: 30rpx;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+  

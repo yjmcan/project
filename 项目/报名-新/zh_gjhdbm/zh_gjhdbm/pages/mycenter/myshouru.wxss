@@ -1,0 +1,45 @@
+/* pages/mycenter/myshouru.wxss */
+.index{
+  width: 100%;
+  overflow-x: hidden;
+}
+.sbanner{
+  background-color: #F66926;
+  color: white;
+  padding: 60rpx 0rpx;
+  font-weight: bold;
+}
+.srfont1{
+  font-size: 90rpx;
+  margin-top: 50rpx;
+}
+.srright{
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.srcontent{  
+  background-color: white;
+  margin-bottom: 1rpx;
+  padding: 20rpx 30rpx;
+}
+.srfont2{
+  color: #999;
+  font-size: 24rpx;
+}
+.money_price{
+  width: 350rpx;
+}
+.sbanner text{
+  right: 30rpx;
+  top: 19rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+
+
+
+
+
+

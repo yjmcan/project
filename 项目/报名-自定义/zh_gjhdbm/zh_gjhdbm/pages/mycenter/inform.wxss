@@ -1,0 +1,9 @@
+view{
+  width: 93%;
+  height: auto;
+  background: #fff;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  margin: 20rpx auto 0;
+  padding: 20rpx;
+}

@@ -1,0 +1,25 @@
+<!--pages/product/productinfo.wxml-->
+<view class="info">
+  <view class="productbox">
+     <image src="{{url}}{{proinfo.logo}}"></image> 
+    <view class="pright">
+      <view class="prightitle">{{proinfo.title}}</view>
+      <view class="pmoney">价格：¥<text>{{proinfo.money}}</text>元</view>
+    </view>
+  </view>
+
+  <view class="productbox">
+    <view class="productext">
+     <rich-text nodes="{{proinfo.content1}}"/>  
+    </view>
+  </view>
+
+  <view class="productbox" wx:if="{{proinfo.content2}}!=null">
+    <view class="productext">
+     <rich-text nodes="{{proinfo.content2}}"/>  
+    </view>
+  </view>
+
+   <view class="hcopyright">技术支持：{{copyrit.support}}</view>
+
+</view>

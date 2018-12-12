@@ -1,0 +1,73 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+<view class='list'>
+  <view>头像</view>
+  <view class='rel' bindtap='choose'>
+    <image class='right ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    <image class='logo' mode='aspectFill' wx:if="{{logo==null}}" src='{{user.img}}'></image>
+    <image class='logo' mode='aspectFill' wx:else src='{{url}}{{logo}}'></image>
+  </view>
+</view>
+<view class='list'>
+  <view>姓名</view>
+  <view class='rel'>
+    <input name="username" class='ab ud' placeholder='请输入您的姓名' value='{{name}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>性别</view>
+  <view class='rel'>
+    <view>
+      <text class='{{sele_b}}' bindtap='sele'></text>
+      <text class='{{sele}}'>女</text>
+      <text class='{{none_sele_b}}' bindtap='none_sele'></text>
+      <text class='{{none_sele}}'>男</text>
+    </view>
+  </view>
+</view>
+<view class='list'>
+  <view>联系方式</view>
+  <view class='rel'>
+    <input name="tel" class='ab ud' type='number' placeholder='请输入您的有效联系方式' value='{{tel}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>工作年限</view>
+  <view class='rel'>
+    <input name = "life" class='ab ud' type='digit' bindinput='bindinput' placeholder='请输入您参加工作的年限' value='{{life}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>毕业院校</view>
+  <view class='rel'>
+    <input name = "school" class='ab ud' placeholder='请输入您的毕业院校' value='{{graduation_school}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>最高学历</view>
+  <view class='rel t_right'>
+   <picker class='picker2' bindchange="bindPickerChange2" value="{{index}}" range="{{nav}}">
+        {{nav[index]}}
+      </picker>
+    <image class='right ab ud' mode='aspectFill' src='../img/acright.png'></image>
+  </view>
+</view>
+<view class='list'>
+  <view>参加工作时间</view>
+  <view class='rel t_right'>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+      {{date}}
+    </picker>
+    <image class='right ab ud' mode='aspectFill' src='../img/acright.png'></image>
+  </view>
+</view>
+<view class='list'>
+  <view>出生年月</view>
+  <view class='rel t_right'>
+    <picker mode="date" value="{{year}}" start="1900-09" bindchange="bindDateChange1">
+      {{year}}
+    </picker>
+    <image class='right ab ud' mode='aspectFill' src='../img/acright.png'></image>
+  </view>
+</view>
+<button form-type='submit' style='background:{{color}}'>保存</button>
+</form>

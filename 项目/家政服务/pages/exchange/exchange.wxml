@@ -1,0 +1,14 @@
+<view class="recovery">
+    <view wx:for="{{nav}}">
+        <text bindtap='tabClick' data-index='{{index}}' class="{{ac_index==index?'select':''}}">{{item}}</text>
+    </view>
+</view>
+<view class='order'>
+    <view wx:for="{{order}}">
+        <text>{{item.createdate}}的预约</text>
+        <text wx:if="{{item.orderstate==0}}">预约成功</text>
+        <text wx:if="{{item.orderstate==1}}">正在回收</text>
+        <text wx:if="{{item.orderstate==2}}">回收完成</text>
+        <image mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+</view>

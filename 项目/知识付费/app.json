@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/index/index",
+    "pages/member/index",
+    "pages/record/buy",
+    "pages/master/index",
+    "pages/record/study"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/pakeageOne",
+      "pages": [
+        "index/index",
+        "index/info",
+        "index/curriculum",
+        "groom/index"
+      ]
+    },
+    {
+      "root": "pages/pakeageTwo",
+      "pages": [
+        "more/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#459cf9",
+    "navigationBarTextStyle": "#fff",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "selectedIconPath": "pages/img/ac_right.png",
+        "iconPath": "pages/img/ac_right.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/img/ac_right.png",
+        "iconPath": "pages/img/ac_right.png",
+        "pagePath": "pages/record/buy",
+        "text": "推荐"
+      },
+      {
+        "selectedIconPath": "pages/img/ac_right.png",
+        "iconPath": "pages/img/ac_right.png",
+        "pagePath": "pages/index/index",
+        "text": "会员中心"
+      },
+      {
+        "selectedIconPath": "pages/img/ac_right.png",
+        "iconPath": "pages/img/ac_right.png",
+        "pagePath": "pages/logs/logs",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+<!--zh_gjhdbm/pages/account/account.wxml-->
+<view class='fxbox'>
+  <view class='accheader'>
+    <view>待结算总额</view>
+    <view class='acheabox1'>¥{{djs_money}}</view>
+  </view>
+  <view class='accbox'>
+    <view class='flex_center accboxtop'>
+      <view class='accxian'></view>
+      <view>结算记录</view>
+    </view>
+    <view class='accboxlist' wx:for="{{HdUnsettled}}">
+      <view>+{{item.money}}</view>
+      <view class='acctime'>{{item.time}}</view>
+    </view>
+  </view>
+</view>

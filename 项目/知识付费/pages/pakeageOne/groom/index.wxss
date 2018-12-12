@@ -1,0 +1,45 @@
+/* pages/groom/index.wxss */
+.list view{
+  margin-right: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 5rpx 15rpx;
+  border-radius: 10rpx;
+}
+.list>scroll-view{
+  white-space: nowrap;
+  width: 100%;
+}
+.total_list>view{
+  width: 49%;
+  height: 350rpx;
+}
+.total_list>view:nth-child(even){
+  margin-left: 2%;
+}
+.total_list>view image{
+  width: 100%;
+  height: 220rpx;
+}
+.total_list>view view:nth-child(2){
+    padding: 15rpx 0;
+}
+.total_list>view view:nth-child(4){
+  top: 0;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.sele{
+  background: #ff8d01;
+  color: #fff;
+}
+.charge{
+  background: #fb8f04;
+}
+.free{
+  background: #10c344;
+}
+.vip{
+  background: #6600c7;
+}

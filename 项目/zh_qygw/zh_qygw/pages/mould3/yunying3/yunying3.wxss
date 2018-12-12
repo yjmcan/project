@@ -1,0 +1,74 @@
+/* zh_qygw/pages/mould3/yunying3/yunying3.wxss */
+page{
+  background-color: white;
+}
+.yunying{
+  width: 100%;
+  overflow-x: hidden;
+}
+.yheader{
+  padding: 30rpx 20rpx;
+}
+.yhtitle{
+  font-weight: bold;
+  font-size: 36rpx;
+  text-align: center;
+  color: #666;
+  margin: 50rpx 0rpx 40rpx;
+}
+.yhtext{
+  line-height: 50rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+/*—————————————————版块部分—————————————————*/
+.hsection{
+  background-color: white;
+  padding-bottom: 1rpx;
+}
+.hsectitle{
+  background-color: #F3F3F3;
+  height: 60rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #0B5394;
+  display: flex;
+  align-items: center;
+}
+.hsecxian{
+  width: 10rpx;
+  height: 60rpx;
+  margin-right: 30rpx;
+  background-color: #0B5394;
+}
+.hsecimg{
+  width: 90%;
+  height: 200rpx;
+  margin-bottom: 10rpx;
+}
+.hsecbox{
+  padding: 30rpx 5rpx 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #888;
+}
+.hsecbox>.flex3{
+  width: 50%;
+}
+.fuwuremark{
+  color: #CCCCCC;
+  margin:70rpx 0rpx 40rpx 0rpx;
+  text-align: center;
+}
+.banquan{
+  color: white;
+  text-align: center;
+  background-color: #0C5395;
+  padding: 40rpx 0rpx;
+}
+.bqfont1{
+  font-size: 34rpx;
+  margin-top: 15rpx;
+}

@@ -1,0 +1,14 @@
+<view class='container' wx:if="{{nav.length>0}}">
+    <view class='list pa fon_30 ba_f bor_bottom' wx:for="{{nav}}" wx:key="*this">
+        <view class='dis_in'>
+            <view wx:if="{{item.type==0}}">充值
+            </view>
+            <view wx:if="{{item.type==1}}">提现
+                <text class='color_9 fon_24 mar_l' wx:if="{{item.state==1}}">（提现已申请）</text>
+                <text class='color_9 fon_24 mar_l' wx:if="{{item.state==2}}">（提现完成）</text></view>
+            <view>{{item.createTime}}</view>
+        </view>
+        <view class='dis_in t_r' wx:if="{{item.type==0}}">+{{item.amount}}</view>
+        <view class='dis_in t_r' wx:if="{{item.type==1}}">-{{item.amount}}</view>
+    </view>
+</view>

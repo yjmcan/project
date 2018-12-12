@@ -1,0 +1,46 @@
+<view class='head' wx:if="{{state1==1}}">
+    <image mode='aspectFill' src='../img/jieshou.png'></image>
+    <view>待回复</view>
+    <view>请您安心等待企业的回复</view>
+</view>
+<view class='head' wx:if="{{state1==2}}">
+    <image mode='aspectFill' src='../img/tong.png'></image>
+    <view>面试邀请</view>
+    <view>恭喜您通过筛选,现邀请您参加面试</view>
+</view>
+<view class='head' wx:if="{{state1==3}}">
+    <image mode='aspectFill' src='../img/jujue.png'></image>
+    <view>被拒绝</view>
+    <view>企业觉得您的简历不符合要求</view>
+</view>
+<view class='list mar'>
+    <image mode='aspectFill' src='../img/time.png'></image>
+    <text>{{detail.created_at}}</text>
+</view>
+<view class='list'>
+    <image mode='aspectFill' src='../img/dianhua.png'></image>
+    <text>{{detail.contact}}({{detail.contact_name}})</text>
+</view>
+<view class='list'>
+    <image mode='aspectFill' src='../img/address.png'></image>
+    <text>{{detail.area}}</text>
+</view>
+<view class='info mar'>
+    <view>
+        <text>职位：</text>
+        <text>{{detail.type_name}}</text>
+    </view>
+    <view>
+        <text>月薪：</text>
+        <text>{{detail.salary_name}}</text>
+        <image mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+    <view>
+        <text>公司：</text>
+        <text>{{detail.company_name}}</text>
+    </view>
+</view>
+<view class='butt' wx:if="{{type==1&&state1==1}}">
+    <view style='background:{{color}}' bindtap='operation' data-status='1'>拒绝</view>
+    <view style='background:{{color}}' bindtap='operation' data-status='2'>同意</view>
+</view>

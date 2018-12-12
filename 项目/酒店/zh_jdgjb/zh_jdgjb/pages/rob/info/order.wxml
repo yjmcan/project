@@ -1,0 +1,41 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+    <view class='container'>
+        <view class='pa ba_f'>
+            <view class='fon_30 fon_wei gobyndsingle'>{{title}}</view>
+            <view class='color_6 fon_26'>有效期：{{mark_start}}到{{mark_end}}期间</view>
+        </view>
+        <view class='pa ba_f mar_t'>
+            <view class='wid_50 dis_in'>
+                <text>数量</text>
+                <text class='mar_l fon_24' style='color:#C29945'>￥</text>
+                <text class='fon_40' style='color:#C29945'>{{money}}</text>
+            </view>
+            <view class='wid_50 dis_in buy_num fon_30 t_r'>
+                <text class='dis_in fon_40' style="color:{{num<=1?'#999':'#333'}}" bindtap="deletes">-</text>
+                <text class='mar_l dis_in'>{{num}}</text>
+                <text class='mar_l dis_in fon_40' bindtap='add'>+</text>
+            </view>
+        </view>
+        <view class='mar_t ba_f pa_l'>
+            <view class='color_6 fon_30 fon_wei pa_t bor_bottom'>填写游客信息</view>
+            <view class='bor_bottom pa_t'>
+                <view class='dis_in color_6' style='width:20%'>游客姓名</view>
+                <input name="name" class='dis_in mar_l' style='width:70%;' placeholder='请输入真实姓名'></input>
+            </view>
+            <view class='pa_t'>
+                <view class='dis_in color_6' style='width:20%'>手机号码</view>
+                <input name="tel" class='dis_in mar_l' type='number' style='width:70%;' placeholder='请输入中国大陆手机号'></input>
+            </view>
+        </view>
+        <view class='fixedm ba_f bot_top'>
+            <view class='wid_50 dis_in' style='color:#C29945'>
+                <text class='mar_l fon_26'>总额：</text>
+                <text class='mar_l fon_26'>￥</text>
+                <text class='fon_40'>{{price}}</text>
+            </view>
+            <button formType='submit' class='t_c fon_30 wid_50 color_f dis_in' style='background:{{color}}'>
+                确认下单
+            </button>
+        </view>
+    </view>
+</form>

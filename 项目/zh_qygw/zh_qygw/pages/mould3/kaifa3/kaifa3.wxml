@@ -1,0 +1,157 @@
+<!--zh_qygw/pages/mould3/kaifa3/kaifa3.wxml-->
+<view class="home3">
+  <!--——————————————————轮播图——————————————————  -->
+  <view class="body" wx:if="{{slide.length!=0}}">
+    <view class='banner'>
+      <view class="swiper-container">
+        <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+          <block wx:for="{{yswiper}}" wx:key="unique">
+            <swiper-item>
+              <image bindtap='jumps' mode="aspectFill" src="{{url}}{{item.logo}}" class="img"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+
+  <!--——————————————————内容部分——————————————————  -->
+  <view class="kcontent">
+    <view class="kctitle">什么是微信小程序？</view>
+    <view class="kctext">微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取
+    和传播，同时具有出色的使用体验。它可以给企业和用户之间搭建连接的桥梁，为企业提供在线的预约、销售、服务、资讯等功能。
+    </view>
+    <view class="kconimg">
+      <image src="../../images/zixun.png"></image>
+    </view>
+    <view class="kctitle">为什么要做小程序？</view>
+
+    <view class="kclist">
+      <view class="kclisleft">
+        <view class="kcnum">1</view>
+      </view>
+      <view class="kclistright">
+        <view class="kclrtitle">找商家，找服务，就上微信小程序。</view>
+        <view class="kclrcontent">小程序是微信的战略级产品，是微信真正实现线上线下连接商家的重要桥梁。微信有超过9亿活跃用户，
+        拥有微信小程序，就像是在万达广场里开店，可以分享庞大用户群。
+        </view>
+      </view>
+    </view>
+
+    <view class="kclist">
+      <view class="kclisleft">
+        <view class="kcnum">2</view>
+      </view>
+      <view class="kclistright">
+        <view class="kclrtitle">附近小程序获取源源不断的客流</view>
+        <view class="kclrcontent">拥有小程序，就可以开启附近小程序功能，相当于在微信里免费挂一块广告牌，房源五公里内的微信用户可以通过附近小程序看待您，
+        并购买您的商品，使用你的服务。
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="xuqiubox">
+    <view class="kctitle2">不同功能需求\n\r单独定制开发</view>
+    <view class="xuqiu">
+
+      <view class="xuqiulist flex3">
+        <image class="xuqiuimg" src="../../images/xuqiu1.png"></image>
+        <view class="xqtitle">电商小程序</view>
+        <view class="xqtext">通过小程序在线销售</view>
+        <view class="xqtext">实现所有电商功能</view>
+      </view>
+
+      <view class="xuqiulist flex3">
+        <image class="xuqiuimg" src="../../images/xuqiu2.png"></image>
+        <view class="xqtitle">O2O小程序</view>
+        <view class="xqtext">通过小程序实现</view>
+        <view class="xqtext">位附近用户服务</view>
+      </view>
+
+      <view class="xuqiulist flex3">
+        <image class="xuqiuimg" src="../../images/xuqiu3.png"></image>
+        <view class="xqtitle">企业小程序</view>
+        <view class="xqtext">企业形象展示</view>
+        <view class="xqtext">资讯发布等功能</view>
+      </view>
+      
+      <view class="xuqiulist flex3">
+        <image class="xuqiuimg" src="../../images/xuqiu4.png"></image>
+        <view class="xqtitle">外卖小程序</view>
+        <view class="xqtext">顾客直接通过</view>
+        <view class="xqtext">小程序叫外卖</view>
+      </view>
+
+    </view>
+
+    <view class="hangye">
+      <view class="kctitle3">多种行业\n\r\n\r全面开放</view>
+      <view class="flex2 hybox1">
+        <view class="hylist flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu1.png"></image>
+          <view class="">零售电商</view>
+        </view>
+        <view class="hylist flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu2.png"></image>
+          <view class="">餐饮美食</view>
+        </view>
+        <view class="hylist flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu3.png"></image>
+          <view class="">KTV娱乐</view>
+        </view>
+        <view class="hylist flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu4.png"></image>
+          <view class="">酒店住宿</view>
+        </view>
+      </view>
+      <view class="flex2 hybox2">
+        <view class="hylist2 flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu5.png"></image>
+          <view class="">化妆美容</view>
+        </view>
+        <view class="hylist2 flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu6.png"></image>
+          <view class="">健身</view>
+        </view>
+        <view class="hylist2 flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu7.png"></image>
+          <view class="">酒吧</view>
+        </view>
+        <view class="hylist2 flex3">
+          <image class="xuqiuimg" src="../../images/xuqiu1.png"></image>
+          <view class="">健身</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="kfzfoot">
+      <image class="shouzhi" src="../../images/mou3shouzhi.png"></image>
+      <view class="kfzftext">小程序案例</view>
+      <image class="shouzhi1" src="../../images/mou3shouzhi.png"></image>
+    </view>
+    <view class="kfzfoot1">
+      <image class="shouzhi" src="../../images/mou3shouzhi.png"></image>
+      <view class="kfzftext" bindtap="phone">联系我们</view>
+      <image class="shouzhi1" src="../../images/mou3shouzhi.png"></image>
+    </view>
+
+    <view class="fuwuremark">——亲，我是有底线的——</view>
+    <!--—————版权部分—————-->
+    <view class="banquan">
+      <view>COPYRIGHT@{{copyrit.support}}</view>
+      <view class="bqfont1">微信搜索：{{aboutus.name}} | <text bindtap="phone">一键拨号</text></view>
+    </view>
+
+  </view>
+
+    <!--——————————————固定在旁边的————————————-->
+    <view class="guding">
+      <!-- <view class="guding1">
+        <image src="../../images/addleft.png"></image>
+      </view> -->
+      <view class="guding1" bindtap="phone">
+        <image src="../../images/dianhua.png"></image>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,54 @@
+/* zh_vip/pages/my/glrk/xfjl.wxss */
+.weui-cells{
+  margin: 20rpx 0;
+}
+.weui-cell{
+  font-size: 30rpx;
+}
+.weui-cell::before{
+  border-top: 1rpx solid #e7e7e7;
+}
+.zd .weui-cell:before{
+  border-top: none;
+}
+.weui-cell__ft{
+  font-size: 28rpx;
+  color: #999;
+}
+.weui-cell__hd{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.md{
+  padding: 0 0 0 30rpx;
+}
+.mdimg{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+}
+.mdbj{
+  box-sizing: border-box;
+  height: 150rpx;
+  background: #FBFBFB;
+  padding: 30rpx 20rpx;
+  color: #666;
+  font-size: 28rpx;
+
+}
+.fkxl{
+  width: 45rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.zxmd{
+  font-size: 28rpx;
+  color: #999;
+}
+.mdname{
+  font-size: 32rpx;
+  color: #333;
+  /* font-weight: bold; */
+}

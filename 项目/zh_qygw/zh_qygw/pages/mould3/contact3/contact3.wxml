@@ -1,0 +1,39 @@
+<!--zh_qygw/pages/mould3/contact3/contact3.wxml-->
+<view class="home">
+  <view class="header">
+    <image class="headerback" src="../../images/zixun.png"></image>
+    <!-- <view class="heabox">联系我们</view> -->
+  </view>
+
+  <view class="conintro">
+    <view class="introtitle">公司介绍</view>
+    <view class="introtext">
+      <rich-text nodes="{{aboutus.about}}"/>
+    </view>
+  </view>
+  <view class="hsection">
+    <view class="hsectitle">
+      <view class="hsecxian"></view>  
+      <view>联系我们</view>    
+    </view>
+    <view class="hsecprogram3">
+      <view class="hsecplist">
+        <view class="hsecname" bindtap="phone">武汉\n\r朱经理\n\r{{aboutus.link_tel}}</view>
+        <image src="../../images/mou3shouzhi.png"></image>
+      </view>
+    </view>
+    <view class="hsremark">
+      <view class="">上班时间：8：30-18：00</view>
+      <view class="">备注：点击电话直接拨号</view>
+    </view>
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300rpx;"></map>
+  </view>
+
+  <view class="fuwuremark">——亲，我是有底线的——</view>
+  <!--—————版权部分—————-->
+  <view class="banquan">
+    <view>COPYRIGHT@{{copyrit.support}}</view>
+    <view class="bqfont1">微信搜索：{{aboutus.name}} | <text bindtap="phone">一键拨号</text></view>
+  </view>
+  
+</view>

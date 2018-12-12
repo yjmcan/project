@@ -1,0 +1,258 @@
+/*公共属性  */
+@import "zh_zbkq/style/weui.wxss";
+/*全局样式*/
+.read{
+display: flex;
+align-items: center;
+padding: 20rpx 30rpx;
+color: #999;
+font-size: 28rpx;
+}
+.readfont{
+color: #ff6161;
+}
+/*参考*/
+.kcrzxy {
+width:70%;
+left:50%;
+top:15%;
+position:fixed;
+transform:translate(-50%, 0);
+background:#fff;
+border-radius:10px;
+z-index:999;
+}
+.kcrzxyhd {
+text-align: center;
+font-size: 30rpx;
+background: #f44444;
+height: 70rpx;
+line-height: 70rpx;
+color: white;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.kcrzxybd{
+font-size: 28rpx;
+padding: 20rpx 30rpx;
+box-sizing: border-box;
+}
+.queren {
+position: relative;
+height: 70rpx;
+width: 30%;
+left: 35%;
+font-size: 30rpx;
+line-height: 70rpx;
+text-align: center;
+color: white;
+background: #f44444;
+border-radius: 10rpx;
+margin: 5px 0;
+}
+button:active {
+color: rgba(255, 255, 255, 0.6);
+opacity: 0.6;
+}
+.zhezhao {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background: rgba(0, 0, 0, 0.7);
+z-index: 998;
+}
+/* button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  color: #fff;
+} */
+.jzwb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  height: 80rpx;
+}
+.hx{
+  width: 200rpx;
+  height: 1px;
+  background: #d5d5d5;
+}
+.wz{
+  margin: 0 20rpx;
+  font-size: 26rpx;
+}
+page {
+  height: 100%;
+  font-family: '微软雅黑', Helvetica, sans-serif;
+}
+.container {
+  height: 100%;
+}
+/*居中  */
+
+.al {
+  margin: 0 auto 0;
+}
+
+/*相对定位  */
+
+.rel {
+  position: relative;
+}
+
+/*绝对定位  */
+
+.ab {
+  position: absolute;
+}
+
+/*上下居中 */
+
+.ud {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*左右居中  */
+
+.about {
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/*垂直水平居中  */
+
+.udlr {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/*字体居中  */
+
+.ac {
+  text-align: center;
+}
+
+/*微软雅黑字体  */
+
+.fon {
+  font-family: Microsoft YaHei;
+}
+
+/*字体加粗  */
+
+.bold {
+  font-weight: bold;
+}
+
+/*块级元素  */
+
+.block {
+  display: block;
+}
+
+/*字体颜色 黑色*/
+
+.cob {
+  color: #000;
+}
+
+/*字体颜色 白色*/
+
+.cow {
+  color: #fff;
+}
+
+/*多行文本超出隐藏*/
+
+.gobyndmulit {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/*单行文本超出隐藏*/
+
+.gobyndsingle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*图片尺寸*/
+
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/*宽度100%*/
+
+.wid {
+  width: 100%;
+}
+
+/*高度*/
+
+.hei {
+  height: 100%;
+}
+
+/*居中*/
+
+.mar {
+  margin: 0 auto 0;
+}
+
+/*背景图片大小*/
+
+.ba {
+  background-size: 100%;
+}
+
+/*左浮*/
+
+.fl {
+  float: left;
+}
+
+/*右浮*/
+
+.fr {
+  float: right;
+}
+
+.flex-wrap {
+  display: flex;
+}
+
+.flex-item {
+  width: 550rpx;
+}
+
+.flex-wrap.flex-direction-col {
+  flex-direction: column;
+}
+
+.flex-wrap.flex-direction-row {
+  flex-direction: row;
+}
+.flex-bet{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.flex-center{
+display: flex;
+align-items: center;
+}

@@ -1,0 +1,30 @@
+{
+  "pages": [
+                "zh_jypx/pages/index/index",
+        "zh_jypx/pages/rank/login",
+            "zh_jypx/pages/rank/voice",
+    "zh_jypx/pages/teacher/t_list",
+    "zh_jypx/pages/teacher/t_login",
+    "zh_jypx/pages/my/my",
+    "zh_jypx/pages/rank/login_firset",
+    "zh_jypx/pages/task/mytask_list",
+    "zh_jypx/pages/task/mytask_detail",
+    "zh_jypx/pages/index/date_list",
+    "zh_jypx/pages/rank/recive_password",
+    "zh_jypx/pages/index/task_detail",
+    "zh_jypx/pages/index/task_list",
+    "zh_jypx/pages/my/integral_change",
+    "zh_jypx/pages/my/change_detail",
+    "zh_jypx/pages/my/integral",
+    "zh_jypx/pages/my/data",
+    "zh_jypx/pages/rank/rank",
+    "zh_jypx/pages/my/task",
+    "zh_jypx/pages/my/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#08a3ff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "#fff"
+  }
+}

@@ -1,0 +1,30 @@
+<view class='sipwer'>
+ <image mode='aspectFill' src='{{score_info.imgurl}}'></image>
+</view>
+<view class='info gobyndsingle'>
+  <view>{{score_info.productname}}</view>
+  <view>{{score_info.productmsg}}</view>
+  <view>
+      <image mode='aspectFill' src='../images/jf_white.png'></image>
+      {{score_info.priceintegral}}
+  </view>
+  <view>
+    已兑换
+    <text>{{score_info.producttimes}}</text> 人次
+  </view>
+</view>
+<view class='service_info'>
+  服务详情
+</view>
+<view class='service rel'>
+  <image class='ab udlr' mode='aspectFill' src='../images/23152351_03.png'></image>
+</view>
+<view style='font-size:26rpx;padding:20rpx;background:#fff'>
+    <rich-text nodes="{{score_info.productdetail}}"></rich-text>
+</view>
+<view class='info_img'>
+  <image class='logo' mode='widthFix' wx:for="{{score_info.productdetailimgs}}" src='{{item}}'></image>
+</view>
+<view class='bottom_nav rel' bindtap='service'>
+    <button>确认兑换</button>
+</view>

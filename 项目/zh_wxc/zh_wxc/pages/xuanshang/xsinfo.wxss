@@ -1,0 +1,301 @@
+/* pages/xuanshang/xsinfo.wxss */
+.btn{
+  background: none;
+  width: 100%;
+  height: 100%;
+}
+.btn::after{
+  border: none;
+}
+.xscontent{
+  background-color: white;
+  padding: 30rpx;
+  border-top: 2rpx solid #eee;
+}
+.xsname{
+  font-size: 32rpx;
+}
+.xsfont{
+  color: #F34B4B;
+  margin-top: 20rpx;
+}
+.xsbanner{
+  background-color: white;
+  margin-top: 20rpx;
+}
+.bannertext{
+  padding: 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.banfont1{
+  color: #999;
+}
+.xsbantime{
+  padding: 30rpx;
+}
+.xsjoin{
+  background-color: white;
+  padding: 0rpx 30rpx;
+}
+.xsjointop{
+  padding: 20rpx 0rpx;
+  border-bottom: 1rpx solid #eee;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+.xsjoinuser{
+  padding: 20rpx 0rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.userimg{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 10rpx;
+}
+.userimg2{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.xsjoinbox{
+  padding: 15rpx 0rpx;
+  width: 100%;
+}
+.telimg{
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 50%;
+}
+.banfont1{
+  width: 170rpx;
+}
+.end_time{
+  width: 280rpx;
+}
+.xsping{
+  background-color: white;
+  padding: 0rpx 30rpx 20rpx;
+  margin-top: 20rpx;
+}
+.xspingtop{
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 15rpx 0;
+}
+.money{
+  width: 130rpx;
+}
+.reset{
+  width: 120rpx;
+}
+.xspingtitle>image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+.xspingtitle{
+  color: #FF949B;
+}
+.xspbanner{
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  padding: 30rpx 0;
+}
+.xsptou{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.xspbox{
+  width: 594rpx;
+}
+.flbet{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xspboxname{
+  color: #70B7FF;
+}
+.xspfont1{
+  color: #999999;
+  font-size: 24rpx;
+}
+.xspfont1>text{
+  margin-left: 20rpx;
+}
+.xsptext{
+  line-height: 40rpx;
+  margin-top: 23rpx;
+  color: #666666;
+}
+.xsphui{
+  background-color: #F5F5F5;
+  width: 97%;
+  padding: 3rpx 8rpx;
+  margin-top: 15rpx;
+  color: #666666;
+}
+.xsphui>text{
+  color: #70B7FF;
+}
+.imglist{
+  margin: 0 30rpx;
+}
+.imglist image{
+  margin:20rpx auto;
+  display: block;
+  width: 690rpx;
+   height: 690rpx 
+}
+.imglist.weuibaron{
+  height: 0;
+}
+/* ——————————————底部固定部分———————————— */
+.ifootcon{
+  width: 100%;
+  height: 110rpx;
+}
+.ifoot{
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 90rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.ifootbox{
+  width: 45%;
+  font-size: 26rpx;
+}
+.ifootshare{
+  width: 35rpx;
+  height: 35rpx;
+  margin-bottom: 5rpx;
+}
+.chakan{
+  background-color: #F34B4B;
+  color: white;
+  text-align: center;
+  line-height: 90rpx;
+  width: 55%;
+  font-size: 30rpx;
+}
+
+/* ——————————————弹框部分———————————— */
+.bomb{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.bombox{
+  width: 75%;
+  background-color: white;
+  padding: 30rpx 0rpx;
+  position: relative;
+}
+.bombfont1{
+  color: #999;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  margin-top: 90rpx;
+}
+.bombimg{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx 0rpx;
+}
+.bombshare{
+  background-color: #F34B4B;
+  color: #fff;
+  width: 90%;
+}
+.bombzhuan{
+  background-color: #F8F8F8;
+  color: #333;
+  width: 90%;
+  margin-top: 20rpx;
+  border: none;
+  outline: none;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.bombshanchu{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.share[type="primary"]{
+  background: white;
+  line-height:35rpx;
+  padding: 0;
+  color: #999;
+  font-size: 30rpx;
+}
+.bianji{
+  color: #999;
+  font-size: 30rpx;
+}
+.share::after{
+  border: 0;
+}
+ .none image{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 150rpx 0 50rpx;
+} 
+.none view{
+  width: 120rpx;
+}
+
+/* ——————————————评论弹框部分———————————— */
+.conbox{
+  width: 80%;
+  background: #fff;
+  border-radius: 20rpx;
+
+}
+.contitle{
+  text-align: center;
+  font-size: 36rpx;
+  margin: 15rpx 0;
+}
+.conbox textarea{
+  width: 80%;
+  background:#f2f2f2;
+  padding: 15rpx;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  height: 165rpx;
+  margin-bottom:25rpx;
+}
+.conbtn{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.conbtn view{
+  width: 50%;
+  padding: 10rpx;
+  text-align: center;
+  font-size: 38rpx;
+  border-top: 1rpx solid #f2f2f2;
+}
+.concancel{
+  border-right: 1rpx solid #f2f2f2;
+}

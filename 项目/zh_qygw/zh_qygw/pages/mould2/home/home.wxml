@@ -1,0 +1,129 @@
+<!--zh_qygw/pages/home/index.wxml-->
+<view class="home">
+  <view class="iheader">
+    <image src="../../images/back1.png"></image>
+  </view>
+  <view class="ibanner">
+    <view class="ibtitle">什么是小程序?</view>
+    <view class="ibxian"></view>
+    <view class="ibtext">小程序是一种不需要下载安装即可使用的应用，背靠微信这个超级流量入口
+      和快速繁荣的及巨大生态系统，将取代80%的APP应用。
+    </view>
+  </view>
+
+  <!--————————推广部分————————-->
+  <view class="isection">
+    <view class="ibtitle">小程序的营销推广功能?</view>
+    <view class="ibxian"></view>
+    <view class="iseclist">
+
+      <view class="isecbox">
+        <image src="../../images/xiaocx.png"></image>
+        <view class="isecfont1">附近的小程序</view>
+        <view class="isecfont2">LBS定位附近的5公里展示</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../../images/xcx1.png"></image>
+        <view class="isecfont1">线下扫码</view>
+        <view class="isecfont2">打通线上线下消费场景</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../../images/xcx2.png"></image>
+        <view class="isecfont1">公众号关联</view>
+        <view class="isecfont2">同意主题可互相关联</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../../images/xcx3.png"></image>
+        <view class="isecfont1">分享传播</view>
+        <view class="isecfont2">一键分享微信群和好友</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../../images/xcx4.png"></image>
+        <view class="isecfont1">丰富的组件和API</view>
+        <view class="isecfont2">功能丰富，满足个性需求</view>
+      </view>
+      <view class="isecbox">
+        <image src="../../images/xcx5.png"></image>
+        <view class="isecfont1">完善的用户体验</view>
+        <view class="isecfont2">微信账号体系，降低使用门槛</view>
+      </view>
+      <view class="isecbox">
+        <image src="../../images/xcx6.png"></image>
+        <view class="isecfont1">多钟社交功能</view>
+        <view class="isecfont2">交友、社区/论坛、直播等</view>
+      </view>
+      <view class="isecbox">
+        <image src="../../images/xcx7.png"></image>
+        <view class="isecfont1">消息通知</view>
+        <view class="isecfont2">发送模板消息，增强客户联系</view>
+      </view>
+    </view>
+  </view>
+
+  <!--————————优势部分————————-->
+  <view class="advantage">
+    <view class="ibtitle">小程序的优势</view>
+    <view class="ibxian"></view>
+    <view class="advlist">
+      <image src="../../images/back0.png"></image>
+      <image src="../../images/back2.png"></image>
+      <image src="../../images/back3.png"></image>
+      <image src="../../images/back4.png"></image>
+      <image src="../../images/back5.png"></image>
+      <image src="../../images/back6.png"></image>
+    </view>
+  </view>
+
+  <!--————————他们都在使用小程序部分————————-->
+  <view class="advantage">
+    <view class="ibtitle">他们都在使用小程序</view>
+    <view class="ibxian"></view>
+    <view class="uselist">
+      <view class="usebox">
+        <image src="../../images/kendeji.png"></image>
+        <view>肯德基</view>
+      </view>
+      <view class="usebox">
+        <image src="../../images/mobai.png"></image>
+        <view>摩拜单车</view>
+      </view>
+      <view class="usebox">
+        <image src="../../images/weibo.png"></image>
+        <view>微博热门</view>
+      </view>
+      <view class="usebox">
+        <image src="../../images/meituan.png"></image>
+        <view>美团外卖</view>
+      </view>
+      <view class="usebox">
+        <image src="../../images/xiaomi.png"></image>
+        <view>小米</view>
+      </view>
+      <view class="usebox">
+        <image src="../../images/aiqiyi.png"></image>
+        <view>爱奇艺</view>
+      </view>
+    </view>
+  </view>
+
+  <!--————————底部部分————————-->
+  <view class="footbox2"></view>
+  <view class="foot2">
+    <view class="footlist2 flex3">
+      <image src="../../images/homesele.png"></image>
+      <view style="color:#28B3E5;">首页</view>
+    </view>
+    <view class="footlist2 flex3" bindtap="fangan">
+      <image src="../../images/fangan.png"></image>
+      <view>解决方案</view>
+    </view>
+    <view class="footlist2 flex3" bindtap="we">
+      <image src="../../images/guanyu.png"></image>
+      <view>咨询我们</view>
+    </view>
+  </view>
+</view>

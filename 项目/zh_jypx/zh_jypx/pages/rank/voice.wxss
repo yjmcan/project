@@ -1,0 +1,12 @@
+/* zh_jypx/pages/rank/voice.wxss */
+.scroll{
+  width: 100%;
+  white-space: nowrap;
+}
+.scroll view{
+  background: red;
+  width: 200rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+   display: inline-block; 
+}

@@ -1,0 +1,71 @@
+<view class='list_0'>
+  <view class='info_4'>
+    <view>
+      <text>#14</text>
+      <text>剩余35分钟</text>
+    </view>
+    <view style='color:{{color}}'>
+      ￥8
+    </view>
+  </view>
+  <view class='info_1'>
+    <view>
+      <text style='color:{{color}}'>1.3km</text>
+      <text>取餐</text>
+    </view>
+    <view class='address_2' style='width:85%;'>
+      <view>每周一餐(东风路总店)</view>
+      <view>武汉市红三区武汉市红三区武汉市红三区武汉市红三区</view>
+    </view>
+  </view>
+  <view class='info_1'>
+    <view>
+      <text style='color:{{color}}'>1.3km</text>
+      <text>送餐</text>
+    </view>
+    <view class='address' style='width:85%;'>
+      <view>湖北省武汉市武昌区武珞路358号湖北省武汉市武昌区武珞路358号</view>
+      <view>张三(先生)\r\n\r\n尾号5977</view>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>
+<view class='order_info ba_ff mar_t'>
+  <view class='wei pa fon_36 bor_bottom'>订单详情</view>
+  <view class='order_num fon_30 pa bor_bottom'>
+    <view class='dis_in color_6'>订单编号</view>
+    <view class='dis_in color_6'>4877</view>
+  </view>
+  <view class='order_num fon_30 pa bor_bottom'>
+    <view class='dis_in color_6'>下单时间</view>
+    <view class='dis_in color_6'>2018-6-8 10：20</view>
+  </view>
+  <view class='order_num fon_30 pa'>
+    <view class='dis_in color_6'>备注</view>
+    <view class='dis_in color_6'>不要辣不要辣不要辣不要辣</view>
+  </view>
+</view>
+<view class='shop_info ba_ff mar_t'>
+  <view class='wei pa fon_36 bor_bottom'>配送餐品</view>
+  <view class='shop_list fon_30 pa bor_bottom'>
+    <view class='dis_in color_6'>龙骨堡玉米</view>
+    <view class='dis_in color_6'>x2</view>
+    <view class='dis_in color_6'>￥4877</view>
+  </view>
+  <view class='shop_list fon_30 pa bor_bottom'>
+    <view class='dis_in color_6'>龙骨堡玉米</view>
+    <view class='dis_in color_6'>x2</view>
+    <view class='dis_in color_6'>￥4877</view>
+  </view>
+  <view class='shop_list fon_30 pa bor_bottom'>
+    <view class='dis_in color_6'>龙骨堡玉米</view>
+    <view class='dis_in color_6'>x2</view>
+    <view class='dis_in color_6'>￥4877</view>
+  </view>
+  <view class='shop_list fon_30 pa'>
+    <view class='dis_in color_6'>龙骨堡玉米</view>
+    <view class='dis_in color_6'>x2</view>
+    <view class='dis_in color_6'>￥4877</view>
+  </view>
+</view>

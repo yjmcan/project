@@ -1,0 +1,79 @@
+<view class='head rel'>
+  <view>{{info.type_name}}</view>
+  <view>
+    <view class='in_line'>
+      <image class='ve_mi' mode='aspectFill' src='../img/renshu.png'></image>
+      <text class='ve_mi'>{{info.number}}人</text>
+    </view>
+    <view class='in_line'>
+      <image class='ve_mi' mode='aspectFill' src='../img/time.png'></image>
+      <text class='ve_mi'>{{info.experience_name}}</text>
+    </view>
+    <view class='in_line'>
+      <image class='ve_mi' mode='aspectFill' src='../img/xueli.png'></image>
+      <text class='ve_mi'>{{info.degree_name}}</text>
+    </view>
+  </view>
+  <view>
+    <text class='welfare' wx:for="{{info.tag}}">{{item.name}}</text>
+  </view>
+  <text class='money ab'>{{info.salary_name}}/月</text>
+</view>
+<view class='body'>
+  <view class='info_head'>
+    <text decode="{{true}}">&nbsp;</text>
+    <text decode="{{true}}">&nbsp;&nbsp;职位详情</text>
+  </view>
+  <view class='company'>
+    <text>{{info.description}}</text>
+  </view>
+  <view class=''></view>
+  <view class='info_head'>
+    <text decode="{{true}}">&nbsp;</text>
+    <text decode="{{true}}">&nbsp;&nbsp;工作地点</text>
+  </view>
+  <view class='company gobyndsingle'  bindtap='address'>
+    <image mode=' ' style='width:29rpx;height:35rpx;' src='../img/address.png'></image>
+    <text>{{info.area}}</text>
+  </view>
+  <view class='info_head'>
+    <text decode="{{true}}">&nbsp;</text>
+    <text decode="{{true}}">&nbsp;&nbsp;公司邮箱</text>
+  </view>
+  <view class='company'>
+    <image mode='aspectFill' src='../img/youxiang.png'></image>
+    <text>{{info.email}}</text>
+  </view>
+</view>
+<view class='company_info'>
+  <image mode='aspectFill' src='{{url}}{{info.logo}}'></image>
+  <view>
+    <view class='gobyndsingle'>{{info.company_name}}</view>
+    <view class='gobyndsingle'>
+      <text>{{info.scale}}</text>
+      <text>|</text>
+      <text>{{info.stage}}</text>
+    </view>
+  </view>
+  <!-- <image mode='aspectFill' src='../img/acright.png'></image> -->
+</view>
+<view style='height:120rpx;'></view>
+<view class='bottom_tab'>
+  <view bindtap='collections'>
+    <image wx:if="{{coll==true}}" mode='aspectFill' src='../img/shoucang.png'></image>
+    <image wx:else mode='aspectFill' src='../img/yishoucang.png'></image>
+    <view wx:if="{{coll==true}}">收藏</view>
+    <view wx:else style='color:{{color}}'>已收藏</view>
+  </view>
+  <view class='rel'>
+    <image mode='aspectFill' src='../img/share.png'></image>
+    <view>分享</view>
+    <button open-type='share' class='share' class='ab share'></button>
+  </view>
+  <view bindtap='submit' style='background:{{color}}' wx:if="{{IsPosition==false}}">
+    一键投递
+  </view>
+  <view  style='background:#ccc' wx:if="{{IsPosition==true}}">
+    已经投递
+  </view>
+</view>

@@ -1,0 +1,42 @@
+<include src="../tabbar/index.wxml" />
+<view class='head'>
+  <view class='head_0'>
+    <view wx:for="{{nav}}" wx:key="*this" bindtap='nav' data-index='{{index}}'>
+      <text>{{item.name}}</text>
+      <image mode='aspectFill' src='{{item.img}}'></image>
+    </view>
+  </view>
+  <view class='head_1' wx:if="{{children.length!=0}}">
+    <view wx:for="{{children}}" wx:key="*this" bindtap='nav_c' data-index='{{index}}' data-id='{{item.id}}'>{{item.name}}</view>
+  </view>
+</view>
+<view class='body' wx:if="{{HomePosition.length>0}}">
+  <view class='body_list rel' wx:for="{{HomePosition}}" wx:for-item="info" wx:key='*this' bindtap='fabu' data-id='{{info.id}}'>
+    <view class='list_left'>
+      <image class='logo' mode='aspectFill' src='{{url}}{{info.logo}}'></image>
+      <view class='gobyndsingle'>
+        <text>{{info.company_name}}</text>
+      </view>
+    </view>
+    <view class='list_middle'>
+      <view>{{info.type_name}}</view>
+      <view class='ask'>
+        <image mode='aspectFill' src='../img/renshu.png'></image>
+        <text>{{info.number}}人</text>
+        <image mode='aspectFill' src='../img/time.png'></image>
+        <text>{{info.experience_name}}</text>
+        <image mode='aspectFill' src='../img/xueli.png'></image>
+        <text>{{info.degree_name}}</text>
+      </view>
+      <view class='label'>
+        <text wx:for="{{info.tag}}" wx:key="*this">{{item.name}}</text>
+      </view>
+    </view>
+    <view class='list_right ab ud'>
+      {{info.salary_name}}
+    </view>
+  </view>
+</view>
+<view class='fixed' wx:if="{{HomePosition.length==0}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+</view>

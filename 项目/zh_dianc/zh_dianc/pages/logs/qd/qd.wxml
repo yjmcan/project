@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<view class='head'>
+  <view class="date-display flex">
+    <view class="next-prev">
+      <view class="arrow prev" bindtap="changeMonth" id="prev"></view>
+    </view>
+    <view class="selected-date">{{currYear}}年{{currMonth}}月</view>
+    <view class="next-prev">
+      <view class="arrow next" bindtap="changeMonth" id="next"></view>
+    </view>
+  </view>
+</view>
+<view class="container-rl">
+  <view class='lxqd'>连续签到
+    <text>{{lxts}}</text>天了</view>
+  <view class="week-display qdflex">
+    <view wx:for="{{week}}" class="week-cell {{item.class}}">{{item.value}}</view>
+  </view>
+  <view class="date-picker">
+    <view class="qdflex">
+      <view wx:for="{{emptyGrids}}" class="date-cell"></view>
+      <view wx:for="{{days}}" class="date-cell" data-selected="{{[currYear, currMonth, item.value]}}">
+        <view wx:if="{{item.isqd!=null}}" data-selected="{{[currYear, currMonth, item.value]}}"><icon type="success" color='#34aaff' size="27"/></view>
+        <view wx:if="{{item.isqd==null&&item.tsrq!=null}}" bindtap="selectDate" data-tsrq='{{days[index]}}' style='background:{{item.tsrq.color}};color:#fff;' class="{{item.class}}{{selected == item.value ? 'selected': ''}} {{xz == item.value ? 'xz': ''}}" data-selected="{{[currYear, currMonth, item.value]}}">{{item.value}}</view>
+        <view wx:if="{{item.isqd==null&&item.tsrq==null}}" bindtap="selectDate" data-tsrq='{{days[index]}}' class="{{item.class}}{{selected == item.value ? 'selected': ''}} {{xz == item.value ? 'xz': ''}}" data-selected="{{[currYear, currMonth, item.value]}}">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='xxts'>日常签到<text style='color:#ff6e6e'>+{{qdset[0].integral}}</text>积分,有背景色的日期含有特殊奖励哦~</view>
+  <view class="weui-btn-area">
+    <button wx:if="{{!isbq||qdset[0].is_bq=='2'}}" class="weui-btn" bindtap='qd' type="primary" disabled='{{disabled}}' style='background:{{disabled?"#f5938a":"#ff6e6e"}};'>{{logintext}}</button>
+    <button wx:else class="weui-btn" bindtap='bq' type="primary" disabled='{{bqdisabled}}' style='background:{{bqdisabled?"#f5938a":"#ff6e6e"}};'>{{bqtext}}</button>
+  </view>
+</view>
+<navigator url='pm'>
+  <view class='ckpm'>查看排名</view>
+</navigator>
+<view class='jfgz1'>
+  <image class='wjx' src='../../images/wjx.png'></image>
+  <view>首次签到</view>
+</view>
+<view class='jfgz2'>
+  <view class='jlgz'>
+    <text>首次签到可额外获得{{qdset[0].one}}积分</text>
+  </view>
+</view>
+<view class='jfgz1'>
+  <image class='wjx' src='../../images/wjx.png'></image>
+  <view>奖励规则</view>
+</view>
+<view class='jfgz2'>
+  <view class='jlgz'>
+    <text wx:for="{{jl}}">{{index+1}}.连续签到{{item.day}}天赠送{{item.integral}}积分</text>
+  </view>
+  <image class='jfjl' src='../../images/jfjl.png'></image>
+</view>

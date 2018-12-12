@@ -1,0 +1,54 @@
+/* pages/feedback/index.wxss */
+page{
+  font-size: 28rpx;
+}
+.submit:nth-child(1){
+  height: 450rpx;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.submit textarea{
+  width: 100%;
+  height: 100%;
+}
+.submit:nth-child(2){
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.submit:nth-child(3){
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.submit>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.submit>view:nth-child(1){
+  width: 25%;
+  text-align: center;
+  height: 100%;
+}
+.submit>view:nth-child(2){
+  width: 75%;
+  height: 100%;
+}
+.submit>view input{
+  width: 100%;
+  height: 100%;
+}
+button{
+  width: 60%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #f66925;
+  margin-top: 60rpx;
+  border-radius: 60rpx;
+}

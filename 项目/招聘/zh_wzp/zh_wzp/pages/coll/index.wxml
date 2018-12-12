@@ -1,0 +1,74 @@
+<view class='head'>
+  <view bindtap='job'>
+    <text class="{{ac_index==1?'select':'no_sele'}}">职位</text>
+  </view>
+  <view>
+    <text class="{{ac_index==2?'select':'no_sele'}}" bindtap='personnel'>人才</text>
+  </view>
+</view>
+<block>
+  <view class='body_list rel' wx:for="{{navv}}" wx:if="{{navv.length>0&&ac_index==2}}">
+    <view class='list_left' bindtap='info' data-id='{{item.id}}'>
+      <image class='logo' mode='aspectFill' src='{{url}}{{item.header}}'></image>
+      <view class='gobyndsingle'>
+        <image class='sex' mode='aspectFill' src='{{url}}{{item.header}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class='list_middle' bindtap='info' data-id='{{item.id}}'>
+      <view>{{item.title}}</view>
+      <view class='ask'>
+        <image mode='aspectFill' style='width:26rpx;' src='../img/address.png'></image>
+        <text>{{item.area[0]}}</text>
+        <image mode='aspectFill' src='../img/time.png'></image>
+        <text>{{item.work_life}}年</text>
+        <image mode='aspectFill' src='../img/xueli.png'></image>
+        <text>{{item.degree_name}}</text>
+      </view>
+      <view class='label' bindtap='info' data-id='{{item.id}}'>
+        <text wx:for="{{item.skill}}" wx:for-item="info">{{info}}</text>
+      </view>
+    </view>
+    <view class='list_right ab ud' bindtap='info' data-id='{{item.id}}'>
+      {{item.salary_name}}
+    </view>
+    <view class='oper'>
+      <text bindtap='collection' data-id='{{item.id}}'>取消收藏</text>
+      <!-- <text>邀请面试</text> -->
+    </view>
+  </view>
+
+  <view class='fixed' wx:if="{{navv.length==0&&ac_index==2}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+  </view>
+</block>
+<block>
+  <view class='recruit_1' wx:for="{{nav}}" wx:key='*this' wx:if="{{nav.length>0&&ac_index==1}}">
+    <view class='recruit_left' bindtap='fabu' data-id='{{item.id}}'>
+      <view>{{item.type_name}}</view>
+      <view class='claim'>
+        <text>{{item.number}}人</text>
+        <text>{{item.experience_name}}</text>
+        <text>{{item.degree_name}}</text>
+      </view>
+      <view>
+        <text class='welfare' wx:for="{{item.tag}}">{{item.name}}</text>
+      </view>
+      <view>
+        <image mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+        <text>{{item.company_name}} </text>
+      </view>
+    </view>
+    <view class='recruit_right' bindtap='fabu' data-id='{{item.id}}'>
+      <view>{{item.salary_name}}</view>
+      <view>{{item.created_at}}</view>
+    </view>
+    <view class='oper' bindtap='collections' data-id='{{item.id}}' data-id='{{item.id}}'>
+      <text>取消收藏</text>
+      <!-- <text>立即投递</text> -->
+    </view>
+  </view>
+  <view class='fixed' wx:if="{{nav.length==0&&ac_index==1}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+  </view>
+</block>

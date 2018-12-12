@@ -1,0 +1,124 @@
+<!--pages/fenlei/fenlei.wxml-->
+<view class='fxbox'>
+
+    <view class='fheader'>
+        <!-- <view class='flex_center'>
+        <image class='fhdizhi'></image>
+        <view class='fhfont1'>武汉</view>
+        <view class='flex_center fhbox'></view>
+        <image class='fhlist'></image>
+      </view> -->
+        <view class="fhmenu">
+            <block wx:for="{{luntext}}" wx:key="*this">
+                <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+                    <view id="{{index}}" style="color:{{item!=navs[index]?'#F66926':''}}">{{item}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class='fheaderzhe' hidden='{{zheceng}}'>
+        <view class='fenleibox'>
+            <!-- wx:if="{{activeIndex==0}}"  -->
+            <view class="tipon" wx:if="{{activeIndex==0}}">
+                <block wx:for="{{typeList}}" wx:for-index="{{index}}" wx:key="*this">
+                    <view bindtap='type_name' data-id='{{item.id}}' data-name="{{item.type_name}}">{{item.type_name}}</view>
+                </block>
+            </view>
+            <view class="tipon1" wx:if="{{activeIndex==1}}">
+                <block wx:for="{{menu2}}" wx:for-index="{{index}}" wx:key="*this">
+                    <view bindtap='avtivity_type' data-type='{{item}}' data-name="{{item}}">{{item}}</view>
+                </block>
+            </view>
+            <view class="tipon" wx:if="{{activeIndex==2}}">
+                <block wx:for="{{menu3}}" wx:for-index="{{index}}" wx:key="*this">
+                    <view bindtap='start_time' data-type='{{item}}' data-name="{{item}}">{{item}}</view>
+                </block>
+            </view>
+        </view>
+        <view class='fheaderzhe2' bindtap='zcxiao'></view>
+    </view>
+
+    <block>
+        <view class='huodong'>
+            <view class='hdbanner rel' bindtap='info' wx:for="{{activity_list}}" wx:key="*this" id='{{item.id}}'>
+                <view class='hdimg rel'>
+                    <view class='ab selected' wx:if="{{item.is_zd==1}}" style='background:{{color}}'>精选</view>
+                    <image mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+                </view>
+                <view class='hdbotbox'>
+                    <view class='hdtitle'>{{item.title}}</view>
+                    <view class='flex_bet indexfont'>
+                        <view class='flex_center'>
+                            <image mode='aspectFill' class='tjdidian' src="../img/didian.png"></image>
+                            <view class='hdaddress'>{{item.address}}</view>
+                        </view>
+                        <!-- <view>4.2km</view> -->
+                    </view>
+                    <view class='flex_bet indexfont'>
+                        <view class='flex_center'>
+                            <image class='tjtime' src="../img/time.png"></image>
+                            <view class=''>{{item.start_time}}</view>
+                            <view class='activity_label' wx:if="{{item.activity_over==1}}" style='background:{{color}}'>报名中</view>
+                            <view class='activity_label' style='color:#fff;background:#e5e5e5;' wx:if="{{item.activity_over==2}}">已结束</view>
+                            <view class='activity_label' wx:if="{{item.activity_over==3}}" style='background:{{color}}'>进行中</view>
+                        </view>
+                        <view class='hdfont2' wx:if="{{item.zd_money!=0}}" style='color:{{color}}'>￥{{item.zd_money}}起</view>
+                        <view class='hdfont2' wx:else style='color:{{color}}'>免费</view>
+                    </view>
+                    <view class='flex_center hdboxlabel'>
+                        <view class='hdlabel' style='color:{{color}};border:2rpx solid {{color}}'>{{item.type_id}}</view>
+                        <view class='hdlabel' wx:if="{{item.activity_type==1}}" style='color:{{color}};border:2rpx solid {{color}}'>线上活动</view>
+                        <view class='hdlabel' style='color:{{color}};border:2rpx solid {{color}}' wx:else>线下活动</view>
+                    </view>
+                </view>
+                <view class='activity_over ab' wx:if="{{item.activity_over==2}}">
+                    <view></view>
+                    <image mode='aspectFill' style='transform:rotate(-20deg);width:300rpx;height320rpx;top:60rpx;' class='ab lr' src='../img/activity_over.png'></image>
+                </view>
+            </view>
+
+        </view>
+    </block>
+
+</view>
+<view wx:if="{{activity_list.length==0}}">
+    <view class='flex3 zanwubox'>
+        <image class='zanwu' src='../img/zwbiaoqian.png'></image>
+        <view>暂无活动</view>
+    </view>
+</view>
+
+<!-- ————————————底部固定导航栏———————————— -->
+<view class='bmfoot2' wx:if="{{yes!=false}}"></view>
+<view class='bmfoot' wx:if="{{yes!=false}}">
+    <view class='bmfootbox'>
+        <view bindtap='index'>
+            <view class='rel'>
+                <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+            </view>
+            <view class='{{db_tab[0].color}}'>{{db_tab[0].name}}</view>
+        </view>
+        <view bindtap='classifination'>
+            <view class='rel'>
+                <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+            </view>
+            <view class='{{db_tab[1].color}}'>{{db_tab[1].name}}</view>
+        </view>
+        <view class='fabu rel' bindtap='fabu'>
+            <image class='ab lr' mode='aspectFill' src='../img/jia@2x.png'></image>
+        </view>
+        <view>
+            <view class='rel' bindtap='mine_activity'>
+                <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+            </view>
+            <view class='{{db_tab[2].color}}'>{{db_tab[2].name}}</view>
+        </view>
+        <view>
+            <view class='rel' bindtap='wode'>
+                <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+            </view>
+            <view class='{{db_tab[3].color}}'>{{db_tab[3].name}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<!--zh_jypx/pages/rank/login_firset.wxml-->
+<view class="home flex3">
+  <form bindsubmit="formSubmit">
+    <!-- <view class="title">SUNNY 英语</view> -->
+    <image src="../img/logo.png" class="logo"></image>
+    <view class="list flex_center">
+      <image src="../img/phones.png"></image>
+      <input type='text' placeholder='请输入您的手机号' name="phone"></input>
+    </view>
+    <view class="list flex_center">
+      <image src="../img/code.png"></image>
+      <input type='password' placeholder='请输入密码' name="code"></input>
+    </view>
+    <button formType="submit" class="submit">登录</button>
+    <view class="forget" bindtap='onFoget'>忘记密码?</view>
+    <view class="ready" bindtap='onRegister'>立即注册</view>
+  </form>
+</view>

@@ -1,0 +1,765 @@
+/* pages/index/home.wxss */
+.home{
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*_+—————————————第4个模板—————————————————  */
+.windex{
+  position: relative;
+  width: 100%;
+}
+.fanwe1,.fanwe2,.fanwe3{
+  position: absolute;
+  left: 0rpx;
+  z-index: 10;
+  width: 100%;
+}
+.fanwe1{
+  height: 580rpx;
+  top: 0rpx;
+}
+.fanwe2{
+  height: 320rpx;
+  top: 580rpx;
+}
+.fanwe3{
+  height: 400rpx;
+  top: 900rpx;
+}
+.windex>image{
+  width: 100%;
+}
+.windex>image:nth-child(1){
+  height:1300rpx;
+}
+/* .windex>image:nth-child(2){
+  height:410rpx;
+  margin-top: -10rpx;
+}
+.windex>image:nth-child(3){
+  height:350rpx;
+  margin-top: -10rpx;
+}   */
+.muban1{
+  padding: 10rpx 20rpx;
+}
+
+/*首页轮播图  */
+.newest_content {
+  width: 80%;
+  height: 50rpx;
+  float: left;
+  line-height: 50rpx;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 360rpx;
+}
+.swiper-container .swiper {
+  height: 360rpx;
+}
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+}
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  /* background: #000; */
+  width: 238rpx;
+  margin: auto;
+  border-radius: 10rpx;
+  height: 20rpx;
+  justify-content: center;
+}
+.dot {
+  margin: 4rpx 8rpx;
+  width: 30rpx;
+  height: 6rpx;
+  background: rgb(255, 255, 255);
+  border: rgb(218, 69, 70) solid 1rpx;
+  border-radius: 8rpx;
+  transition: all 0.6s;
+}
+.active {
+  width: 30rpx;
+  background: #f80;
+}
+/*—————————————————轮播—————————————————*/
+/*——————————————————分类部分——————————————————*/
+.icontent{
+  margin-top: 20rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20rpx 20rpx;
+}
+.bannerlist{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bannerlist>image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+}
+/*—————————关于我们部分开始———————————*/
+.habout{
+  width: 100%;
+  height: 250rpx;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  position: relative;
+  color:#F6F5F5;
+}
+.haboutimg{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.haboutbox{
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  left: 0rpx;
+  top: 0rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.habouttext{
+  width: 50%;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+  line-height: 50rpx;
+}
+.hmore{
+  border-radius: 50rpx;
+  padding: 5rpx 10rpx;
+  border:1rpx solid white;
+  font-size: 24rpx;
+  text-align: center;
+}
+.hxian{
+  background-color: #2083C9;
+  width: 100rpx;
+  height: 5rpx;
+  margin: 30rpx 0rpx;
+}
+.haboutfont{
+  font-style: italic;
+}
+
+/*—————————————产品中心部分开始———————————————*/
+.hpcbox{
+  width: 100%;
+  height: 285rpx;
+  overflow-x: scroll;
+  white-space:nowrap;
+}
+.hpcboxlist{
+  margin-right: 15rpx;
+  text-align: center;
+  display: inline-block;
+}
+.hpcbimg{
+  width: 300rpx;
+  height: 230rpx;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.hpcboxlist>view{
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+/*—————————————解决方案部分开始———————————————*/
+.hproduct{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: white;
+  border-radius: 15rpx;
+}
+.hptitle{
+  color: #2083C9;
+  margin-bottom: 25rpx;
+}
+.hpxian{
+  width: 8rpx;
+  height: 32rpx;
+  background-color: #2083C9;
+  margin-right: 15rpx;
+}
+.hpcontent{
+  display: flex;
+}
+.hpconimg{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.hpcname{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.hpctext{
+  width: 440rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+  color: #666;
+  font-size: 26rpx;
+  line-height: 38rpx;
+  margin-top: 10rpx;
+}
+
+/*—————————————企业动态部分开始———————————————*/
+.isecdong{
+  padding: 20rpx 0rpx;
+  font-size: 26rpx;
+}
+.isectime{
+  color: #999;
+  width: 140rpx;
+  border-right: 4rpx solid #B8B8B8;
+  text-align: center;
+}
+.isectimefont1{
+  font-size: 36rpx;
+  color: #999;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.isecdong>view:nth-child(2){
+  width: 480rpx;
+}
+.hcopyright{
+  color: #2083C9;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+/*—————————————底部部分开始———————————————*/
+.hfootbox{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+.hfooter{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  border-top: 1rpx solid #eee;
+}
+.femail{
+  width: 45rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.hfooter>.flex1{
+  width: 50%;
+  height: 80rpx;
+}
+.hfback{
+  background-color: #2083C9;
+  color: white;
+}
+.fphone{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.moreimg{
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+}
+
+/* ------------底部部分------------- */
+.footbox1{
+  width: 100%;
+  height: 115rpx;
+}
+.foot1{
+  width: 101%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: -1rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+  z-index: 11;
+}
+.footlist1{
+  width: 20%;
+}
+.footlist1>image{
+  width: 45rpx;
+  height: 45rpx;
+}
+
+/*----------------------第二个模板开始----------------------*/
+/* zh_qygw/pages/home/index.wxss */
+.zhuanimg{
+  animation: zhuan 3s infinite linear;
+	-webkit-animation: zhuan 3s infinite linear;
+}
+@keyframes zhuan{
+  0%{transform: rotate(0deg);}
+  80%{transform: rotate(360deg);}
+  100%{transform: rotate(360deg);}
+}
+.iheader{
+  width: 100%;
+  height: 250rpx;
+}
+.iheader>image{
+  width: 100%;
+  height: 100%;
+}
+.ibanner{
+  padding: 30rpx;
+  margin: 20rpx 0rpx;
+  background-color: white;
+}
+.ibtitle{
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.ibxian{
+  background-color: #28B3E5;
+  width: 40rpx;
+  height: 7rpx;
+  margin: 15rpx auto;
+}
+.ibtext{
+  color: #666;
+  line-height: 45rpx;
+}
+
+/*——————————————推广功能——————————————*/
+.isection{
+  background-color: white;
+  margin-top: 15rpx;
+  padding-top: 30rpx;
+}
+.iseclist{
+  display: flex;
+  flex-wrap: wrap;
+}
+.iseclist .isecbox:nth-child(1) image{
+  background-color: #31B16C;
+}
+.iseclist .isecbox:nth-child(2) image{
+  background-color: #601986;
+}
+.iseclist .isecbox:nth-child(3) image{
+  background-color: #28B3E5;
+}
+.iseclist .isecbox:nth-child(4) image{
+  background-color: #E98417;
+}
+.iseclist .isecbox:nth-child(5) image{
+  background-color: #DA4014;
+}
+.iseclist .isecbox:nth-child(6) image{
+  background-color: #0069B7;
+}
+.iseclist .isecbox:nth-child(7) image{
+  background-color: #E38174;
+}
+.isecbox{
+  width: 49%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30rpx 0rpx;
+}
+.isecbox>image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.isecfont1{
+  width: 80%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #666;
+  margin-top: 25rpx;
+  text-align: center;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.isecfont2{
+  width: 80%;
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 25rpx;
+  text-align: center;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+/*—————————————优势部分—————————————  */
+.advantage{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 30rpx 30rpx 10rpx;
+}
+.advlist>image{
+  width: 100%;
+  height: 250rpx;
+  margin-bottom: 20rpx;
+}
+
+/*————————他们都在使用小程序部分——————————*/
+.uselist{
+  display: flex;
+  flex-wrap: wrap;
+}
+.usebox{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0rpx;
+}
+.usebox>image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.usebox>view{
+  width: 80%;
+  text-align: center;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.footbox2{
+  width: 100%;
+  height: 115rpx;
+}
+.foot2{
+  width: 100%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+  z-index: 10;
+}
+.footlist2{
+  width: 33.3%;
+}
+.footlist2>image{
+  width: 45rpx;
+  height: 45rpx;
+}
+
+
+/*------------------------第三个模板------------------------------  */
+.ad {
+  margin-bottom: 2rpx;
+  height: 64rpx;
+  /* background-color: greenyellow; */
+  text-align: top;
+  background-color: white;
+  overflow: hidden;
+}
+/*—————————————————公告部分—————————————————*/
+.ad-icon {
+  line-height: 64rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  float: left;
+  height: 35rpx;
+  width: 40rpx;
+}
+
+.adinfo {
+  margin-left: 20rpx;
+  float: left;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  width: 650rpx;
+}
+.adinfo rich-text{
+  width: 100%;
+}
+.nav_index_text {
+  margin-top: 15rpx;
+  font-size: 24rpx;
+}
+
+/*———————————导航部分———————————*/
+.navlist{
+  background-color: white;
+  padding-bottom: 20rpx;
+}
+.navbox{
+  padding: 40rpx 0rpx;
+  display: flex;
+  align-items: center;
+}
+.navimg{
+  width:100rpx;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+  border-radius: 50%;
+  background-color: #01538D;
+}
+.navbox>.flex3{
+  width: 20%;
+  text-align: center;
+  color: #999;
+}
+.wxback{
+  width: 100%;
+  height: 230rpx;
+  background-color: #01538D;
+}
+.hcontent{
+  padding: 50rpx 30rpx;
+  color: #666;
+}
+.hctitle{
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.hctext{
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+.hcbanner{
+  width: 100%;
+  height: 300rpx;
+}
+.hcbanner>image{
+  width: 100%;
+  height: 100%;
+}
+
+/*—————————————————版块部分—————————————————*/
+.hsection{
+  background-color: white;
+  padding-bottom: 1rpx;
+}
+.hsectitle{
+  background-color: #F3F3F3;
+  height: 70rpx;
+  font-weight: bold;
+  font-size: 38rpx;
+  color: #0B5394;
+  display: flex;
+  align-items: center;
+}
+.hsecxian{
+  width: 10rpx;
+  height: 70rpx;
+  margin-right: 30rpx;
+  background-color: #0B5394;
+}
+.hsecimg{
+  width: 90%;
+  height: 200rpx;
+  margin-bottom: 10rpx;
+}
+.hsecbox{
+  padding: 30rpx 5rpx 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #888;
+}
+.hsecbox>.flex3{
+  width: 50%;
+}
+.hsecprogram{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx 5rpx;
+  color: #888;
+  font-size: 24rpx;
+}
+.hsecprimg{
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 10rpx;
+}
+.hsecprogram>.flex3{
+  width: 33%;
+}
+.comment{
+  padding: 40rpx 30rpx;
+}
+.combox{
+  display: flex;
+}
+.comimg{
+  width: 200rpx;
+  height: 200rpx;
+}
+.comtext{
+  width: 450rpx;
+  margin-left: 25rpx;
+  color: #888;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.comtitle{
+  color: #333;
+  font-size: 30rpx;
+  margin-bottom: 5rpx;
+}
+.comneirong{
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.comfoot{
+  text-align: right;
+}
+.commore{
+  margin-top: 30rpx;
+  color: #888;
+  text-align: right;
+}
+.hsecprogram2{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx 5rpx;
+  color: #333;
+}
+.hsecprogram2>.flex3{
+  width: 33%;
+}
+.hsecprogram3{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rpx 30rpx;
+  color: #333;
+}
+.hsecprogram3>.flex3{
+  width: 33%;
+}
+.hsecprimg2{
+  width: 110rpx;
+  height: 110rpx;
+  margin-bottom: 15rpx;
+}
+.diancha{
+  text-align: center;
+  margin-top: 30rpx;
+  color: #888;
+  margin-bottom: 60rpx;
+}
+.hsecplist{
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  height: 95rpx;
+  display: flex;
+  align-items: center;
+}
+.hsecplist>image{
+  width: 40rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+.hsecname{
+  text-indent: 2em;
+}
+.hsremark{
+  text-align: center;
+  color: #999;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  line-height: 45rpx;
+}
+.hsremark>view:nth-child(2){
+  color: #F4CCCC;
+}
+#map{
+  width: 100%;
+  height: 400rpx;
+}
+/* ------------底部部分------------- */
+.footbox3{
+  width: 100%;
+  height: 115rpx;
+}
+.foot3{
+  width: 101%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: -1rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+  z-index: 12;
+}
+.footlist3{
+  width: 33.3%;
+}
+.footlist3>image{
+  width: 45rpx;
+  height: 45rpx;
+}

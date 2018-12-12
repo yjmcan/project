@@ -1,0 +1,48 @@
+<!--pages/mycenter/edit.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='index'>
+    <view class='ebanner'>
+      <view class='flex_bet editbox'>
+        <view>主办方名称</view>
+        <view>
+          <input name="name" placeholder='请输入主办方名字' value='{{name}}'></input>
+        </view>
+      </view>
+      <view class='flex_bet editbox'>
+        <view>主办方头像</view>
+        <view class='flex_center' bindtap='img_array'>
+          <image class='edituserimg' src='{{url}}{{logo}}'></image>
+          <image class='editright' src='../img/acright.png'></image>
+        </view>
+      </view>
+      <view class='flex_bet editbox'>
+        <view class='flex_center'>
+          <view>主办方联系方式</view>
+          <view>
+            <input type='number' bindinput='phone' placeholder='请输入联系方式' name="phone" value='{{phone}}'></input>
+          </view>
+        </view>
+         <view class='editcode' bindtap='sendmessg' wx:if="{{getmsg=='发送验证码'&&system.is_dxyz==1}}">
+            {{getmsg}}
+        </view> 
+         <view class='editcode' wx:if="{{system.is_dxyz==2}}" style='background:{{color}}'>
+            <button class='editcode_botton' open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">微信验证</button> 
+        </view> 
+        
+          <view class='editcode' wx:if="{{getmsg!='发送验证码'&&system.is_dxyz==1}}">{{getmsg}}</view> 
+      </view>
+       <view class='flex_bet editbox' wx:if="{{system.is_dxyz==1}}">
+        <view class='flex_center'>
+          <view>短信验证码</view>
+          <view>
+            <input type='number' bindblur='code' placeholder='请输入短信验证码' name="code" ></input>
+          </view>
+        </view>
+      </view>
+      <textarea maxlength='540' name="info" class='jianjie' placeholder='输入主办方简介' value='{{info}}'></textarea>
+    </view>
+
+    <button class='cenbutton' form-type='submit' wx:if="{{frequency==0}}" style='background:{{color}}'>保存</button>
+    <button class='cenbutton' wx:else style='background:{{color}}'>保存</button>
+  </view>
+</form>

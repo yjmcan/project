@@ -1,0 +1,84 @@
+<view class='container' wx:if="{{store_info!=null}}">
+  <view class='head'>
+    <swiper indicator-dots="true" indicator-active-color="#fff" autoplay="true" interval="3000" duration="1000" circular="true">
+      <block wx:key="*this">
+        <swiper-item>
+          <image src="{{store_info.stationMainImg}}" mode='aspectFill' class="img" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--  物流公司  -->
+  <view class='pa recommed ba_f'>
+    <view class='dis_in recommed_0 rel' style='width:100%;'>
+      <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='dis_in mar_l wei fon_30' >{{store_info.name}}</text>
+      <view class='yajin fon_30 ab ud color_f'>
+        信誉额度 <text wx:if="{{store_info.creditAmount==null}}">0</text><text wx:if="{{store_info.creditAmount!=null}}">{{store_info.creditAmount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='check t_c ba_f fon_30 pa_1' wx:for="{{store_info.sourceRouteArray}}">
+    <view class='dis_in bor_bottom'>
+      {{item.startAllName}}
+    </view>
+    <view class='dis_in'>
+      <image mode='aspectFill' src='../../img/jh.png'></image>
+    </view>
+    <view class='dis_in bor_bottom'>
+      {{item.endAllName}}
+    </view>
+  </view>
+  <!--  现有货源  -->
+  <view class='body pa_1 mar_t ba_f'>
+    <view class='pa_0 recommed'>
+      <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='wei fon_30 dis_in mar_l'>现有货源</text>
+    </view>
+  </view>
+  <!-- <view class='source pa_1 ba_f'>
+    <view class='dis_in fon_28 pa_0 t_c' wx:for="{{imgUrls}}">
+      <text class='color_6'>运城</text>
+      <text class='color_6'>——</text>
+      <text class='color_6'>运城</text>
+      <text style='color:{{color}}'>300</text>
+    </view>
+  </view> -->
+  <view class='source pa_1 ba_f'>
+     <text class=' fon_28 pa_0 color_6'>{{store_info.nowSource}}</text> 
+   <!-- <rich-text class=' fon_28 pa_0 color_6' nodes="{{store_info.nowSource}}"></rich-text>-->
+  </view>
+  <!--  详情  -->
+  <view class='body pa_1 mar_t ba_f'>
+    <view class='pa_0 recommed'>
+      <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='wei fon_30 dis_in mar_l'>详情图片</text>
+    </view>
+  </view>
+  <view class='info pa ba_f fon_30'>
+      <text>{{store_info.stationDetails}}</text>
+  </view>
+  <view class='info pa_1'>
+    <image wx:for="{{store_info.inStorePhoto}}" mode='widthFix' src='{{item}}'></image>
+  </view>
+  <view style='height:120rpx;'></view>
+  <view class='bottom_nav fon_30 ba_f'>
+    <view class=' t_c' bindtap='maketel'>
+      <image mode='aspectFill' src='../../img/bh.png'></image>
+      拨号
+    </view>
+    <view class=' t_c' bindtap='cancel_collection' wx:if="{{store_info.isCollect!='false'&&store_info!=null}}">
+      <image mode='aspectFill' src='../../img/sc-yxz.png'></image>
+      已收藏
+    </view>
+    <view class=' t_c' bindtap='shoucang' wx:else>
+      <image mode='aspectFill' src='../../img/sc.png'></image>
+      收藏
+    </view>
+    <view class=' t_c' bindtap='address'>
+      <image mode='aspectFill' src='../../img/dh.png'></image>
+      导航
+    </view>
+  </view>
+</view>
+<progress wx:else stroke-width="3" active-mode="forwards"	 percent="{{speed}}" active  />

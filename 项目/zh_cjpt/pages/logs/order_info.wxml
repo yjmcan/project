@@ -1,0 +1,51 @@
+<view class='t_c price ba_f' style='color:{{color}}'>
+    ￥61.20元
+</view>
+<view class='ba_f mar_t'>
+    <view class='pa shop fon_30'>
+        <view class='dis_in'>清炒肉丝</view>
+        <view class='dis_in'>x1</view>
+        <view class='dis_in'>￥50.00</view>
+    </view>
+    <view class='pa shop fon_30 bor_bottom'>
+        <view class='dis_in'>清炒肉丝</view>
+        <view class='dis_in'>x1</view>
+        <view class='dis_in'>￥50.00</view>
+    </view>
+    <view class='pa shop fon_24 color_9'>
+        <view class='dis_in'>餐盒费</view>
+        <view class='dis_in'></view>
+        <view class='dis_in'>￥50.00</view>
+    </view>
+     <view class='pa shop fon_24 color_9 bor_bottom'>
+        <view class='dis_in'>打包费</view>
+        <view class='dis_in'></view>
+        <view class='dis_in'>￥50.00</view>
+    </view>
+    <view class='pa shop fon_30 bor_bottom'>
+        <view class='dis_in'>平台抽佣</view>
+        <view class='dis_in'></view>
+        <view class='dis_in'>-￥5.00</view>
+    </view>
+    <view class='pa shop fon_30'>
+        <view class='dis_in'>结算金额</view>
+        <view class='dis_in'></view>
+        <view class='dis_in'>￥50.00</view>
+    </view>
+</view>
+<view class='mar_t ba_f fon_28 pa order color_9'>
+    <view class='dis_in'>订单留言</view>
+    <view class='dis_in'>gnwakghikwahgioahw</view>
+</view>
+<view class=' ba_f fon_28 pa order color_9'>
+    <view class='dis_in'>订单号</view>
+    <view class='dis_in'>20180930418</view>
+</view>
+<view class=' ba_f fon_28 pa order color_9'>
+    <view class='dis_in'>下单时间</view>
+    <view class='dis_in'>2018-09-12 12:32</view>
+</view>
+<view class=' ba_f fon_28 pa order color_9'>
+    <view class='dis_in'>订单完成时间</view>
+    <view class='dis_in'>2018-09-12 12:32</view>
+</view>

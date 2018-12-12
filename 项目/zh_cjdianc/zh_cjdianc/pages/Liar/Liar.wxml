@@ -1,0 +1,70 @@
+<view class="head" wx:if="{{xtxx.gs_img.length>0}}">
+  <swiper indicator-dots="true" autoplay="true" interval="3000" circular='true' duration="500">
+    <block wx:for="{{xtxx.gs_img}}">
+      <swiper-item>
+        <image mode='aspectFill' src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- <view class='seller_info'>
+     <view>
+        <image mode='aspectFill' src='../../img/telephone.png'></image>
+    </view>
+    <view>门店名称：{{xtxx.gs_tel}}</view>
+</view> -->
+<view class="weui-cells weui-cells_after-title" style='border-bottom:1rpx solid #efeff4'>
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../img/gssjjs.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd" style='font-weight:bold'>商家介绍</view>
+  </view>
+</view>
+<view class='seller_info margin'>
+  <rich-text nodes="{{xtxx.gs_details}}"></rich-text>
+</view>
+<!-- <view class='seller_info' bindtap='maketel'>
+  <view>
+    <image mode='aspectFill' src='../../img/telephone.png'></image>
+  </view>
+  <view>联系电话：{{xtxx.gs_tel}}</view>
+</view>
+<view class='seller_info'>
+  <view>
+    <image mode='aspectFill' src='../../img/seller/seller_info_img.png'></image>
+  </view>
+  <view>营业时间：{{xtxx.gs_time}}</view>
+</view>
+<view class='seller_info margin' bindtap='location'>
+  <view>
+    <image mode='aspectFill' src='../../img/personal/dizhi.png'></image>
+  </view>
+  <view>
+    <view>{{xtxx.gs_add}}</view>
+    <image mode='aspectFill' src='../../img/blackjt.png'></image>
+  </view>
+</view> -->
+<view class="weui-cells weui-cells_after-title" style='margin-bottom: 30rpx;'>
+  <navigator bindtap='maketel' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../img/gstel.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">联系电话：{{xtxx.gs_tel}}</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../img/gssj.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">营业时间：{{xtxx.gs_time}}</view>
+    <view class="weui-cell__ft"></view>
+  </navigator>
+  <navigator bindtap='location' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../img/gsdt.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">地址：{{xtxx.gs_add}}</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>

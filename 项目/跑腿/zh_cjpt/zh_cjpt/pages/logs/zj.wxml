@@ -1,0 +1,171 @@
+<!-- <view class='head bor_bottom'>
+  <view class='dis_in color_6 fon_30'>
+    <view>可提现余额</view>
+    <view>￥{{price}}</view>
+  </view>
+  <view class='dis_in fon_30' bindtap='tixian'>
+    <text>提现</text>
+  </view>
+</view>
+<view class='ls fon_30 bor_bottom rel' bindtap='capital'>
+  <image mode='aspectFill' src='../img/yu.png'></image>
+  <text>查看余额流水</text>
+  <image class='ab acright' mode='aspectFill' src='../img/acright.png'></image>
+</view>
+<view class='today_price mar_t'>
+  <view class='rel bor_bottom pa'>
+    <text class='fon_30'>今日预计收入</text>
+    <text class='fon_24'>({{today_time}})</text>
+    <text class='fon_24'></text>
+    <image mode='aspectFill' class='ab ud acright' src='../img/acright.png'></image>
+  </view>
+  <view class='pa bor_bottom'>
+    <view class='color_6'>完成订单</view>
+    <view>共{{today_money.wc.count}}笔</view>
+    <view>￥{{today_money.wc.money}}</view>
+  </view>
+  <view class='pa bor_bottom'>
+    <view class='color_6'>退款订单</view>
+     <view>共{{today_money.wwc.count}}笔</view>
+    <view>￥{{today_money.wwc.money}}</view>
+  </view>
+</view>
+<view class='history_list pa_1 mar_t'>
+  <view class=' fon_36 pa bor_bottom'>
+    历史账单
+  </view>
+  <view class='list bor_bottom' wx:for="{{history}}" wx:key="*this" bindtap='bill' data-days='{{item.days}}' data-money='{{item.money}}' data-count='{{item.count}}'> 
+    <view class='dis_in'>
+      <view class='month' style='background:{{color}}'>
+        <text class='fon_30'>{{item.month}}月</text>
+        <text class='fon_24'>{{item.year}}</text>
+      </view>
+    </view>
+    <view class='dis_in'>
+      <view class='fon_36' style='padding-bottom:10rpx;'>￥{{item.money}}</view>
+      <view class='fon_24'>
+        <text class='color_6'>外卖订单共</text>
+        <text style='color:{{color}}'>{{item.count}}</text>
+        <text class='color_6'>笔</text>
+      </view>
+    </view>
+    <view class='dis_in'>
+      <image class='acright' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+  </view>
+</view> -->
+<view class='head rel'>
+  <view class='ab' style='background:{{color}}'>
+    <image mode='aspectFill' class='image_100' src='../img/wallet_bg.png'></image>
+  </view>
+  <view class='ab'>
+    <view class='color_f fon_60 t_c pa_0'>
+      ￥{{price}}
+    </view>
+    <view class='head_title t_c fon_24 color_f'>
+      <text class='dis_in'></text>
+      <text class='dis_in mar_l'>账户余额</text>
+      <text class='dis_in mar_l'></text>
+    </view>
+    <view class='tx fon_28 t_c'>
+      <text class='color_f' bindtap='tixian'>提现</text>
+    </view>
+    <view class='PutFowardDetails t_c color_9 fon_30 ab pa_0'>
+      <view style="color:{{tx_statu==true?color:'#999'}}" bindtap='change_tx1'>
+        提现明细
+      </view>
+      <view style="color:{{tx_statu==false?color:'#999'}}" bindtap='change_tx2'>
+        账单明细
+      </view>
+    </view>
+  </view>
+</view>
+<view class='body' wx:if="{{tx_statu==true}}">
+  <view class='ba_f pa rel fon_32 list_head' style='color:{{color}}'>
+    <text class='dis_in' style='background:{{color}}'></text>
+    <text class='dis_in mar_l'>{{year}}年</text>
+    <!-- <image mode='aspectFill' src='' class='dis_in ab ud'></image> -->
+  </view>
+  <view class="PutFoward_list {{index==0?'mar_t':''}} {{index==6?'':'bor_bottom'}} pa ba_f " wx:for="{{tx_list}}">
+    <view class='dis_in'>
+      <view class='fon_30 color_0'>
+        <text>提现</text>
+        <text class='color_0 mar_l'>￥</text>
+        <text class='fon_40 color_0'>{{item.tx_cost}}</text>
+      </view>
+      <view class='fon_24 color_9'>{{item.time}}</view>
+    </view>
+    <view class='fon_28 t_r dis_in' bindtap='tx_info' data-id="{{item.id}}">
+      <text class='dis_in wei' style='color:#000' wx:if="{{item.state==1}}">申请中</text>
+      <text class='dis_in wei' style='color:{{color}}' wx:if="{{item.state==2}}">已提现</text>
+      <text class='dis_in wei' style='color:red' wx:if="{{item.state==3}}">已拒绝</text>
+      <image mode='aspectFill' src='../img/acright.png' class='right_img dis_in mar_l'></image>
+    </view>
+  </view>
+</view>
+<view class='body' wx:if="{{tx_statu==false}}">
+  <view class='ba_f pa rel fon_32 list_head' style='color:{{color}}'>
+    <text class='dis_in' style='background:{{color}}'></text>
+    <text class='dis_in mar_l'>{{start_time}}至{{end_time}}</text>
+    <image mode='aspectFill' src='../img/month_sele.png' bindtap='month_show' class='dis_in ab ud'></image>
+  </view>
+  <view wx:if="{{list.length>0}}" class="PutFoward_list_1 {{index==0?'mar_t':''}} {{index==6?'':'bor_bottom'}} pa ba_f " wx:for="{{list}}">
+    <view class='dis_in'>
+      <view class='fon_30 color_9'>
+        <text style='color:{{color}}'>#{{item.origin_id}}</text>
+        <!-- <text class='color_6 mar_l'>￥</text> -->
+        <!-- <text class='fon_40 color_6'>10000</text> -->
+      </view>
+      <view class='fon_24 color_9'>{{item.jd_time}}</view>
+    </view>
+    <view class='fon_28 t_c dis_in'>
+        <text wx:if="{{item.state!=5}}">+</text>
+        <text wx:else>-</text>
+        <text>{{item.ps_money}}</text>
+    </view>
+    <view class='fon_28 t_r dis_in' bindtap='zd_info' data-id="{{item.id}}">
+      <text class='dis_in' wx:if="{{item.state==1}}">待接单</text>
+      <text class='dis_in' wx:if="{{item.state==2}}">已接单</text>
+      <text class='dis_in' style='color:{{color}}' wx:if="{{item.state==3}}">正在配送</text>
+      <text class='dis_in' style='color:#666' wx:if="{{item.state==4}}">已完成</text>
+      <text class='dis_in' style='color:red' wx:if="{{item.state==5}}">用户退款</text>
+      <image mode='aspectFill' src='../img/acright.png' class='right_img dis_in mar_l'></image>
+    </view>
+  </view>
+  <view style='padding:150rpx 0;' class='t_c fon_30 color_9' wx:if="{{list.length==0}}">
+    --- 暂无数据 ---
+  </view>
+</view>
+<!-- 弹框 -->
+<view class='showmodal fixed' hidden='{{sele_month}}'>
+  <view class='ab'></view>
+  <view class='ab udlr'>
+    <view class='TimeSele fon_30'>
+      <!-- <view class='dis_in'>20185-09-17</view> -->
+      <view class='dis_in t_c' bindtap='sele_month' data-type="0" style='border-bottom:2rpx solid {{start_month==true?color:color_1}};color:{{start_month==true?color:color_1}}'>
+        <text wx:if="{{start.year==null}}">开始日期</text>
+        <text wx:else>{{start.year}}年{{start.month}}月</text>
+      </view>
+      <view class='dis_in t_c color_6'>至</view>
+      <view class='dis_in bor_bottom t_c' bindtap='sele_month' data-type="1" style='border-bottom:2rpx solid {{end_month==true?color:color_1}};color:{{end_month==true?color:color_1}}'>
+        <text wx:if="{{end.year==null}}">结束日期</text>
+        <text wx:else>{{end.year}}年{{end.month}}月</text>
+      </view>
+    </view>
+    <picker-view class='ba_f time_show' indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{years}}" class='t_c fon_30' style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" class='t_c fon_30' style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <!-- <picker-view-column>
+        <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column> -->
+    </picker-view>
+    <view class='determine ba_f fon_30'>
+      <view class='dis_in pa_1' bindtap='cancel'>取消</view>
+      <view class='t_r dis_in pa_1' style='color:{{color}}' bindtap='determine'>完成</view>
+    </view>
+  </view>
+</view>

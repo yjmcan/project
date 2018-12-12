@@ -1,0 +1,463 @@
+/* pages/fabu/enrollset.wxss */
+
+.index {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.eheader {
+  margin-top: 15rpx;
+  background-color: white;
+}
+
+.etitle {
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  position: relative;
+}
+
+.etitle>view:nth-child(3) {
+  position: absolute;
+  color: blue;
+  right: 5%;
+  font-size: 24rpx;
+}
+
+.exian {
+  width: 8rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+  background-color: #f66926;
+}
+
+/* —————————————热门模块开始————————————— */
+
+.marry {
+  background-color: white;
+  padding: 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.proitem {
+  padding: 15rpx 30rpx;
+  position: relative;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #eee;
+}
+
+.proitem.weuibaron {
+  color: #fff;
+  position: relative;
+  background-color: #f66926;
+}
+
+/*——————————————报名标签部分————————————*/
+
+.elabel {
+  padding: 20rpx 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.elabellist {
+  padding: 15rpx 35rpx;
+  border-radius: 10rpx;
+  border: 3rpx solid #f66926;
+  margin: 10rpx;
+  color: #f66926;
+}
+
+.none_select {
+  padding: 15rpx 35rpx;
+  border-radius: 10rpx;
+  border: 3rpx solid #f66926;
+  margin: 10rpx;
+  color: #f66926;
+}
+.select{
+  padding: 15rpx 35rpx;
+  background: #f66926;
+  border: 3rpx solid #f66926;
+  color: #fff;
+  border-radius: 10rpx;
+  margin: 10rpx;
+}
+.estyle {
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+
+.proitem2 {
+  padding: 10rpx 35rpx;
+  position: relative;
+  text-align: center;
+  background-color: #eee;
+}
+
+.proitem2.weuibaron {
+  color: #fff;
+  position: relative;
+  background-color: #f66926;
+}
+
+.remark {
+  width: 100%;
+  height: 300rpx;
+  color: #999;
+}
+
+.ebeizhu {
+  padding: 20rpx;
+  font-size: 24rpx;
+  width: 100%;
+}
+
+.eaddstyle {
+  padding: 50rpx 0rpx;
+  font-size: 24rpx;
+}
+
+.eaddfont {
+  color: #f66926;
+  font-size: 36rpx;
+}
+
+.etelphone {
+  font-size: 24rpx;
+  padding: 10rpx 0rpx;
+}
+
+.etelbox {
+  padding: 0rpx 30rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.etelnum {
+  margin-right: 20rpx;
+  font-weight: bold;
+  color: #666;
+}
+
+.eshanchu {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.etelinput {
+  width: 450rpx;
+}
+
+/*票券  */
+
+.interval {
+  width: 100%;
+  height: 20rpx;
+  background: #f9f9f9;
+}
+
+.ticket {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-bottom: 120rpx;
+}
+
+.set_up {
+  width: 95%;
+}
+
+.ticket_fill {
+  width: 90%;
+  height: auto;
+  border: 2rpx solid #ccc;
+  overflow: hidden;
+  margin: 20rpx auto 0;
+  border-radius: 15rpx;
+}
+
+.fill_head {
+  width: 100%;
+  height: 80rpx;
+  background: #f66926;
+  position: relative;
+}
+
+.ticket_name {
+  position: absolute;
+  left: 6.5%;
+  top: 25%;
+  width: 90%;
+  height: 50%;
+}
+
+.ticket_name>view:nth-child(1) {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  color: #fff;
+}
+
+.ticket_name>view input {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  min-height: 0;
+}
+
+.ticket_name>view:nth-child(2) {
+  position: absolute;
+  right: 0;
+  width: 10%;
+  height: 60%;
+}
+
+.ticket_name>view image {
+  width: 100%;
+  height: 100%;
+}
+
+.ticket_name view view {
+  float: left;
+}
+
+.ticket_name view view image {
+  width: 100%;
+  height: 100%;
+}
+
+.ticket_name view view:nth-child(2) {
+  width: 40rpx;
+  height: 35rpx;
+  margin-left: 15rpx;
+}
+
+.ticket_all {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.ticket_all>view:nth-child(1) {
+  width: 20%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.ticket_all>view:nth-child(2) {
+  width: 80%;
+  height: 100%;
+  float: left;
+  color: #333;
+}
+
+.ticket_type>view text {
+  padding: 15rpx 30rpx;
+}
+
+.free_Admission {
+  background: #f66926;
+  color: #fff;
+}
+
+.charge {
+  background: #ccc;
+  color: #333;
+}
+
+.input_num {
+  width: 100%;
+  height: 70%;
+  line-height: 63rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 8rpx;
+  border: 1rpx solid #ccc;
+  text-align: center;
+}
+
+.input_character>view {
+  display: inline-block;
+}
+
+.input_character>view:nth-child(1) {
+  width: 70%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.input_character>view:nth-child(2) {
+  position: relative;
+  width: 26%;
+  height: 100%;
+  float: left;
+  margin-left: 20rpx;
+  line-height: 80rpx;
+  color: #333;
+}
+
+.add_ticket {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+/*自定义弹框  */
+
+.delete_ticket {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+
+.delete_ticket>view:nth-child(1) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+.delete_ticket>view:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70%;
+  height: 300rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  z-index: 1100;
+  overflow: hidden;
+}
+
+.prompt {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.prompt_info {
+  width: 100%;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.prompt_button {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.prompt_button>view {
+  float: left;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+.prompt_button>view:nth-child(1) {
+  box-sizing: border-box;
+  border-right: 2rpx solid #e5e5e5;
+}
+
+/*添加联系方式  */
+
+.add_infomation {
+  width: 98%;
+  height: 680rpx;
+  bottom: 5%;
+  position: fixed;
+  left: 1%;
+  z-index: 1000;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+}
+
+.add_infomation>view:last-child {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #f66926;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10rpx;
+  background: #fff;
+}
+
+.add_contacts {
+  width: 100%;
+  height: 560rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.add_contacts>view {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.add_contacts>view:nth-child(1) {
+  color: #333;
+}
+
+.add_contacts>view:last-child {
+  border: none;
+}
+.next_step{
+  width: 80%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 20rpx;
+  background: #f66926;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  left: 10%;
+  z-index: 10000;
+}
+.next_step::after{
+  border: 2rpx solid #f66926;
+}

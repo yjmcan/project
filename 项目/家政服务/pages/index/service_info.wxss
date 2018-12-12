@@ -1,0 +1,213 @@
+/* pages/index/service_info.wxss */
+.address{
+  background: #fff;
+  width: 100%;
+  height: 200rpx;
+}
+.user_info{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx;
+}
+.user_info>view{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.user_info>view view{
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.user_info>view view:nth-child(1){
+  width: 20%;
+}
+.user_info>view view:nth-child(2){
+  width: 80%;
+}
+.address button{
+  width: 60%;
+  height: 80rpx;
+  background: #f66925;
+  border-radius: 60rpx;
+  line-height: 80rpx;
+  color: #fff;
+}
+.time{
+  margin: 20rpx;
+  background: #fff;
+  height: 80rpx;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+.time>view{
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+.time>view text{
+  color: #888;
+}
+.shop_info{
+  height: auto;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.shop_info>view{
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.shop_info>view:nth-child(1){
+  width: 130rpx;
+  margin-left: 20rpx;
+}
+.shop_info>view:nth-child(2){
+  width: 450rpx;
+}
+.shop_info>view image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.shop_info>view view{
+  font-size: 28rpx;
+}
+.shop_info>view view:nth-child(1){
+  font-weight: bold;
+  height: 40rpx;
+  line-height: 20rpx;
+  /* line-height: 40rpx; */
+}
+.shop_info>view view:nth-child(2){
+  height: 80rpx;
+  line-height: 110rpx;
+  color: #777;
+}
+.shop_info>view view text{
+  color: red;
+}
+.form_info{
+  background: #fff;
+  border-bottom: 2rpx solid #f9f9f9;
+  box-sizing: border-box;
+}
+.form_info text{
+  right: 20rpx;
+  bottom: 30rpx;
+  font-size: 24rpx;
+  color: red;
+}
+.form_info>view{
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24rpx;
+}
+.form_info>view:nth-child(1){
+  width: 20%;
+  text-indent: 20rpx;
+}
+.form_info>view:nth-child(2){
+  width: 80%;
+}
+.service_title>text:nth-child(1){
+  color: orange;
+  font-size: 22rpx;
+  float: left;
+}
+.service_title>text:nth-child(2){
+  color: #999;
+  font-size: 22rpx;
+  float: right;
+  margin-right: 60rpx;
+}
+.service_title checkbox-group{
+  right: 0;
+}
+.top{
+  margin-top: 20rpx;
+}
+.none_border{
+  border: none;
+}
+.check_group,.remark{
+  padding: 20rpx;
+  margin-top: 20rpx;
+  background: #fff;
+}
+.check_group>view{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24rpx;
+}
+.remark{
+  margin-bottom: 120rpx;
+}
+.remark>view{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24rpx;
+}
+.check_group>view:nth-child(1){
+  width: 20%
+}
+.check_group>view:nth-child(2){
+  width: 80%
+}
+.checkbox checkbox{
+  transform: scale(.7)
+}
+.remark>view:nth-child(1){
+  width: 20%
+}
+.remark>view:nth-child(2){
+  width: 80%
+}
+.remark textarea{
+  width: 100%;
+  min-height: 70rpx;
+  height: 100%;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  line-height: 100rpx;
+  z-index: 50000;
+}
+.bottom>view{
+  float: left;
+}
+.bottom>view:nth-child(1){
+  width: 55%;
+  background: #fff;
+  font-size: 23rpx;
+  text-align: center;
+  color: #999;
+}
+.bottom>view text:nth-child(1){
+  color: red;
+}
+.bottom>view text:nth-child(3){
+  margin-left: -90rpx;
+}
+.bottom>view:nth-child(2){
+  width: 45%;
+  color: #fff;
+  background: red;
+  font-size: 28rpx;
+  text-align: center;
+}
+.submit{
+  background: none;
+  font-size: 34rpx;
+  color: #fff;
+}
+.submit::after{
+  border: none;
+}

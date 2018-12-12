@@ -1,0 +1,52 @@
+<!--zh_zbkq/pages/my/glyhq/glyhqdl.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="head1">最近领取</view>
+    <view class="head2">
+      <text>{{yhq.lq_num}}</text>
+      <text>人</text>
+    </view>
+    <view class="head3">
+      <view style="border-right:1px solid #d9d9d9">
+        <text class="">浏览量</text>
+        <text class="">{{yhq.click}}</text>
+      </view>
+      <view style="border-right:1px solid #d9d9d9">
+        <text class="">领取量</text>
+        <text class="">{{yhq.lq_num}}</text>
+      </view>
+      <view>
+        <text class="">已核销</text>
+        <text class="">{{yhq.hx_num}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="head">
+    <view class="head1">剩余（张）</view>
+    <view class="head4">
+      <view>{{sysl}}</view>
+      <view bindtap='chakan'>查看</view>
+    </view>
+  </view>
+  <view class="zxhx">最新核销</view>
+  <view class="ft" wx:if="{{hxlist.length!=0}}" wx:for="{{hxlist}}">
+    <view class='ftleft'>
+      <image src='{{item.img}}'></image>
+    </view>
+    <view class="ftl">
+      <view class="ftl1">
+        <text>{{item.nickname}}</text>
+        <text>管理员核销</text>
+      </view>
+      <view class="ftl2">{{item.hx_time}}</view>
+    </view>
+    <view class="ftr">已核销</view>
+  </view>
+  <view class="ft" wx:if="{{hxlist.length==0}}">
+    <view class="ftl">
+      <view class="ftl1" style='font-size:30rpx;color:#999;'>
+        暂无数据
+      </view>
+    </view>
+  </view>
+</view>

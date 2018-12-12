@@ -1,0 +1,189 @@
+/* 
+.head{
+  padding: 20rpx;
+  background: #fff;
+}
+.head>view{
+  width: 50%;
+}
+.head>view:nth-child(2){
+  text-align: right;
+}
+.head>view text{
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #e5e5e5;
+}
+.ls{
+  padding: 20rpx;
+  background: #fff;
+}
+.ls>image:nth-child(1){
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.ls image:nth-child(3){
+  right: 20rpx;
+}
+.ls text{
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.ls text:nth-child(2){
+  text-align: right;
+}
+.today_price{
+  background: #fff;
+}
+.today_price view text:nth-child(3){
+  float: right;
+}
+.today_price image{
+  right: 20rpx;
+  vertical-align: middle;
+}
+.today_price>view view{
+  display: inline-block;
+  width: 33.3%;
+  font-size: 30rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.history_list{
+  background: #fff;
+}
+.list>view:nth-child(1){
+  width: 20%;
+}
+.list>view:nth-child(2){
+  width: 75%;
+}
+.list>view:nth-child(3){
+  width: 5%;
+}
+.list{
+  padding: 20rpx 0;
+}
+.list>view image{
+  
+}
+.month{
+  width: 80%;
+  border-radius: 8rpx;
+  text-align: center;
+  padding: 15rpx 0;
+}
+.month text{
+  color: #fff;
+  display: block;
+} */
+.head{
+  width: 100%;
+  height: 500rpx;
+}
+.head>view{
+  width: 100%;
+  height: 100%;
+}
+.head_title>text:nth-child(1){
+  width: 10%;
+  height: 2rpx;
+  background: #fff;
+  opacity: .5;
+}
+.head_title>text:nth-child(3){
+  width: 10%;
+  height: 2rpx;
+  background: #fff;
+  opacity: .5;
+}
+.tx{
+  margin-top: 50rpx;
+}
+.tx text{
+  border:2rpx solid #fff;
+  border-radius: 10rpx;
+  padding: 8rpx 40rpx;
+}
+.PutFowardDetails{
+  display: flex;
+  margin-top: 60rpx;
+  bottom: 0;
+  width: 100%;
+}
+.PutFowardDetails>view{
+  flex: 2;
+}
+.PutFowardDetails>view:nth-child(1){
+  border-right: 2rpx solid #e5e5e5;
+}
+.list_head>text:nth-child(1){
+  width: 6rpx;
+  height: 30rpx;
+}
+.list_head image{
+  width: 50rpx;
+  height: 50rpx;
+  right: 20rpx;
+}
+.right_img{
+  width: 20rpx;
+  height: 30rpx;
+}
+.PutFoward_list>view:nth-child(1){
+  width: 70%;
+}
+.PutFoward_list>view:nth-child(2){
+  width: 30%;
+}
+.PutFoward_list_1>view:nth-child(1){
+  width: 40%;
+}
+.PutFoward_list_1>view:nth-child(3){
+  width: 40%;
+}
+.PutFoward_list_1>view:nth-child(2){
+  width: 20%;
+}
+/* 弹框 */
+.showmodal>view:nth-child(1){
+  background: #000;
+  opacity: .5;
+}
+.showmodal>view:nth-child(2){
+  width: 90%;
+  height: 500rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.TimeSele{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.TimeSele>view:nth-child(1){
+  width: 30%;
+  border-bottom: 2rpx solid red;
+  margin-left: 10%;
+}
+.TimeSele>view:nth-child(3){
+  width: 30%;
+}
+.TimeSele>view:nth-child(2){
+  width: 20%;
+}
+.determine{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+}
+.determine>view{
+ flex: 2;
+}
+.time_show{
+  width: 100%;
+  height: 300rpx;
+  margin-top: 50rpx;
+}

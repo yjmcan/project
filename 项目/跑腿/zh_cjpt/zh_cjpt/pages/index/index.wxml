@@ -1,0 +1,189 @@
+<include src="../route/index.wxml" />
+<view class='container'>
+  <view class='head'>
+    <view wx:for="{{nav}}" class='fon_40' wx:key="*this" bindtap='nav' data-index='{{index}}' class="{{item.color}} wei" style='border-bottom:4rpx solid {{item.border}};color:{{item.color}}'>{{item.name}}</view>
+  </view>
+  <!-- 待抢单 -->
+  <view wx:if="{{ac_index==0}}">
+    <view class='robbing pa ba_f' wx:for="{{list}}" wx:key="*this">
+      <view class='robb_head' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view style='background:#f9f9f9;height:50rpx;line-height:50rpx;padding:0 10rpx;'>
+          <!-- <text class='fon_36 dis_in' style='color:{{color}}'>#{{item.ps_num}}</text> -->
+           <text class='fon_40' style='color:{{color}}'>#{{item.origin_id}}</text>
+          <text class='fon_24 dis_in t_r'>下单时间:{{item.time}}</text>
+        </view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:{{color}}' class='dis_in t_c'>取</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view>{{item.sender_name}}</view>
+          <view class='gobyndsingle color_6 fon_24 mar_t'>{{item.sender_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance}}km</view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:orange' class='dis_in t_c'>送</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view class=' fon_24' style='line-height:50rpx;'>{{item.receiver_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance1}}km</view>
+      </view>
+      <view class='order_price fon_30 pa_0 color_3' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <text style='padding:3rpx 7rpx;color:#fff;background:{{color}};border-radius:5rpx;' wx:if="{{item.pay_type!=4}}" class='dis_in fon_22'>在线支付</text>
+         <text style='padding:3rpx 7rpx;color:#fff;background:orange;border-radius:5rpx;' wx:if="{{item.pay_type==4}}" class='dis_in fon_22'>货到付款</text>
+        <text class='mar_l'>订单金额:</text>
+        <text style='color:{{color}}' class='wei'>￥{{item.goods_price}}</text>
+        <text class='mar_l'>佣金:</text>
+        <text style='color:red;' class='wei'>￥{{item.ps_money}}</text>
+      </view>
+      <view class='fon_28 pa_0'>
+        <text class='fon_24'>客户期望送达时间：</text>
+        <text style='color:{{color}}'>{{item.delivery_time}}</text>
+      </view>
+      <button class='qiang' style='background:{{color}}' bindtap='robbing' data-id='{{item.id}}'>立即抢单</button>
+    </view>
+  </view>
+  <!-- 待取餐 -->
+  <view wx:if="{{ac_index==1}}">
+    <view class='robbing pa ba_f' wx:for="{{list}}" wx:key="*this">
+      <view class='robb_head' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view style='background:#f9f9f9;height:50rpx;line-height:50rpx;padding:0 10rpx;'>
+          <text class='fon_40' style='color:{{color}}'>#{{item.origin_id}}</text>
+          <text class='fon_24 dis_in t_r'>下单时间:{{item.time}}</text>
+        </view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:{{color}}' class='dis_in t_c'>取</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view>{{item.sender_name}}</view>
+          <view class='gobyndsingle color_6 fon_24 mar_t'>{{item.sender_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance}}km</view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:orange' class='dis_in t_c'>送</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view class=' fon_24' style='line-height:50rpx;'>{{item.receiver_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance1}}km</view>
+      </view>
+       <view class='order_price fon_30 pa_0 color_3' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <text style='padding:3rpx 7rpx;color:#fff;background:{{color}};border-radius:5rpx;' class='dis_in fon_22' wx:if="{{item.pay_type!=4}}">在线支付</text>
+         <text style='padding:3rpx 7rpx;color:#fff;background:orange;border-radius:5rpx;' wx:if="{{item.pay_type==4}}" class='dis_in fon_22'>货到付款</text>
+        <text class='mar_l'>订单金额:</text>
+        <text style='color:{{color}}' class='wei'>￥{{item.goods_price}}</text>
+        <text class='mar_l'>佣金:</text>
+        <text style='color:red;' class='wei'>￥{{item.ps_money}}</text>
+      </view>
+      <view class='fon_28 pa_0'>
+        <text class='fon_24'>客户期望送达时间：</text>
+        <text style='color:{{color}}'>{{item.delivery_time}}</text>
+      </view>
+      <view class='info_5'>
+        <button class='ba_f' style='color:{{color}};border:2rpx solid {{color}}' bindtap='sender_tel' data-tel='{{item.sender_tel}}'>联系商家</button>
+        <button style='background:{{color}};color:#fff' bindtap='g_shop' data-id='{{item.id}}'>确认到店</button>
+      </view>
+      <button class='qiang' style='background:{{color}}' bindtap='Slip' data-id='{{item.id}}'>转单</button>
+    </view>
+  </view>
+  <!-- 待配送 -->
+  <view wx:if="{{ac_index==2}}">
+    <view class='robbing pa ba_f' wx:for="{{list}}" wx:key="*this">
+      <view class='robb_head' bindtap='order_info' data-id='{{item.id}}'>
+        <view style='background:#f9f9f9;height:50rpx;line-height:50rpx;padding:0 10rpx;'>
+           <text class='fon_40' style='color:{{color}}'>#{{item.origin_id}}</text>
+          <text class='fon_24 dis_in t_r'>下单时间:{{item.time}}</text>
+        </view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:{{color}}' class='dis_in t_c'>取</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view>{{item.sender_name}}</view>
+          <view class='gobyndsingle color_6 fon_24 mar_t'>{{item.sender_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance}}km</view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:orange' class='dis_in t_c'>送</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view class=' fon_24' style='line-height:50rpx;'>{{item.receiver_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance1}}km</view>
+      </view>
+       <view class='order_price fon_30 pa_0 color_3' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+         <text style='padding:3rpx 7rpx;color:#fff;background:{{color}};border-radius:5rpx;' class='dis_in fon_22' wx:if="{{item.pay_type!=4}}">在线支付</text>
+         <text style='padding:3rpx 7rpx;color:#fff;background:orange;border-radius:5rpx;' wx:if="{{item.pay_type==4}}" class='dis_in fon_22'>货到付款</text>
+        <text class='mar_l'>订单金额:</text>
+        <text style='color:{{color}}' class='wei'>￥{{item.goods_price}}</text>
+        <text class='mar_l'>佣金:</text>
+        <text style='color:red;' class='wei'>￥{{item.ps_money}}</text>
+      </view>
+      <view class='fon_28 pa_0'>
+        <text class='fon_24'>客户期望送达时间：</text>
+        <text style='color:{{color}}'>{{item.delivery_time}}</text>
+      </view>
+      <view class='info_5'>
+        <button class='ba_f' style='color:{{color}};border:2rpx solid {{color}}' bindtap='sender_tel' data-tel='{{item.receiver_tel}}'>拨打电话</button>
+        <button style='background:{{color}};color:#fff' bindtap='service' data-id='{{item.id}}'>确认送达</button>
+      </view>
+    </view>
+  </view>
+   <!-- 待配送 -->
+  <view wx:if="{{ac_index==3}}">
+    <view class='robbing pa ba_f' wx:for="{{list}}" wx:key="*this">
+      <view class='robb_head' bindtap='order_info' data-id='{{item.id}}'>
+        <view style='background:#f9f9f9;height:50rpx;line-height:50rpx;padding:0 10rpx;'>
+           <text class='fon_40' style='color:{{color}}'>#{{item.origin_id}}</text>
+          <text class='fon_24 dis_in t_r'>下单时间:{{item.time}}</text>
+        </view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:{{color}}' class='dis_in t_c'>取</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view>{{item.sender_name}}</view>
+          <view class='gobyndsingle color_6 fon_24 mar_t'>{{item.sender_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance}}km</view>
+      </view>
+      <view class='order_info pa_0 bor_bottom' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+        <view class='dis_in fon_28 color_f'>
+          <text style='background:orange' class='dis_in t_c'>送</text>
+        </view>
+        <view class='dis_in fon_30'>
+          <view class=' fon_24' style='line-height:50rpx;'>{{item.receiver_address}}</view>
+        </view>
+        <view class='dis_in color_6 fon_28 t_r'>{{item.distance1}}km</view>
+      </view>
+       <view class='order_price fon_30 pa_0 color_3' bindtap='order_info' data-id='{{item.id}}' data-index='{{ac_index}}'>
+         <text style='padding:3rpx 7rpx;color:#fff;background:{{color}};border-radius:5rpx;' class='dis_in fon_22' wx:if="{{item.pay_type!=4}}">在线支付</text>
+         <text style='padding:3rpx 7rpx;color:#fff;background:orange;border-radius:5rpx;' wx:if="{{item.pay_type==4}}" class='dis_in fon_22'>货到付款</text>
+        <text class='mar_l'>订单金额:</text>
+        <text style='color:{{color}}' class='wei'>￥{{item.goods_price}}</text>
+        <text class='mar_l'>佣金:</text>
+        <text style='color:red;' class='wei'>￥{{item.ps_money}}</text>
+      </view>
+      <view class='info_6'>
+        <button style='background:#e5e5e5;color:#fff'>已经送达</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{list.length<=0}}" class="prompt">
+  <image mode='widthFix' src='../img/none.png'></image>
+  <view class='t_c color_9 fon_24 mar_t'>暂无订单</view>
+</view>
+<view style='height:120rpx;'></view>

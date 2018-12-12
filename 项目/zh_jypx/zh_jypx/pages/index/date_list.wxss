@@ -1,0 +1,42 @@
+/* pages/index/task_list.wxss */
+page{
+  background: #fff;
+}
+.home{
+  padding: 15rpx;
+}
+.classes{
+  font-size: 38rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+.date{
+  position: relative;
+  width: 150rpx;
+  height: 50rpx;
+  border:1rpx solid #ccc;
+  margin:15rpx;
+  border-radius: 10rpx;
+  color: #888
+}
+.list{
+  display: inline-block;
+}
+.true{
+  position: absolute;
+  bottom: 5rpx;
+  right: 15rpx;
+  border-right: 1px solid #08a3ff; 
+  border-bottom: 1px solid #08a3ff;  
+  width: 10px;
+  height: 20px;  
+  transform: rotate(45deg);
+}
+.none{
+  text-align: center;
+  width: 100%;
+  font-size: 36rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}

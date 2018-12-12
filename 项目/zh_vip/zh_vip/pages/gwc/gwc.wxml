@@ -1,0 +1,91 @@
+<include src="/zh_vip/pages/commons/navbar/navbar.wxml" />
+<view class="after-navber">
+  <view class="bottom-bar flex-row">
+    <view class="flex-y-center flex-grow-1" style="padding: 0 24rpx">
+      <view bindtap="cartCheckAll" class="flex-grow-0 flex-y-center" style="margin-right: 20rpx">
+        <view class="cart-checkbox {{cart_check_all?'active':''}}" style="margin-right: 10rpx"></view>
+        <text style="white-space: nowrap">全选</text>
+      </view>
+      <view class="flex-grow-1 zjyf">
+        <text>总计:￥{{total_price}}</text>
+        <text>不含运费</text>
+      </view>
+    </view>
+    <block wx:if="{{show_cart_edit}}">
+      <view bindtap="cartDelete" class="flex-y-center flex-grow-0 flex-x-center submit-btn">删除</view>
+    </block>
+    <block wx:else>
+      <view bindtap="cartSubmit" class="flex-y-center flex-grow-0 flex-x-center submit-btn">结算</view>
+    </block>
+  </view>
+  <view wx:if="{{show_cart_edit}}" class='bianji' bindtap="cartDone">
+    <view bindtap='hdsy' style='background:{{xtxx.link_color}}'>首页</view>
+    <view style='background:{{xtxx.link_color}}'>完成</view>
+  </view>
+  <view wx:else class='bianji' bindtap="cartEdit">
+    <view bindtap='hdsy' style='background:{{xtxx.link_color}}'>首页</view>
+    <view style='background:{{xtxx.link_color}}'>编辑</view>
+  </view>
+  <block wx:if="{{cart_list.length==0}}">
+    <view class="no-data-tip">
+      <view class="no-data-icon flex-y-center flex-x-center">
+        <image src="../../img/nav-icon-cart.png" style="width: 81rpx;height: 81rpx"></image>
+      </view>
+      <view>购物车还是空的哦</view>
+    </view>
+  </block>
+  <view wx:if="{{cart_list.length!=0}}" class="flex-row zysp">
+    <image src='../../img/hmd.png'></image>
+    <view class="flex-grow-1">
+      {{mdinfo.name}}自营商品
+    </view>
+  </view>
+  <view class="cart-list">
+    <block wx:for="{{cart_list}}" wx:for-item="item" wx:for-index="index">
+      <view class="cart-item flex-row">
+        <block wx:if="{{item.disabled&&!show_cart_edit}}">
+          <view class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+            <view style="width: 40rpx"></view>
+          </view>
+        </block>
+        <block wx:else>
+          <view bindtap="cartCheck" class="flex-grow-0 flex-y-center" data-index="{{index}}" style="padding: 24rpx">
+            <view class="cart-checkbox {{item.checked?'active':''}}"></view>
+          </view>
+        </block>
+        <view class="flex-grow-1">
+          <view class="flex-grow-1 flex-row">
+            <view class="flex-grow-0">
+              <image class="goods-pic" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
+            </view>
+            <view class="flex-grow-1 flex-col">
+              <view class="flex-grow-1">
+                <view class="goods-name">
+                  <navigator url="../psdj/spxq?id={{item.good_id}}">{{item.name}}</navigator>
+                </view>
+                <view class="attr-list">
+                  <view class="attr-item">{{item.spec}}
+                  </view>
+                </view>
+              </view>
+              <view class="flex-grow-0 flex-row">
+                <view class="flex-grow-1 price">￥{{item.money}}</view>
+                <view class="flex-grow-0">
+                  <view class="flex-row number-input-box">
+                    <view bindtap="numberSub" data-id='{{item.id}}' class="flex-grow-0 flex-x-center flex-y-center number-btn number-sub {{item.num<=1?'disabled':''}}">- \n
+                    </view>
+                    <view class="flex-grow-0">
+                      <input bindblur="numberBlur" data-id='{{item.id}}' class="flex-grow-1 number-input" min="1" step="1" type="number" value="{{item.num}}"></input>
+                    </view>
+                    <view bindtap="numberAdd" data-id='{{item.id}}' class="flex-grow-0 flex-x-center flex-y-center number-btn number-add">+ \n
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

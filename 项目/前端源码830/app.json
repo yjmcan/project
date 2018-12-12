@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/store/score",
+    "pages/store/index",
+    "pages/admission/info",
+    "pages/collection/collection",
+    "pages/logs/index",
+    "pages/admission/index",
+    "pages/logs/logs",
+    "pages/index/info",
+    "pages/store/money",
+    "pages/store/put_forword",
+    "pages/index/search",
+    "pages/city"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3884fe",
+    "navigationBarTitleText": "货友宝",
+    "navigationBarTextStyle": "#fff"
+  }
+}

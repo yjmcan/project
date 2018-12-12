@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "zh_wxc/pages/index/index",
+    "zh_wxc/pages/my/myfabu",
+    "zh_wxc/pages/logs/logs",
+    "zh_wxc/pages/fabu/fabuyewu",        
+    "zh_wxc/pages/my/evaluate",
+    "zh_wxc/pages/my/mywait",
+    "zh_wxc/pages/logs/ti_xian",
+    "zh_wxc/pages/fabu/checkdetail",
+    "zh_wxc/pages/xuanshang/xsinfo",
+    "zh_wxc/pages/fabu/check",
+    "zh_wxc/pages/fabu/fankui",
+    "zh_wxc/pages/fabu/fabu",
+    "zh_wxc/pages/xuanshang/xscontent",
+    "zh_wxc/pages/bangdan/bangdan",
+    "zh_wxc/pages/logs/shouruinfo",
+    "zh_wxc/pages/question/question",
+    "zh_wxc/pages/my/myjoin",
+    "zh_wxc/pages/logs/mymoney",
+    "zh_wxc/pages/logs/news"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "悬赏小程序",
+    "navigationBarTextStyle": "black"
+  }
+}

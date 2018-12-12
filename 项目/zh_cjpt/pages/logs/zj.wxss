@@ -1,0 +1,80 @@
+/* pages/logs/zj.wxss */
+.head{
+  padding: 20rpx;
+  background: #fff;
+}
+.head>view{
+  width: 50%;
+}
+.head>view:nth-child(2){
+  text-align: right;
+}
+.head>view text{
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #e5e5e5;
+}
+.ls{
+  padding: 20rpx;
+  background: #fff;
+}
+.ls>image:nth-child(1){
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.ls image:nth-child(3){
+  right: 20rpx;
+}
+.ls text{
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.ls text:nth-child(2){
+  text-align: right;
+}
+.today_price{
+  background: #fff;
+}
+.today_price view text:nth-child(3){
+  float: right;
+}
+.today_price image{
+  right: 20rpx;
+  vertical-align: middle;
+}
+.today_price>view view{
+  display: inline-block;
+  width: 33.3%;
+  font-size: 30rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.history_list{
+  background: #fff;
+}
+.list>view:nth-child(1){
+  width: 20%;
+}
+.list>view:nth-child(2){
+  width: 75%;
+}
+.list>view:nth-child(3){
+  width: 5%;
+}
+.list{
+  padding: 20rpx 0;
+}
+.list>view image{
+  
+}
+.month{
+  width: 80%;
+  border-radius: 8rpx;
+  text-align: center;
+  padding: 15rpx 0;
+}
+.month text{
+  color: #fff;
+  display: block;
+}

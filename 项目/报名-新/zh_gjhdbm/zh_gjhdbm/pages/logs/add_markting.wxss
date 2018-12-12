@@ -1,0 +1,88 @@
+/* zh_gjhdbm/pages/logs/add_markting.wxss */
+.markting_code{
+  width: 100%;
+  height: 400rpx;
+  background: #F66926;
+}
+.markting_code image{
+  width: 300rpx;
+  height: 300rpx;
+  background: #fff;
+}
+.markting_man{
+  width: 100%;
+  height: auto;
+}
+.markting_man>view:nth-child(1){
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-indent: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  background: #fff;
+}
+.hx_list{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+  background: #fff;
+}
+.hx_list:last-child{
+  border: none;
+}
+.hx_list>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.hx_list>view:nth-child(1){
+    width: 20%;
+    height: 100%;
+}
+
+.hx_list>view:nth-child(2){
+    width: 60%;
+    height: 100%;
+    line-height: 100rpx;
+}
+.hx_list>view:nth-child(3){
+    width: 20%;
+    height: 100%;
+    float: right;
+    line-height: 100rpx;
+    font-size: 40rpx;
+
+}
+.hx_list>view text{
+  padding: 0rpx 30rpx;
+  background: #F66926;
+  border-radius: 10rpx;
+  color: #fff;
+}
+.hx_list>view image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.none_prompt{
+  position: fixed;
+  width: 300rpx;
+  height: 300rpx;
+  top:600rpx;
+}
+.none_prompt>image{
+  width: 100%;
+  height: 100%;
+}
+.none_prompt>view{
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.delete{
+  padding: 20rpx;
+  background: red;
+  border-radius: 10rpx;
+}

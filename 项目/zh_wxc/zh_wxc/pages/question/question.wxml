@@ -1,0 +1,30 @@
+<!--pages/question/question.wxml-->
+<view class='home'>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.question}}{{open}}</view>
+            <image class="kind-list__img" src="../img/ggengduo03.png"></image>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{open ? 'weui-cells_show' : ''}}">
+              <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">{{item.answer}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!--没有数据的情况-->
+  <view wx:if="{{list.length==0}}" class="flex3 none">
+    <image src="../img/zhanwei.png"></image>
+    <view>暂无数据</view>
+  </view>
+  
+  <button class='kefubut' open-type="contact">联系客服</button>
+</view>

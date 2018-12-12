@@ -1,0 +1,41 @@
+<!--zh_dianc/pages/seller/dd.wxml-->
+<import src="template.wxml" />
+<template is="tabbar" data="{{tabbar}}" />
+<view class='dqmd'>
+  <image src='{{url}}{{store.logo}}'></image>
+  <view>当前门店:{{store.name}}</view>
+</view>
+<view class='main'>
+  <navigator url='dd/wmdd'>
+    <view class='ddbk' style='background-color:#6BBDEC'>
+      <image wx:if="{{store.wm_img==''}}" class='ddimg' src='../images/wm.png'></image>
+      <image wx:else class='ddimg' src='{{url}}{{store.wm_img}}'></image>
+      <view wx:if="{{store.wm_name==''}}" class='ddwz1'>外卖订单</view>
+      <view wx:else class='ddwz1'>{{store.wm_name}}订单</view>
+    </view>
+  </navigator>
+  <navigator url='dd/tndd'>
+    <view class='ddbk' style='background-color:#FF7575'>
+      <image wx:if="{{store.dn_img==''}}" class='ddimg' src='../images/dc.png'></image>
+      <image wx:else class='ddimg' src='{{url}}{{store.dn_img}}'></image>
+      <view wx:if="{{store.dn_name==''}}" class='ddwz2'>店内订单</view>
+      <view wx:else class='ddwz2'>{{store.dn_name}}订单</view>
+    </view>
+  </navigator>
+  <navigator url='dd/yddd'>
+    <view class='ddbk' style='background-color:#3CAB8D'>
+      <image wx:if="{{store.yy_img==''}}" class='ddimg' src='../images/yd.png'></image>
+      <image wx:else class='ddimg' src='{{url}}{{store.yy_img}}'></image>
+      <view wx:if="{{store.yy_name==''}}" class='ddwz3'>预定订单</view>
+      <view wx:else class='ddwz3'>{{store.yy_name}}订单</view>
+    </view>
+  </navigator>
+  <navigator url='dd/dmfdd'>
+    <view class='ddbk' style='background-color:#B8A4F2'>
+      <image wx:if="{{store.sy_img==''}}" class='ddimg' src='../images/dmf.png'></image>
+      <image wx:else class='ddimg' src='{{url}}{{store.sy_img}}'></image>
+      <view wx:if="{{store.sy_name==''}}" class='ddwz4'>当面付订单</view>
+      <view wx:else class='ddwz4'>{{store.sy_name}}订单</view>
+    </view>
+  </navigator>
+</view>

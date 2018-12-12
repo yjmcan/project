@@ -1,0 +1,22 @@
+<!--zh_wxc/pages/fabu/check.wxml-->
+
+<view class='conbox flex_bet' wx:for="{{con}}" bindtap='ondetail' data-id="{{index}}">
+  <view class="listimg">
+    <image class='conimg' src='{{item.img}}'></image>
+  </view>
+  <view class='flex3'>
+    <view class='confont2 gobyndsingle'>{{item.nickname}}</view>
+    <view class="flex_center">{{item.create_time}}</view>
+  </view>
+  <view class="flex3">
+    <view class="more">查看详情 >></view>
+    <view wx:if="{{item.status==1}}" class="pass">已审核</view>
+    <view wx:if="{{item.status==0}}" class="wait">待审核</view>
+    <view wx:if="{{item.status==2}}" class="refuse">已拒绝</view>
+  </view>
+</view>
+<!--没有数据的时候-->
+<view class="flex3 none" wx:if="{{con.length==0}}">
+  <image src="../img/zhanwei.png"></image>
+  <view>暂无数据</view>
+</view>

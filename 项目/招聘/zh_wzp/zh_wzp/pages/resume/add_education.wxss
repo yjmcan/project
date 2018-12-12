@@ -1,0 +1,50 @@
+/* zh_wzp/pages/resume/add_job.wxss */
+.list{
+  padding: 20rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.list>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.list>view:nth-child(1){
+  width: 25%;
+}
+.list>view:nth-child(2){
+  width: 75%;
+}
+.list>view view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.list>view view{
+  margin-right: 20rpx;
+}
+.list>view view:nth-child(1){
+  margin-left: 120rpx;
+}
+.list>textarea{
+  margin-top: 20rpx;
+  width: 100%;
+}
+button{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f66925;
+  margin-top: 50rpx;
+  color: #fff;
+  margin: 50rpx auto 0;
+  font-size: 30rpx;
+}
+.picker2{
+  /* float: right; */
+  margin-right: 40rpx;
+  color: #666;
+}
+image{
+  width: 19rpx;
+  height: 27rpx;
+  right:0rpx;
+}

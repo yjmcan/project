@@ -1,0 +1,55 @@
+<!--zh_zbkq/pages/index/yhqdl.wxml-->
+<view class="container">
+  <view class="top">
+    <!-- <view wx:if="{{yhq.name=='代金券'}}">{{yhq.cost}}
+      <text style='font-size:40rpx;margin-left:10rpx;'>元代金券</text>
+    </view>
+    <view wx:if="{{yhq.name=='折扣券'}}">{{yhq.cost}}
+      <text style='font-size:40rpx;margin-left:10rpx;'>折扣券</text>
+    </view>
+    <view wx:if="{{yhq.name=='通用券'}}">{{yhq.cost}}
+      <text style='font-size:30rpx;margin-left:10rpx;'>{{yhq.kq_name}}</text>
+    </view> -->
+    <view>{{yhq.money}}元
+      <text style='font-size:30rpx;margin-left:10rpx;'>{{yhq.name}}</text>
+    </view>
+    <image src="data:image/png;base64,{{yhq.hx_code}}"></image>
+    <view class="lq">
+  <form bindsubmit="form_save" bindreset="formReset" report-submit="true">
+      <button formType="submit" style='background:{{xtxx.link_color}}'>收银员扫码核销</button>
+  </form>
+    </view>
+  </view>
+  <view class="xx">
+    <view class="hyuan1"></view>
+    <view class="hyuan2"></view>
+  </view>
+  <view class="bottom">
+    <navigator url="../index/sjdl?sjid={{yhq.md_id}}" class="bt-2">
+      <view>购买时间：{{yhq.lq_time}}</view>
+      <image src="../../img/jiantou1.png"></image>
+    </navigator>
+    <view class="bt-1">
+      <view>有效期至：{{yhq.time}}</view>
+    </view>
+    <view class="bt-1">
+      <!-- <view>
+        <view class="yuan"></view>
+        <text>领取后30天失效，一个月可领1次</text>
+      </view>
+      <view>
+        <view class="yuan"></view>
+        <text>领取时间：周一二三四五</text>
+      </view> -->
+      <view>剩余次数：{{yhq.number}}次</view>
+    </view>
+    <view class="bt-1">
+      <view>可用门店：{{yhq.store_name}}</view>
+    </view>
+    <view class="bt-3">
+      <view>使用须知</view>
+      <rich-text nodes="{{yhq.details}}"></rich-text>
+    </view>
+  </view>
+  <!-- <view class="wdyhq">我的优惠券</view> -->
+</view>

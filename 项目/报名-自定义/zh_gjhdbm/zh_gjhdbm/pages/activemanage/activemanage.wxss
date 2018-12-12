@@ -1,0 +1,90 @@
+/* pages/activemanage/activemanage.wxss */
+.mybtop{
+  padding: 20rpx;
+  display: flex;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.mybimg{
+  width: 35%;
+  height: 160rpx;
+  border-radius: 6rpx;
+}
+.mybtopinfo{
+  width: 63%;
+  padding-left: 2%;
+}
+.mybtitle{
+  font-weight: bold;
+  font-size: 26rpx;
+  width: 420rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.mybicon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.mybfont1{
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+.myjinxing{
+  border: 3rpx solid #09AD07;
+  padding: 3rpx 10rpx;
+  color: #09AD07;
+  font-size: 18rpx;
+  font-weight: bold;
+  line-height: 30rpx;  
+}
+.myjinxingbox{
+  margin-top: 10rpx;
+}
+.mybfont2{
+  color: #F66926;
+  font-size: 26rpx;
+}
+.mybottom{
+  border-top: 1rpx solid #eee;
+  padding: 15rpx 0rpx;
+  display: flex;
+  background: #fff;
+}
+.mybotbox{
+  width: 50%;
+  border-right: 1rpx solid #eee;
+  text-align: center;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.mybotbox:last-child{
+  border: none;
+}
+/*列表*/
+.list{
+  display: flex;
+  width:100%;
+  flex-direction: row;
+  background: #fff;
+  margin-top: 20rpx;
+  flex-wrap: wrap
+}
+.listcon{
+  width: 33.3%;
+  border-bottom: 1rpx solid #f2f2f2;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  padding: 30rpx 0;
+}
+.listcon image{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  margin:0 auto 10rpx auto;
+}

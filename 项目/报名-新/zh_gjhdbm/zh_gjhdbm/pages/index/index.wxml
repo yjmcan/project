@@ -1,0 +1,227 @@
+<block wx:if="{{Speed>=100}}">
+  <!--index.wxml-->
+  <view class='index'>
+    <!--————开屏广告——————  -->
+    <!-- <view class='bomb' hidden='{{bomb}}'>
+     <view class='bombox'>
+       <image class='bombimg' src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=570437944,358180613&fm=27&gp=0.jpg'></image>
+       <view class='shanchu' bindtap='guanbi'>×</view> 
+    </view> 
+  </view>  -->
+    <!--———————————头部搜索部分———————————————-->
+    <view class='iheader' style='background:{{color}}'>
+      <view class='flex_center'>
+        <image class='ihimg' bindtap='address' src='../img/address.png'></image>
+        <view class='address' bindtap='address' wx:if="{{city!=''}}">{{city}}</view>
+        <view class='address' bindtap='address' wx:else>全国版</view>
+        <view class='ihbox'>
+          <image class='ihseaimg' src='../img/searchicon.png'></image>
+          <input bindtap='search' placeholder='搜出你喜欢的活动' placeholder-style='color:#C9C9C9;'></input>
+        </view>
+        <image bindtap='myyanpiao' class='ihsaomaimg' src='../img/shaoma.png'></image>
+      </view>
+    </view>
+    <view style='height:76rpx;'></view>
+    <view class='search' wx:if="{{search==true}}">
+      <view></view>
+      <view class='search_list' wx:for="{{search_list}}" bindtap='info' id='{{item.id}}'>
+        <view>
+          <image mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+        </view>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+    <!--———————————轮播图部分———————————————-->
+    <view class="swiper-container" wx:if="{{home_carousel_figure.length>0}}">
+      <!-- <image wx:if="{{home_carousel_figure.length<=0}}" mode='aspectFill' src='../img/none_img.png' class='ab udlr none_img'></image> -->
+      <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{home_carousel_figure}}" wx:key="*this">
+          <swiper-item>
+            <image bindtap='swiper_skip' data-index='{{index}}' mode="aspectFill" src="{{url}}{{item.logo}}" class="img"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--———————————最新热门部分———————————————-->
+    <!-- <view class='ibanner'>
+    <view class='ibannerwai' wx:for="{{nav}}">
+      <view class='ibannerbox1'>
+        <image class='ibannerimg' src='{{url}}{{item.logo}}'></image>
+      </view>
+      <view>{{item.title}}</view>
+    </view>
+  </view> -->
+    <swiper class='classify' style='height:{{height}}rpx' autoplay="true" interval="4000" duration="1000" circular="true" wx:if="{{nav.length>0}}">
+      <block wx:for="{{nav}}" wx:key="unique">
+        <swiper-item>
+          <block wx:for="{{item}}" wx:key="*this">
+            <view bindtap='skip' data-index="{{index}}">
+              <view class='classify_logo rel'>
+                <image class='ab lr' mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+              </view>
+              <view class='classify_name gobyndsingle center'>{{item.title}}</view>
+            </view>
+          </block>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!--———————————专题精选部分———————————————-->
+    <view class='rel' wx:if="{{system.is_ztjx==1&&Thematic_selection.length>0}}">
+      <view class='isecheader rel'>专题精选</view>
+      <image wx:if="{{Thematic_selection.length<=0}}" mode='aspectFill' src='../img/fabusuccess.png' class='ab lr none_specail'></image>
+      <scroll-view class="marketlist" scroll-x="true">
+        <view class="marketlist_one" wx:for="{{Thematic_selection}}" bindtap='selection_skip' wx:key="this" data-index='{{index}}'>
+          <image mode='aspectFill' style='border-radius:10rpx;' src="{{url}}{{item.logo}}"></image>
+        </view>
+      </scroll-view>
+    </view>
+    <!--———————————拼团精选部分———————————————-->
+    <view class='rel' wx:if="{{system.is_pt==1&&group_list.length>0}}">
+      <view class='isecheader rel'>拼团精选</view>
+      <image wx:if="{{group_list.length<=0}}" mode='aspectFill' src='../img/fabusuccess.png' class='ab lr none_specail'></image>
+      <scroll-view class="marketlist" scroll-x="true">
+        <view class="marketlist_one rel" wx:for="{{group_list}}" bindtap='group' wx:key="this" data-id='{{item.id}}'>
+          <image mode='aspectFill' style='border-radius:10rpx;' src="{{item.logo}}"></image>
+          <text class='ab' style='color:#fff;background:{{color}}'>{{item.people}}人团</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!--———————————个性推荐部分———————————————-->
+    <!-- <view class='isecheader'>所有活动</view> -->
+    <view class='filter'>
+        <view class='dis_in' wx:for="{{list}}" wx:key="*this" style="color:{{index+1==orderby?color:'#666'}};font-weight:{{index+1==orderby?'bold':''}}" catchtap='sele_orderby' data-index="{{index}}">{{item}}</view>
+    </view>
+    <view style='min-height: 500rpx;background:#fff' class='rel'>
+      <image wx:if="{{activity_list.length<=0}}" mode='aspectFill' src='../img/fabuinfo.png' class='ab udlr none_activity'></image>
+      <view class='none_activity_text ab'>暂无活动</view>
+      <block wx:if="{{system.style==1}}">
+        <view class="tuijian rel" wx:for="{{activity_list}}" wx:key="*this" bindtap='info' id='{{item.id}}'>
+          <view class="tuijian_title1">
+            <view bindtap="infoYemian" class="tuijian_banner">
+              <view>
+                <image mode='aspectFill' class="tuijian_img" src="{{url}}{{item.logo}}"></image>
+              </view>
+              <view class="tuijian_title3">
+                <view class="tuijian_title2">
+                  <view class="rich_one">
+                    <text>{{item.title}}</text>
+                  </view>
+                </view>
+                <view class="tuijian_title4">
+                  <view class="tuijian_img4">
+                    <view>
+                      <image class="tuijian_img1" src="../img/riqi.png"></image>
+                      <text>{{item.address}}</text>
+                    </view>
+                  </view>
+                  <view class="flex_center tuijian_img3">
+                    <image class="tjdidian" src="../img/didian.png"></image>
+                    <text>{{item.cityname}}</text>
+                  </view>
+                  <view class="flex_bet">
+                    <view>
+                      <image class="tjliulan" src="../img/liulan.png"></image>
+                      <text>{{item.views}}</text>
+                    </view>
+                    <view class="tuijian_jiage" wx:if="{{item.zd_money!=0}}">￥{{item.zd_money}}起</view>
+                    <view class="tuijian_jiage" wx:else>免费</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='activity_over ab' wx:if="{{item.activity_over==2}}">
+            <image mode='aspectFill' style='transform:rotate(-20deg);right:40rpx;' class='ab ud' src='../img/activity_over1.png'></image>
+          </view>
+        </view>
+      </block>
+      <!--———————————活动部分———————————————-->
+      <block wx:if="{{system.style==2}}">
+        <view class='huodong'>
+          <view class='hdbanner rel' bindtap='info' wx:for="{{activity_list}}" wx:key="*this" id='{{item.id}}' data-type_name='{{item.type_id}}'>
+            <view class='hdimg rel'>
+              <view class='ab selected' wx:if="{{item.is_zd==1}}" style='background:{{color}}'>精选</view>
+              <image mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+            </view>
+            <view class='hdbotbox'>
+              <view class='hdtitle'>{{item.title}}</view>
+              <view class='flex_bet indexfont'>
+                <view class='flex_center'>
+                  <image mode='aspectFill' class='tjdidian' src="../img/didian.png"></image>
+                  <view class='hdaddress' style='width:560rpx;'>{{item.address}}</view>
+                  <view style='float:right'>{{item.cityname}}</view>
+                </view>
+                <!-- <view>4.2km</view> -->
+              </view>
+              <view class='flex_bet indexfont'>
+                <view class='flex_center'>
+                  <image class='tjtime' src="../img/time.png"></image>
+                  <view class='hdaddress'>{{item.start_time}}</view>
+                  <view class='activity_label' wx:if="{{item.activity_over==1}}" style='background:#13a008'>报名中</view>
+                  <view class='activity_label' style='color:#fff;background:#e5e5e5;' wx:if="{{item.activity_over==2}}">已结束</view>
+                  <view class='activity_label' style='background:{{color}}' wx:if="{{item.activity_over==3}}">进行中</view>
+                </view>
+                <view class='hdfont2' wx:if="{{item.zd_money>0}}" style='color:{{color}}'>￥{{item.zd_money}}起</view>
+                <view class='hdfont2' style='color:{{color}}' wx:else>免费</view>
+              </view>
+              <view class='flex_center hdboxlabel'>
+                <view class='hdlabel' style='color:{{color}};border:2rpx solid {{color}}'>{{item.type_id}}</view>
+                <view class='hdlabel' wx:if="{{item.activity_type==1}}" style='color:{{color}};border:2rpx solid {{color}}'>线上活动</view>
+                <view class='hdlabel' wx:else style='color:{{color}};border:2rpx solid {{color}}'>线下活动</view>
+              </view>
+            </view>
+            <view class='activity_over ab' wx:if="{{item.activity_over==2}}">
+              <view></view>
+              <image mode='aspectFill' style='transform:rotate(-20deg);width:300rpx;height320rpx;top:60rpx;' class='ab lr' src='../img/activity_over.png'></image>
+            </view>
+          </view>
+
+        </view>
+      </block>
+    </view>
+    <view class='copyright'>
+      <image mode='aspectFill' src='{{url}}{{system.bq_logo}}'></image>
+      {{system.bq_name}}
+    </view>
+
+    <!-- ————————————底部固定导航栏———————————— -->
+    <view class='bmfoot2' wx:if="{{db_tab!=null}}"></view>
+    <view class='bmfoot' wx:if="{{db_tab!=null}}">
+      <view class='bmfootbox'>
+        <view>
+          <view class='rel' bindtap='index'>
+            <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+          </view>
+          <view style='color:#F66926'>{{db_tab[0].name}}</view>
+        </view>
+        <view bindtap='classifination'>
+          <view class='rel'>
+            <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+          </view>
+          <view>{{db_tab[1].name}}</view>
+        </view>
+        <view class='fabu rel' bindtap='fabu'>
+          <image class='ab lr' mode='aspectFill' src='{{db_tab[4].img}}'></image>
+        </view>
+        <view>
+          <view class='rel' bindtap='mine_activity'>
+            <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+          </view>
+          <view>{{db_tab[2].name}}</view>
+        </view>
+        <view>
+          <view class='rel' bindtap='wode'>
+            <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+          </view>
+          <view>{{db_tab[3].name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='fixed' wx:if="{{bind_user==false}}">
+    <button open-type='getUserInfo' bindgetuserinfo="bindgetuserinfo"></button>
+  </view>
+</block>
+<progress percent="{{Speed}}" stroke-width="2" active-mode="forwards" active wx:if="{{Speed<100}}" />

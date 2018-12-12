@@ -1,0 +1,107 @@
+/* .head {
+  padding: 60rpx 0 40rpx 0;
+  text-align: center;
+  background: #459cf9;
+}
+
+.head>view:nth-child(1) {
+  border-radius: 50%;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto 0;
+  display: block;
+  overflow: hidden;
+}
+
+.head>view:nth-child(2) {
+  padding: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.list {
+  padding: 30rpx 20rpx;
+  background: #fff;
+}
+
+.list>image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+
+.list>text {
+  vertical-align: middle;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.list button {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: none;
+} */
+rich-text{
+  width: 70%;
+  height:30rpx;
+  background: red;
+}
+swiper{
+  width: 95%;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.head{
+  width: 100%;
+  height: 400rpx;
+}
+.head>view:nth-child(1){
+  width: 100%;
+  height: 100%;
+}
+.head>view:nth-child(2){
+  width: 100%;
+  height: 200rpx;
+  top:35rpx;
+}
+.logo{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user_info>view{
+  padding: 10rpx 0;
+}
+.user_info image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.job_status{
+  display: flex;
+  padding: 50rpx 0;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.job_status>view{
+  flex: 2;
+}
+.job_status image{
+  width:55rpx;
+  /* background: red; */
+}
+.body{
+  width: 100%;
+  height: 400rpx;
+  bottom: -250rpx;
+}
+.Entrance{
+  padding: 30rpx 20rpx;
+}
+.Entrance image{
+  width: 40rpx;
+  height: 40rpx;
+}

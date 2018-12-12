@@ -1,0 +1,136 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='expect mar'>
+    <view class='head'>
+      <image mode='aspectFill' src='../img/me_0.png'></image>
+      <text>职位期望</text>
+    </view>
+    <view class='title'>
+        <view>
+            简历标题
+        </view> 
+        <view>
+            <input name="title" placeholder='请输入标题' value='{{resume.title}}'></input>
+        </view>
+    </view>
+    <view class='head_0 rel'>
+      <text>求职状态</text>
+      <picker bindchange="bindPickerChange1" value="{{index}}" range="{{array}}">
+        {{array[index]}}
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+    <view class='head_0 rel'>
+      <text>期望职位</text>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{job_W}}">
+        <text wx:if="{{milt_status!=true&&add==true}}">{{resume.type_name}}</text>
+        <text wx:if="{{milt_status==true&&add==true}}">{{job_W[1][multiIndex[1]]}}</text>
+        <text wx:if="{{add==false}}">{{job_W[1][multiIndex[1]]}} </text>
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+    <view class='head_0 rel'>
+      <text>期望行业</text>
+      <picker bindchange="bindPickerChange4" value="{{index2}}" range="{{c_l_c}}">
+        {{c_l_c[index2]}}
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+    <view class='head_0 rel'>
+      <text>工作地点</text>
+      <picker mode="region" bindchange="bindPickerChange3" value="{{region}}" custom-item="{{customItem}}">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+    <view class='head_0 rel'>
+      <text>薪资要求</text>
+      <picker bindchange="bindPickerChange2" value="{{index1}}" range="{{price}}">
+        {{price[index1]}}
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+  </view>
+  <view class='expect mar'>
+    <view class='head'>
+      <image mode='aspectFill' src='../img/pingjia.png'></image>
+      <text>自我评价</text>
+    </view>
+    <textarea name="text" value='{{text}}' placeholder='还没有填写自我评价' maxlength='540' value='{{resume.self_evaluation}}'></textarea>
+  </view>
+  <view class='expect mar'>
+    <view class='head'>
+      <image mode='aspectFill' src='../img/me_2.png'></image>
+      <text>工作经历</text>
+    </view>
+    <view class='job_c'>
+      <view wx:for="{{job}}" class='project rel' wx:key="*this" bindtap='add_job' data-index='{{index}}'>
+        <text>{{item.work_company}}</text>
+        <!-- <text>{{item.work_time2}}</text>
+        <text>至</text>
+        <text>{{item.work_time1}}</text> -->
+        <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+      </view>
+    </view>
+    <view class='add' bindtap='add_job'>
+      添加工作经历
+    </view>
+  </view>
+  <view class='expect mar'>
+    <view class='head'>
+      <image mode='aspectFill' src='../img/xiangmu.png'></image>
+      <text>项目经历</text>
+    </view>
+    <view class='job_c'>
+      <view wx:for="{{project}}" class='project rel' wx:key="*this" bindtap='add_project' data-index='{{index}}'>
+        <text>{{item.project_name}}</text>
+        <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+      </view>
+    </view>
+    <view class='add' bindtap='add_project'>
+      添加项目经历
+    </view>
+  </view>
+  <view class='expect mar'>
+    <view class='head'>
+      <image mode='aspectFill' src='../img/me_4.png'></image>
+      <text>教育经历</text>
+    </view>
+    <view class='job_c'>
+      <view wx:for="{{education}}" class='project rel' wx:key="*this" bindtap='add_education' data-index='{{index}}'>
+        <text>{{item.education_school}}</text>
+        <text>{{item.education_time1}}-{{item.education_time2}}</text>
+        <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+      </view>
+    </view>
+    <view class='add' bindtap='add_education'>
+      添加教育经历
+    </view>
+  </view>
+  <view class='expect mar'>
+    <view class='head'>
+      <image mode='aspectFill' src='../img/jin.png'></image>
+      <text>个人技能标签</text>
+    </view>
+    <view class='job_d' wx:if="{{skill.length>0}}">
+      <view class='skill' wx:for="{{skill}}">
+          <text>{{item}}</text>
+          <text bindtap='delete' data-index='{{index}}'>x</text>
+      </view>
+    </view>
+    <view class='add' bindtap='add_skill'>
+      添加技能标签
+    </view>
+  </view>
+  <button style='background:{{color}}' form-type='submit'>保存</button>
+</form>
+<view class='fixed' wx:if="{{cancel==true}}">
+    <view class='ab' bindtap='cancel'></view>
+    <view class='ab udlr'>
+    <view>添加技能标签</view>
+        <input bindblur='inputs_skill' placeholder='请输入您所熟悉的技能'></input>
+        <view>
+            <text bindtap='cancel'>取消</text>
+            <text bindtap='confal'>确定</text>
+        </view>
+    </view>
+</view>

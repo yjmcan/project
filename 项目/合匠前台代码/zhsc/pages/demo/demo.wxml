@@ -1,0 +1,1 @@
+<include src="/commons/extension/extension.wxml" /><include src="/commons/navbar/navbar.wxml" /><view class="after-navber"><text>示例页面</text></view>

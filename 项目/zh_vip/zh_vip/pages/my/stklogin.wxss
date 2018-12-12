@@ -1,0 +1,148 @@
+/* zh_hyk/pages/my/login.wxss */
+page{
+  background: #fff;
+  font-family: '微软雅黑', Helvetica, sans-serif;
+}
+.kkfy{
+  padding: 20rpx 40rpx;
+  color: #FE7D55;
+  font-size: 28rpx;
+}
+.headhd{
+  margin: 0rpx 30rpx 140rpx;
+  padding-top: 70rpx;
+  position: relative;
+  box-sizing: border-box;
+  height: 270rpx;
+}
+.bgimg{
+  position: absolute;
+  width: 100%;
+  height: 270rpx;
+  /* opacity: 0.8; */
+  border-radius: 20rpx;
+}
+.number{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+.head{
+  width: 100%;
+  position: absolute;
+  /* background: -webkit-linear-gradient( left top,#ffbc81,#ff714c);
+  background: linear-gradient(left top,#ffbc81,#ff714c); */
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* opacity: 0.8; */
+  height: 270rpx;
+  z-index: 1;
+}
+.himg1{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.himg1 image{
+  width: 70rpx;
+  height: 28rpx;
+}
+.hbd{
+  padding: 20rpx 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hbd__bd{
+  flex: 1;
+  margin-left: 40rpx;
+  font-size: 35rpx;
+  color: #fff;
+}
+.hbd__hd image{
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+}
+/**/
+.weui-cells{
+  padding: 0 40rpx;
+  font-size: 30rpx;
+}
+.weui-label {
+  width: 150rpx;
+}
+.weui-cell{
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.weui-cell_input{
+  padding: 12rpx 0rpx 12rpx 30rpx;
+}
+.weui-cell__hd{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.weui-cell__hd image{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 30rpx;
+}
+.weui-cell:before{
+  border-top: none;
+}
+.weui-cell__ft image{
+  width: 28rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+/*验证*/
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+color:#999;
+opacity: 0.7;
+}
+.yanz{
+  font-size: 28rpx;
+  color: #999;
+  line-height: 2;
+  padding: 5rpx 20rpx;
+  background: #fff;
+}
+.yanz-on{
+  background: #FE7D55;
+  color: #fff;
+  /* border:1rpx solid  #f44444; */
+}
+.bc{
+  width: 40%;
+  background: #FE7D55;
+  color: #fff;
+  border-radius: 60rpx;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+}
+button:active {
+color: rgba(255, 255, 255, 0.6);
+opacity: 0.6;
+}
+.xzqx{
+  padding: 12rpx 30rpx;
+}
+.weui-cell:before{
+  left: 0
+}
+.weui-cell{
+  font-size: 28rpx;
+}

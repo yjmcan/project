@@ -1,0 +1,4 @@
+<!--zh_qygw/pages/mould4/you4.wxml-->
+<view class="index">
+  <image src="{{url}}/addons/zh_qygw/template/images/ni.jpg"></image>
+</view>

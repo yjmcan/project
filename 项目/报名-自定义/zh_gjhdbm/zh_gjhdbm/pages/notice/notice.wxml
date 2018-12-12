@@ -1,0 +1,12 @@
+<!--pages/notice/notice.wxml-->
+<view class='index'>
+  <view class='noheader'>参加活动</view>
+  <view class='nocontent'>
+    <image class='noconimg' src='../img/wenhao.png'></image>
+    <view>账号为什么会被冻结</view>
+  </view>
+  <view class='nocontent'>
+    <image class='noconimg' src='../img/wenhao.png'></image>
+    <view>账号为什么会被冻结</view>
+  </view>
+</view>

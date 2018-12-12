@@ -1,0 +1,19 @@
+/* zh_qygw/pages/mould4/index.wxss */
+.windex{
+  width: 100%;
+  overflow-x: hidden;
+}
+.windex>image{
+  width: 100%;
+}
+.windex>image:nth-child(1){
+  height:715rpx;
+}
+.windex>image:nth-child(2){
+  height:410rpx;
+  margin-top: -10rpx;
+}
+.windex>image:nth-child(3){
+  height:350rpx;
+  margin-top: -10rpx;
+}

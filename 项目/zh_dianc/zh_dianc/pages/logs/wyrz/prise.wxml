@@ -1,0 +1,106 @@
+<!--zh_hdbm/pages/logs/prise/prise.wxml-->
+<view class="font">
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit='true'>
+    <view class="geren_headerp">
+      <view class="geren_header_onep">
+        <view class="header_leftp">商家名称:</view>
+        <input class="header_inputp" name="sjname" placeholder="请输入商家名称" type="text" placeholder-style="color:#ccc;" />
+      </view>
+      <view class="geren_header_onep">
+        <view class="header_leftp">商家地址:</view>
+        <input class="header_inputp" name="sjdz" value='{{sjdz}}' placeholder="请输入商家地址" type="text" placeholder-style="color:#ccc;" />
+        <image mode="aspectFit" bindtap='dingwei' src="../../images/shouhuodizhi@2x.png" style="margin-right: 5px;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="geren_header">
+        <view class="geren_header_one">
+          <view class="header_left">联系电话:</view>
+          <input class="header_inputp" type="number" name="lxtel" placeholder="请输入联系电话" placeholder-style="color:#ccc;" />
+        </view>
+      </view>
+      <view class="geren_header_onep">
+        <view class="header_leftp">联系人:</view>
+        <input class="header_inputp" name="faname" placeholder="请输入联系人" type="text" placeholder-style="color:#ccc;" />
+      </view>
+    </view>
+    <!-- <view class="banner">
+    <view class="banner_left"  bindtap="choose">
+      <view class="benner_title">证件正面照片</view>
+     <view class="banner_box rel">
+          <image class="camera" wx:if="{{logo==null}}" src="../../images/renzheng3.png"></image>
+          <image class="camera2" wx:if="{{logo!=null}}" src="{{logo}}"></image>
+          <view wx:if="{{logo==null}}">点击上传</view>
+        </view>
+    </view>
+    <view class="banner_right" bindtap="choose1">
+      <view class="benner_title">证件背面照片</view>
+      <view class="banner_box rel">
+          <image class="camera" wx:if="{{logos==null}}" src="../../images/renzheng3.png"></image>
+          <image class="camera2" wx:if="{{logos!=null}}" src="{{logos}}"></image>
+          <view wx:if="{{logos==null}}">点击上传</view>
+        </view>
+    </view>
+  </view> -->
+    <view class='sctp'>
+      <view class="bannerp">
+        <view class="header_leftp">工商营业执照照片</view>
+        <view class="banner_leftp">
+          <view class="banner_box rel" bindtap="choose">
+            <image class="camera" wx:if="{{files==null}}" src="../../images/renzheng3.png"></image>
+            <image class="camera2" mode='aspectFit' wx:if="{{files!=null}}" src="{{files}}"></image>
+            <view wx:if="{{files==null}}">点击上传</view>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{xtxx.is_img=='1'}}">
+        <view class="bannerp">
+          <view class="header_leftp">食品安全许可证照片</view>
+          <view class="banner_leftp">
+            <view class="banner_box rel" bindtap="choose1">
+              <image class="camera" wx:if="{{files1==null}}" src="../../images/renzheng3.png"></image>
+              <image class="camera2" mode='aspectFit' wx:if="{{files1!=null}}" src="{{files1}}"></image>
+              <view wx:if="{{files==null}}">点击上传</view>
+            </view>
+          </view>
+        </view>
+        <view class="bannerp">
+          <view class="header_leftp">法人身份证正面照片</view>
+          <view class="banner_leftp">
+            <view class="banner_box rel" bindtap="choose2">
+              <image class="camera" wx:if="{{files2==null}}" src="../../images/renzheng3.png"></image>
+              <image class="camera2" mode='aspectFit' wx:if="{{files2!=null}}" src="{{files2}}"></image>
+              <view wx:if="{{files==null}}">点击上传</view>
+            </view>
+          </view>
+        </view>
+        <view class="bannerp">
+          <view class="header_leftp">法人身份证反面照片</view>
+          <view class="banner_leftp">
+            <view class="banner_box rel" bindtap="choose3">
+              <image class="camera" wx:if="{{files3==null}}" src="../../images/renzheng3.png"></image>
+              <image class="camera2" mode='aspectFit' wx:if="{{files3!=null}}" src="{{files3}}"></image>
+              <view wx:if="{{files==null}}">点击上传</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="agree">
+      <icon type="success" color="#0F9AE8" size="16" />
+      <view class="agree_text">同意
+        <text class="agree_text2" bindtap='lookFwxy'>《商家入驻服务协议》</text>
+      </view>
+    </view>
+
+    <view class="footerp">
+      <button class="footer_btn" disabled='{{yyzz==""}}' form-type='submit'>提交审核</button>
+    </view>
+  </form>
+</view>
+<view class="zhezhao" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">商家入驻服务协议</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 60vh;">
+    <rich-text nodes="{{rzxy}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>

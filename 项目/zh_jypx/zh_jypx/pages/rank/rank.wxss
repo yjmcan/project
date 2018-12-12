@@ -1,0 +1,40 @@
+/* pages/rank/rank.wxss */
+page{
+  background: #fff;
+}
+.title{
+  font-size: 38rpx;
+  text-align: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid#ccc;
+  line-height: 100rpx;
+}
+.nav_title{
+  text-align: center;
+  height: 90rpx;
+  font-size: 33rpx;
+  width: 80%;
+  margin:0 auto;
+  line-height: 90rpx;
+}
+.rank{
+  padding: 0 30rpx;
+}
+.rank_detail{
+  background: #f2f2f2;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.rule{
+  padding: 30rpx;
+  font-size: 33rpx;
+}
+.con{
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  padding-top: 15rpx;
+}
+
+
+

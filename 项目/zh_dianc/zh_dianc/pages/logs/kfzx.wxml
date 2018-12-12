@@ -1,0 +1,21 @@
+<!--zh_zbkq/pages/my/kfzx.wxml-->
+<view class="container">
+  <button class="kf" open-type="contact">
+    <image style='height:90rpx;' src="../images/zxkf1.png"></image>
+    <view>在线客服</view>
+  </button>
+  <button class="kf" bindtap="tel">
+    <image src="../images/telephone.png"></image>
+    <view>联系电话</view>
+  </button>
+  <!--——————————————尾部——————————————  -->
+  <!-- <view class="footer">
+    <view class="copyright" bindtap='tzxcx'>
+      <view class='copyright_logo'>
+        <image mode='aspectFill' src="{{url}}{{bqxx.bq_logo}}" class='copyright_img'></image>
+        <view class='copyright_text'>{{bqxx.bq_name}}</view>
+      </view>
+      <view class='copyright_txt'>{{bqxx.support}}</view>
+    </view>
+  </view> -->
+</view>

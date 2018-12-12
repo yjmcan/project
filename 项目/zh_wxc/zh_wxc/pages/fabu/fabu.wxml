@@ -1,0 +1,52 @@
+<!--pages/fabu/fabu.wxml-->
+<form bindsubmit="formSubmit">
+<view class='home'>
+  <input value="{{list.title}}" class='fheader' name="title"></input>
+  <!-- <view class='fheader'>王先生</view> -->
+  <view class='fbanner'>
+    <textarea class='ftextarea' name="detail" value="{{list.content}}"></textarea>
+    <view class='flex_center upfileimg' bindtap="upfile">
+      <image src='../img/shangchuan@2x.png' class='fcarema'></image>
+      <view>点击上传图片</view>
+    </view>
+  </view>
+  <view class='kimgbox'>
+   <block wx:for='{{imgArray1}}'>
+        <view class="fankuiimg">
+          <image mode='aspectFill' wx:if="{{item}}" class='upfile' src='{{url}}{{item}}'></image>
+          <image class='shanchu' src='../img/tianjia@2x.png' data-index="{{index}}" catchtap="deleteImg"></image>
+        </view>
+  </block>
+  </view>
+  <view class='flex_bet wuyelist'>
+    <view class='wuyefont1'>结束时间：</view>
+    <view class='flex_center'>
+      <picker mode="date" value="{{date}}" start="{{now}}" end="" bindchange="bindDateChange">
+        <input disabled="true" class="picker1" value='{{date}}' name="date"/>
+      </picker>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <input class="picker" value='{{time}}' name="time" disabled="true"/>
+      </picker>
+
+    </view>
+  </view>
+
+  <view class='wuyebox'>
+    <view class='flex_bet wuyelist'>
+      <view class='wuyefont1'>更多选项</view>
+      <image class='wmore' src='../img/gengduo.png'></image>
+    </view>
+    <view class='flex_bet wuyelist'>
+      <view class='wuyefont1'>手机号</view>
+      <input value="{{list.phone}}" class='wuyeinp' name="phone"></input>
+    </view>
+    <view class='flex_bet wuyelist'>
+      <view class='wuyefont1'>微信号</view>
+      <input placeholder='请填写微信号' class='wuyeinp' name="weixin" value='{{list.wx_number}}'></input>
+    </view>
+  </view>
+
+  <button class='fsave' formType="submit" >保存</button>
+  <button class='fdelete' bindtap='oncancel' >删除悬赏</button>
+</view>
+</form>

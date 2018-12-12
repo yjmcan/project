@@ -1,0 +1,51 @@
+<!--zh_hyk/pages/my/login.wxml-->
+<view class='headhd'>
+  <image src="../../img/bgimg.png" class='bgimg'></image>
+  <view class="head">
+    <view class='himg1'>
+      <image src='../../img/vip.png'></image>
+    </view>
+    <view class="hbd">
+      <view class="hbd__hd">
+        <image style='border-radius:50%;' src="{{url}}{{xtxx.bq_logo}}" class='himg'></image>
+      </view>
+      <view class="hbd__bd">
+        欢迎续费会员卡
+      </view>
+    </view>
+    <view class='number'>Tel:{{xtxx.link_tel}}</view>
+  </view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="weui-cells weui-cells_after-title">
+    <block wx:if="{{xtxx.vip_qx=='1'}}">
+      <view class='xzqx'>选择会员卡有效期</view>
+      <radio-group bindchange="radioChange" name='radiogroup'>
+        <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
+          <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            <icon class="weui-icon-checkbox_circle" type="circle" color="#ff7f46" size="23" wx:if="{{!item.checked}}"></icon>
+            <icon class="weui-icon-checkbox_success" type="success" color='#ff7f46' size="23" wx:if="{{item.checked}}"></icon>
+          </view>
+          <view class="weui-cell__bd">{{item.money}}元,购买{{item.days}}天</view>
+        </label>
+      </radio-group>
+    </block>
+    <view class="read">
+      <radio style='zoom:80%' color='#ff7f46' checked='true' />
+      <view>我已阅读并同意
+        <text class="readfont" bindtap='lookck'>《会员卡协议》</text>
+      </view>
+    </view>
+  </view>
+  
+  <button formType="submit" class='bc'>续费</button>
+</form>
+<view class="zhezhao" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">会员卡协议</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 500rpx;">
+    <rich-text nodes="{{xtxx.vip_xy}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>

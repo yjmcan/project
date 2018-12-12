@@ -1,0 +1,1 @@
+<button bindtap='add_market'>确认核销此票券？</button>

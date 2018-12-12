@@ -1,0 +1,36 @@
+<!--pages/logs/piaoquan/piaoquan.wxml-->
+<view class='index'>
+  <view class="marry">
+    <block wx:for="{{luntext}}" wx:key="*this">
+      <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view id="{{index}}">{{item}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view >
+    <view class='pheader' bindtap='piaoinfo' data-index='{{index}}' data-states='{{item.states}}' data-id='{{item.id}}' data-fu_id='{{fu_id}}' data-state='{{item.state}}' wx:for="{{my_tickets}}" wx:key="*this">
+      <view class='phleft'>
+        <view class='phfont1'>{{item.hd_title}}</view>
+        <view class='phfont2'>{{item.hd_place}}</view>
+        <view class='phfont3'>至　{{item.end}}　结束</view>
+        <view class='phtopyuan'></view>
+        <view class='phbotyuan'></view>
+      </view>
+      <view class='phright flex3'>
+        <view class='phfont4'>{{item.tk_name}}</view>
+        <view class='phfont6'>¥ {{item.money}}</view>
+        <view class='phfont5' wx:if="{{item.states==2}}" style='background:#ccc'>{{item.state}}</view>
+        <view class='phfont5' wx:else>{{item.state}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='no_many' wx:if="{{many==false&&my_tickets.length>0}}">——————————　没有更多了　——————————</view>
+  <view wx:if="{{my_tickets.length==0}}">
+    <view class='flex3 zanwubox'>
+      <image class='zanwu' src='../../img/zwbiaoqian.png'></image>
+      <view>暂无票券</view>
+    </view>
+  </view>
+</view>
+<!-- ————————————底部固定导航栏———————————— -->

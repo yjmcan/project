@@ -1,0 +1,124 @@
+/* pages/program/program.wxss */
+.program{
+  padding: 0rpx 20rpx 20rpx;
+}
+.pheader{
+  background-color: white;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  display: flex;
+}
+.phbox,.phbox2{
+  width: 445rpx;
+  height: 200rpx;
+  overflow: hidden;
+}
+.phboxtitle{
+  font-size: 30rpx;
+  color: #333;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.phbox>.yghidden2{
+  color: #666;
+  height: 100rpx;
+  line-height: 35rpx;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.phimg{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.pfoot{
+  text-align: center;
+  color: #999;
+  margin-top: 20rpx;
+  background-color: white;
+  padding: 20rpx 0rpx;
+}
+.phbtime{
+  color: #999;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+
+/* 热门模块开始 */
+.marry {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #eee;
+  overflow-x: scroll;
+  white-space:nowrap;
+}
+.lunItem {
+  padding: 1rpx;
+  flex: 1;
+  margin-right: 20rpx;
+}
+.luntext {
+  font-size: 30rpx;
+}
+.proitem {
+  padding: 15rpx 30rpx;
+  position: relative;
+  text-align: center;
+}
+.proitem.weuibaron {
+  color: #2083C9;
+  position: relative;
+  border-bottom: 5rpx solid #2083C9;
+}
+.zheline.block {
+  display: block;
+  background-color: #2083C9;
+}
+.zheline {
+  background-color: #2083C9;
+  height: 5rpx;
+  width: 74%;
+  position: absolute;
+  bottom: 0rpx;
+  left: 14%;
+  display: none;
+}
+/* ------------底部部分------------- */
+.footbox1{
+  width: 100%;
+  height: 115rpx;
+}
+.foot1{
+  width: 101%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: -1rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+  z-index: 11;
+}
+.footlist1{
+  width: 20%;
+}
+.footlist1>image{
+  width: 45rpx;
+  height: 45rpx;
+}

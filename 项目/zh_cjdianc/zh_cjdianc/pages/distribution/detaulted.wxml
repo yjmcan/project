@@ -1,0 +1,55 @@
+<view class='list_header'>
+  <block wx:for="{{tabs}}">
+    <view class="list_title {{activeIndex==index?'selsect':'default'}}" style="color:{{activeIndex==index?color:''}}" id="{{index}}" bindtap="tabClick">
+      <view>{{item}}</view>
+      <view class='list_border' style="background-color:{{color}};" hidden='{{activeIndex!=index}}'></view>
+    </view>
+  </block>
+</view>
+<view class="list">
+  <view class="list_imgbk2" hidden="{{order_list.length!=0||!mygd}}">
+    <image mode='aspectFit' class="list_imgbk" src="../../img/list.png"></image>
+    <view class="list_imgbk3">您暂无相关明细哦！</view>
+  </view>
+  <block wx:for="{{order_list}}">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd" wx:if="{{item.order_num!=null}}">订单编号：{{item.order_num}}</view>
+        <view class="weui-cell__bd" wx:if="{{item.order_num==null}}">订单编号：{{item.note}}</view>
+        <view wx:if="{{item.type=='1'}}" class="weui-cell__ft" style='color:#999'>外卖订单</view>
+        <view wx:if="{{item.type=='2'}}" class="weui-cell__ft" style='color:#999'>店内订单</view>
+        <view wx:if="{{item.type=='3'}}" class="weui-cell__ft" style='color:#999'>预约订单</view>
+        <view wx:if="{{item.type=='4'}}" class="weui-cell__ft" style='color:#999'>当面付订单</view>
+      </view>
+      <view class="weui-cell">
+        <!-- <view class="weui-cell__hd">
+          <image wx:if="{{item.type=='1'}}" src="../../images/zfb.png" class='himg'></image>
+          <image wx:if="{{item.type=='2'}}" src="../../images/weixin.png" class='himg'></image>
+          <image wx:if="{{item.type=='3'}}" src="../../images/yhk.png" class='himg'></image>
+        </view> -->
+        <view class="weui-cell__bd">
+          <view>分销等级：({{item.note}})</view>
+          <view>下单时间：{{item.time}}</view>
+        </view>
+        <view class="weui-cell__ft">预计佣金：+{{item.money}}</view>
+      </view>
+      <!-- <view class="weui-cell">
+        <view wx:if="{{item.type=='1'}}" class="weui-cell__bd">支付宝帐号：{{item.account}}</view>
+        <view wx:if="{{item.type=='2'}}" class="weui-cell__bd">微信帐号：{{item.account}}</view>
+        <view wx:if="{{item.type=='3'}}" class="weui-cell__bd">银行卡号：{{item.account}}</view>
+        <navigator open-type='redirect' url='../my/bzzx'>
+          <view class="weui-cell__ft" style='font-size:26rpx; color:#34aaff;border:1rpx solid #34aaff;padding:6rpx 15rpx;border-radius:30rpx;"'>联系客服</view>
+        </navigator>
+      </view> -->
+    </view>
+  </block>
+  <view class='jzz' hidden='{{mygd}}'>
+    <image class='Rotation' src='../../img/jzz.png'></image>
+    <view>加载中...</view>
+  </view>
+  <view wx:if="{{mygd}}" class='jzwb'>
+    <view class='hx'></view>
+    <view class='wz'>加载完毕</view>
+    <view class='hx'></view>
+  </view>
+</view>

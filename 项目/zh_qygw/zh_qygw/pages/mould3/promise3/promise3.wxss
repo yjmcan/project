@@ -1,0 +1,33 @@
+/* zh_qygw/pages/mould3/promise3/promise3.wxss */
+page{
+  background-color: white;
+}
+.promise3{
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 32rpx;
+}
+.content{
+  padding: 0rpx 20rpx;
+  color: #666;
+}
+.probox{
+  margin-top: 70rpx;
+}
+.proimg{
+  width: 150rpx;
+  height: 150rpx;
+}
+.protitle{
+  font-size: 40rpx;
+  margin: 30rpx 0rpx;
+}
+.procontent{
+  text-indent: 2em;
+  line-height: 45rpx;
+}
+.fuwuremark{
+  color: #CCCCCC;
+  margin:70rpx 0rpx 40rpx 0rpx;
+  text-align: center;
+}

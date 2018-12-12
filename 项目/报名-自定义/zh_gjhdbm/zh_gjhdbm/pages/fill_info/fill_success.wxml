@@ -1,0 +1,31 @@
+<view class='container rel'>
+    <view>
+        <image src='../img/fill_success.png'></image>
+    </view> 
+    <view class='ab fill_info'>
+        <view>本次支付总金额</view>
+        <view class='fill_money'>
+            <text>￥</text>
+            <text>{{price}}</text>
+        </view> 
+        <view class='fill_infos rel'>
+            <view class='ab'>购票清单</view>
+            <view class='list' wx:for="{{tickets}}">
+                <view>{{item.tk_name}}</view>
+                <view>{{item.num}}</view>
+                <view style='color:{{color}}'>￥{{item.money}}</view>
+            </view> 
+        </view>
+        <view class='price'>
+            <text>小计：</text>
+            <text>￥{{price}}</text>
+        </view>
+    </view>
+    <view class='see_ticket ab'>
+        <view>出票成功</view>
+        <view>出票成功，已放入 [我的票券] 中</view>
+        <view>
+            <text bindtap='mine_ticket'>立即查看</text>
+        </view> 
+    </view>
+</view>

@@ -1,0 +1,53 @@
+<view class="address rel">
+    <view class='add_address ab udlr'>+添加地址</view>
+</view>
+<view class='time'>
+    <view>
+        <view>
+            选择日期：
+        </view> 
+        <view>2017.07.15</view>
+    </view>
+    <view>
+        <view>
+            选择时间：
+        </view> 
+        <view>16：30</view>
+    </view>
+</view>
+<view class='info'>
+    <view>
+        <image mode='aspectFill' src='../img/.png'></image>
+    </view>
+    <view class='info_text'>
+        <view>厨房保养</view>
+        <view>
+            <text style='color:red'>150.00</text>
+            <text>元</text>
+        </view>
+    </view>
+</view>
+<view class='input'>
+    <view>数量：</view>
+    <view>
+      <input placeholder='请输入数量'></input>
+    </view>
+</view>
+<view class='input'>
+    <view>次数：</view>
+    <view>
+      <input placeholder='请输入次数'></input>
+    </view>
+</view>
+<view class='input'>
+    <view>预约人：</view>
+    <view>
+      <input placeholder='请输入预约人姓名'></input>
+    </view>
+</view>
+<view class='input'>
+    <view>手机号：</view>
+    <view>
+      <input placeholder='请输入手机号'></input>
+    </view>
+</view>

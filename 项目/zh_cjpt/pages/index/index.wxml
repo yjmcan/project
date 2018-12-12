@@ -1,0 +1,132 @@
+<view class='container'>
+  <view class='head'>
+    <view wx:for="{{nav}}" wx:key="*this" bindtap='nav' data-index='{{index}}' class="{{item.color}}" style='border-bottom:4rpx solid {{item.color}};color:{{item.color}}'>{{item.name}}</view>
+  </view>
+  <view wx:if="{{ac_index==0}}">
+    <view wx:for="{{nav}}" wx:key="*this" class='list_0'>
+      <view class='info_0' bindtap='order_info'>
+        <view>
+          <image class='img_1' mode='aspectFill' src='../img/wo.png'></image>
+          <text>—</text>
+          <text>0.4KM</text>
+          <image class='img_1' mode='aspectFill' src='../img/qu.png'></image>
+          <text>—</text>
+          <text>3.74KM</text>
+          <text>—</text>
+          <image class='img_1' mode='aspectFill' src='../img/song.png'></image>
+        </view>
+        <view>
+          ￥8
+        </view>
+      </view>
+      <view class='info_1'>
+        <view>
+          <text style='color:{{color}}'>1.3km</text>
+          <text>取餐</text>
+        </view>
+        <view class='address'>
+          <view>每周一餐(东风路总店)</view>
+          <view>武汉市红三区武汉市红三区武汉市红三区武汉市红三区</view>
+        </view>
+      </view>
+      <view class='info_1'>
+        <view>
+          <text style='color:{{color}}'>1.3km</text>
+          <text>送餐</text>
+        </view>
+        <view class='address_2' style='width:85%;'>
+          <view>湖北省武汉市武昌区武珞路358号湖北省武汉市武昌区武珞路358号</view>
+          <view>张三(先生)\r\n\r\n尾号5977</view>
+        </view>
+      </view>
+      <view class='info_2'>
+        <text>在线支付23.01元</text>
+        <text>预计送达时间11:30</text>
+      </view>
+      <button class='qiang' style='background:{{color}}'>抢单</button>
+    </view>
+  </view>
+  <view wx:if="{{ac_index==1}}">
+    <view wx:for="{{nav}}" wx:key="*this" class='list_0'>
+      <view class='info_4' bindtap='order_info'>
+        <view>
+          <text>#14</text>
+          <text>剩余35分钟</text>
+        </view>
+        <view style='color:{{color}}'>
+          预计出餐13：08
+        </view>
+      </view>
+      <view class='info_1'>
+        <view>
+          <text style='color:{{color}}'>1.3km</text>
+          <text>取餐</text>
+        </view>
+        <view class='address' bindtap='route'>
+          <view>每周一餐(东风路总店)</view>
+          <view>武汉市红三区武汉市红三区武汉市红三区武汉市红三区</view>
+        </view>
+        <view bindtap='route'>
+          <image mode='aspectFill' src='../img/luxian.png' class='img_0'></image>
+        </view>
+      </view>
+      <view class='info_1'>
+        <view>
+          <text style='color:{{color}}'>1.3km</text>
+          <text>送餐</text>
+        </view>
+        <view class='address_2' style='width:85%;'>
+          <view>湖北省武汉市武昌区武珞路358号湖北省武汉市武昌区武珞路358号</view>
+          <view>张三(先生)\r\n\r\n尾号5977</view>
+        </view>
+      </view>
+      <view class='info_5'>
+        <button style='color:{{color}};border:2rpx solid {{color}}'>联系商家</button>
+        <button style='background:{{color}};color:#fff'>确认到店</button>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{ac_index==2}}">
+    <view wx:for="{{nav}}" wx:key="*this" class='list_0'>
+      <view class='info_4' bindtap='order_info'>
+        <view>
+          <text>#14</text>
+          <text>剩余35分钟</text>
+        </view>
+        <view style='color:{{color}}'>
+
+        </view>
+      </view>
+      <view class='info_1'>
+        <view>
+          <text style='color:{{color}}'>1.3km</text>
+          <text>取餐</text>
+        </view>
+        <view class='address_2' style='width:85%;'>
+          <view>每周一餐(东风路总店)</view>
+          <view>武汉市红三区武汉市红三区武汉市红三区武汉市红三区</view>
+        </view>
+      </view>
+      <view class='info_1'>
+        <view>
+          <text style='color:{{color}}'>1.3km</text>
+          <text>送餐</text>
+        </view>
+        <view class='address' bindtap='route'>
+          <view>湖北省武汉市武昌区武珞路358号湖北省武汉市武昌区武珞路358号</view>
+          <view>张三(先生)\r\n\r\n尾号5977</view>
+        </view>
+        <view bindtap='route'>
+          <image mode='aspectFill' src='../img/luxian.png' class='img_0'></image>
+        </view>
+      </view>
+      <view class='beizhu'>
+        备注：需要开发票
+      </view>
+      <view class='info_5'>
+        <button style='color:{{color}};border:2rpx solid {{color}}'>拨打电话</button>
+        <button style='background:{{color}};color:#fff'>确认送达</button>
+      </view>
+    </view>
+  </view>
+</view>

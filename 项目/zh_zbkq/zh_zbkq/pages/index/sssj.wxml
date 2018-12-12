@@ -1,0 +1,107 @@
+<!--zh_dianc/pages/home/sssj.wxml-->
+<scroll-view class='films' scroll-y="true" bindscrolltolower="sljz" style="height:{{scrollHeight}}px">
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-panel__hd">
+        <view class="weui-search-bar">
+          <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+              <icon class="weui-icon-search_in-box" type="search" size="16"></icon>
+              <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+              <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+              </view>
+            </view>
+            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+              <icon class="weui-icon-search" type="search" size="16"></icon>
+              <view class="weui-search-bar__text">搜索</view>
+            </label>
+          </view>
+          <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="searchData">搜索</view>
+        </view>
+        <view wx:if="{{searchLogShowed}}">
+          <view class="search-log" wx:for-item="searchLog" wx:for="{{searchLogList}}" wx:key="searchLogListId" bindtap="searchDataByLog" data-log="{{searchLog}}">
+            {{searchLog}}
+          </view>
+          <view class="clear-search-log" bindtap="clearSearchLog">
+            <!-- <view>清空</view> -->
+            <image src='../../img/ljt.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='jzz' hidden='{{qqsj}}'>
+        <image class='Rotation' src='../../img/jzz.png'></image>
+        <view>加载中...</view>
+      </view>
+      <block wx:if="{{qqsj}}">
+        <block wx:for="{{mdlist}}">
+          <navigator url="sjdl?sjid={{item.id}}" wx:if="{{mdlist.length!=0}}" class="main-list">
+            <view class="main-left">
+              <image mode='aspectFill' src="{{url}}{{item.md_logo}}"></image>
+            </view>
+            <view class="main-right">
+              <view class='main-rh'>
+                <view class="mr1 gobyndsingle">{{item.md_name}}</view>
+                <view class="mr6">
+                  <image src="../../img/huo.png"></image>
+                  <text>人气</text>
+                  <text>{{item.rq}}</text>
+                </view>
+              </view>
+              <view class="mr2">
+                <view class="text2-xj">
+                  <view class='pingjia_fenshu3' wx:if="{{item.score!='0.0'}}">
+                    <view class='kximg'>
+                      <image src='../../img/i-star.png'></image>
+                    </view>
+                    <view class='sximg' style='width: {{ item.score* 20}}%'>
+                      <image src='../../img/i-stars.png'></image>
+                    </view>
+                  </view>
+                  <view wx:if="{{item.score!='0.0'}}" class='text2-fs'>{{item.score}}分</view>
+                  <view wx:else class='text2-fs'>暂无评分</view>
+                </view>
+                <view class="mr2-right">
+                  <image src="../../img/ditu2.png"></image>
+                  <text>{{item.distance}}</text>
+                </view>
+              </view>
+              <view class="mr3">商家地址：{{item.address}}</view>
+              <view class="mr4">
+                <view class="mr4-1">免</view>
+                <view class="mr4-2">免费券</view>
+              </view>
+              <view class="mr5" wx:if="{{item.kqname=='代金券'}}">
+                <view class="mr5-1" style='background:#ff5e5b'>金</view>
+                <view class="mr5-2">{{item.cost}}代金券</view>
+                <view class="mr5-3">{{item.conditions}}</view>
+              </view>
+              <view class="mr5" wx:if="{{item.kqname=='折扣券'}}">
+                <view class="mr5-1">折</view>
+                <view class="mr5-2">{{item.cost}}折券</view>
+                <view class="mr5-3">{{item.conditions}}</view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+        <view class='jzz' hidden='{{jzgd}}'>
+          <image class='Rotation' src='../../img/jzz.png'></image>
+          <view>加载更多...</view>
+        </view>
+        <view wx:if="{{mdlist.length==0}}" class='kong'>
+          <image src='../../img/wsj.png'></image>
+          <view>暂无符合您搜索内容的商家...</view>
+        </view>
+      </block>
+      <!-- <view class='copyright'>
+        <view class='copyright_logo' data-appid="{{mdxx.tz_appid}}" bindtap='tzxcx'>
+          <image mode='aspectFill' src="{{url}}{{mdxx.bq_logo}}" class='copyright_img'></image>
+          <view class='copyright_text'>{{mdxx.bq_name}}</view>
+        </view>
+        <view class='copyright_txt'>{{mdxx.support}}</view>
+      </view> -->
+    </view>
+    <view class="page__ft">
+    </view>
+  </view>
+</scroll-view>

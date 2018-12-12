@@ -1,0 +1,26 @@
+<!--zh_cjdianc/pages/reserve/reservetime.wxml-->
+<view class='sjinfonav'>
+  <scroll-view class="nav-two" scroll-x="true">
+    <view wx:for='{{navbar}}' wx:key="*this" data-index='{{index}}' class="toatal_head  {{selectedindex==index?'selsect':'default'}}" bindtap="selectednavbar" style="color:{{selectedindex==index?color:''}}">
+      <view wx:if="{{index<3}}" class='toataltime'>
+        <text>{{item.name}}</text>
+        <text>{{item.time}}</text>
+      </view>
+      <view wx:else class='toataltime'>
+        <picker mode="date" value="{{startdate}}" name='datepicker' start="{{startdate}}" end="" bindchange="bindDateChange">
+          <view class="picker reserve_sele">{{item.name}}</view>
+        </picker>
+      </view>
+      <view wx:if='{{selectedindex==index}}' class="toatal_text" style="background-color: {{color}}"></view>
+    </view>
+  </scroll-view>
+</view>
+<view class='yxrq'>已选日期:{{yxtime}}</view>
+<view class='timearr'>
+  <view wx:for="{{tiemarr}}" style="color:{{selectedtime==index?'#fff':''}};background:{{selectedtime==index?color:''}}" wx:key="*this" data-index='{{index}}' bindtap='selectedTime' class='timecell'>{{item.time}}</view>
+</view>
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='footer'>
+    <button formType="submit" style="background:{{color}}">确认选择</button>
+  </view>
+</form>

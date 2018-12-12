@@ -1,0 +1,31 @@
+/* zh_jypx/pages/teacher/t_list.wxss */
+page{
+  background: #fff;
+}
+.msg{
+  margin-left: 20rpx;
+  overflow-x:scroll;
+  white-space:nowrap;
+}
+.msg_scroll{
+  display:inline-block;
+  margin-right: 20rpx;
+}
+/*课程级别*/
+.level{
+  height: 90rpx;
+  border-bottom:1rpx solid #ccc;
+}
+.msg_scroll.on{
+  color: #08a3ff;
+}
+.level_con view{
+    border:1rpx solid #ccc;
+    width: 250rpx;
+    height: 70rpx;
+    margin-top:50rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+    line-height: 70rpx;
+}

@@ -1,0 +1,10 @@
+/* pages/member/index.wxss */
+.member>view{
+  background: orange;
+}
+.member>view image{
+  width: 40rpx;
+  height: 40rpx;
+  background: red;  
+  margin-right: 20rpx;
+}

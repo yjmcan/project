@@ -1,0 +1,79 @@
+<!--zh_hyk/pages/my/zdxq.wxml-->
+<view class='page'>
+  <view class='main'>
+    <view class='head'>
+      <icon type='success' size='40'></icon>
+      <view>支付已完成</view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd skmd">收款门店</view>
+          <view class="weui-cell__ft skmd" style='color:#FF9700'>{{zdinfo.store_name}}</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/ddze.png"></image>
+        </view>
+        <view class="weui-cell__bd fkje">付款金额</view>
+        <view class="weui-cell__ft fkje1" style='color:#FF9700'>￥{{zdinfo.money}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/fkje.png"></image>
+        </view>
+        <view class="weui-cell__bd">订单总额</view>
+        <view class="weui-cell__ft">￥{{zdinfo.price}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/ddbh.png"></image>
+        </view>
+        <view class="weui-cell__bd">订单编号</view>
+        <view class="weui-cell__ft">{{zdinfo.order_num}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/xdsj.png"></image>
+        </view>
+        <view class="weui-cell__bd">下单时间</view>
+        <view class="weui-cell__ft">{{zdinfo.time}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/zffs.png"></image>
+        </view>
+        <view class="weui-cell__bd">支付方式</view>
+        <view wx:if="{{zdinfo.pay_type=='1'}}" class="weui-cell__ft">微信支付</view>
+        <view wx:if="{{zdinfo.pay_type=='2'}}" class="weui-cell__ft">余额支付</view>
+        <view wx:if="{{zdinfo.pay_type=='3'}}" class="weui-cell__ft">积分支付</view>
+        <view class='zxmd' style='color:#ff7f46' wx:if="{{zdinfo.pay_type=='0'}}">{{zdinfo.pay_type2}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='yhbf'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd fkje">优惠总额</view>
+          <view class="weui-cell__ft" style='color:#FF9700'>{{yhze}}元</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/hyzk.png"></image>
+        </view>
+        <view class="weui-cell__bd">会员折扣</view>
+        <view class="weui-cell__ft" style='color:#FF9700'>-￥{{zdinfo.preferential}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../img/ddyhq.png"></image>
+        </view>
+        <view class="weui-cell__bd">优惠券</view>
+        <view class="weui-cell__ft" style='color:#FF9700'>-￥{{zdinfo.preferential2}}</view>
+      </view>
+    </view>
+  </view>
+</view>

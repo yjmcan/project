@@ -1,0 +1,10 @@
+<view class='head rel'>
+    <input bindblur='search' focus="true" class='ab ud' placeholder='请输入关键词' placeholder-style='text-indext:20rpx'></input>
+    <text class='ab'>搜索</text>
+</view> 
+<view class='search_list' wx:for="{{search_list}}"  bindtap='info' id='{{item.id}}'>
+    <view>
+        <image mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+    </view>
+    <view>{{item.title}}</view>
+</view>

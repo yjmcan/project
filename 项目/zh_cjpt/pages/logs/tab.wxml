@@ -1,0 +1,24 @@
+<view class='head'>
+  <view class='head_0'>
+    <text bindtap='sele' class="{{ac_index==0?'sele':'no_sele'}}">订单统计</text>
+    <text bindtap='sele' class="{{ac_index==1?'sele':'no_sele'}}">收入统计</text>
+  </view>
+  <view class='num'>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>今日订单量</text>
+      <text class='fon-24'>0</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>本周订单量</text>
+      <text class='fon-24'>0</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>本月订单量</text>
+      <text class='fon-24'>0</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>累计订单量</text>
+      <text class='fon-24'>0</text>
+    </view>
+  </view>
+</view>

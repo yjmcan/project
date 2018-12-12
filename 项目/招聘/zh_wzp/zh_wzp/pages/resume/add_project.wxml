@@ -1,0 +1,57 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+<view class='list'>
+  <view>
+    项目名称
+  </view>
+  <view>
+    <input name="name" placeholder='请输入项目名称' value='{{project.project_name}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>
+    项目角色
+  </view>
+  <view>
+    <input name="job" placeholder='请输入您所担任的项目角色' value='{{project.project_role}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>
+    时间段
+  </view>
+  <view>
+    <view>
+      <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+       {{date}}
+      </picker>
+    </view>
+    <view>
+      至
+    </view>
+    <view>
+      <picker mode="date" value="{{date1}}" bindchange="bindDateChange1">
+       {{date1}}
+      </picker>
+    </view>
+  </view>
+</view>
+
+<view class='list'>
+  <view>
+    项目链接
+  </view>
+  <view>
+    <input name="fruit" placeholder='请输入项目链接' value='{{project.project_url}}'></input>
+  </view>
+</view>
+<view class='list'>
+  <view>
+    项目简介
+  </view>
+  <view>
+
+  </view>
+  <textarea name="text" placeholder='请输入您的项目简介' maxlength='540' value='{{project.project_introducation}}'></textarea>
+</view>
+<button form-type='submit' style='background:{{color}}'>完成</button>
+</form>

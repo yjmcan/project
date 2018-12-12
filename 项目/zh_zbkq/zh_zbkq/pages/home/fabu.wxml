@@ -1,0 +1,66 @@
+<!--zh_zbkq/pages/home/fabu.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="fabu">
+    <view class="banner">
+      <textarea name="fbnr" maxlength='-1' bindinput='jyfbnr' placeholder="要发布的内容..." placeholder-style="color:#999;" />
+      <!-- <view class="addimg">
+        <image src="../../img/addbai.png"></image>
+      </view> -->
+      <view class='mdtp1'>
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{images}}" wx:key="*this">
+              <view class="weui-uploader__file">
+                <view class='x' bindtap='delete' data-index='{{index}}'>
+                  <image src='../../img/x.png'></image>
+                </view>
+                <image class="weui-uploader__img" bindtap="previewImage" src="{{url2}}{{item}}" mode="aspectFill" />
+              </view>
+            </block>
+          </view>
+          <view class="weui-uploader__input-box" wx:if="{{images.length<9}}">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+        <view class='tpsl'>{{images.length}}/9</view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="flexbet" bindtap='dw'>
+        <view class="flexitem">
+          <image class="ditu" src="../../img/ditu2.png"></image>
+          <input name="weizhi" value='{{weizhi}}' placeholder="请选择您的位置信息" placeholder-style="color:#999;" />
+        </view>
+        <image class="addright" src="../../img/jiantou1.png"></image>
+      </view>
+      <view class="flexbet" style='border:none'>
+        <view class="flexitem">
+          <image class="ditu" src="../../img/xiangqingdianhua@2x.png"></image>
+          <input name="tel" type='number' placeholder="请输入电话号码" placeholder-style="color:#999;" />
+        </view>
+      </view>
+    </view>
+
+    <view class="read">
+      <checkbox-group name="checkbox">
+        <checkbox value="1" checked="{{true}}" />
+      </checkbox-group>
+      <view>我已阅读并同意
+        <text class="readfont" bindtap='lookck'>《资讯发布协议》</text>
+      </view>
+    </view>
+
+    <view class="footer">
+      <button formType="submit" class='{{nr==""||tjz?"button1":"button2"}}' disabled='{{nr==""||tjz}}'>{{btntext}}</button>
+    </view>
+  </view>
+</form>
+<view class="zhezhao" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">资讯发布协议</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 600rpx;">
+    <rich-text nodes="{{headinfo.agreement}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>

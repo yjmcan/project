@@ -1,0 +1,65 @@
+<!--pages/fabu/fabuinfo.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='index'>
+    <view class='fiheaderwai'>
+      <image class='fiheaderimg' src='../img/jindu2.png'></image>
+      <view class='fiheader'>
+        <view class='fihbox1'>基本信息</view>
+        <view class='fihbox2'>活动详情</view>
+        <view class='fihbox3'>发布成功</view>
+      </view>
+    </view>
+    <view class='events_img'>
+      <view class='rel' wx:if='{{textarea==false}}'>
+        <textarea bindblur='textarea_info' maxlength='540' class='ab udlr' placeholder='请输入活动介绍' value='{{textarea_info}}'></textarea>
+        <view class='delete ab' bindtap='delete_text'>
+          <view></view>
+          <image class='ab udlr' mode='aspectFill' src='../img/delete.png'></image>
+        </view>
+      </view>
+      <view wx:for="{{imgArray1}}" wx:key="*this" class='rel'>
+        <image class='img' mode='aspectFill' src='{{url}}{{item}}'></image>
+        <view class='delete ab' bindtap='delete' data-index='{{index}}'>
+          <view></view>
+          <image class='ab udlr' mode='aspectFill' src='../img/delete.png'></image>
+        </view>
+      </view>
+      <view class='rel add_info' style='height:80rpx;border:none' wx:if="{{edit==true||textarea==false}}">
+        <image class='add udlr ab' bindtap='botxianshi' mode='aspectFill' src='../img/add.png'></image>
+        <button form-type='submit' style='background:{{color}}'>下一步</button>
+      </view>
+    </view>
+    <view class='flex3 fihbox' wx:if="{{edit==false&&textarea==true}}">
+      <image class='fbimg' src='../img/fabuinfo.png'></image>
+      <view class='fabufont2'>编辑活动详情</view>
+      <view class='fabufont1'>让活动介绍更生动</view>
+      <view class='fabuliji' bindtap='botxianshi' style='background:{{color}}'>立即添加</view>
+      <view class='fabuliji' style='background:{{color}}'>
+          <button form-type='submit'>下一步</button>
+      </view>
+    </view>
+
+    <view class='fabubot' hidden='{{addmuban}}'>
+      <view class='botbox'>
+        <view class='botadd'>添加模块</view>
+        <view class='flex_center botsection'>
+          <view class='botcontent flex3' bindtap='img_array'>
+            <view class='botmenu'>
+              <image src='../img/picture.png'></image>
+            </view>
+            <view>单图</view>
+          </view>
+          <view class='botcontent flex3' wx:if='{{textarea==true}}' bindtap='textarea'>
+            <view class='botmenu'>
+              <image src='../img/document.png'></image>
+            </view>
+            <view>文本框</view>
+          </view>
+        </view>
+        <view class='botquxiao'>
+          <view class='botquxiaoin' bindtap='botcancel'>取消</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>

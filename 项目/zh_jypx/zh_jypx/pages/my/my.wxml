@@ -1,0 +1,72 @@
+<!--pages/my/my.wxml-->
+<view class="home">
+  <!--个人消息-->
+  <view class="msg flex_center">
+    <image class="head" mode="aspectFill" src="{{img}}"></image>
+    <view class="msg_con">
+      <view>{{school}}</view>
+      <view>{{grade}}{{classes}}</view>
+      <view>{{really_name}}</view>
+    </view>
+  </view>
+
+  <!--积分-->
+  <view class="rank flex_around">
+    <view bindtap='integral'>积分{{score}}</view>
+    <view bindtap='integral_change'>积分兑换</view>
+  </view>
+
+  <!--我的-->
+  <view class="my">
+    <view class="flex_center row" bindtap='datas'>
+      <image src="../img/data.png"></image>
+      <view>我的资料</view>
+    </view>
+    <view class="flex_center row" bindtap='task'>
+      <image src="../img/task.png"></image>
+      <view>我的作业</view>
+    </view>
+    <view class="flex_center row" bindtap='onRank'>
+      <image src="../img/ranks.png"></image>
+      <view>班级排名</view>
+    </view>
+    <view class="flex_center row" bindtap='article'>
+      <image src="../img/article.png"></image>
+      <view>历史文章</view>
+    </view>   
+    <view class="flex_center row">
+      <image src="../img/phone.png"></image>
+      <view>联系电话</view>
+    </view>
+    <view class="flex_center row" bindtap='onAddress'>
+      <image src="../img/address.png"></image>
+      <view>学校地址</view>
+    </view>
+    <view class="flex_center row">
+      <button open-type="contact" class="flex_center service">
+        <image src="../img/service.png"></image>
+        <view>在线客服</view>
+      </button>
+    </view>
+
+  </view>
+
+
+  <view class='ifootbox'></view>
+  <!--底部-->
+  <view class="foot flex_around">
+    <view class="flex3" bindtap='onIndex'>
+      <image src="../img/index.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="flex3" bindtap='onTeacher'>
+      <image src="../img/teacher.png"></image>
+      <view>教师</view>
+    </view>
+    <view class="flex3 active">
+      <image src="../img/my_on.png"></image>
+      <view>我的</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,17 @@
+<!--pages/program/programinfo.wxml-->
+<view class="home">
+  <view class="info">
+    <view class="infotitle">{{programinfo.title}}</view>
+    <view class="infobanner">
+      <rich-text nodes="{{programinfo.content1}}"/>  
+    </view>
+    <view class="infotime">{{programinfo.time}}</view>
+  </view>
+  <view class="content2" wx:if="{{programinfo.content2!=''}}">
+    <rich-text nodes="{{programinfo.content2}}"/>
+  </view>
+  <view class="hcopyright">技术支持：{{copyrit.support}}</view>
+
+  <!--—————————————————底部部分开始———————————————  -->
+  
+</view>

@@ -1,0 +1,7 @@
+<!--zh_cjdianc/pages/smdc/getdl.wxml-->
+<view class='head' style='background:{{color}}'>
+  <image src='../../img/wxlogin.png'></image>
+</view>
+  <form bindsubmit="form_save" bindreset="formReset" report-submit="true">
+<button class="hydlqueren" style='background:{{color}}' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>+微信授权登录</button>
+  </form>

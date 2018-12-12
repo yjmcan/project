@@ -1,0 +1,55 @@
+<view class='container'>
+  <view class='head t_c' style='background:{{color}}'>
+    <view>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='color_f fon_36 pa_0'>
+      <open-data type="userNickName"></open-data>
+    </view>
+  </view>
+  <view class='body pa_1 ba_f'>
+    <view class='list ba_f pa_0 bor_bottom' bindtap='ruzhu'>
+      <view class='dis_in fon_30'>
+        <image mode='aspectFill' src='../../img/wddp.png' class='dis_in logo'></image>
+        <text class='mar_l'>我的货站</text>
+      </view>
+      <view class='dis_in t_r color_9 fon_24'>
+        <text class='mar_r' wx:if="{{users.status==0}}">待入驻</text>
+        <text class='mar_r' wx:if="{{users.status==1}}">待支付</text>
+        <text class='mar_r' wx:if="{{users.status==2}}">系统正在审核入驻</text>
+        <text class='mar_r' wx:if="{{users.status==3}}">待完善</text>
+        <text class='mar_r' wx:if="{{users.status==4}}">系统正在审核店铺信息</text>
+        <text class='mar_r' wx:if="{{users.status==5}}">审核通过</text>
+        <text class='mar_r' wx:if="{{users.status==6}}">待续费</text>
+        <image mode='aspectFill' src='../../img/jt.png' class='dis_in right'></image>
+      </view>
+    </view>
+    <view class='list ba_f pa_0' bindtap='collection'>
+      <view class='dis_in fon_30'>
+        <image mode='aspectFill' src='../../img/sczx.png' class='dis_in logo'></image>
+        <text class='mar_l'>收藏中心</text>
+      </view>
+      <view class='dis_in t_r color_9 fon_24'>
+        <text class='mar_r'></text>
+        <image mode='aspectFill' src='../../img/jt.png' class='dis_in right'></image>
+      </view>
+    </view>
+  </view>
+  <view class='t_c color_6 fon_28 support'>
+    <image mode='widthFix' src='../../img/jishuzhichi.png'></image>
+    <!-- <view class='pa_0'>**********技术支持</view> -->
+  </view>
+  <view class='fixed_bottom fon_28'>
+    <view class=' t_c dis_in' style='width:49%;' bindtap='index'>
+      <image mode='aspectFill' src='../../img/sy.png'></image>
+      <text>首页</text>
+    </view>
+    <view class='dis_in bor_right rel' style='width:2%;'>
+      <text class='ab udlr'></text>
+    </view>
+    <view class=' t_c dis_in color_6' style='width:49%;' bindtap='logs'>
+      <image mode='aspectFill' src='../../img/wd-xz.png'></image>
+      <text style='color:{{color}}'>我的</text>
+    </view>
+  </view>
+</view>

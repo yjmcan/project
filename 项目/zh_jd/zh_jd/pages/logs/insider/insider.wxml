@@ -1,0 +1,63 @@
+<!--zh_jd/pages/myvip/myvip.wxml-->
+<view class="myvip font">
+  <view class="header">
+    <view class="card">
+      <view class="card_text">MEMBER</view>
+      <view class="card_text2">
+        <text class="card_text3">会员卡号</text>
+        <text>{{numbers}}</text>
+      </view>
+      <view class='card_text6'>姓名
+        <text>{{name}}</text>
+      </view>
+      <view class='card_text6'>电话
+        <text>{{tel}}</text>
+      </view>
+      <view class="card_text4">
+        <view>您目前的会员等级为
+          <text wx:if="{{level_name==null}}">初始会员</text>
+          <text wx:else>{{level_name}}</text>
+        </view>
+        <view class="card_text5">
+          <image src="../../../images/vip.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="banner">
+    <view class="banner_border"></view>
+    <view class="">
+      <text wx:if="{{level_name==null}}">初始会员</text>
+      <text wx:else>{{level_name}}</text>的特权（{{GetPrivilege.length}}项）</view>
+  </view>
+  <view class="content">
+    <!-- <view class="content_list">
+      <image src="../../../images/1.png"></image>
+      <view class="content_text">会员折扣
+        <text wx:if="{{discount==null}}"></text>
+        <text wx:else>{{discount}}折</text>
+      </view>
+    </view>
+    <view class="content_list">
+      <image src="../../../images/2.png"></image>
+      <view class="content_text">积分累计</view>
+    </view>
+    <view class="content_list">
+      <image src="../../../images/3.png"></image>
+      <view class="content_text">预订保留至21:00</view>
+    </view>
+    <view class="content_list">
+      <image src="../../../images/4.png"></image>
+      <view class="content_text">免交押金</view>
+    </view>
+    <view class="content_list">
+      <image src="../../../images/5.png"></image>
+      <view class="content_text">延时退房15:00</view>
+    </view> -->
+    <view class="content_list" wx:for="{{GetPrivilege}}">
+      <image src="{{url}}{{item.icon}}"></image>
+      <view class="content_text">{{item.name}}</view>
+    </view>
+  </view>
+</view>

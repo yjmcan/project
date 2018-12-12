@@ -1,0 +1,36 @@
+<view class='nav'>
+    <view wx:for="{{nav}}">
+        <text bindtap='tabClick' data-index='{{index}}' class="{{ac_index==index?'select':''}}">{{item}}</text>
+    </view>
+</view>
+<view class='order' wx:for="{{order}}" wx:key="*this"  bindtap='order_info' data-id='{{item.orderid}}' data-productid='{{item.productid}}'>
+    <view class='rel img'>
+        <image class='ab' mode='aspectFill' src='{{item.orderimg}}'></image>
+    </view>
+    <view class='info'>
+        <view class='order_name'>
+            <text>{{item.ordercontent}}</text>
+            <text wx:if="{{item.orderstate==-1}}">未支付</text>
+            <text wx:if="{{item.orderstate==0}}">已支付</text>
+            <text wx:if="{{item.orderstate==1}}">服务中</text>
+            <text wx:if="{{item.orderstate==2}}">已完成</text>
+        </view>
+        <view class='remarks'>
+          <text>￥{{item.reservemoney}}</text>
+          <!-- <text>此金额为定金，尾款当面支付</text> -->
+        </view>
+        <view wx:if="{{item.orderpaytype==1}}">支付方式：卡次</view>
+        <view wx:else>支付方式：现金</view>
+        <view>共一件商品 合计：{{item.reservemoney}}元</view>
+         <view class='pay' wx:if="{{item.orderstate==-1}}" bindtap='pay_order' data-reservemoney='{{item.reservemoney}}' data-orderid='{{item.orderid}}'>
+            <text>立即支付</text>
+        </view> 
+        <view class='pay' style='margin-right:20rpx;' wx:if="{{item.orderstate==-1}}" bindtap='cancel_order' data-type='1' data-orderid='{{item.orderid}}'>
+            <text>取消订单</text>
+        </view> 
+        <view class='pay' wx:if="{{item.orderstate==2}}" bindtap='cancel_order' data-type='2' data-orderid='{{item.orderid}}'>
+            <text>删除订单</text>
+        </view> 
+    </view>
+    <view></view>
+</view>

@@ -1,0 +1,65 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+<view class='unit border_t border_b mar'>
+    <view>
+        <text>*</text>
+        <text>单位名称</text>
+    </view>
+    <view>
+        <input name="mingc" placeholder='请输入单位名称'></input>
+    </view>
+</view>
+<view class='unit border_b'>
+    <view>
+        <text>*</text>
+        <text>单位性质</text>
+    </view>
+    <view>
+        <input name="xingzhi" placeholder='请输入单位性质'></input>
+    </view>
+</view>
+<view class='unit border_b'>
+    <view>
+        <text>*</text>
+        <text>单位主行业</text>
+    </view>
+    <view>
+        <input name="hangye" placeholder='请输入单位主行业'></input>
+    </view>
+</view>
+<view class='unit border_bo border_n'>
+    <view>
+        <text>*</text>
+        <text>法人姓名</text>
+    </view>
+    <view>
+        <input name="name" placeholder='请输入法人姓名'></input>
+    </view>
+</view>
+<view class='body border_t border_bo mar'>
+    <view>
+        <text>*</text>
+        <text>上传证件原件照片</text>
+    </view>
+    <view>需上传“组织机构代码证/上级单位下发的红头文件成立批复”</view>
+    <view class='upload'>
+
+        <view class='rel' wx:for="{{imgArray1}}">
+            <image mode='aspectFill' src='{{url}}{{item}}'></image>
+            <text class='ab delete' bindtap='delete' data-index='{{index}}'>x</text>
+        </view>
+        <view bindtap='choose'>
+            <image mode='aspectFill' src='../img/upload.png'></image>
+        </view>
+    </view>
+    <view>
+        <view>注：</view>
+        <view>
+            1.可上传5张图片,仅限GIF,PNG或JPG格式,大小限制在3M以内
+        </view>
+        <view>
+            2.企业营业执照仅用于审核，不会向第三方透露，请放心上传
+        </view>
+    </view>
+</view>
+<button form-type='submit' style='background:{{color}}'>提交审核</button>
+</form>

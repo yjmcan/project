@@ -1,0 +1,59 @@
+/* pages/my/task.wxss */
+page{
+  background: #fff;
+}
+.msg{
+  margin-left: 20rpx;
+  overflow-x:scroll;
+  white-space:nowrap;
+}
+.msg_scroll{
+  display:inline-block;
+  margin-right: 20rpx;
+}
+/*课程级别*/
+.level{
+  height: 90rpx;
+  border-bottom:1rpx solid #ccc;
+}
+.msg_scroll.on{
+  color: #08a3ff;
+}
+/* .home{
+  padding: 30rpx;
+} */
+/* .title{
+  margin:50rpx;
+  padding: 10rpx 20rpx;
+  font-size: 33rpx;
+  color: #fff;
+  background: #08a3ff;
+  display: inline-block;
+  border-radius: 10rpx;
+}
+.ready_t{
+  background: #f7ba3c;
+} */
+/* .already_t{
+  background: #ff7434;
+} */
+.ready_list{
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+.ready_list view{
+  font-size: 30rpx;
+}
+.good,
+.revise{
+  color: #fff;
+  padding: 10rpx 15rpx;
+  border-radius: 10rpx;
+}
+.revise{
+  background: #f7ba3c;
+}
+.good{
+  background: #08a3ff;
+
+} 

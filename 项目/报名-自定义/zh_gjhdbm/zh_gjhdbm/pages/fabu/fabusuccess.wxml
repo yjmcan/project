@@ -1,0 +1,17 @@
+<!--pages/fabu/fabusuccess.wxml-->
+<view class='index'>
+  <view class='fiheaderwai'>
+    <image class='fiheaderimg' src='../img/jindu3.png'></image>
+    <view class='fiheader'>
+      <view class='fihbox1'>基本信息</view>
+      <view class='fihbox2'>活动详情</view>
+      <view class='fihbox3'>发布成功</view>      
+    </view>
+  </view>
+  <view class='flex3 fihbox'>
+    <image class='fbimg' src='../img/fabusuccess.png'></image>
+    <view class='fabufont2'>发布成功</view>
+    <view class='fabufont1'>快去邀请小伙伴们参加吧</view>
+    <view class='fabuliji' bindtap='botxianshi' style='background:{{color}}'>立即查看</view>
+  </view>
+</view>

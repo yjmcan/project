@@ -1,0 +1,227 @@
+<view class="container">
+  <view class="head">
+    <view class="head-left">
+      <view class="hl" bindtap='xzwz'>
+        <image src="../../img/ditu.png"></image>
+        <view>{{weizhi}}</view>
+        <image src="../../img/jiantou.png"></image>
+      </view>
+    </view>
+    <view class="head-right" bindtap='sssj'>
+      <view class="h2">
+        <image class="h2-img" src="../../img/sousuo.png"></image>
+        <input class="h2-input" placeholder="搜索优惠券" />
+      </view>
+    </view>
+  </view>
+  <swiper wx:if="{{lb.length!=0}}" class="swiper-lb" autoplay='true' indicator-dots='true' indicator-color='#e5e5e5' indicator-active-color='#f44444' circular="true" duration="300">
+    <swiper-item wx:for="{{lb}}">
+      <image src="{{url}}{{item.logo}}" bindtap='tzsj' data-index='{{index}}'></image>
+    </swiper-item>
+  </swiper>
+  <view wx:if="{{bqxx.is_fl=='1'}}" class="main-head">
+    <block wx:if="{{bqxx.fl_more=='1'&&navs.length==1&&navs[0].length<5}}">
+      <swiper style='height:175rpx' class="swiper-box" circular="true" duration="300">
+        <swiper-item class="handover" wx:for="{{navs}}">
+          <view class="classification al">
+            <block wx:for="{{item}}">
+              <view class="child_element" data-flid="{{item.id}}" data-flname="{{item.name}}" bindtap="cxfl">
+                <view class="slide_icon">
+                  <image class="img" src="{{url}}{{item.img}}"></image>
+                </view>
+                <view class="slide_icon_text">{{item.name}}</view>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:if="{{bqxx.fl_more=='2'&&navs.length==1&&navs[0].length<6}}">
+      <swiper style='height:175rpx' class="swiper-box" circular="true" duration="300">
+        <swiper-item class="handover" wx:for="{{navs}}">
+          <view class="classification al">
+            <block wx:for="{{item}}">
+              <view class="child_element1" data-flid="{{item.id}}" data-flname="{{item.name}}" bindtap="cxfl">
+                <view class="slide_icon">
+                  <image class="img" src="{{url}}{{item.img}}"></image>
+                </view>
+                <view class="slide_icon_text">{{item.name}}</view>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:if="{{bqxx.fl_more=='1'&&navs[0].length>=5}}">
+      <swiper style='height:350rpx' class="swiper-box" autoplay='true' indicator-dots='true' indicator-color='#e5e5e5' indicator-active-color='#f44444' circular="true" duration="300">
+        <swiper-item class="handover" wx:for="{{navs}}">
+          <view class="classification al">
+            <block wx:for="{{item}}">
+              <view class="child_element" data-flid="{{item.id}}" data-flname="{{item.name}}" bindtap="cxfl">
+                <view class="slide_icon">
+                  <image class="img" src="{{url}}{{item.img}}"></image>
+                </view>
+                <view class="slide_icon_text">{{item.name}}</view>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:if="{{bqxx.fl_more=='2'&&navs[0].length>=6}}">
+      <swiper style='height:350rpx' class="swiper-box" autoplay='true' indicator-dots='true' indicator-color='#e5e5e5' indicator-active-color='#f44444' circular="true" duration="300">
+        <swiper-item class="handover" wx:for="{{navs}}">
+          <view class="classification al">
+            <block wx:for="{{item}}">
+              <view class="child_element1" data-flid="{{item.id}}" data-flname="{{item.name}}" bindtap="cxfl">
+                <view class="slide_icon">
+                  <image class="img" src="{{url}}{{item.img}}"></image>
+                </view>
+                <view class="slide_icon_text">{{item.name}}</view>
+              </view>
+            </block>
+          </view>
+        </swiper-item>
+      </swiper>
+    </block>
+    <!-- <view class="swiper_tab" wx:if="{{navs.length>8}}">
+        <view class="swiper-tab">
+          <view wx:for="{{navs}}" class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" data-current="0"></view>
+        </view>
+      </view> -->
+  </view>
+  <!-- 我要入驻开始 -->
+  <view class='join'>
+    <image class='jion-img' src='../../img/laba.png'></image>
+    <swiper class="jionbo gobyndsingle" vertical="true" autoplay="true" circular="true" interval="2000">
+      <navigator url='sjdl?sjid={{item.id}}' wx:for="{{allstore}}">
+        <swiper-item>
+          • 恭喜【
+          <text class='join-name'>{{item.md_name}}</text>】入驻
+        </swiper-item>
+      </navigator>
+    </swiper>
+    <view wx:if="{{bqxx.is_rz=='1'}}" class="jiony" bindtap='wyrz'>我要入驻</view>
+    <view wx:else class="jiony">最新入驻</view>
+  </view>
+  <!-- 我要入驻结束 -->
+  <view class="main-bd-hd">
+    <view class="line" style='margin-right:15rpx;'></view>
+    <view class="classname">附近
+      <text style='color:#f44444;margin:0 10rpx;'>{{typetext}}</text>商家</view>
+    <view class="line" style='margin-left:15rpx;'></view>
+  </view>
+  <view class="paixu">
+    <block wx:for="{{listarr}}" wx:key="*this">
+      <view id="{{index}}" class="{{activeIndex == index ? 'selected' : 'default'}}" bindtap="tabClick">{{item}}
+        <!-- <image class='xsjt-img' src='../images/xsjt.png'></image> -->
+      </view>
+    </block>
+  </view>
+  <view class='jzz' hidden='{{qqsj}}'>
+    <image class='Rotation' src='../../img/jzz.png'></image>
+    <view>加载中...</view>
+  </view>
+  <block wx:if="{{qqsj}}">
+    <block wx:for="{{mdlist}}">
+      <navigator url="sjdl?sjid={{item.id}}" wx:if="{{mdlist.length!=0}}" class="main-list">
+        <view class="main-left">
+          <image mode='aspectFill' src="{{url}}{{item.md_logo}}"></image>
+          <view wx:if="{{item.is_top=='1'}}" class='xzhiding'>
+            置顶
+          </view>
+        </view>
+        <view class="main-right">
+          <view class='main-rh'>
+            <view class="mr1 gobyndsingle">{{item.md_name}}</view>
+            <view class="mr6">
+              <image src="../../img/huo.png"></image>
+              <text>人气</text>
+              <text>{{item.rq}}</text>
+            </view>
+          </view>
+          <view class="mr2">
+            <view class="text2-xj">
+              <view class='pingjia_fenshu3' wx:if="{{item.score!='0.0'}}">
+                <view class='kximg'>
+                  <image src='../../img/i-star.png'></image>
+                </view>
+                <view class='sximg' style='width: {{ item.score* 20}}%'>
+                  <image src='../../img/i-stars.png'></image>
+                </view>
+              </view>
+              <view class='pingjia_fenshu3' wx:else>
+                <view class='kximg'>
+                  <image src='../../img/i-star.png'></image>
+                </view>
+                <view class='sximg' style='width: 100%'>
+                  <image src='../../img/i-stars.png'></image>
+                </view>
+              </view>
+              <view wx:if="{{item.score!='0.0'}}" class='text2-fs'>{{item.score}}分</view>
+              <view wx:else class='text2-fs'>5.0分</view>
+            </view>
+            <view class="mr2-right">
+              <image src="../../img/ditu2.png"></image>
+              <text>{{item.distance}}</text>
+            </view>
+          </view>
+          <view class="mr3">商家地址：{{item.address}}</view>
+          <view class="mr4" wx:if="{{bqxx.is_mfq=='1'}}">
+            <view class="mr4-1">免</view>
+            <view class="mr4-2">免费券</view>
+          </view>
+          <view class="mr5" wx:if="{{item.kqname=='代金券'}}">
+            <view class="mr5-1" style='background:#ff5e5b'>金</view>
+            <view class="mr5-2">{{item.cost}}代金券</view>
+            <view class="mr5-3">{{item.conditions}}</view>
+          </view>
+          <view class="mr5" wx:if="{{item.kqname=='折扣券'}}">
+            <view class="mr5-1">折</view>
+            <view class="mr5-2">{{item.cost}}折券</view>
+            <view class="mr5-3">{{item.conditions}}</view>
+          </view>
+          <view class="mr5" wx:if="{{item.kqname=='通用券'}}">
+            <view class="mr5-1">通</view>
+            <!-- <view class="mr5-2">{{item.cost}}{{item.kqname}}</view> -->
+            <view class="mr5-3">{{item.conditions}}</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <view class='jzz' hidden='{{jzgd}}'>
+      <image class='Rotation' src='../../img/jzz.png'></image>
+      <view>加载更多...</view>
+    </view>
+    <view wx:if="{{mygd}}" class='jzwb'>
+      <view class='hx'></view>
+      <view class='wz'>加载完毕</view>
+      <view class='hx'></view>
+    </view>
+    <view wx:if="{{mdlist.length==0}}" class='kong'>
+      <image src='../../img/wsj.png'></image>
+      <view>附近暂无此分类商家...</view>
+    </view>
+  </block>
+  <!--尾部版权  -->
+  <view class='copyright'>
+    <view class='copyright_logo' data-appid="{{bqxx.tz_appid}}" bindtap='tzxcx'>
+      <image mode='aspectFill' src="{{url}}{{bqxx.copy_logo}}" class='copyright_img'></image>
+      <view class='copyright_text'>{{bqxx.name}}</view>
+    </view>
+    <view class='copyright_txt'>{{bqxx.wz}}</view>
+  </view>
+</view>
+<view class="zhezhao" hidden="{{kpgg}}"></view>
+<view class="kpgg" hidden="{{kpgg}}">
+  <view class="close-kpgg" bindtap="closekpgg">
+    <image src="../../img/gbgg.png" class="img"></image>
+  </view>
+  <swiper indicator-dots='true' indicator-color='#e5e5e5' indicator-active-color='#f44444' circular="true" duration="500" class="kpgg-swiper">
+    <block wx:for="{{kpggimg}}" wx:key="unique">
+      <swiper-item data-index="{{index}}" bindtap='tzwy'>
+        <image mode="scaleToFill" src="{{url}}{{item.logo}}" class="img"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

@@ -1,0 +1,37 @@
+/* pages/my/integral_change.wxss */
+page{
+  background: #fff;
+}
+.title{
+  font-size: 38rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.list{
+  width: 80%;
+  margin:40rpx auto;
+}
+.list_con{
+  margin-right: 40rpx;
+}
+.list_con:nth-child(2n){
+  margin-right: 0;
+}
+.list_con image{
+  background: #ccc;
+  width: 280rpx;
+  height: 280rpx;
+}
+.list_con view{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+.rule{
+  width: 80%;
+  margin:20rpx auto;
+  font-size: 33rpx;
+}
+.rule view{
+  margin-top: 15rpx;
+}

@@ -1,0 +1,4 @@
+/* zh_cjpt/pages/logs/help.wxss */
+page{
+  background: #fff;
+}

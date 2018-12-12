@@ -1,0 +1,19 @@
+/* pages/logs/reward.wxss */
+.list{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.list>view:nth-child(1){
+  width: 20%;
+}
+.list>view:nth-child(2){
+  width: 50%;
+}
+.list>view:nth-child(3){
+  width: 30%;
+}
+.list>view image{
+  width: 90%;
+  height: 100rpx;
+  background: red;
+}

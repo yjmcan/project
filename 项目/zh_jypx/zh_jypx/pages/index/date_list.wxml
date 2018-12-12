@@ -1,0 +1,16 @@
+<!--pages/index/date_list.wxml-->
+<view wx:if="{{none.code==200}}">
+  <view class="classes">{{title}}</view>
+  <view class="home flex2">
+    <view wx:for="{{date}}" class='date flex1' bindtap='task_list' data-id="{{item.id}}" data-index="{{index}}">
+      <view class="list">{{item.unit_name}}</view>
+      <!--已经完成作业-->
+      <view class="true"></view>
+    </view>
+  </view>
+</view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>

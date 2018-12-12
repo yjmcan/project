@@ -1,0 +1,4 @@
+/* zh_cjdianc/pages/sjzx/dndd/dnddxq.wxss */
+@import "/zh_cjdianc/pages/wddd/ddxq.wxss";
+.kttext{font-weight: normal;font-size: 24rpx;color: #999;}
+.ddinfo{padding-bottom: 0;}

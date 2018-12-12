@@ -1,0 +1,90 @@
+<!--zh_hyk/pages/my/wdkq.wxml-->
+<view class="">
+  <view class='list_header'>
+    <block wx:for="{{tabs}}">
+      <view class="list_title {{activeIndex==index?'default':'selsect'}}" id="{{index}}" bindtap="tabClick">
+        <view>{{item}}</view>
+        <view class='list_border' hidden='{{activeIndex!=index}}'></view>
+      </view>
+    </block>
+  </view>
+  <!--可用的  -->
+  <view class="list" hidden="{{activeIndex != 0}}">
+    <view class="list_imgbk2" hidden="{{items1.length!=0}}">
+      <image class="list_imgbk" src="../../img/wyhq.png"></image>
+      <view class="list_imgbk3" style="margin-top:-30rpx;">您暂时还没有可用券哦！</view>
+    </view>
+    <block wx:if="{{items1.length!=0}}">
+      <view class='yhsc'>小提示：按住券左滑可删除券哦~</view>
+      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart1" bindtouchmove="touchmove1" wx:for="{{items1}}" wx:key="">
+        <view class="yhq1">
+          <image src="../../img/yhg1.png"></image>
+          <navigator url="../index/sjdl?sjid={{item.md_id}}">
+            <view class="yhq1-lt">
+              <image wx:if="{{item.store_id!=null}}" mode='aspectFill' src="{{url}}{{item.store_logo}}"></image>
+              <image wx:else mode='aspectFill' src="{{url}}{{item.link_logo}}"></image>
+            </view>
+            <view class="yhq1-bd">
+              <text class="gobyndsingle">{{item.Coupons_name}}</text>
+              <text class="gobyndsingle" wx:if="{{item.type=='1'}}">{{item.reduction}}<text style='color:#FF7F46;font-size: 30rpx;margin-left:10rpx;'>元</text>
+              <text class='yhqmk' wx:if="{{item.full!='0'}}">满{{item.full}}元可用</text>
+              <text class='yhqmk' wx:else>无门槛</text></text>
+              <text class="gobyndsingle" wx:if="{{item.type=='2'}}">{{item.reduction}}<text style='color:#FF7F46;font-size: 30rpx;margin-left:10rpx;'>折</text>
+              <text class='yhqmk' wx:if="{{item.full!='0'}}">满{{item.full}}元可用</text>
+              <text class='yhqmk' wx:else>无门槛</text></text>
+              <text>有效期：{{item.start_time}}至{{item.end_time}}</text>
+            </view>
+          </navigator>
+          <view wx:if="{{item.store_id!=null}}" class="yhq1-rt" bindtap="ljsy" data-yhqid='{{item.id}}'>
+            <view>可用门店</view>
+            <view>{{item.store_name}}</view>
+          </view>
+          <view wx:else class="yhq1-rt" bindtap="ljsy" data-yhqid='{{item.id}}'>
+            <view>可用门店</view>
+            <view>所有门店</view>
+          </view>
+        </view>
+        <view class="del" catchtap="del" data-yhqid='{{item.id}}'>删除</view>
+      </view>
+    </block>
+  </view>
+
+  <!--失效的  -->
+  <view class="list" hidden="{{activeIndex != 1}}">
+    <view class="list_imgbk2" hidden="{{items.length!=0}}">
+      <image class="list_imgbk" src="../../img/wyhq.png"></image>
+      <view class="list_imgbk3" style="margin-top:-30rpx;">您暂时还没有失效的券哦！</view>
+    </view>
+    <block wx:if="{{items.length!=0}}">
+      <view class='yhsc'>小提示：按住券左滑可删除券哦~</view>
+      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+        <view class="yhq1">
+          <image src="../../img/yhg1.png"></image>
+          <navigator url="../index/sjdl?sjid={{item.md_id}}">
+            <view class="yhq1-lt">
+              <image wx:if="{{item.store_id!=null}}" mode='aspectFill' src="{{url}}{{item.store_logo}}"></image>
+              <image wx:else mode='aspectFill' src="{{url}}{{item.link_logo}}"></image>
+            </view>
+            <view class="yhq1-bd">
+              <text class="gobyndsingle">{{item.Coupons_name}}</text>
+              <text class="gobyndsingle" wx:if="{{item.type=='1'}}">{{item.reduction}}<text style='color:#FF7F46;font-size: 30rpx;margin-left:10rpx;'>元</text>
+              <text class='yhqmk' wx:if="{{item.full!='0'}}">满{{item.full}}元可用</text>
+              <text class='yhqmk' wx:else>无门槛</text></text>
+              <text class="gobyndsingle" wx:if="{{item.type=='2'}}">{{item.reduction}}<text style='color:#FF7F46;font-size: 30rpx;margin-left:10rpx;'>折</text>
+              <text class='yhqmk' wx:if="{{item.full!='0'}}">满{{item.full}}元可用</text>
+              <text class='yhqmk' wx:else>无门槛</text></text>
+              <text>有效期：{{item.start_time}}至{{item.end_time}}</text>
+            </view>
+          </navigator>
+          <view class="yhq1-rtsx" style='background:#d5d5d5' data-yhqid='{{item.id}}'>已经使用</view>
+        </view>
+        <view class="del" catchtap="del" data-yhqid='{{item.id}}'>删除</view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- <view class="drawer_screen" wx:if="{{showModal}}"></view>
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModal}}">
+  <view class="drawer_title">为了方便您的使用，需验证您的手机号</view>
+  <button class="btn_ok" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即验证</button>
+</view> -->

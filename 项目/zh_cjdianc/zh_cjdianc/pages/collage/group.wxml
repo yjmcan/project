@@ -1,0 +1,45 @@
+<view class='container'>
+  <!--  拼团轮播图  -->
+  <view class='head'>
+    <swiper autoplay="auto" indicator-color='#ccc' indicator-active-color='{{color}}' interval="5000" duration="500" indicator-dots='true' circular='true' class="swiper">
+      <block wx:for="{{imgArray}}" wx:key="*this">
+        <swiper-item>
+          <image bindtap='jumps' data-id='{{item.id}}' data-type='{{item.item}}' data-name='{{item.title}}' data-wb_src='{{item.src2}}' data-src='{{item.src}}' data-appid='{{item.appid}}' mode='aspectFill' src='{{item.logo}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--  拼团分类  -->
+  <view class='nav ba_f mar_t'>
+    <swiper style='height:{{height}}rpx;' autoplay="auto" indicator-color='#f7f7f7' indicator-active-color='{{color}}' interval="5000" duration="500" indicator-dots='true' circular='true' class="swiper">
+      <block wx:for="{{nav_array}}" wx:key="*this">
+        <swiper-item>
+          <view wx:for="{{item}}" class='dis_in nav_li' wx:key="*this" bindtap='nav_child' data-id='{{item.id}}'>
+            <image mode='aspectFill' src='{{item.img}}'></image>
+            <view class='t_c fon_28 gobyndsingle'>{{item.name}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--  拼团列表  -->
+  <view class='mar_t'>
+    <view class='shop_list pa bor_bottom' wx:for="{{group_list}}" wx:key="*this" bindtap='index' data-storeid='{{item.store_id}}' data-id="{{item.id}}">
+      <view class='dis_in'>
+        <image mode='aspectFill' src='{{item.logo}}'></image>
+      </view>
+      <view class='dis_in'>
+        <view class='fon_30 gobyndsingle' style='font-weight:bold'>{{item.name}}</view>
+        <view class='fon_24 color_6 gobyndsingle mdtp'>
+          <image mode='aspectFill' src='../../img/tabdn.png'></image>
+          <view style='line-height:50rpx;' class='fon_30'>{{item.store_name}}</view>
+        </view>
+        <view>
+          <text class='fon_24' style='color:{{color}}'>{{item.people}}人团</text>
+          <text class='fon_36 mar_l  color_6' style='color:{{color}}'>￥{{item.pt_price}}</text>
+          <text class='fon_28 mar_l' style='background:{{color}};color:#fff;padding:10rpx 20rpx;float:right;border-radius:10rpx;'>去参团</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

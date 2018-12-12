@@ -1,0 +1,55 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx648013d2ed95099f",
+	"projectname": "%E6%8B%9B%E8%81%98",
+	"svr": "/",
+	"client": "/",
+	"qcloudRoot": "/",
+	"miniprogramRoot": "/",
+	"pluginRoot": "/",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "添加核销员",
+					"pathName": "zh_gjhdbm/pages/piaoquaninfo/add_mark",
+					"query": "scene=1",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "验票",
+					"pathName": "zh_gjhdbm/pages/logs/inspect_ticket",
+					"query": "scene=7,1",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class='list pa ba_f' wx:for="{{list}}" bindtap='info' data-index='{{item.createUserId}}'>
+    <view class='dis_in'>
+      <image mode='aspectFill' src='{{item.goodsStation.stationMainImg}}' class='img'></image>
+    </view>
+    <view class='dis_in'>
+      <view class='fon_30 wei'>【{{item.goodsStation.name}}】</view>
+      <view class='color_6 fon_26 gobyndsingle'>{{item.goodsStation.sourceRouteArray[0].startAllName}}-{{item.goodsStation.sourceRouteArray[0].endAllName}}</view>
+      <view class='fon_26' style='color:{{color}}'>{{item.goodsStation.phone}}</view>
+      <view class='color_6 fon_26 gobyndsingle'>{{item.goodsStation.address}}</view>
+    </view>
+  </view>
+</view>

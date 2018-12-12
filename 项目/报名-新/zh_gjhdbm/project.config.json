@@ -1,0 +1,43 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wxdcca2bb7deeea9c2",
+	"projectname": "%E7%BA%BF%E4%B8%8A%E6%8A%A5%E5%90%8D",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "转发进入",
+					"pathName": "zh_gjhdbm/pages/collage/group",
+					"query": "user_id=507&goods_id=10",
+					"scene": "1008"
+				}
+			]
+		}
+	}
+}

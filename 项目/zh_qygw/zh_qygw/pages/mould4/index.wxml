@@ -1,0 +1,7 @@
+<!--zh_qygw/pages/mould4/index.wxml-->
+<view class="windex">
+  <image src="{{url}}/addons/zh_qygw/template/images/home1.gif" bindtap="women4"></image>
+  <image src="{{url}}/addons/zh_qygw/template/images/home2.gif" bindtap="youqing4"></image>
+  <image src="{{url}}/addons/zh_qygw/template/images/home3.gif" bindtap="you4"></image>
+</view>
+

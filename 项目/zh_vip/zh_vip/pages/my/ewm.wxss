@@ -1,0 +1,109 @@
+/* zh_hyk/pages/my/ewm.wxss */
+.page{
+  height: 100%;
+  overflow-y: hidden;
+}
+.head{
+  background: #fff;
+  margin: 0rpx 7vw;
+  margin-top: 100rpx;
+  position: relative;
+  height: 280rpx;
+  border-bottom: 1rpx dashed #d9d9d9;
+}
+.headimg{
+  position: absolute;
+  width: 100%;
+  height: 280rpx;
+  border-radius: 10rpx;
+}
+.head::before {
+  content: " ";
+  position: absolute;
+  left: -20rpx;
+  bottom: -20rpx;
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #F7F7F7;
+  z-index: 10;
+}
+.head::after {
+  content: " ";
+  position: absolute;
+  right: -20rpx;
+  bottom: -20rpx;
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #F7F7F7;
+  z-index: 10;
+}
+.htext{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.htext view{
+  text-align: center;
+}
+.htext image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.hydj{
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 180rpx;
+  background: #fff;
+  padding: 0 20rpx;
+  border: 2rpx solid #ed5424;
+  margin-bottom: 30rpx;
+}
+.hydj text{
+  color: #ed5424;
+  font-size: 26rpx;
+}
+.hydj image{
+  width: 30rpx;
+  height: 38rpx;
+}
+.code{
+  background: #fff;
+  margin: 0rpx 7vw;
+  padding:60rpx 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  align-items: center;
+}
+.code image{
+  width: 400rpx;
+  height: 400rpx;
+}
+.code view{
+  margin-top: 20rpx;
+  text-align: center;
+}
+.syxz{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-size: 26rpx;
+}
+.syxz image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}

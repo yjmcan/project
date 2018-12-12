@@ -1,0 +1,72 @@
+<!--zh_jypx/pages/rank/login.wxml-->
+<view class="home">
+  <form bindsubmit="formSubmit">
+    <image src="../img/logo.png" class="logo"></image>
+    <!--下拉选择校区-->
+    <view class="flex3">
+      <view class="flex_bet school">
+        <picker bindchange="bindPickerSchoole" range="{{school}}" value="{{index}}">
+          <view class="picker flex_center">
+            <view>选择校区 :{{school[index]}} </view>
+          </view>
+        </picker>
+      </view>
+
+      <!--下拉选择年级-->
+      <view class="flex_bet school">
+        <picker bindchange="bindPickerGrade" value="{{grade_index}}" range="{{grade}}">
+          <view class="picker flex_center">
+            <view>选择年级 :{{grade[grade_index]}}</view>
+
+          </view>
+        </picker>
+      </view>
+
+      <!--下拉选择班级-->
+      <view class="flex_bet school">
+        <picker bindchange="bindPickerCourse" value="{{u_index}}" range="{{course}}">
+          <view class="picker flex_center">
+            <view>选择课程 : {{course[u_index]}}</view>
+          </view>
+        </picker>
+      </view>
+
+      <!--下拉选择班级-->
+      <view class="flex_bet school">
+        <picker bindchange="bindPickerClasses" value="{{index}}" range="{{classes}}" data-cid="{{classes[c_index]}}">
+          <view class="picker flex_center">
+            <view>选择班级 : {{classes[c_index]}}</view>
+          </view>
+        </picker>
+      </view>
+
+      <view class="flex_center list">
+        <view>家长姓名 : </view>
+        <input type="text" placeholder='请输入家长姓名' name="parent_name"></input>
+      </view>
+
+      <view class="flex_center list">
+        <view>学生姓名 : </view>
+        <input type="text" placeholder='请输入学生姓名' name="child_name"></input>
+      </view>
+
+      <view class="flex_center list">
+        <view>联系电话 : </view>
+        <input type="text" placeholder='请输入联系电话' class="phone" name="phone" bindinput='onChange'></input>
+      </view>
+
+      <view class="flex_center list">
+        <view>验证码 : </view>
+        <input type="number" placeholder='请输入验证码' class="code" name="code"></input>
+        <button class="btn" disabled='{{disabled}}' bindtap='onCode'>{{time}}</button>
+      </view>
+
+      <view class="flex_center list">
+        <view>登录密码 : </view>
+        <input type="password" placeholder='请输入登录密码' name="password"></input>
+      </view>
+      <button class="submit" formType="submit">提交注册</button>
+      <!-- <input type="submit" value="提交注册" class="submit"></input> -->
+    </view>
+  </form>
+</view>

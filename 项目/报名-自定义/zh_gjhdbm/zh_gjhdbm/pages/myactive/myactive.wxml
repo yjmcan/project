@@ -1,0 +1,79 @@
+<!--pages/myactive/myactive.wxml-->
+<view class='index'>
+  <view class="marry">
+    <block wx:for="{{luntext}}" wx:key="*this">
+      <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view id="{{index}}">{{item}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class='mybanner' wx:for="{{my_activity}}" data-id='{{item.id}}' bindtap='my_activity' wx:key="*this">
+    <view class='mybtop'>
+      <image mode='aspectFill' class='mybimg' src='{{url}}{{item.logo}}'></image>
+      <view class='mybtopinfo'>
+        <view class='mybtitle'>{{item.title}}</view>
+        <view class='flex_center mybfont1'>
+          <image class='mybicon' src='../img/acaddress.png'></image>
+          <view wx:if="{{item.activity_type==1}}">线上活动</view>
+          <view wx:else>线下活动</view>
+        </view>
+        <view class='flex_center mybfont1'>
+          <image class='mybicon' src='../img/actime.png'></image>
+          <view>至{{item.end_time}} 结束</view>
+        </view>
+        <view class='flex_bet myjinxingbox'>
+          <view class='myjinxing {{item.sign_state}}'>{{item.sign_up}}</view>
+          <view class='mybfont2' style='color:{{color}}'>￥{{item.zd_money}} 起</view>
+        </view>
+      </view>
+    </view>
+    <view class='mybottom'>
+      <view class='mybotbox'>
+        <text class='mybfont3' style='color:{{color}}'>{{item.total_ticket}}</text>报名
+      </view>
+      <view class='mybotbox'>
+        <text class='mybfont3' style='color:{{color}}'>{{item.gz_num}}</text>关注
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{my_activity.length==0}}">
+  <view class='flex3 zanwubox'>
+    <image class='zanwu' src='../img/zwbiaoqian.png'></image>
+    <view>暂无活动</view>
+  </view>
+</view>
+<!-- ————————————底部固定导航栏———————————— -->
+<view class='bmfoot2' wx:if="{{yes!=false}}"></view>
+<view class='bmfoot' wx:if="{{yes!=false}}">
+  <view class='bmfootbox'>
+    <view bindtap='index'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+      </view>
+      <view class='{{db_tab[0].color}}'>{{db_tab[0].name}}</view>
+    </view>
+    <view bindtap='classifination'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+      </view>
+      <view class='{{db_tab[1].color}}'>{{db_tab[1].name}}</view>
+    </view>
+    <view class='fabu rel' bindtap='fabu'>
+      <image class='ab lr' mode='aspectFill' src='../img/jia@2x.png'></image>
+    </view>
+    <view>
+      <view class='rel' bindtap='mine_activity'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+      </view>
+      <view class='{{db_tab[2].color}}'>{{db_tab[2].name}}</view>
+    </view>
+    <view>
+      <view class='rel' bindtap='wode'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+      </view>
+      <view class='{{db_tab[3].color}}'>{{db_tab[3].name}}</view>
+    </view>
+  </view>
+</view>

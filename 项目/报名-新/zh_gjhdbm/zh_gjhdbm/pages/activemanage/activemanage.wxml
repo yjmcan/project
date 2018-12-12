@@ -1,0 +1,51 @@
+<!--pages/activemanage/activemanage.wxml-->
+<view class='mybtop'>
+  <image mode='aspectFill' class='mybimg' src='{{url}}{{options.logo}}'></image>
+  <view class='mybtopinfo'>
+    <view class='mybtitle'>{{options.title}}</view>
+    <view class='flex_center mybfont1'>
+      <image class='mybicon' src='../img/acaddress.png'></image>
+      <view wx:if="{{options.activity_type==1}}">线上活动</view>
+      <view wx:else>线下活动</view>
+    </view>
+    <view class='flex_center mybfont1'>
+      <image class='mybicon' src='../img/actime.png'></image>
+      <view>至{{options.end_time}} 结束</view>
+    </view>
+    <view class='flex_bet myjinxingbox'>
+      <!-- <view class='myjinxing'>进行中,可报名</view> -->
+      <view class='mybfont2' style='color:{{color}}'>￥{{options.zd_money}}起</view>
+    </view>
+  </view>
+</view>
+<view class='mybottom'>
+  <view class='mybotbox'>
+    {{options.total_ticket}}报名
+  </view>
+  <view class='mybotbox'>
+    {{options.gz_num}}关注
+  </view>
+</view>
+<view class="list">
+  <view class="listcon" bindtap='ticket_manage'>
+    <image mode='aspectFill' src='../img/piaojuan@2x.png'></image>
+    <text>票券管理</text>
+  </view>
+  <view class="listcon" bindtap='mine_income'>
+    <image mode='aspectFill' src='../img/huodongshouru@2x.png'></image>
+    <text>活动收入</text>
+  </view>
+   <view class="listcon" bindtap='edit_activity'>
+    <image mode='aspectFill' src='../img/huodongbianji_icon.png'></image>
+    <text>活动编辑</text>
+  </view> 
+  <view class="listcon" bindtap='close_activity'>
+    <image mode='aspectFill' src='../img/tingzhi@2x.png'></image>
+    <text wx:if="{{options.is_close==1}}">暂停报名</text>
+    <text wx:if="{{options.is_close==2}}">开启报名</text>
+  </view>
+   <view class="listcon" bindtap='see_write_off_code'>
+    <image mode='aspectFill' src='../img/hexiaoma_icon.png'></image>
+    <text>查看核销码</text>
+  </view>
+</view>

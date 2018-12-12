@@ -1,0 +1,78 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+<view class='contaienr'>
+  <view class='head'>
+    <view class='member'>
+      <!-- <view class='t_c fon_36 color_f'>会员规则</view>
+      <view class='pa fon_28 color_f'>会员规则</view>
+      <view class='pa fon_28 color_f'>会员规则</view>
+      <view class='pa fon_28 color_f'>会员规则</view>
+      <view class='pa fon_28 color_f'>本卡最终解释权归*****所有</view> -->
+      <image mode='aspectFill' src='{{role.ruleImg}}'></image>
+    </view>
+  </view>
+  <view class='list mar_t ba_f pa fon_28 bor_bottom'>
+    <view class='list_0 dis_in'>
+      <text style='color:red'>*</text>
+      <text>货站名称</text>
+    </view>
+    <view class='list_1 dis_in'>
+      <input name="name" placeholder='请输入货站名称' value='{{name}}'></input>
+    </view>
+  </view>
+  <view class='list ba_f pa fon_28 bor_bottom'>
+    <view class='list_0 dis_in'>
+      <text style='color:red'>*</text>
+      <text>联系电话</text>
+    </view>
+    <view class='list_1 dis_in'>
+      <input name="tel" type='number' placeholder='请输入货站联系电话' value='{{tel}}'></input>
+    </view>
+  </view>
+  <view class='list ba_f pa fon_28 bor_bottom'>
+    <view class='list_head'>
+      <text style='color:red'>*</text>
+      <text>门头照或者营业执照</text>
+      <text class='color_9 mar_l'>(二选一即可)</text>
+    </view>
+    <view class='choose_img'>
+      <view class='choose dis_in' wx:for="{{imgArray1}}" bindtap='delete_img' data-index='{{index}}'>
+        <image mode='aspectFill' src='{{item}}'></image>
+      </view>
+      <view class='choose dis_in' bindtap='choose_img_0' wx:if="{{imgArray1.length<1}}">
+        <image mode='aspectFill' src='../../img/tj.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='list ba_f pa fon_28 bor_bottom'>
+    <view class='list_head'>
+      <text style='color:red'>*</text>
+      <text>本人照片及身份证（正反面）</text>
+      <text class='color_9 mar_l'>(正反面)</text>
+    </view>
+    <view class='choose_img'>
+      <view class='choose dis_in' wx:for="{{imgArray2}}"  bindtap='delete_img3' data-index='{{index}}'>
+        <image mode='aspectFill' src='{{item}}'></image>
+      </view>
+      <view class='choose dis_in' bindtap='choose_img_2' wx:if="{{imgArray2.length<3}}">
+        <image mode='aspectFill' src='../../img/tj.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='list ba_f pa fon_28 bor_bottom'>
+    <view class='list_head'>
+      <text style='color:red'>*</text>
+      <text>入驻时间选择</text>
+      <text class='color_9 mar_l'></text>
+    </view>
+    <view class='pa rel' wx:for="{{list}}" bindtap='sele_index' data-index='{{index}}'>
+        <text>入驻平台{{item.costDays}}天</text>
+        <text class='mar_l'>共</text>
+        <text style='color:red'>{{item.costMoney}}</text>
+        <text>元</text>
+        <icon class='ab ud' style='right:20rpx;top:20rpx;' type='success' color='{{color}}' wx:if="{{ac_index==index}}"></icon>
+        <icon class='ab ud' style='right:20rpx;top:20rpx;' type='clear' color='#e5e5e5' wx:else></icon>
+    </view>
+  </view> -->
+  <button style='background:{{color}}' formType="submit" class='color_f con_30'>提交</button>
+</view>
+</form>

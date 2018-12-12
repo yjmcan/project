@@ -1,0 +1,45 @@
+/* zh_zbkq/pages/my/sjzx/wdkh.wxss */
+page {
+  background: #efeff4;
+  font-family: '微软雅黑', Helvetica, sans-serif;
+}
+.kong{
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666
+}
+.kong image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+}
+/**/
+.weui-cells{
+  font-size: 30rpx;
+}
+.weui-cells::after{
+  border: none;
+}
+.weui-cells::before{
+  border: none;
+}
+.weui-cell__ft{
+  font-size: 26rpx;
+  color: #f44444;
+}
+.himg{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.sj{
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+}

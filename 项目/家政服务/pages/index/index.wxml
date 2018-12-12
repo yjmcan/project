@@ -1,0 +1,40 @@
+<view class="container">
+  <view class='head'>
+     <swiper circular = "true"  duration="500" interval="1500" indicator-dots="true" indicator-color="#fff" indicator-active-color="#000">
+      <block wx:for="{{imgs}}" wx:key="*this">
+        <swiper-item>
+          <image bindtap='classfication_info' data-id='{{item.id}}' src="{{item.imgaddress}}" mode='aspectFill' class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper> 
+  <image mode='aspectFill' src='../images/'></image>
+  </view>
+  <view class='nav'>
+    <view class='inline' wx:for="{{nav}}" wx:key="*this" bindtap='classfication' data-name='{{item.servicetypename}}'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{item.imgaddress}}'></image>
+      </view>
+      <view class='align'>{{item.servicetypename}}</view>
+    </view>
+  </view>
+  <view class='recommend'>
+    <view class='recommend_head'>
+      <text>{{nav[0].servicetypename}}</text>
+    </view>
+    <view class='recommend_list' bindtap='classfication_info' wx:for="{{list}}" wx:key="*this" data-id='{{item.productid}}'>
+      <view>
+        <image mode='aspectFill' src='{{item.imgurl}}'></image>
+      </view>
+      <view>{{item.productname}}</view>
+      <view>{{item.productmsg}}</view>
+      <view class='price'>
+        <text>{{item.price}}元/{{item.productunit}}</text>
+         <!-- <text>0</text>
+        <text>可用卡次</text>  -->
+      </view>
+    </view>
+  </view>
+</view>
+<view class='phone rel' bindtap='phone'>
+    <image mode='aspectFill' class='ab udlr' src='../images/phones.png'></image>
+</view>

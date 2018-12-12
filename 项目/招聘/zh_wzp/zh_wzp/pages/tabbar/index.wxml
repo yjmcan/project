@@ -1,0 +1,8 @@
+<view class='fixed tabbar' wx:if="{{sele==true}}">
+  <block wx:for="{{tabbar}}">
+    <view bindtap='tabbar' data-url='{{item.url}}'>
+      <image mode='aspectFill' src='{{item.active?item.sele_icon:item.icon}}'></image>
+      <view style="color:{{item.active?item.sele_color:item.color}}">{{item.name}}</view>
+    </view>
+  </block>
+</view>

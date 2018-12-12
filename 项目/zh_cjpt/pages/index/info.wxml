@@ -1,0 +1,10 @@
+
+<view class="map_box">
+  <map id="navi_map" longitude="114.3538838625" latitude="30.5255869914" scale="16" markers="{{markers}}" polyline="{{polyline}}"></map>
+</view>
+
+<view class="text_box">
+  <view class="text">{{distance}}</view>
+  <view class="text">预计送达时间:15：30</view>
+  <view class="detail_button" bindtouchstart="goDetail">详情</view>
+</view>

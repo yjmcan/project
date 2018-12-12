@@ -1,0 +1,14 @@
+/* pages/more/index.wxss */
+.fine_3_0{
+  margin-top: 20rpx;
+}
+.fine_3_0>view:nth-child(1){
+  width: 30%;
+  background: red;
+}
+.fine_3_0>view image{
+  height: 220rpx;
+}
+.fine_3_0>view:nth-child(2){
+  width: 70%;
+}

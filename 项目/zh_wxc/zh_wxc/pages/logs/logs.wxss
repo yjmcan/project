@@ -1,0 +1,88 @@
+.logsheader{
+  background-color: white;
+  border-top: 1rpx solid #eee;
+  padding-top: 50rpx;
+  padding-bottom: 15rpx;
+}
+.userimg{
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 15rpx;
+  border-radius: 50%;
+}
+
+.logsnew1,.logsnew2{
+  background-color: white;  
+  padding: 20rpx 30rpx;
+  color: #888888;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.logsnew2{  
+  margin-top: 20rpx;
+}
+.logsimg{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.logsrit{
+  width: 13rpx;
+  height: 22rpx;
+}
+.logmoney{
+  margin-right: 40rpx;
+}
+
+/*——————————底部固定导航部分——————————  */
+.ifoot{
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 1000;
+  box-shadow: 0rpx 5rpx 10rpx #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24rpx;
+}
+.ifootbox{
+  width: 100%;
+  height: 120rpx;
+}
+.ifoot>.flex3{
+  width: 33.3%;
+}
+.ifoothome{
+  width: 57rpx;
+  height: 53rpx;
+  margin-bottom: 5rpx;
+}
+.ifootwode{
+  width: 50rpx;
+  height: 51rpx;
+  margin-bottom: 5rpx;
+}
+.ifootimg2{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.ifootfont1{
+  color: #ED414A;
+}
+.ifootfont2{
+  color: #999;
+}
+
+
+
+
+
+
+
+

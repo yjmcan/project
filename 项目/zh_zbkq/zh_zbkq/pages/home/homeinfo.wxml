@@ -1,0 +1,54 @@
+<!--zh_zbkq/pages/home/homeinfo.wxml-->
+<view class="home">
+  <view class="homebox">
+
+    <view class="header">
+      <view class="flex_center">
+        <image wx:if="{{zxinfo.user_id!='0'}}" class="touxiang" src="{{url}}{{zxinfo.md_logo}}"></image>
+        <image wx:else class="touxiang" src="{{url}}{{ptxx.logo}}"></image>
+        <view class="hzhong">
+          <view wx:if="{{zxinfo.user_id!='0'}}" class="hzhongview">{{zxinfo.md_name}}</view>
+          <view wx:else class="hzhongview">{{ptxx.name}}</view>
+          <view class="address gobyndsingle">{{zxinfo.address}}</view>
+        </view>
+      </view>
+      <button class="fenxiang" open-type='share'>分享好友</button>
+    </view>
+    <!--——————头部部分————————  -->
+
+    <view class="banner">
+      {{zxinfo.content}}
+    </view>
+    <block wx:if="{{zxinfo.imgs!=''}}" wx:for="{{zxinfo.imgarr}}" wx:for-item="imgitem">
+      <view class='img'>
+        <image mode='widthFix' bindtap='previewImage' data-src='{{imgitem}}' data-imgarr='{{zxinfo.imgarr}}' src="{{imgitem}}"></image>
+      </view>
+    </block>
+    <view class="hremark">
+      <view class="flex_item">
+        <view wx:if="{{zxinfo.xctime.day!=0}}">{{zxinfo.xctime.day}}天前</view>
+        <view wx:if="{{zxinfo.xctime.day==0&&zxinfo.xctime.hour!=0}}">{{zxinfo.xctime.hour}}小时前</view>
+        <view wx:if="{{zxinfo.xctime.day==0&&zxinfo.xctime.hour==0&&zxinfo.xctime.minut!=0}}">{{zxinfo.xctime.minute}}分钟前</view>
+        <view wx:if="{{zxinfo.xctime.day==0&&zxinfo.xctime.hour==0&&zxinfo.xctime.minut==0}}">刚刚</view>
+        <image class="watch" src="../../img/view.png"></image>
+        <view>{{zxinfo.yd_num}}</view>
+        <view class="lianxi" bindtap='tel' data-tel='{{zxinfo.tel}}'>联系Ta</view>
+      </view>
+      <!-- <image class="talkbox" src="../../img/fangduihua.png"></image> -->
+    </view>
+
+    <view class="zanbox" wx:if="{{zxinfo.collect.length!=0||zxinfo.assess.length!=0}}">
+      <view class="kuang"></view>
+      <view class="infozan">
+        <image class="aixin" src="../../img/aixin.png"></image>
+        <image class="infotou" wx:for="{{zxinfo.collect}}" wx:for-item="dzitem" src="{{dzitem.img}}"></image>
+      </view>
+      <view class="userbox" wx:if="{{zxinfo.assess.length!=0}}" wx:for="{{zxinfo.assess}}" wx:for-item="plitem">
+        <view class="comment">
+          <text>{{plitem.nickname}}:</text>
+          <text>{{plitem.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

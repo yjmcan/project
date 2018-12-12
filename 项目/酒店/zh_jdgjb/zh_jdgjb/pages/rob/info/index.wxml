@@ -1,0 +1,54 @@
+<view class='container'>
+     <image src="{{url}}{{robInfo.logo}}" class="slide-image"/>
+    <view class='pa fon_30 fon_wei ba_f'>
+        {{robInfo.title}}
+    </view>
+    <view class='pa_l ba_f'>
+        <view class='robPrice pa_l color_6'>
+            <text class='fon_24 middle timelimit'>限时抢购</text>
+            <text class='fon_40 middle mar_l' style='color:#F07A01'>￥{{robInfo.rob_money}}</text>
+            <text class='mar_l middle fon_26'>市场价格：{{robInfo.money}}元</text>
+        </view>
+        <view class='pa_t'>
+            <view class='fon_28 color_6'>
+            【开始时间】: {{robInfo.rob_start}} 准时开售
+        </view>
+        <view class='fon_28 color_6'>
+            【结束时间】: {{robInfo.rob_end}} 结束
+        </view>
+        <view class='fon_28 color_6'>
+            【预约时间】: {{robInfo.mark_start}}到{{robInfo.mark_end}}期间
+        </view>
+        </view>
+    </view>
+    <view class='mar_t ba_f pa_l'>
+        <view class='pa_t'>
+            <text class='dis_in left_border'> </text>
+            <text class='fon_wei dis_in mar_l'>产品描述</text>
+        </view>
+        <!-- <image mode='widthFix' class='wid' src='{{item}}' wx:for="{{info.imgs}}"></image> -->
+        <rich-text nodes="{{robInfo.details}}"></rich-text>
+    </view>
+    <view style='height:120rpx;'></view>
+    <view class='fixedTime bor_top'>
+        <view class='dis_in' style='background:#fff'>
+            <view class='pa_l color_6'>距离抢购结束时间</view>
+            <view class='pa_l color_6'>
+                <text class='dis_i times t_c color_f'>{{day}}</text>
+                <text>天</text>
+                <text class='dis_i times t_c color_f'>{{hour}}</text>
+                <text>小时</text>
+                <text class='dis_i times t_c color_f'>{{min}}</text>
+                <text>分</text>
+                <text class='dis_i times t_c color_f'>{{sec}}</text>
+                <text>秒</text>
+            </view>
+        </view>
+        <view class='dis_in color_f t_c' bindtap='rush' wx:if="{{group!='已结束'}}">
+            立即抢购
+        </view>
+        <view class='dis_in color_f t_c' wx:if="{{group=='已结束'}}">
+            抢购已结束
+        </view>
+    </view>
+</view>

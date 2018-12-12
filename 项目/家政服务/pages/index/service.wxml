@@ -1,0 +1,34 @@
+<view class='sipwer'>
+  <image mode='aspectFill' src='{{card_info.imgurl}}'></image>
+</view>
+<view class='info'>
+  <view>{{card_info.productname}}</view>
+  <view>{{card_info.productmsg}}</view>
+  <view>{{card_info.price}}元/{{card_info.productunit}}</view>
+   <view>
+     已服务
+    <text>{{card_info.producttimes}}</text> 人次 
+  </view> 
+   <view style='text-align:right' wx:if="{{card_info.supportcard == 1}}">可用卡次
+    <text>{{length}}</text>
+  </view> 
+</view>
+<view class='service_info'>
+  服务详情
+</view>
+
+<view class='service rel'>
+
+
+  <image class='ab udlr' mode='aspectFill' src='../images/23152351_03.png'></image>
+</view>
+<view style='font-size:26rpx;padding:20rpx;'>
+    <rich-text nodes="{{card_info.productdetail}}"></rich-text>
+</view>
+<view class='info_img'>
+  <image class='logo' wx:for="{{imgs}}" mode='widthFix' src='{{item}}'></image>
+</view>
+<view class='bottom_nav'>
+    <button bindtap='kaci'>卡次预约</button>
+    <button bindtap='service'>立即预约</button>
+</view>

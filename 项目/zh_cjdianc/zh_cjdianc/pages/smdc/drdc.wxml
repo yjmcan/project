@@ -1,0 +1,96 @@
+<!--zh_cjdianc/pages/smdc/drdc.wxml-->
+<view wx:if="{{isloading}}" class='loadinggif'>
+  <image src='../../img/loading.gif'></image>
+</view>
+<block wx:if="{{!isloading}}">
+  <!-- <view class='closeimg' style='background:{{color}}'>
+    <image bindtap='qxpd' src='../../img/gbpd.png'></image>
+  </view> -->
+  <view class='head' style='background:{{color}}'>
+    <view class='zwzh'>类型：{{type_name}}，桌号：{{table_name}}</view>
+    <button open-type='share' class='tjdcr flex-row flex-x-center flex-y-center' style='color:{{color}}'>
+      <view style='border:5rpx solid {{color}}'>+</view>
+      <view>添加拼单人</view>
+    </button>
+  </view>
+  <view class='main'>
+    <view class='pdlist'>
+      <view class='pdlisttop flex-row'>
+        <image src='{{drlsit.user.user_img}}'></image>
+        <view class='flex-grow-1'>
+          <view class='flex-row'>
+            <view class='flex-grow-1 gobyndsingle name'>{{drlsit.user.user_name}}
+              <text class='fquser'>发起人</text>
+            </view>
+            <navigator url='smdcxgsp?storeid={{storeid}}&zuid={{zuid}}&dr_id={{drid}}&tableid={{tableid}}' class='cxxg'>重新选购</navigator>
+          </view>
+          <view wx:for="{{drlsit.user.good}}" class='pdlistfot flex-row flex-y-center'>
+            <!-- <image src='../../img/gstel.png'></image> -->
+            <view class='flex-grow-1 flex-row flex-y-center'>
+              <view class='flex-grow-1'>
+                <view>{{item.name}}</view>
+                <view class='spec'>{{item.spec}}</view>
+              </view>
+              <view class='num'>x{{item.num}}</view>
+            </view>
+            <view class='money'>￥{{item.money}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='pdlist' wx:for='{{drlsit.son}}' wx:for-item="sonitem">
+      <view class='pdlisttop flex-row'>
+        <image src='{{sonitem.user_img}}'></image>
+        <view class='flex-grow-1'>
+          <view class='flex-row'>
+            <view class='flex-grow-1 gobyndsingle name'>{{sonitem.user_name}}</view>
+            <view class='del' bindtap='sc' data-sonid='{{sonitem.son_id}}'>删除Ta</view>
+          </view>
+          <view wx:for="{{sonitem.good}}" class='pdlistfot flex-row flex-y-center'>
+            <!-- <image src='../../img/gstel.png'></image> -->
+            <view class='flex-grow-1 flex-row flex-y-center'>
+              <view class='flex-grow-1'>
+                <view>{{item.name}}</view>
+                <view class='spec'>{{item.spec}}</view>
+              </view>
+              <view class='num'>x{{item.num}}</view>
+            </view>
+            <view class='money'>￥{{item.money}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='hjsp'>
+      <text>{{drlsit.people}}人,</text>
+      <text>{{drlsit.good_num}}份商品</text>
+    </view>
+  </view>
+  <view class='dbtjdd flex-row flex-y-center'>
+    <view class='dbtjddl flex-row flex-y-center'>
+      <!-- <view class='flex-grow-0'>{{drlsit.people}}人，{{drlsit.good_num}}份商品</view>  -->
+      <view class='flex-grow-1'>合计
+        <text>￥{{drlsit.money}}</text>
+      </view>
+    </view>
+    <view class='dbtjddr'>
+      <form bindsubmit="tjddformSubmit" report-submit="true" bindreset="formReset">
+        <button formType="submit" style='background:{{color}}'>
+          提交订单
+        </button>
+      </form>
+    </view>
+  </view>
+</block>
+<button class='hddb' bindtap='sxsj'>
+  <image src='../../img/shuaxin.png'></image>
+</button>
+<view wx:if="{{drlsit.drorder.state==2}}" class='sdcg'>
+  <image src='../../img/suo.png'></image>
+  <view>订单已锁定</view>
+  <button bindtap='jsdd'>解锁并继续拼单</button>
+</view>
+<view wx:if="{{drlsit.drorder.state==3}}" class='sdcg' style='z-index: 1100;'>
+  <image src='../../img/suo.png'></image>
+  <view>拼单已结束</view>
+  <!-- <button bindtap='jsdd'>解锁并继续拼单</button> -->
+</view>

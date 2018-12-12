@@ -1,0 +1,145 @@
+/* zh_qygw/pages/home/index.wxss */
+.home{
+  width: 100%;
+  overflow-x: hidden;
+}
+.iheader{
+  width: 100%;
+  height: 250rpx;
+}
+.iheader>image{
+  width: 100%;
+  height: 100%;
+}
+.ibanner{
+  padding: 30rpx;
+  margin: 20rpx 0rpx;
+  background-color: white;
+}
+.ibtitle{
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.ibxian{
+  background-color: #28B3E5;
+  width: 40rpx;
+  height: 7rpx;
+  margin: 15rpx auto;
+}
+.ibtext{
+  color: #666;
+  line-height: 45rpx;
+}
+
+/*——————————————推广功能——————————————*/
+.isection{
+  background-color: white;
+  margin-top: 15rpx;
+  padding-top: 30rpx;
+}
+.iseclist{
+  display: flex;
+  flex-wrap: wrap;
+}
+.isecbox{
+  width: 49%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30rpx 0rpx;
+}
+.isecbox>image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.isecfont1{
+  width: 80%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #666;
+  margin-top: 25rpx;
+  text-align: center;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.isecfont2{
+  width: 80%;
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 25rpx;
+  text-align: center;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+/*—————————————优势部分—————————————  */
+.advantage{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 30rpx 30rpx 10rpx;
+}
+.advlist>image{
+  width: 100%;
+  height: 250rpx;
+  margin-bottom: 20rpx;
+}
+
+/*————————他们都在使用小程序部分——————————*/
+.uselist{
+  display: flex;
+  flex-wrap: wrap;
+}
+.usebox{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0rpx;
+}
+.usebox>image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.usebox>view{
+  width: 80%;
+  text-align: center;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.footbox2{
+  width: 100%;
+  height: 115rpx;
+}
+.foot2{
+  width: 100%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+}
+.footlist2{
+  width: 33.3%;
+}
+.footlist2>image{
+  width: 45rpx;
+  height: 45rpx;
+}
+

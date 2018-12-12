@@ -1,0 +1,20 @@
+<!--pages/fabu/fankui.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='home'>
+    <view class='kbanner'>
+      <textarea class='kbantext' placeholder='提交完成任务凭证' name="con"></textarea>
+      <view class='flex_center' bindtap="chooseImg">
+        <image class='kcamera' src='../img/shangchuan@2x.png'></image>
+        <view>点击上传图片</view>
+      </view>
+    </view>
+    <view class='kimgbox'>
+      <view class='fankuiimg' wx:for="{{imgArray1}}" wx:for-item="item" wx:key="*this">
+        <image class='upfile' src='{{url}}{{item}}' data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+        <image class='shanchu' src='../img/tianjia@2x.png' data-index="{{index}}" catchtap="deleteImg"></image>
+      </view>
+    </view>
+
+    <button class='fsave' formType="submit">提交</button>
+  </view>
+</form>

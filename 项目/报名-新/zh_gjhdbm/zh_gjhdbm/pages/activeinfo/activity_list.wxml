@@ -1,0 +1,5 @@
+<view class="bm_list" wx:for="{{bmlist}}">
+    <image mode='aspectFill' src='{{item.img}}'></image>
+    {{item.name}}
+    <text>{{item.time}}</text>
+</view>

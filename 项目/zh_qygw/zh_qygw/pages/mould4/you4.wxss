@@ -1,0 +1,14 @@
+/* zh_qygw/pages/mould4/you4.wxss */
+page{background-color: #000;}
+.index{
+  width: 100%;
+  overflow-x: hidden;
+  height: auto;
+}
+.index>image{
+  width: 100%;
+  height: 1200rpx;
+}
+.index>image:nth-child(2){
+  margin-top: -10px;
+}

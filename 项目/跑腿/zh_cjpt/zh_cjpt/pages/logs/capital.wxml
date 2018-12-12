@@ -1,0 +1,11 @@
+<view class='container ba_f'>
+  <view bindtap='show' data-index="{{index}}" class="list fon_30 " wx:for="{{help}}" bindtap='help_info' data-info='{{item}}'>
+    <view class='fon_30 title bor_bottom pa'>
+      <view class='dis_in'>{{index+1}} 、</view>
+      <view class='dis_in'>{{item.question}}</view>
+    </view>
+    <!-- <view class="mar_t" style='padding:0 0 0 54rpx'>
+      <rich-text class='color_9 fon_24' nodes="{{item.answer}}"></rich-text>
+    </view> -->
+  </view>
+</view>

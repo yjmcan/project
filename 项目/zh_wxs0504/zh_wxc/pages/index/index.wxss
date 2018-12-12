@@ -1,0 +1,237 @@
+/**index.wxss**/
+.btn1{
+  height:70rpx;
+  position:absolute;
+  top:0;
+  width:100%;
+  background: #fff;
+  border:0;
+  z-index: 2;
+  filter:alpha(opacity=0);  
+      -moz-opacity:0;  
+      -khtml-opacity: 0;  
+      opacity: 0;  
+}
+.btn2{
+  position:absolute;
+  left:86rpx;
+  height:100%;
+  width:360rpx;
+  filter:alpha(opacity=0);  
+      -moz-opacity:0;  
+      -khtml-opacity: 0;  
+      opacity: 0; 
+  z-index: 2
+}
+button::after{
+  border:0
+}
+.header{
+  width: 100%;
+  height: 330rpx;
+  position: relative;
+}
+.headerimg{
+  width: 100%;
+  height: 330rpx;
+  background-color: pink;
+}
+.searchbox{
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 55%;
+  height: 50rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 20%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0rpx 10rpx 50rpx;
+  border-radius: 50rpx;
+}
+.searchinp{
+  width: 330rpx;
+  height: 30rpx;
+}
+.searchimg{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.swiper{
+  height:330rpx;
+}
+.swiper swiper-item image{
+  width: 100%;
+}
+
+/* 热门模块开始 */
+.marry {
+  width: 100%;
+  height: 90rpx;
+  background-color: white;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #eee;
+  overflow-x: scroll;
+  white-space:nowrap;
+  color: #999;
+}
+.all,
+.proitem {
+  padding: 20rpx 0rpx;
+  position: relative;
+  text-align: center;
+  margin: 0rpx 20rpx;
+}
+.all.weuibaron,
+.proitem.weuibaron {
+  color: #ED414A;
+  position: relative;
+  border-bottom: 5rpx solid #ED414A; 
+}
+
+.conbox{
+  background-color: white;
+  margin-top: 15rpx;
+  display: flex;
+  padding: 15rpx 20rpx 15rpx 30rpx;
+  flex-direction: row;
+}
+.context{
+  display: flex;
+  flex-direction: column; 
+  margin-left: 30rpx;
+  width: 76%;
+}
+.confont2{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 30rpx;
+}
+.conimg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: pink;
+}
+.money{
+  margin-right: 30rpx;
+  font-size:32rpx;
+}
+.conyewu{
+  width: 65rpx;
+  height: 53rpx;
+  color: white;
+  position: relative;
+  margin-top: 0;
+}
+.conyewu>image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0rpx;
+  left: 0rpx;
+}
+.yewutext{
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.conzan{
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 37rpx;
+}
+.confont1{
+  position: absolute;
+  right: 0;
+  bottom:0;
+  width: 40%;
+  text-align: right;
+  color: #ED414A;  
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.msg{
+  align-items:left;
+  margin-left: 20rpx;
+}
+.jilu{
+  position: absolute;
+  right: 30rpx;
+}
+.all{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+
+/*——————————底部固定导航部分——————————  */
+.ifoot{
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 1000;
+  box-shadow: 0rpx 5rpx 10rpx #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24rpx;
+}
+.ifootbox{
+  width: 100%;
+  height: 120rpx;
+}
+.ifoot>.flex3{
+  width: 33.3%;
+}
+.ifoothome{
+  width: 57rpx;
+  height: 53rpx;
+  margin-bottom: 5rpx;
+}
+.ifootwode{
+  width: 50rpx;
+  height: 51rpx;
+  margin-bottom: 5rpx;
+}
+.ifootimg2{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.ifootfont1{
+  color: #ED414A;
+}
+.ifootfont2{
+  color: #999;
+}
+.conzan{
+  font-size: 24rpx;
+  color: #666;
+}
+.conzan>image{
+  width: 30rpx;
+  height: 34rpx;
+  margin-right: 10rpx;
+}
+
+.none image{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 150rpx 0 50rpx;
+}
+

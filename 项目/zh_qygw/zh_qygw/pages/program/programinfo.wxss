@@ -1,0 +1,75 @@
+/* pages/program/programinfo.wxss */
+.home{
+  padding: 0rpx 20rpx 20rpx;
+}
+.info{
+  margin-top: 20rpx;
+  background-color: white;
+  border-radius: 15rpx;
+  padding:20rpx;
+}
+.infotitle{
+  line-height: 50rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #2083C9;
+  padding-bottom: 10rpx;
+}
+.infobanner{
+  margin: 20rpx 0rpx;
+}
+.infotime{
+  font-size: 24rpx;
+  text-align: right;
+}
+.hcopyright{
+  color: #2083C9;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+.infoimg{
+  margin:20rpx 0rpx;
+  width: 100%;
+}
+/*—————————————底部部分开始———————————————*/
+.hfootbox{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+.hfooter{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  border-top: 1rpx solid #eee;
+}
+.femail{
+  width: 45rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.hfooter>.flex1{
+  width: 50%;
+  height: 80rpx;
+}
+.hfback{
+  background-color: #2083C9;
+  color: white;
+}
+.fphone{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.content2{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}

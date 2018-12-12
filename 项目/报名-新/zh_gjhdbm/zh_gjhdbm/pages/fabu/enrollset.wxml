@@ -1,0 +1,174 @@
+<!--pages/fabu/enrollset.wxml-->
+<view class='index'>
+  <!-- <view class='eheader'>
+    <view class='etitle'>
+      <view class='exian'></view>
+      <view>参与方式</view>
+    </view>
+    <view class="marry">
+      <block wx:for="{{luntext}}" wx:key="*this">
+        <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+          <view id="{{index}}">{{item}}</view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+
+  <view class='eheader' wx:if="{{activeIndex==0}}">
+    <view class='etitle'>
+      <view class='exian'></view>
+      <view>报名信息</view>
+    </view>
+    <view class='elabel'>
+        <view wx:for="{{bminfo}}" wx:key="*this" bindtap='select_info' data-index='{{index}}' class='{{item.class}}'>{{item.name}}</view>
+    </view>
+    <view class='interval'></view>
+    <view class='ticket'>
+
+      <view class='etitle'>
+        <view class='exian'></view>
+        <view>票券设置</view>
+        <!-- <view>服务费需知</view> -->
+      </view>
+      <view class='ticket_fill' wx:for="{{set_up}}" wx:if="{{item.one==true}}" wx:key="*this">
+        <view class='fill_head'>
+          <view class='ticket_name'>
+            <view bindtap='{{item.ticket_fixed_two}}' data-id='{{item.id}}' wx:if="{{item.ticket_input==false}}">
+              <view>{{item.ticket_name_one}}</view>
+              <view>
+                <image mode='aspectFit' src='../image/fabu.png'></image>
+              </view>
+            </view>
+            <view wx:if="{{item.ticket_input==true}}">
+              <input bindblur="{{item.bindblur}}" data-id='{{item.id}}'></input>
+            </view>
+            <view bindtap='{{item.delete_ticket}}' data-id='{{item.id}}'>
+              <image mode='aspectFit' src='../image/guanbi.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='ticket_type ticket_all'>
+          <view>类型</view>
+          <view>
+            <text class='border_left_top border_left_bottom {{item.free_Admission_one}}' bindtap='{{item.free_Admission}}' data-id='{{item.id}}'>免费</text>
+            <text class='border_right_top border_right_bottom {{item.charge_one}}' bindtap='{{item.charge}}' data-id='{{item.id}}'>收费</text>
+          </view>
+        </view>
+        <view class='ticket_num ticket_all' wx:if="{{item.charge_one!='charge'}}">
+          <view>价格</view>
+          <view class='input_character'>
+            <view>
+              <input type='digit' bindblur='{{item.ticket_price}}' data-id='{{item.id}}' class='input_num' placeholder='该票券价格' placeholder-style='text-align:center;font-size:24rpx;' value='{{item.price}}'></input>
+            </view>
+            <view>元</view>
+          </view>
+        </view>
+        <view class='ticket_num ticket_all'>
+          <view>总数</view>
+          <view class='input_character'>
+            <view>
+              <input bindblur='{{item.ticket_total}}' value='{{item.total}}' data-id='{{item.id}}' type='number' class='input_num' placeholder='票券总数默认不受限制' placeholder-style='text-align:center;font-size:24rpx;'></input>
+            </view>
+            <view>张</view>
+          </view>
+        </view>
+        <view class='ticket_homebuying_restrictions ticket_all'>
+          <view>限购</view>
+          <view class='input_character'>
+            <view>
+              <input bindblur='{{item.ticket_limit}}' data-id='{{item.id}}' value='{{item.limit}}' type='number' class='input_num' placeholder='每人购买限制（默认不受限制）' placeholder-style='text-align:center;font-size:24rpx;'></input>
+            </view>
+            <view>张/人</view>
+          </view>
+        </view>
+        <view class='ticket_to_examine ticket_all'>
+          <view>审核</view>
+          <text>需要审核报名信息</text>
+          <switch bindchange="{{item.to_examine}}" data-id='{{item.id}}' checked="{{item.examine}}" style='margin-left:20rpx;'></switch>
+        </view>
+      </view>
+      <view class='interval'></view>
+      <view class='add_ticket' wx:if="{{add==true}}" bindtap='add_ticket'>添加票券</view>
+    </view>
+  </view>
+  <button class='next_step' bindtap='next_step' style='background:{{color}};border:2rpx solid {{color}}'>下一步</button>
+  <!-- <view wx:if="{{activeIndex==1}}">
+    <view class='eheader flex_bet'>
+      <view class='etitle'>
+        <view class='exian'></view>
+        <view>费用类型</view>
+      </view>
+      <view class='estyle'>
+        <block wx:for="{{estyle}}" wx:key="*this">
+          <view id="{{index}}" style='display:inline-block' class="proitem2 {{activeIndex2 == index ? 'weuibaron' : ''}}" bindtap="tabstyle">
+            <view id="{{index}}">{{item}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='eheader'>
+      <view class='etitle'>
+        <view class='exian'></view>
+        <view>参与说明</view>
+      </view>
+      <view class='remark flex1'>不需要报名，可以直接参与</view>
+    </view>
+  </view> -->
+
+  <view wx:if="{{activeIndex==1}}">
+    <view class='eheader flex_bet'>
+      <view class='etitle'>
+        <view class='exian'></view>
+        <view>费用类型</view>
+      </view>
+      <view class='estyle'>
+        <block wx:for="{{estyle}}" wx:key="this">
+          <view id="{{index}}" style='display:inline-block' class="proitem2 {{activeIndex2 == index ? 'weuibaron' : ''}}" bindtap="tabstyle">
+            <view id="{{index}}">{{item}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='eheader'>
+      <view class='etitle'>
+        <view class='exian'></view>
+        <view>参与说明</view>
+      </view>
+      <textarea auto-height='true' style='min-height:250rpx;' class='ebeizhu' placeholder-style='color:#c9c9c9;' placeholder='请认真填写参与活动的具体方式，以便让他人更好的参与你的活动'></textarea>
+      <view class='etelbox'>
+        <view class='etelphone flex_bet' wx:for="{{information}}" wx:key="*this">
+          <view class='flex_center'>
+            <view class='etelnum'>{{item.name}}</view>
+            <input class='etelinput' placeholder='选填' type='number' maxlength='11'></input>
+          </view>
+          <image bindtap='delete_click' data-index='{{index}}' class='eshanchu' src='../img/shanchu.png'></image>
+        </view>
+      </view>
+
+      <!-- <view class='eaddstyle flex1' bindtap='contact_information'>
+        <view>添加联系方式</view>
+        <view class='eaddfont'>+</view>
+      </view> -->
+      <view class='backdrop' wx:if="{{contact_informations==true}}"></view>
+      <view class='add_infomation' wx:if="{{contact_informations==true}}">
+        <view class='add_contacts'>
+          <view>添加联系人</view>
+          <view wx:for="{{contact_information}}" wx:key="*this" style='color:#f66926;font-size:26rpx;' bindtap='add_click' data-id='{{item.id}}'>{{item.name}}</view>
+        </view>
+        <view bindtap='cancel_contacts'>取消</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='delete_ticket' wx:if="{{delete_ticket==true}}">
+  <view></view>
+  <view>
+    <view class='prompt'>温馨提示</view>
+    <view class='prompt_info'>是否删除此票券信息？</view>
+    <view class='prompt_button'>
+      <view bindtap='cancel'>取消</view>
+      <view bindtap='confirm'>确认</view>
+    </view>
+  </view>
+</view>

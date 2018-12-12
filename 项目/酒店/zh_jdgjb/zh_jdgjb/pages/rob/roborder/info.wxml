@@ -1,0 +1,119 @@
+<view class='container'>
+    <view class='top_status pa' style='background:{{color}}'>
+        <view class='pa color_f dis_in wid_50'>
+            <text class='mar_l pa_l' wx:if="{{orderInfo.state=='2'}}">审核中</text>
+            <text class='mar_l pa_l' wx:if="{{orderInfo.state=='3'}}">待核销</text>
+            <text class='mar_l pa_l' wx:if="{{orderInfo.state=='4'}}">已核销</text>
+            <text class='mar_l pa_l' wx:if="{{orderInfo.state=='5'}}">已拒绝</text>
+            <text class='mar_l pa_l' wx:if="{{orderInfo.state=='6'}}">已作废</text>
+        </view>
+        <view class='pa color_f t_r dis_in wid_50'>
+            <image mode='aspectFill' src='../../img/qianggou/hx_code.png' class='img_left mar_r'></image>
+        </view>
+    </view>
+    <block>
+        <view class='pa ba_f'>
+            <image mode='aspectFill' class='img_logo middle' src='{{url}}{{orderInfo.store_logo}}'></image>
+            <text class='mar_l middle color_6'>{{orderInfo.store_name}}</text>
+        </view>
+        <view class='shopInfo pa'>
+            <image mode='aspectFill' class='dis_t' src='{{url}}{{orderInfo.logo}}'></image>
+            <view class='fon_30 color_6 dis_t'>
+                {{orderInfo.title}}
+            </view>
+            <view class='dis_t t_r'>
+                <view class='color_6'>￥{{orderInfo.money}}</view>
+                <view class='color_9'>x1</view>
+            </view>
+        </view>
+        <view class='pa t_r ba_f color_6 bor_bottom'>
+            合计 ￥{{orderInfo.money}}
+        </view>
+        <view class='ba_f t_c'>
+            <view class='pa_t dis_in wid_50 bor_right color_6' bindtap='sele_address'>
+                <image mode='aspectFill' class='img_left middle' src='../../img/qianggou/hx_daohang.png'></image>
+                <text class='middle mar_l'>商家导航</text>
+            </view>
+            <view class='pa_t dis_in wid_50 color_6' bindtap='makePhone' data-tel="{{orderInfo.store_tel}}">
+                <image mode='aspectFill' class='img_left middle' src='../../img/qianggou/hx_tel.png'></image>
+                <text class='middle mar_l'>拨打电话</text>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class='pa bor_bottom ba_f mar_t'>
+            <image mode='aspectFill' class='img_left middle' src='../../img/qianggou/hx_yuyue.png'></image>
+            <text class='mar_l middle color_6'>预约到店时间</text>
+        </view>
+        <view class='ba_f fon_30 pa color_6'>
+            <view class='pa_t'>
+                <block wx:if="{{orderInfo.enter_time=='0'&&orderInfo.state=='2'||orderInfo.state=='5'}}">
+                    <view class='dis_in t_c' style="width:{{date!=null?'50%':'100%'}};">
+                        <picker style='height:40rpx;' mode="date" value="{{date}}" start="{{today}}" end="" bindchange="bindDateChange">
+                            <view wx:if="{{date==null}}">请选择到店时间</view>
+                            <view class='dis_in wid_50'>{{date}}</view>
+                        </picker>
+                    </view>
+                    <view class='dis_in t_r wid_50' style="display:{{date!=null?'':'none'}}">
+                        <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+                            <button formType="submit" class='submission fon_28 color_f' style='background:{{color}}'>提交预约</button>
+                        </form>
+                    </view>
+                </block>
+                <block wx:if="{{orderInfo.enter_time!='0'&&orderInfo.state=='2'}}">
+                    <view class='t_c'>正在审核中</view>
+                </block>
+                <!-- <block wx:if="{{orderInfo.enter_time!='0'&&orderInfo.state=='5'}}">
+                    <view class='t_c'>已拒绝预约</view>
+                </block> -->
+                <block wx:if="{{orderInfo.enter_time!='0'&&orderInfo.state=='3'||orderInfo.state=='4'}}">
+                    <view class='t_c'>{{orderInfo.enter_time}}</view>
+                </block>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{orderInfo.state=='3'&&today<=orderInfo.enter_time&&orderInfo.state!='6'}}">
+        <view class=' pa bor_bottom ba_f mar_t'>
+            <image mode='aspectFill ' class='img_left middle ' src='../../img/qianggou/hx_icon.png'></image>
+            <text class='mar_l middle color_6 '>核销订单</text>
+        </view>
+        <view class='pa_l t_c ba_f code '>
+            <image class='mar_t ' mode='aspectFill ' src='data:image/png;base64,{{robCode}}'></image>
+            <view class='fon_26 color_9 '>使用时请向商家出示二维码</view>
+        </view>
+    </block>
+    <view class='pa fon_28' style='color:red'>
+        请在预约当天到店入住,超出预约时间,此订单将作废
+    </view>
+    <block>
+        <view class='pa bor_bottom ba_f '>
+            <image mode='aspectFill ' class='img_left middle ' src='../../img/qianggou/user_icon.png'></image>
+            <text class='mar_l middle color_6 '>用户信息</text>
+        </view>
+        <view class='pa ba_f color_6 '>
+            <view>
+                联系人：{{orderInfo.name}}
+            </view>
+            <view>
+                联系电话：{{orderInfo.tel}}
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class='pa bor_bottom ba_f mar_t '>
+            <image mode='aspectFill ' class='img_left middle ' src='../../img/qianggou/order_icon.png'></image>
+            <text class='mar_l middle color_6 '>订单详情</text>
+        </view>
+        <view class='pa ba_f color_6 '>
+            <view>
+                订单编号：{{orderInfo.order_num}}
+            </view>
+            <view>
+                下单时间：{{orderInfo.time}}
+            </view>
+            <view>
+                支付方式：微信支付
+            </view>
+        </view>
+    </block>
+</view>

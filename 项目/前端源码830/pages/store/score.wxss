@@ -1,0 +1,7 @@
+/* pages/store/score.wxss */
+.list:last-child{
+  border: none;
+}
+.list>view{
+  width: 50%;
+}

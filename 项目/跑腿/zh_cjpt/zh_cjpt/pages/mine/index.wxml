@@ -1,0 +1,100 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class="container">
+    <view class='head' wx:if="{{list.length>0}}">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{list}}">
+          <swiper-item>
+            <image mode='aspectFill' src="{{url}}{{item.logo}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='body'>
+      <view class='text_list'>
+        <view>姓名</view>
+        <view>
+          <input name="name" placeholder='请输入您的真实姓名' value='{{link_name}}'></input>
+        </view>
+      </view>
+      <view class='text_list' wx:if="{{getSystem.is_dxyz==1}}">
+        <view>联系方式</view>
+        <view>
+          <input name="tel" bindinput='user_tel' type='number' placeholder='请输入您的手机号' value='{{link_tel}}'></input>
+        </view>
+      </view>
+      <view class='text_list' wx:if="{{getSystem.is_dxyz==1}}">
+        <view>验证码</view>
+        <view>
+          <input name="code" type='number' placeholder='请输入短信验证码'></input>
+          <view class='code' wx:if="{{getmsg=='获取验证码'}}" bindtap='sendmessg'>{{getmsg}}</view>
+          <view class='code' style='color:#999;font-size:22rpx' wx:else>{{getmsg}}</view>
+        </view>
+      </view>
+      <view class='text_list'>
+        <view>个人邮箱</view>
+        <view>
+          <input name="email" placeholder='请输入您的邮箱账号' value='{{email}}'></input>
+        </view>
+      </view>
+      <view class='text_list' wx:if="{{getSystem.is_dxyz==2}}">
+        <view>联系方式</view>
+        <view>
+          <input style='width:65%;' class='dis_in' name="code" disabled='true' type='number' value='{{phone}}' placeholder='验证微信手机号'></input>
+          <button style='background:{{color}}' class='dis_in vfTion' open-type='getPhoneNumber'  bindgetphonenumber="getPhoneNumber">微信验证</button>
+        </view>
+      </view>
+      <view class='text_list'>
+        <view>登录密码</view>
+        <view>
+          <input maxlength='8' name="password" placeholder='请输入密码' value='{{link_name}}'></input>
+        </view>
+      </view>
+      <view class='text_list'>
+        <view>确认密码</view>
+        <view>
+          <input maxlength='8' name="confirm_pw" placeholder='请再次输入密码' value='{{link_name}}'></input>
+        </view>
+      </view>
+      <view class='upload_id'>
+        <view>请上传您的个人照片</view>
+        <view>
+          <view style='background: #ffdca8' bindtap='choose' data-type='1' wx:if="{{upload_one==null}}">
+            <image class='sele_img' mode='widthFix' src='../img/logo.png'></image>
+            个人照片
+          </view>
+          <view bindtap='choose' data-type='1' wx:else>
+            <image class='prompt_img' mode='widthFix' src='{{upload_one}}'></image>
+          </view>
+        </view>
+      </view>
+      <view class='upload_id'>
+        <view>请上传您的身份证正反面照片</view>
+        <view>
+          <view style='background: #ffdca8' bindtap='choose' data-type='2' wx:if="{{upload_two==null}}">
+            <image class='sele_img' mode='widthFix' src='../img/zhenmian@2x.png'></image>
+            身份证正面
+          </view>
+          <view bindtap='choose' data-type='2' wx:else>
+            <image class='prompt_img' mode='aspectFill' src='{{upload_two}}'></image>
+          </view>
+          <view style='background: #ffdca8' bindtap='choose' data-type='3' wx:if="{{upload_three==null}}">
+            <image class='sele_img' mode='widthFix' src='../img/fanmian@2x.png'></image>
+            身份证反面
+          </view>
+          <view bindtap='choose' data-type='3' wx:else>
+            <image class='prompt_img' mode='widthFix' src='{{upload_three}}'></image>
+          </view>
+        </view>
+      </view>
+      <view class='prompts'>请真实填写您的真实信息，保证我们能尽快联系到您</view>
+      <view class='protocol rel'>
+        <icon class='ab ud' bindtap='selse_succ' wx:if="{{succ==true}}" type='success' color='{{color}}'></icon>
+        <icon class='ab ud' bindtap='selse_succ' wx:if="{{succ==false}}" type='success' color='#e5e5e5'></icon>
+        <text>我已阅读并了解</text>
+        <text bindtap='xieyi' style='color:{{color}}'>【入驻申请协议】</text>
+      </view>
+      <button class='submit' form-type='submit' style='background:{{color}}'>立即申请入驻</button>
+    </view>
+  </view>
+</form>
+<view class='title fon_28' style='background:{{color}}' wx:if="{{close==true}}">{{title}}</view>

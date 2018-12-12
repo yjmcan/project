@@ -1,0 +1,38 @@
+/* zh_jdgjb/pages/rob/roborder/index.wxss */
+@import '../../public.wxss';
+
+.active{
+    border-bottom: 2rpx solid red;
+}
+.tabs{
+    display: flex;
+    justify-content: center;
+}
+.tabs>navigator{
+    padding:0 20rpx;
+    width: 30%;
+}
+.tabs>navigator view{
+   padding: 20rpx 30rpx;
+}
+.img_logo{
+    width: 80rpx;
+    height: 80rpx;
+}
+.shopInfo image{
+    width: 32%;
+    height: 160rpx;
+    border-radius: 8rpx;
+}
+.shopInfo>view:nth-child(2){
+    width: 50%;
+    margin-left: 3%;
+}
+.shopInfo>view:nth-child(3){
+    width: 15%;
+}
+.seeInfo{
+    padding: 12rpx 20rpx;
+    background: orange;
+    border-radius: 8rpx;
+}

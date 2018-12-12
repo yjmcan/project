@@ -1,0 +1,50 @@
+<!--pages/index/task_detail.wxml-->
+<view class="home" wx:if="{{none.code==200}}">
+  <form bindsubmit="formSubmit">
+    <view class="classes">{{task.course_name}}{{task.name}}</view>
+    <view class="title">{{task.unit_name}}</view>
+    <view class="anser_con">
+      <view class="head">{{task.title}}</view>
+      <view class="video" bindtap='yu_lan'>
+        <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+          objectFit="cover" direction="-90" poster="{{url}}{{task.thumb}}"></video>
+      </view>
+      <view class="btn flex3">
+        <!-- <view wx:if="{{voices}}">
+          <block wx:for="{{voices}}"> -->
+            <view class="answer_box" bindtap="audioPlay" wx:if="{{my_answer}}">
+              <view class="date flex_center">
+                <view>我的回答:</view>
+                 <view class="answer_time">{{min_time}}''</view> 
+                <audio src="{{url}}{{src}}" class="" id="myAudio"></audio>
+              </view>
+            <!-- </view> -->
+          <!-- </block> -->
+        </view>
+        <view class="flex_center">
+          <view bindtap='start' class="answer">点击录音</view>
+          <view bindtap='stop' class="answer">停止录音</view>
+          <!-- <view class="answer" bindtouchstart="touchdown" bindtouchend="touchup" wx:if="{{voices==''&&hidden==hidden}}">答题</view>
+          <view class="answer" bindtap="again" wx:if="{{voices!=''&&hidden==hidden}}">重新答题</view> -->
+        </view>
+        <view>
+          <view class="next" wx:if="{{page!=all_length}}" bindtap='onNext'>下一题</view>
+          <button formType="submit" class="submit" wx:if="{{page==all_length}}">提交作业</button>
+        </view>
+        <view>{{page}}/{{all_length}}</view>
+      </view>
+    </view>
+  </form>
+
+  <!--话筒-->
+  <view class="megaphone flex1" wx:if="{{isSpeaking}}">
+    <image src="../img/magephone.gif"></image>
+    <!-- 正在录音
+    <icon type="waiting" size="40"/> -->
+  </view>
+</view>
+
+<!--暂无数据-->
+<view wx:if="{{none.code==501}}" class="none_all">
+  <image src="../img/none.png"></image>
+</view>

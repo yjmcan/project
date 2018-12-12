@@ -1,0 +1,5 @@
+/* zh_cjdianc/pages/index/spfl.wxss */
+@import "/zh_cjdianc/pages/index/index.wxss";
+.tjsj{
+  margin-top: 0;
+}

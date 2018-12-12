@@ -1,0 +1,58 @@
+<!--zh_dianc/pages/info/sjhj.wxml-->
+<view class='fwxq'>
+  <view wx:if="{{store.details!=''}}">
+    <view class='title'>
+      <view class='hx'></view>
+      <view class='hxwz'>关于我们</view>
+      <view class='hx'></view>
+    </view>
+    <view class="weui-cell" style='background:white;font-size:26rpx;color:#666;margin-bottom:20rpx;'>
+      <rich-text nodes="{{store.details}}"></rich-text>
+    </view>
+  </view>
+  <view style='margin-bottom:20rpx;'>
+    <view class='title'>
+      <view class='hx'></view>
+      <view class='hxwz'>商家视频</view>
+      <view class='hx'></view>
+    </view>
+    <view class='video' wx:if="{{store.store_video.length>6}}">
+      <video objectFit='fill' src='{{store.store_video}}'></video>
+    </view>
+    <view wx:else style='background:#fff;padding:10px 15px'>商家暂未上传视频</view>
+  </view>
+  <view class='title'>
+    <view class='hx'></view>
+    <view class='hxwz'>商家环境</view>
+    <view class='hx'></view>
+  </view>
+  <view class="xztpul">
+    <view wx:if="{{store.environment==''}}" style='padding:10px 15px'>
+      商家暂未上传图片
+    </view>
+    <block wx:else>
+      <block wx:for="{{store.environment}}">
+        <view class="scimg-box">
+          <image mode='widthFix' bindtap='previewImage' id="{{item}}" data-urls='{{store.environment}}' class="scimg" src="{{item}}" />
+        </view>
+      </block>
+    </block>
+  </view>
+  <view class='title' style='margin-top:20rpx;'>
+    <view class='hx'></view>
+    <view class='hxwz'>商家资质</view>
+    <view class='hx'></view>
+  </view>
+  <view class="xztpul">
+    <view wx:if="{{store.yyzz==''}}" style='padding:10px 15px'>
+      商家暂未上传资质
+    </view>
+    <block wx:else>
+      <block wx:for="{{store.yyzz}}">
+        <view class="scimg-box">
+          <image mode='widthFix' bindtap='previewImage' id="{{item}}" data-urls='{{store.yyzz}}' class="scimg" src="{{item}}" />
+        </view>
+      </block>
+    </block>
+  </view>
+</view>

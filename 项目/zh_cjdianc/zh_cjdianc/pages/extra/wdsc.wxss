@@ -1,0 +1,6 @@
+@import "/zh_cjdianc/pages/index/index.wxss";
+.tjsj,.main{
+  margin-top: 0;
+}
+.kong {margin-top: 0;padding-top: 30rpx;}
+.sjright{justify-content: space-between;}

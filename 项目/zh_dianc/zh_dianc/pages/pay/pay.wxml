@@ -1,0 +1,315 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class="font">
+    <!--头部开始  -->
+    <view hidden="{{dnzt}}" class='pay_header' bindtap='map' style="background:{{color}}">
+      <view wx:if="{{user_address==null}}">
+        <view class='pay_headtitle'>
+          <view wx:if="{{users.user_address!=''}}">{{users.user_address}}</view>
+          <view wx:if="{{users.user_address==''}}">请添加收货地址</view>
+          <image src='../images/baise.png'></image>
+        </view>
+        <view class='pay_man' wx:if="{{users.user_address!=''}}">{{users.user_name}}</view>
+      </view>
+      <view wx:if="{{user_address!=null}}">
+        <view class='pay_headtitle'>
+          <view>{{user_address}}</view>
+          <!-- <view>请添加收货地址</view> -->
+          <image src='../images/baise.png'></image>
+        </view>
+        <view class='pay_man'>{{user_name}}</view>
+      </view>
+    </view>
+    <!--头部结束  -->
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd" style='font-size:30rpx;'>店内自取</view>
+        <view class="weui-cell__ft">
+          <switch color='#34aaff' checked='{{dnzt}}' bindchange="switch1Change" />
+        </view>
+      </view>
+    </view>
+    <!--配送商家部分开始  -->
+    <view class='pay_give' wx:if="{{!dnzt&&sdindex==0}}">
+      <view>
+        <view class='pay_quick'>尽快送达 [ 预计{{sd_time}}内送达，请耐心等待 ]</view>
+        <view class="pay_left">
+          <view class='pay_bird' wx:if="{{store.ps_mode==2}}">商家配送</view>
+          <view class='pay_bird' wx:if="{{store.ps_mode==1}}">达达配送</view>
+          <view class='pay_bird' wx:if="{{store.ps_mode==3}}">UU跑腿</view>
+          <view class='pay_bird' wx:if="{{store.ps_mode==4}}">人人派送</view>
+          <!-- <view class='pay_time'>准时达</view> -->
+          <!-- <view class='pay_over'>超时10分钟享赔付</view> -->
+        </view>
+      </view>
+      <view class='jtimg' bindtap='qlq'>
+        <image class='pay_right' src='../images/huise@2x.png'></image>
+      </view>
+    </view>
+    <view class='pay_give' wx:if="{{!dnzt&&sdindex==1}}">
+      <view>
+        <view class='bd' style=' margin-top:0;padding:0'>
+          <view class="left">送达时间：</view>
+          <view class="right">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__bd picker">
+                <picker mode="date" style=' width: 220rpx' start='{{datestart}}' bindchange="bindDateChange">
+                  <view class="weui-input">{{date}}</view>
+                </picker>
+                <view>日</view>
+                <picker mode="time" style=' width: 120rpx' value="{{time}}" start="{{timestart}}" end="23:59" bindchange="bindTimeChange">
+                  <view class="weui-input">{{time}}</view>
+                </picker>
+                <view>分</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="pay_left">
+          <view class='pay_bird' wx:if="{{store.ps_mode==2}}">商家配送</view>
+          <view class='pay_bird' wx:if="{{store.ps_mode==1}}">达达配送</view>
+          <view class='pay_bird' wx:if="{{store.ps_mode==3}}">UU跑腿</view>
+          <view class='pay_bird' wx:if="{{store.ps_mode==4}}">人人派送</view>
+        </view>
+      </view>
+      <view class='jtimg' bindtap='qlq'>
+        <image class='pay_right' src='../images/huise@2x.png'></image>
+      </view>
+    </view>
+    <view class='bd' wx:if="{{dnzt}}">
+      <view class="left">自取时间：</view>
+      <view class="right">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd picker">
+            <picker mode="date" style=' width: 220rpx' start='{{datestart}}' bindchange="bindDateChange">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+            <view>日</view>
+            <picker mode="time" style=' width: 120rpx' value="{{time}}" start="{{timestart}}" end="23:59" bindchange="bindTimeChange">
+              <view class="weui-input">{{time}}</view>
+            </picker>
+            <view>分</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--配送商家部分结束  -->
+  <!-- <view class="classname">收货地址到商家的距离：{{distance}}</view> -->
+  <!--外卖订单的详情  -->
+  <view class='pay_info'>
+    <view class='pay_infotitle'>{{store.name}}</view>
+    <!--第一个菜品开始  -->
+    <view class='pay' wx:for="{{order}}" wx:if="{{item.num>0}}">
+      <view>
+        <view class='pay_infotype'>
+          <view>{{item.name}}</view>
+          <view class='pay_flex'>
+            <view>×{{item.num}}</view>
+            <view>¥{{item.money}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='pay_rice'>不含米饭</view> -->
+    </view>
+    <!--餐盒  -->
+    <view class='pay1 pay_lunch'>
+      <view class='reduce_flex'>
+        <view class='pai_reduce' style='background:#ea9518'>费</view>
+        <view wx:if="{{store.box_name!=''}}">{{store.box_name}}</view>
+        <view wx:else>餐盒费</view>
+      </view>
+      <view>¥{{totalbox}}</view>
+    </view>
+    <!--配送费  -->
+    <view class='pay1 pay_lunch' style='border-bottom:none;'>
+      <view class='reduce_flex'>
+        <view class='pai_reduce' style='background:#34AAFF'>配</view>
+        <view>配送费</view>
+      </view>
+      <view wx:if="{{!dnzt}}">¥{{fre}}</view>
+      <view wx:if="{{dnzt}}">自取无配送费</view>
+    </view>
+  </view>
+  <view class='pay_info' style='margin-top:20rpx;'>
+    <!--优惠券  -->
+    <view class='pay1 pay_lunch' bindtap='coupon'>
+      <view class='reduce_flex'>
+        <view class='pai_reduce'>惠</view>
+        <view>优惠券</view>
+      </view>
+      <view wx:if="{{pre==0}}">
+        <text wx:if="{{xyh_open==1}}">
+            <text wx:if="{{new_user==1}}">新用户不享受此优惠</text>
+        <text wx:if="{{new_user==2}}">请选择优惠券</text>
+        </text>
+        <text wx:if="{{xyh_open==2}}">
+            <text>请选择优惠券</text>
+        </text>
+      </view>
+      <view wx:if="{{pre!=0}}">
+        <text wx:if="{{xyh_open==1}}">
+            <text wx:if="{{new_user==1}}">新用户不享受此优惠</text>
+        <text wx:if="{{new_user==2}}">
+              <text wx:if="{{pre==0}}">请选择优惠券</text>
+        <text wx:if="{{pre!=0}}">-{{pre}}</text>
+        </text>
+        </text>
+        <text wx:if="{{xyh_open==2}}">
+            <text wx:if="{{new_user==1}}">
+              <text wx:if="{{pre==0}}">请选择优惠券</text>
+        <text wx:if="{{pre!=0}}">-{{pre}}</text>
+        </text>
+        <text wx:if="{{new_user==2}}">
+              <text wx:if="{{pre==0}}">请选择优惠券</text>
+        <text wx:if="{{pre!=0}}">-{{pre}}</text>
+        </text>
+        </text>
+      </view>
+      <!-- <view wx:if="{{new_user==1}}">新用户不享受此优惠</view> -->
+    </view>
+    <!--在线立减部分  -->
+    <view class='pay1 pay_lunch'>
+      <view class='reduce_flex'>
+        <view class='pai_reduce'>减</view>
+        <view>在线支付立减优惠</view>
+      </view>
+      <text wx:if="{{xyh_open==1}}">
+          <text wx:if="{{new_user==1}}">新用户不享受此优惠</text>
+      <text wx:if="{{new_user==2}}">
+            <text wx:if="{{totalPrice>=yh}}">-¥{{cut}}</text>
+      <text wx:if="{{totalPrice<yh}}">-¥0</text>
+      </text>
+
+      </text>
+      <text wx:if="{{xyh_open==2}}">
+          <text wx:if="{{totalPrice>=yh}}">-¥{{cut}}</text>
+      <text wx:if="{{totalPrice<yh}}">-¥0</text>
+      </text>
+    </view>
+    <!--新用户下单立减  -->
+    <view class='pay1 pay_lunch' wx:if="{{xyh_open==1&&new_user==1}}">
+      <view class='reduce_flex'>
+        <view class='pai_reduce'>减</view>
+        <view>新用户下单立减</view>
+      </view>
+      <view>-¥{{xyh_money}}</view>
+    </view>
+    <!--小计  -->
+    <view class='pay1 pay_count' style='border:none;'>
+      <text class='pay_count1'>小计</text>
+      <text class='pay_count2'>¥</text>
+      <text class='pay_count3'>{{money}}</text>
+    </view>
+  </view>
+  <view class="weui-cells__title">订单备注
+    <text>（输入备注内容（可不填））</text>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" style='text-align:left' bindblur='ddbz' />
+      </view>
+    </view>
+  </view>
+  <view class='pay_remarks'>
+    <view class='remarks_on'>微信支付</view>
+  </view>
+  <view class='kong'></view>
+  <view class='pay_fixed'>
+    <view class='pay_fixed_left'>
+      <text class='fixed_text pay_fixed_left2'>¥</text>
+      <text class='fixed_text'>{{money}}</text>
+      <text class='pay_discount'>
+          <text>| 已优惠¥</text>
+      <text wx:if="{{xyh_open==1}}">
+            <text wx:if="{{new_user==1}}">{{xyh_money}}</text>
+      <!-- <text wx:if="{{new_user==2}}">{{cut+pre}}</text> -->
+      <text wx:if="{{new_user==2&&totalPrice>=yh}}">{{cut+pre}}</text>
+      <text wx:if="{{new_user==2&&totalPrice<yh}}">{{pre}}</text>
+      </text>
+      <text wx:if="{{xyh_open==2}}">
+            <!-- <text wx:if="{{new_user==1}}">{{cut+pre}}</text>
+      <text wx:if="{{new_user==2}}">{{cut+pre}}</text> -->
+      <text wx:if="{{totalPrice>=yh}}">{{cut+pre}}</text>
+      <text wx:if="{{totalPrice<yh}}">{{pre}}</text>
+      </text>
+      <!-- <text wx:if="{{xyh_open==1&&new_user==1}}">{{xyh_money}}6</text> -->
+      </text>
+    </view>
+    <button class='pay_fixed_right' disabled='{{qzf}}' bindtap='xszz' style="background:{{color}}">去支付</button>
+  </view>
+  <view class="zhezhao" hidden="{{qlq}}" catchtap="qdzz"></view>
+  <view class="qlq" hidden="{{qlq}}">
+    <view class="qlq-head">选择送达时间</view>
+    <view class='qlq-flex'>
+      <view class='qlq-b' bindtap='jksd'>
+        <image src="../images/dps.png"></image>
+        <view>尽快送达</view>
+      </view>
+      <view class='qlq-b' bindtap='xzsj'>
+        <image src="../images/jacket.png"></image>
+        <view>选择时间</view>
+      </view>
+    </view>
+    <view bindtap="qdzz" class="qlq-foot">关闭</view>
+  </view>
+  <!-- 支付方式 -->
+  <view class="drawer_screen" bindtap='yczz' wx:if="{{showModal}}"></view>
+  <!--content-->
+  <view class="drawer_box" wx:if="{{showModal}}">
+    <!--drawer content-->
+    <view class="drawer_title">请选择支付方式</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group class="radio-group" name="radiogroup" bindchange="radioChange">
+        <label>
+          <view class="weui-cell">
+            <view class="weui-cell__hd" class='zfimg'>
+              <image src="../images/weixin.png"></image>
+            </view>
+            <view class="weui-cell__bd">微信支付</view>
+            <view class="weui-cell__ft">
+              <radio value="wxzf" checked="{{zffs==1}}" />
+            </view>
+          </view>
+        </label>
+        <label wx:if="{{ptkqyue&&sjkqyue}}">
+          <view class="weui-cell" style='border-top:1rpx solid #e6e6e6;'>
+            <view class="weui-cell__hd" class='zfimg'>
+              <image src="../images/qb.png"></image>
+            </view>
+            <view class="weui-cell__bd">余额支付
+              <text class='yetext'>您的余额{{wallet}}</text>
+            </view>
+            <view class="weui-cell__ft">
+              <radio disabled='{{!(ptkqyue&&sjkqyue)}}' color='#34aaff' value="yezf" checked="{{zffs==2}}" />
+            </view>
+          </view>
+        </label>
+        <label wx:if="{{ptkqjf&&sjkqjf}}">
+          <view class="weui-cell" style='border-top:1rpx solid #e6e6e6;'>
+            <view class="weui-cell__hd" class='zfimg'>
+              <image src="../images/cost.png"></image>
+            </view>
+            <view class="weui-cell__bd">积分支付
+              <text class='yetext' style='color:#FF9700'>您的积分{{total_score}}</text>
+            </view>
+            <view class="weui-cell__ft">
+              <radio disabled='{{!(ptkqjf&&sjkqjf)}}' color='#FF9700' value="jfzf" checked="{{zffs==3}}" />
+            </view>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="drawer_title1">您选择的{{zfwz}}
+      <text wx:if="{{zffs==3}}">({{jf_proportion}}积分可抵1元)</text>
+    </view>
+    <button class="{{btntype}}" disabled='{{zfz}}' formType="submit">
+      <view wx:if="{{!zfz}}">确定支付
+        <text class='zftext'>￥{{money}}</text>
+      </view>
+      <view wx:if="{{zfz}}">
+        <text class='zfztext'>支付中...</text>
+      </view>
+    </button>
+  </view>
+</form>

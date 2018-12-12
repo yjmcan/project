@@ -1,0 +1,36 @@
+<view class='container'>
+    <view class="robList ba_f {{index>0?'mar_t':''}}" wx:for="{{roblist}}" wx:key="*this" bindtap="robinfo" data-id="{{item.id}}">
+        <view class='robImg'>
+            <image mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+        </view>
+        <view class='fon_30 pa_l robTime rel' style='background:{{color}}'>
+            <image mode='aspectFill' class='middle robTimeImg' src='../img/time.png'></image>
+            <text class='middle mar_l color_f'>{{item.rob_start}} 开抢</text>
+            <view class='robMoney color_f ab'>
+                <image class='ab' mode='aspectFill' src='../img/robmoney_0.png'></image>
+                <view class='ab t_c'>
+                    <text class='fon_24'>￥</text>
+                    <text class='fon_34'>{{item.rob_money}}</text>
+                </view>
+            </view>
+        </view>
+        <view class='pa color_6'>
+            {{item.title}}
+        </view>
+    </view>
+</view>
+
+<view class='foot'>
+    <view class='footbox flex3' catchtap='index'>
+        <image src='../img/yudingg@2x.png'></image>
+        <view class=''>预订</view>
+    </view>
+    <view class='footbox flex3'>
+        <image src='../img/qianggou/qg_sele.png'></image>
+        <view class='footfont1'>抢购</view>
+    </view>
+    <view class='footbox flex3' catchtap='wode'>
+        <image src='../img/wo@2x.png'></image>
+        <view>我的</view>
+    </view>
+</view>

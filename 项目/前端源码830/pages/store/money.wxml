@@ -1,0 +1,10 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='container ba_f pa_1'>
+    <view class='fon_30 pa_0'>充值金额</view>
+    <view class='pa_0 input_money' style='color:{{color}}'>
+      <input name="money" type='digit' value='1'></input>
+    </view>
+    <view class='fon_24 pa_0 color_9'>请输入0元以上任意金额</view>
+  </view>
+  <button formType="submit" style='background:{{color}}' class='color_f'>充值</button>
+</form>

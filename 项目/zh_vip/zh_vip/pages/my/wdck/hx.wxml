@@ -1,0 +1,12 @@
+<!--zh_zbkq/pages/my/tjhxy/hx.wxml-->
+<view class="container">
+  <view class="head">
+    <icon type="info" size="93"></icon>
+  </view>
+  <view class="text">是否进行扣次</view>
+  <view class="btn">
+  <form bindsubmit="form_save" bindreset="formReset" report-submit="true">
+    <button formType="submit" class="weui-btn" type="primary" bindtap='hx' style="background-color:#f44444">确定</button>
+  </form>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/my/data.wxml-->
+<view class="home flex3">
+  <image class="bg" src="../img/bg.jpg"></image>
+  <view class="list flex_bet">
+    <view>所在学校 :</view>
+    <view>{{user_msg.cate_name}}</view>
+  </view>
+  <view class="list flex_bet">
+    <view>所在年级 :</view>
+    <view>{{user_msg.course_name}}</view>
+  </view>
+  <view class="list flex_bet">
+    <view>所在班级 :</view>
+    <view>{{user_msg.name}}{{user_msg.class_name}}</view>
+  </view>
+  <view class="list flex_bet">
+    <view>家长姓名 :</view>
+    <view>{{user_msg.parents_name}}</view>
+  </view>
+  <view class="list flex_bet">
+    <view>孩子姓名 :</view>
+    <view>{{user_msg.students_name}}</view>
+  </view>
+  <view class="list flex_bet">
+    <view>联系电话 :</view>
+    <view>{{user_msg.phone_number}}</view>
+  </view>
+</view>

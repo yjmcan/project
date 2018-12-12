@@ -1,0 +1,21 @@
+<view class='fon_36 pa head'>
+  <view class='t_l dis_in'>2018-06</view>
+  <view class='t_r dis_in'>￥164.00</view>
+</view>
+<view class='fon_30 color_6 pa head ba_f'>
+  <view class='t_l dis_in'>外卖订单共31笔</view>
+  <view class='t_r dis_in'>￥164.00</view>
+</view>
+<view class='fon_30 color_6 pa head'>
+  <view class='t_l dis_in'>历史订单</view>
+</view>
+<view class='fon_30 pa head ba_f bor_bottom order_info'>
+    <view class=''>编号</view>
+    <view class=''>交易类型</view>
+    <view class=''>配送费</view>
+</view>
+<view class='fon_30 pa head ba_f bor_bottom order_info' wx:for="{{nav}}" wx:key="*this" bindtap='day_order'>
+    <view class='color_6'>2018093041523</view>
+    <view class='color_6'>外卖订单</view>
+    <view style='color:{{color}}'>￥2.00</view>
+</view>

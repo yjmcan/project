@@ -1,0 +1,214 @@
+/* zh_wzp/pages/resume/set_up.wxss */
+page{
+  background: #e5e5e5;
+}
+.user_info{
+  height: 160rpx;
+  background: #fff;
+  width: 95%;
+  margin: 20rpx auto 0;
+  border-radius: 20rpx;
+}
+.user_info>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.user_info>view:nth-child(1){
+  width: 30%;
+  height: 100%;
+}
+.user_info>view:nth-child(2){
+  width: 70%;
+  height: 100%;
+}
+.user_logo{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.user_info>view view:nth-child(1){
+  padding: 30rpx 0 20rpx 0;
+}
+.title{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.title>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.title>view:nth-child(1){
+  width: 25%;
+}
+.title>view:nth-child(2){
+  width: 75%;
+}
+.right{
+  right: 20rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+.mar{
+  margin-top: 20rpx;
+}
+.expect{
+  background: #fff;
+  width: 95%;
+  margin: 20rpx auto 0;
+  border-radius: 20rpx;
+}
+.head{
+  padding: 20rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+  color: #333;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.head image{
+  width: 47rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.head  text{
+  vertical-align: middle;
+}
+.head_0{
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.head_0 image{
+  width:20rpx;
+  height: 35rpx;
+  right: 20rpx;
+}
+.project image{
+  width:20rpx;
+  height: 35rpx;
+  right: 20rpx;
+}
+.head_0 picker{
+  float: right;
+  margin-right: 50rpx;
+}
+.expect textarea{
+  width: 95%;
+  height: 300rpx;
+  margin:  20rpx auto 0;
+}
+.add{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.project{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.project text:nth-child(2){
+  font-size: 24rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+.project text:nth-child(3){
+  font-size: 24rpx;
+  float: right;
+}
+.project text:nth-child(4){
+  float: right;
+  font-size: 24rpx;
+}
+.job_c>text:nth-child(2){
+  float: right;
+}
+.job_c>text:nth-child(3){
+  float: right;
+}
+.job_c>text:nth-child(4){
+  float: right;
+}
+button{
+  width: 95%;
+  height: 80rpx;
+  color: #fff;
+  margin: 40rpx auto 40rpx;
+  margin-top: 40rpx;
+  margin-bottom:40rpx;
+  font-size: 28rpx;
+}
+.fixed{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5000000;
+  top: 0;
+}
+.fixed>view:nth-child(1){
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+}
+.fixed>view:nth-child(2){
+  width: 90%;
+  height: 300rpx;
+  border-radius: 15rpx;
+  background: #fff;
+}
+.fixed>view view:nth-child(1){
+  height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+.fixed>view input:nth-child(2){
+  height: 110rpx;
+  padding: 0 20rpx;
+  line-height: 110rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  border-top: 2rpx solid #e5e5e5;
+}
+.fixed>view view:nth-child(3){
+  width: 100%;
+  height: 80rpx;
+}
+.fixed>view view text{
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  box-sizing: border-box;
+}
+.fixed>view view text:nth-child(1){
+  border-right: 2rpx solid #e5e5e5;
+}
+.skill{
+  display:inline-block;
+  vertical-align: middle;
+  padding: 0 20rpx;
+  background: #f1f7ff;
+  height: 60rpx;
+  border-radius: 9rpx;
+  margin-right: 10rpx;
+  margin-top: 15rpx;
+}
+.skill text:nth-child(1){
+  line-height: 60rpx;
+  color: #666;
+}
+.job_d{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.skill text:nth-child(2){
+  line-height: 10rpx;
+  padding: 0 0 0 20rpx;
+  display: inline-block;
+  color: red;
+  font-size: 22rpx;
+}

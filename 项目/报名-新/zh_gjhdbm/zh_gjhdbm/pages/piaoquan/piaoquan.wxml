@@ -1,0 +1,74 @@
+<!--pages/logs/piaoquan/piaoquan.wxml-->
+<view class='index'>
+  <view class="marry">
+    <block wx:for="{{luntext}}" wx:key="*this">
+      <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view id="{{index}}">{{item}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view>
+    <view class='pheader' bindtap='piaoinfo' data-states='{{item.states}}' data-id='{{item.id}}' data-fu_id='{{item.fu_id}}' data-state='{{item.state}}' wx:for="{{my_tickets}}" wx:key="*this">
+      <view class='phleft'>
+        <view class='phfont1'>{{item.hd_title}}</view>
+        <view class='phfont2'>{{item.hd_place}}</view>
+        <view class='phfont3' style='color:{{color}}'>至　{{item.end}}　结束</view>
+        <view class='phtopyuan'></view>
+        <view class='phbotyuan'></view>
+      </view>
+      <view class='phright flex3'>
+        <view class='phfont4' style='color:{{color}}'>{{item.tk_name}}</view>
+        <view class='phfont6'>¥ {{item.money}}</view>
+        <!-- <view class='phfont5' wx:if="{{item.states==2}}" style='background:#ccc'>{{item.state}}</view>
+        <view class='phfont5' wx:else>{{item.state}}</view> -->
+        <view class='phfont5' wx:if="{{item.state==1}}" style='background:#ccc'>待审核</view>
+        <view class='phfont5' wx:if="{{item.state==2}}" style='background:#ccc'>未验票</view>
+        <view class='phfont5' wx:if="{{item.state==4}}" style='background:#ccc'>待退票</view>
+        <view class='phfont5' wx:if="{{item.state==5}}" style='background:#ccc'>已退票</view>
+        <view class='phfont5' wx:if="{{item.state==6}}" style='background:#ccc'>已拒绝</view>
+        <view class='phfont5' wx:if="{{item.state==3}}">已验票</view>
+      </view>
+    </view>
+  </view>
+  <view class='no_many' wx:if="{{many==false&&my_tickets.length>0}}">——————————　没有更多了　——————————</view>
+  <view wx:if="{{my_tickets.length==0}}">
+    <view class='flex3 zanwubox'>
+      <image class='zanwu' src='../../img/zwbiaoqian.png'></image>
+      <view>暂无票券</view>
+    </view>
+  </view>
+</view>
+<!-- ————————————底部固定导航栏———————————— -->
+<view class='bmfoot2' wx:if="{{yes!=false}}"></view>
+<view class='bmfoot' wx:if="{{yes!=false}}">
+  <view class='bmfootbox'>
+    <view bindtap='index'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+      </view>
+      <view class='{{db_tab[0].color}}'>{{db_tab[0].name}}</view>
+    </view>
+    <view bindtap='classifination'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+      </view>
+      <view class='{{db_tab[1].color}}'>{{db_tab[1].name}}</view>
+    </view>
+    <view class='fabu rel' bindtap='fabu'>
+      <image class='ab lr' mode='aspectFill' src='../img/jia@2x.png'></image>
+    </view>
+    <view>
+      <view class='rel' bindtap='mine_activity'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+      </view>
+      <view class='{{db_tab[2].color}}'>{{db_tab[2].name}}</view>
+    </view>
+    <view>
+      <view class='rel' bindtap='wode'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+      </view>
+      <view class='{{db_tab[3].color}}'>{{db_tab[3].name}}</view>
+    </view>
+  </view>
+</view>

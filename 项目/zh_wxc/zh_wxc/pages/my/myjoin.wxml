@@ -1,0 +1,51 @@
+<!--pages/my/myjoin.wxml-->
+<!--pages/my/myfabu.wxml-->
+<view class='home'>
+  <scroll-view class="marry" scroll-x="true" wx:if="{{hidden}}">
+    <block wx:for="{{prolist}}" wx:key="unique">
+      <view data-index="{{index}}" id="{{item.id}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="onClick">
+        <view>{{item.name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view wx:for="{{luntext}}" wx:key="unique">
+    <view class='conbox' wx:for-index="index" wx:key="id">
+      <view class="listimg">
+        <image class='conimg' src='../img/sss.png' wx:if="{{item.end_time<now}}"></image>
+        <image class='conimg' src='{{item.img}}' wx:else></image>
+      </view>
+      <view class="context">
+        <view class='flex_bet'>
+          <view class='confont2'>{{item.title}}</view>
+          <view class="flex_center">
+            <image src="../img/yan@2x.png" class="conzan"></image>
+            <view>{{item.read}}</view>
+          </view>
+        </view>
+        <view class='lbottom'>
+          <view class="">
+            <view class="money">¥{{item.price}}</view>
+          </view>
+          <!-- <view class='confont1 pass' wx:if="{{item.code==1}}">已通过</view> -->
+          <view class='confont1 pass' wx:if="{{item.code==3||item.code==1}}" bindtap='evaluate'>待评价</view>
+          <view class='confont1 pass' wx:if="{{item.code==4}}" bindtap='pcinfo' data-id="{{item.id}}">已完成</view>
+          <view class='confont1 wait' wx:if="{{item.code==2}}" bindtap='place_order' data-id='{{item.id}}' data-note='{{item.note}}'>已拒绝</view>
+          <view class='confont1 refuse' wx:if="{{item.code==0}}" bindtap='pcinfo' data-id="{{item.id}}">待审核</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='fixed' hidden='{{season}}'>
+      <view class='ab'></view>
+      <view class='ab udlr'>
+          {{note}}
+      </view>
+  </view>
+  <!--没有数据的情况-->
+  <view wx:if="{{luntext.length==0 || all_con.code==500}}" class="flex3 none">
+    <image src="../img/zhanwei.png"></image>
+    <view>暂无数据</view>
+  </view>
+
+</view>

@@ -1,0 +1,98 @@
+/* pages/order/order.wxss */
+.nav{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  display: flex;
+  font-size: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.nav>view{
+  flex: 4;
+}
+.select{
+  display: inline-block;
+  height: 100%;
+  color: #ec8a0d;
+  font-weight: 600;
+  border-bottom: 2rpx solid #ec8a0d;
+}
+.order{
+  margin-top: 20rpx;
+  background: #fff;
+  width: 100%;
+  height: 330rpx;
+  border:2rpx solid #e5e5e5;
+}
+.order:last-child{
+  border: none;
+}
+.order>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.order>view:nth-child(1){
+  width: 23%;
+  height: 100%;
+}
+.img image{
+  width: 150rpx;
+  height: 150rpx;
+  top: 20rpx;
+  right: 0;
+}
+.info{
+  width: 70%;
+  height: 100%;
+  margin-left: 3%;
+}
+.remarks text:nth-child(1){
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+.remarks text:nth-child(2){
+  font-size: 26rpx;
+  color: #999;
+}
+.info>view:nth-child(1){
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.info>view:nth-child(2){
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.info>view:nth-child(3){
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+.info>view:nth-child(4){
+  font-size: 28rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #666;
+}
+.pay{
+  margin-top: 20rpx;
+}
+.pay text{
+  padding: 9rpx 15rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #666;
+  color: #666;
+  font-size: 30rpx;
+  float: right;
+   margin-left: 20rpx; 
+}
+.order_name text:nth-child(2){
+  float: right;
+  color: #ec8a0d;
+  font-size: 26rpx;
+}

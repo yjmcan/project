@@ -1,0 +1,2 @@
+<!--zh_zbkq/pages/index/webhtml.wxml-->
+<web-view src='{{vr}}'></web-view>

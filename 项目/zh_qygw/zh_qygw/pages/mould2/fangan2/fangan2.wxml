@@ -1,0 +1,65 @@
+<!--zh_qygw/pages/mould2/fangan2/fangan2.wxml-->
+<view class="home">
+  <view class="iheader">
+    <image src="../../images/jingyan.png"></image>
+  </view>
+
+  <!--————————我们的优势部分——————————-->
+  <view class="advantage">
+    <view class="advtitle">
+      <view class="xian"></view>
+      <view class="">我们的优势</view>
+    </view>
+
+    <view class="advlist">
+      <view class="advbox">
+        <view class="advnum">1</view>
+        <view class="zctitle">专业的售前支持</view>
+        <view class="acbanner">我们的售前人员将和您相信沟通您所需要的需求和功能，对您的需求有着全面的理解和掌握。</view>
+      </view>
+      <view class="advbox">
+        <view class="advnum">2</view>
+        <view class="zctitle">专业的程序制作</view>
+        <view class="acbanner">技术人员根据您的需求提供最优的解决方案和办法，让您的小程序与众不同。</view>
+      </view>
+      <view class="advbox">
+        <view class="advnum">3</view>
+        <view class="zctitle">增值售后服务</view>
+        <view class="acbanner">后续我们会定期更新小程序新的功能和玩法，您购买的不仅仅是一套小程序，而是一整套的小程序开发和使用方案。</view>
+      </view>
+    </view>
+  </view>
+
+  <!--————————行业的解决方案————————-->
+  <view class="advantage">
+    <view class="advtitle">
+      <view class="xian"></view>
+      <view class="">行业的解决方案</view>
+    </view>
+
+    <view class="jiebox">
+      <image src="../../images/fangan1.png"></image>
+      <image src="../../images/fangan2.png"></image>
+      <image src="../../images/fangan3.png"></image>
+      <view class="ljmore" bindtap="we">了解更多</view>
+    </view>
+  </view>
+
+  <!--————————底部部分————————-->
+  <view class="footbox"></view>
+  <view class="foot">
+    <view class="footlist flex3" bindtap="home">
+      <image src="../../images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="footlist flex3">
+      <image src="../../images/fangansele.png"></image>
+      <view style="color:#28B3E5;">解决方案</view>
+    </view>
+    <view class="footlist flex3" bindtap="we">
+      <image src="../../images/guanyu.png"></image>
+      <view>咨询我们</view>
+    </view>
+  </view>
+
+</view>

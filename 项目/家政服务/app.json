@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/service",
+    "pages/index/service_info",
+    "pages/users",
+    "pages/kaci/kaci",
+    "pages/integral_mall/service",
+    "pages/shop_order/shop_order",
+    "pages/order_info/order_info",
+    "pages/order/order",
+    "pages/integral_mall/integral_mall",
+    "pages/logs/logs",
+    "pages/subscribe/subscribe",
+    "pages/waste_recovery/waste_recovery",
+    "pages/shop_order/order_info",
+    "pages/exchange/exchange",
+    "pages/feedback/index",
+    "pages/index/classfication",
+    "pages/integral_mall/exchange",
+    "pages/order/order_info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f66925",
+    "navigationBarTitleText": "三叶家服",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#f66925",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/images/index_selsect.png",
+        "iconPath": "pages/images/mine.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/images/recovery_select.png",
+        "iconPath": "pages/images/recovery.png",
+        "pagePath": "pages/waste_recovery/waste_recovery",
+        "text": "回收"
+      },
+      {
+        "selectedIconPath": "pages/images/shop_select.png",
+        "iconPath": "pages/images/shop.png",
+        "pagePath": "pages/integral_mall/integral_mall",
+        "text": "商城"
+      },
+      {
+        "selectedIconPath": "pages/images/wode_select.png",
+        "iconPath": "pages/images/wode.png",
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+/* zh_gjhdbm/pages/activeinfo/activity_list.wxss */
+.bm_list{
+  width: 100%;
+  /* vertical-align: middle; */
+  background: #fff;
+  line-height: 60rpx;
+  text-indent: 30rpx;
+  padding: 20rpx 0;
+}
+.bm_list image{
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  margin-left: 20rpx;
+  border-radius: 50%;
+}
+.bm_list{
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.bm_list:last-child{
+  border: none;
+}
+
+.bm_list>text:nth-child(2){
+  float: right;
+  margin-right: 20rpx;
+}

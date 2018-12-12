@@ -1,0 +1,44 @@
+<include src="../tabbar/index.wxml" />
+<view class='head'>
+  <view class='head_0'>
+    <view wx:for="{{nav}}" wx:key="*this" bindtap='nav' data-index='{{index}}'>
+      <text>{{item.name}}</text>
+      <image mode='aspectFill' src='{{item.img}}'></image>
+    </view>
+  </view>
+  <view class='head_1' wx:if="{{children.length!=0}}">
+    <view wx:for="{{children}}" wx:key="*this" bindtap='nav_c' data-index='{{index}}' data-id='{{item.id}}'>{{item.name}}</view>
+  </view>
+</view>
+<view class='body' wx:if="{{list.length>0}}">
+  <view class='body_list rel' wx:for="{{list}}" bindtap='info' data-id='{{item.id}}'>
+    <view class='list_left'>
+      <image class='logo' mode='aspectFill' src='{{url}}{{item.header}}'></image>
+      <view class='gobyndsingle'>
+        <image class='sex' wx:if="{{item.sex==1}}" mode='aspectFill' src='../img/nan.png'></image>
+        <image class='sex' wx:else mode='aspectFill' src='../img/nv.png'></image>
+        <text>{{item.username}}</text>
+      </view>
+    </view>
+    <view class='list_middle'>
+      <view>{{item.title}}</view>
+      <view class='ask'>
+        <image mode='aspectFill' src='../img/address.png' style='width:24rpx;'></image>
+        <text>{{item.area[1]}}</text>
+        <image mode='aspectFill' src='../img/time.png'></image>
+        <text>{{item.work_life}}年</text>
+        <image mode='aspectFill' src='../img/xueli.png' style='width:35rpx;'></image>
+        <text>{{item.degree_name}}</text>
+      </view>
+      <view class='label'> 
+        <text wx:for="{{item.skill}}" wx:for-item="info">{{info}}</text>
+      </view>
+    </view>
+    <view class='list_right ab ud'>
+     {{item.salary_name}}
+    </view>
+  </view>
+</view>
+<view class='fixed' wx:if="{{list.length==0}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+</view>

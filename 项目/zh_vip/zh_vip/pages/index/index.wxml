@@ -1,0 +1,183 @@
+<!--zh_hyk/pages/i/index.wxml-->
+<include src="/zh_vip/pages/commons/navbar/navbar.wxml" />
+<view class='page'>
+  <view class='head'>
+    <image class='img' src='{{url}}{{mdinfo.logo}}'></image>
+    <view class='hhyk {{sqlq?"sq":"lq"}}'>
+      <image class='hykjt {{sqlq?"xs":"xx"}}' src='../../img/sq.png' bindtap='sqlq'></image>
+      <image wx:if="{{userInfo.grade!='0'}}" class='img1' src='{{url}}{{userInfo.level_img}}'></image>
+      <image wx:else class='img1' src='../../img/bghyk.png'></image>
+      <view class="weui-cells weui-cells_after-title vip">
+        <view class="weui-cell" style='padding:0 30rpx;'>
+          <view class="weui-cell__hd">
+            <image style='border-radius:50%;' src="{{userInfo.img}}" class='himg'></image>
+          </view>
+          <view class="weui-cell__bd">
+            <view style='color:#fff' wx:if="{{userInfo.name==''}}">{{userInfo.nickname}}</view>
+            <view style='color:#fff' wx:else>{{userInfo.name}}</view>
+            <view class="hy" wx:if="{{userInfo.grade!='0'}}">{{userInfo.level_name}}</view>
+            <view class="hy" wx:else>游客</view>
+          </view>
+          <view wx:if="{{userInfo.grade!='0'}}">
+            <!-- <view style='color:#7a441e;font-size:25rpx;' class="weui-cell__ft weui-cell__ft_in-access">
+              会员码
+            </view> -->
+            <navigator url='wyxf' wx:if="{{isdq=='1'}}" class='weui-cell__ft ljxf'>立即续费</navigator>
+          </view>
+          <view bindtap='ljkk' wx:else>
+            <view class='weui-cell__ft ljkk'>立即开卡</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{userInfo.grade!='0'}}" class='knumber'>No.
+        <text>{{userInfo.vip_code}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='head-bd flex-center'>
+    <block wx:if="{{TopNav.length==0}}">
+      <view wx:if="{{xtxx.model=='2'}}" class='flex1' bindtap='qhmd'>
+        <image class='img2' src='../../img/hmd.png'></image>
+        <view>切换门店</view>
+      </view>
+      <view wx:if="{{xtxx.model=='1'}}" class='flex1' bindtap='jumps'>
+        <image style='border-radius:50%;' class='img2' src='{{url}}{{xtxx.qhmd_img}}'></image>
+        <view>{{xtxx.qhmd_name}}</view>
+      </view>
+      <view class='flex1 bdvidew2' bindtap='md'>
+        <image src='../../img/smg.png'></image>
+        <view>买单</view>
+      </view>
+      <view class='flex1' bindtap='cz'>
+        <image class='img2' src='../../img/smgdd.png'></image>
+        <view>充值</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view wx:for="{{TopNav}}" class='flex1 {{index==1&&TopNav.length==3?"bdvidew2":""}}'>
+        <form bindsubmit="topjumps" bindreset="formReset" report-submit="true">
+          <button formType="submit" style='width:100%;height:100%' data-item='{{item.item}}' data-src='{{item.src}}' data-websrc='{{item.src2}}' data-appid='{{item.appid}}'>
+            <image style='border-radius:50%;' class='img2' src='{{url}}{{item.logo}}'></image>
+            <view>{{item.title}}1</view>
+          </button>
+        </form>
+      </view>
+    </block>
+  </view>
+  <view class='ft'>
+    <view class='dqmd'>
+      <text>当前门店：</text>{{mdinfo.name}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view url="" bindtap='ckwz' data-jwd='{{mdinfo.coordinates}}' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image class='ftimg' src="../../img/dz.png"></image>
+        </view>
+        <view class="weui-cell__bd">{{mdinfo.address}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <view url="" bindtap='maketel' data-tel='{{mdinfo.tel}}' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image class='ftimg' src="../../img/dh.png"></image>
+        </view>
+        <view class="weui-cell__bd">{{mdinfo.tel}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+  </view>
+  <navigator wx:if="{{xtxx.is_ck=='1'}}" url='../my/wdck/gkzx' class='flex4'>
+    <image src='../../img/ddze.png'></image>
+    <view class="weui-cell__bd" style='margin-left:0'>前往购卡中心</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <view class='flex4'>
+    <image src='../../img/quan.png'></image>
+    <view>领取优惠券</view>
+  </view>
+  <view class='yhqlist'>
+    <view class='yhq' wx:for="{{unreceive}}">
+      <view class='yhq1'>
+        <view class='yhqleft'>
+          <image class='yhqleftimg' src='../../img/yhq{{item.type}}.png'>
+            <view class='yhqleftwz'>
+              <view wx:if="{{item.type=='1'}}">代金券</view>
+              <view wx:if="{{item.type=='2'}}">折扣券</view>
+              <view wx:if="{{item.type=='1'}}" class='yhqleftwz1'>￥
+                <text class='yhqleftwz2'>{{item.reduction}}</text>
+              </view>
+              <view wx:if="{{item.type=='2'}}" class='yhqleftwz2'>{{item.reduction}}
+                <text class='yhqleftwz1'>折</text>
+              </view>
+            </view>
+          </image>
+        </view>
+        <view class='yhqright'>
+          <view class='yhqrtop flex-bet'>
+            <view class='yhqrl'>
+              <view>{{item.name}}</view>
+              <view wx:if="{{item.full=='0'}}" class='yhqtj'>无门槛</view>
+              <view wx:else class='yhqtj'>满{{item.full}}可用</view>
+            </view>
+
+            <form bindsubmit="mflq" bindreset="formReset" report-submit="true" disabled='{{lqdisabledid==item.id}}' data-id='{{item.id}}' data-lqdj='{{item.level_type}}'>
+              <button formType="submit" class='yhqrr'>免费领取</button>
+            </form>
+          </view>
+          <view class='yhqrft flex-bet' data-id='{{item.id}}' bindtap="tradeinfo">
+            <view>有效期：{{item.start_time}}-{{item.end_time}}</view>
+            <image class="addright {{item.open ? 'show' : 'close'}}" src="../../img/jt.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class='yhq2' wx:if='{{item.open}}'>
+        <view>使用说明：{{item.details}}</view>
+        <view wx:if="{{item.level_type!='0'}}">领取限制：{{item.level_name}}及以上可领取。</view>
+      </view>
+    </view>
+    <view class='yhq' wx:for="{{received}}">
+      <view class='yhq1'>
+        <view class='yhqleft'>
+          <image class='yhqleftimg' src='../../img/yhq{{item.type}}.png'>
+            <view class='yhqleftwz'>
+              <view wx:if="{{item.type=='1'}}">代金券</view>
+              <view wx:if="{{item.type=='2'}}">折扣券</view>
+              <view wx:if="{{item.type=='1'}}" class='yhqleftwz1'>￥
+                <text class='yhqleftwz2'>{{item.reduction}}</text>
+              </view>
+              <view wx:if="{{item.type=='2'}}" class='yhqleftwz2'>{{item.reduction}}
+                <text class='yhqleftwz1'>折</text>
+              </view>
+            </view>
+          </image>
+        </view>
+        <view class='yhqright'>
+          <view class='yhqrtop flex-bet'>
+            <view class='yhqrl'>
+              <view>{{item.name}}</view>
+              <view wx:if="{{item.full=='0'}}" class='yhqtj'>无门槛</view>
+              <view wx:else class='yhqtj'>满{{item.full}}可用</view>
+            </view>
+            <view class='yhqrrylq'>
+              <image src='../../img/ylq.png'></image>
+            </view>
+          </view>
+          <view class='yhqrft flex-bet' data-id='{{item.id}}' bindtap="tradeinfo">
+            <view>有效期：{{item.start_time}}-{{item.end_time}}</view>
+            <image class="addright {{item.open ? 'show' : 'close'}}" src="../../img/jt.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class='yhq2' wx:if='{{item.open}}'>
+        <view>使用说明：{{item.details}}</view>
+        <view wx:if="{{item.level_type!='0'}}">领取限制：{{item.level_name}}及以上可领取。</view>
+      </view>
+    </view>
+  </view>
+  <!--尾部版权  -->
+  <view class='copyright'>
+    <view class='copyright_logo' data-appid="{{xtxx.tz_appid}}" bindtap='tzxcx'>
+      <image mode='aspectFill' src="{{url}}{{xtxx.bq_logo}}" class='copyright_img'></image>
+      <view class='copyright_text'>{{xtxx.bq_name}}</view>
+    </view>
+    <view class='copyright_txt'>{{xtxx.support}}</view>
+  </view>
+</view>

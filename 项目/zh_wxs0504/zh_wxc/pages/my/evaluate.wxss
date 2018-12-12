@@ -1,0 +1,29 @@
+/* zh_wxc/pages/my/evaluate.wxss */
+.elaluate{
+  background: #fff;
+  padding: 30rpx;
+}
+.msg image{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  margin-right:15rpx;
+  background: #f2f2f2;
+}
+.stars image{
+  width: 50rpx;
+  height: 50rpx;
+  margin:20rpx 10rpx;
+}
+.ftextarea{
+  background: #f2f2f2;
+  width: 97%;
+  border: 1rpx solid #ccc;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+.submit{
+  background: #0ca5fe;
+  color: #fff;
+}

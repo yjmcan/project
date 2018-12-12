@@ -1,0 +1,26 @@
+<!--pages/about/consult.wxml-->
+<view class="home">
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit='true'>
+    <view class="conbox">
+      <view class="flex-center conlist">
+        <view class="conleft">咨询产品</view>
+        <input type="text" name="proname" placeholder="请输入产品名称" placeholder-style="color:#999;"/>
+      </view>
+      <view class="flex-center conlist">
+        <view class="conleft">您的称呼</view>
+        <input type="text" name="username" placeholder="请输入您的称呼"  placeholder-style="color:#999;"/>
+      </view>
+      <view class="flex-center conlist">
+        <view class="conleft">联系电话</view>
+        <input type="number" name="contel" maxlength="11" placeholder="请输入联系电话"  placeholder-style="color:#999;"/>
+      </view>
+      <view class="flex-center conlist2">
+        <view class="conleft">咨询内容</view>
+        <textarea class="ctextarea" name="context" placeholder="描述一下您的需求，最多500字" placeholder-style="color:#999;"/>
+      </view>
+      <button class="huoqu" wx:if="{{telphone==null}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+      <button formType="submit" class="conbtn">立即申请</button>
+      <view class="footbox">技术支持：武汉志汇科技</view>
+    </view>
+  </form>
+</view>

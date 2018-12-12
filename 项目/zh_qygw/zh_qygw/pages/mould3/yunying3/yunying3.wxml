@@ -1,0 +1,33 @@
+<!--zh_qygw/pages/mould3/yunying3/yunying3.wxml-->
+<view class="yunying">
+  <view class="yheader">
+    <view class="yhtitle">公众号与小程序代运营</view>
+    <view class="yhtext">1、代运营微信公众号，包含文章编写、投票、微运营活动等；
+    2、代运营微信小程序。包含代码版本更新，日常维护，升级，吸粉，微营销活动等</view>    
+  </view>
+
+  <view class="hsection">
+    <view class="hsectitle">
+      <view class="hsecxian"></view>  
+      <view>微营销与代运营</view>    
+    </view>
+    <view class="hsecbox">
+      <view class="flex3">
+        <image class="hsecimg" src="../../images/mou3back5.png"></image>
+        <view class="">腾讯公众号底部广告</view>
+      </view>
+      <view class="flex3">
+        <image class="hsecimg" src="../../images/mou3back6.png"></image>
+        <view class="">微信官方朋友圈广告</view>
+      </view>
+    </view>
+  </view>
+
+   <view class="fuwuremark">——亲，我是有底线的——</view>
+   <!--—————版权部分—————-->
+  <view class="banquan">
+    <view>COPYRIGHT@{{copyrit.support}}</view>
+    <view class="bqfont1">微信搜索：{{aboutus.name}} | <text bindtap="phone">一键拨号</text></view>
+  </view>
+
+</view>

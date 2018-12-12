@@ -1,0 +1,95 @@
+
+.recommed>text:nth-child(2){
+  margin-left: 10rpx;
+}
+.recommed>text:nth-child(1){
+  border-radius: 6rpx;
+}
+.group{
+  width: 100%;
+  height: 60rpx;
+  border-radius: 15rpx;
+}
+.group>view{
+  width: 50%;
+  height: 100%;
+  line-height: 60rpx;
+  box-sizing: border-box;
+}
+.title image{
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+.Explain{
+  text-indent: 60rpx;
+}
+.store_img{
+  width: 100%;
+  height: 300rpx;
+}
+page{
+  /* background: #fff; */
+}
+.head{
+  width: 100%;
+  height: 350rpx;
+}
+.head swiper{
+  width: 100%;
+  height: 100%;
+}
+.check>view:nth-child(1){
+  padding: 20rpx 0;
+  width: 40%;
+}
+.check>view:nth-child(2){
+  padding: 20rpx 0;
+  width: 10%;
+}
+.check>view:nth-child(3){
+  padding: 20rpx 0;
+  width: 40%;
+}
+.check image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.check button{
+  width: 82%;
+  height: 80rpx;
+  margin-top: 40rpx;
+  line-height: 80rpx;
+  background: rgb(56, 132, 254)
+}
+.recommed>view:nth-child(1){
+  width: 50%;
+}
+.recommed>view:nth-child(2){
+  width: 50%;
+}
+.recommed>view image{
+  width: 30rpx;
+  height: 35rpx;
+}
+.source>view{
+  width: 50%;
+}
+.info>image{
+  width: 100%;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  z-index: 21521905721;
+  border-top: 2rpx solid #e5e5e5;
+}
+.bottom>view{
+  width: 50%;
+  line-height: 100rpx;
+  height: 100%;
+}

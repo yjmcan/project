@@ -1,0 +1,87 @@
+<!--zh_cjdianc/pages/hyk/hyk.wxml-->
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml" />
+<view class='page'>
+  <view class='headimg'>
+    <view class='banner' wx:if="{{lblist.length!=0}}">
+      <view class="swiper-container">
+        <swiper autoplay="true" circular='true' indicator-dots='{{lblist.length>1}}' interval="5000" duration="500" class="swiper">
+          <block wx:for="{{lblist}}" wx:key="unique">
+            <swiper-item data-index="{{index}}">
+              <image bindtap='jumps' data-id='{{item.id}}' data-type='{{item.item}}' data-name='{{item.title}}' data-wb_src='{{item.src2}}' data-src='{{item.src}}' data-appid='{{item.appid}}' src="{{item.logo}}" class="img"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class='hytq' bindtap='lookck'>
+      <view class='hytq1'>会员特权</view>
+      <view class='tqsm'>特权说明</view>
+      <image class='whimg' src='../../img/bangz.png'></image>
+    </view>
+    <view class='zstq'>
+      <view class='zstgcl'>
+        <image src='../../img/personal/zshb.png'></image>
+        <view>专属红包</view>
+      </view>
+      <view class='zstgcl'>
+        <image src='../../img/personal/jlj.png'></image>
+        <view>特殊标识</view>
+      </view>
+      <view class='zstgcl'>
+        <image src='../../img/personal/zszk.png'></image>
+        <view>专属折扣</view>
+      </view>
+      <view class='zstgcl'>
+        <image src='../../img/personal/jbtq.png'></image>
+        <view>金币特权</view>
+      </view>
+    </view>
+  </view>
+  <view class='mylhb' hidden='true'>
+    <view class='mylhbhd'>每月免费领红包</view>
+    <view>会员期内每月可免费领取
+      <text style='color: #f44444;'>4个</text>无门槛红包</view>
+    <view class='hbcells'>
+      <view class='hbcell' wx:for="{{Coupons}}" style='background: {{item.state=="1"?"#fff":""}};color:{{item.state=="1"?"":""}}'>
+        <view class='hbleft'>
+          <text>￥</text>
+          <text>{{item.reduce}}</text>
+        </view>
+        <view class='hbright'>无门槛红包</view>
+        <view class='hbtop'></view>
+        <view class='hbbtm'></view>
+      </view>
+    </view>
+  </view>
+  <view class='mylhb'>
+    <view class='mylhbhd'>买单享受专属折扣</view>
+    <view>会员期内买单可享受
+      <text style='color: #f44444;'>折扣优惠</text>
+    </view>
+    <view class='zszk' wx:if="{{system.zb_img==''}}">
+      <view class='zkleft' style='left: 40rpx;top: 0;'>
+        <image src='../../img/personal/zshb.png'></image>
+        <view>超级会员专享价</view>
+        <view>￥29.9</view>
+      </view>
+      <view class='zkleft' style='background: #efeff4;color:#666;right: 40rpx;bottom: 0;'>
+        <view>原价</view>
+        <view>￥59.9</view>
+      </view>
+      <image class='zszkimg' src='../../img/personal/zszk.png'></image>
+    </view>
+    <view class='zszk1' wx:if="{{system.zb_img!=''}}">
+      <image src='{{system.zb_img}}'></image>
+    </view>
+  </view>
+   <view bindtap='lookck' class='zssm'>{{xtxx.hy_note}}</view> 
+  <!-- <view>
+    <rich-text nodes="{{xynr}}"></rich-text>
+  </view> -->
+</view>
+<navigator url='kthy' class="weui-btn-area">
+  <button wx:if="{{userInfo.ishy=='2'}}" class="weui-btn" style='background:{{color}};color:#fff;'>开通会员>></button>
+  <button wx:else class="weui-btn" style='background:{{color}};color:#fff;'>我的会员>></button>
+</navigator>
+<import src="/zh_cjdianc/pages/commons/xy.wxml" />
+<template is="xytemp" data="{{fwxy,xymc,xynr}}" />

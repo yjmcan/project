@@ -1,0 +1,49 @@
+<!--zh_hdbm/pages/logs/geren/geren.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class="font">
+    <view class="geren_header">
+      <view class="geren_header_one">
+        <view class="header_left">真实姓名:</view>
+        <input name="name" bindblur="inpunt1" placeholder="请输入你的真实姓名" placeholder-style="color:#ccc;" />
+      </view>
+      <view class="geren_header_one">
+        <view class="header_left">证件类型:</view>
+        <view>身份证</view>
+      </view>
+      <view class="geren_header_one">
+        <view class="header_left">证件号码:</view>
+        <input  name="code" bindblur="inpunt2" placeholder="请输入你的证件号码" placeholder-style="color:#ccc;" />
+      </view>
+    </view>
+
+    <view class="banner">
+      <view class="banner_left" bindtap="choose1">
+        <view class="benner_title">证件正面照片</view>
+        <view class="banner_box rel">
+          <image class="camera" wx:if="{{zm_img==null}}" src="../img/renzheng3.png"></image>
+          <image class="camera2" wx:if="{{zm_img!=null}}" src="{{url}}{{zm_img}}"></image>
+          <view wx:if="{{zm_img==null}}">点击上传</view>
+        </view>
+      </view>
+      <view class="banner_right" bindtap="choose2">
+        <view class="benner_title">证件背面照片</view>
+        <view class="banner_box rel">
+          <image class="camera" wx:if="{{fm_img==null}}" src="../img/renzheng3.png"></image>
+          <image class="camera2" wx:if="{{fm_img!=null}}" src="{{url}}{{fm_img}}"></image>
+          <view wx:if="{{fm_img==null}}">点击上传</view>
+        </view>
+      </view>
+    </view>
+    <view class="agree" bindtap='icon'>
+      <icon wx:if="{{icon==true}}" type="success" color="{{color}}" size="16" />
+      <icon wx:else type="success" color="#ccc" size="16" />
+      <view class="agree_text">我已阅读并同意
+        <text class="agree_text2" bindtap='identity' style='color:{{color}}'>《身份认证服务协议》</text>
+      </view>
+    </view>
+
+    <view class="footer">
+      <button class="footer_btn" form-type='submit' style='background:{{color}};color:#fff'>提交认证</button>
+    </view>
+  </view>
+</form>

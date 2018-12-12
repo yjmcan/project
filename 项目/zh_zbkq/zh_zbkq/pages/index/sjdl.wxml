@@ -1,0 +1,249 @@
+<!--zh_zbkq/pages/index/sjdl.wxml-->
+<view class="container">
+  <view class="head">
+    <swiper autoplay="auto" indicator-color='#666' indicator-active-color='#FFF' interval="5000" duration="500" indicator-dots='true' circular='true' class="swiper">
+      <block wx:if="{{sjinfo.lb_newimg.length!=0}}" wx:for="{{sjinfo.lb_newimg}}" wx:key="unique">
+        <swiper-item data-appid="{{item.appid}}">
+          <image mode='aspectFill' src="{{url}}{{item}}" class="img"></image>
+        </swiper-item>
+      </block>
+      <block wx:if="{{sjinfo.lb_newimg.length==0}}" wx:for="{{sjinfo.newimg}}" wx:key="unique">
+        <swiper-item data-appid="{{item.appid}}">
+          <image mode='aspectFill' src="{{url}}{{item}}" class="img"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="text1">{{sjinfo.md_name}}
+      <text style='font-weight:300;color:#666;margin-left:10rpx;'>({{sjinfo.type_name}})</text>
+      <navigator url='webhtml?vr_src={{sjinfo.vr_src}}'><text wx:if="{{sjinfo.vr_src!=''}}" class='vrxs'>VR演示</text></navigator>
+    </view>
+    <view class="text2">
+      <view class="text2-xj">
+        <view class='pingjia_fenshu3'>
+          <view class='kximg'>
+            <image src='../../img/i-star.png'></image>
+          </view>
+          <view class='sximg' style='width: {{ score* 20}}%'>
+            <image src='../../img/i-stars.png'></image>
+          </view>
+        </view>
+        <view wx:if="{{score>0}}" class='text2-fs'>{{score}}分</view>
+        <view wx:else class='text2-fs'>暂无评分</view>
+      </view>
+      <view class="text2-rq">人气：{{sjinfo.rq}}</view>
+    </view>
+  </view>
+  <!-- 优惠券 -->
+  <view class='list_header'>
+    <block wx:for="{{tabs}}">
+      <view class="list_title {{activeIndex==index?'default':'selsect'}}" id="{{index}}" bindtap="tabClick">
+        <view>{{item}}</view>
+        <view class='list_border' hidden='{{activeIndex!=index}}'></view>
+      </view>
+    </block>
+  </view>
+  <!--主页  -->
+  <view class="list" hidden="{{activeIndex != 0}}">
+    <view class='zhuye'>
+      <view class='zhuye-v' wx:if="{{sjinfo.WiFi=='1'}}">
+        <image src='../../img/2.png'></image>
+        <view>wifi</view>
+      </view>
+      <view class='zhuye-v' wx:if="{{sjinfo.park=='1'}}">
+        <image src='../../img/3.png'></image>
+        <view>停车位</view>
+      </view>
+      <view class='zhuye-v' wx:if="{{sjinfo.apy=='1'}}">
+        <image src='../../img/4.png'></image>
+        <view>支付宝支付</view>
+      </view>
+      <view class='zhuye-v' wx:if="{{sjinfo.wei=='1'}}">
+        <image src='../../img/5.png'></image>
+        <view>微信支付</view>
+      </view>
+    </view>
+    <!-- <view class="list_imgbk2" wx:if="{{yhqlist.length==0}}">
+      <image class="list_imgbk" src="../../img/ddyhq.png"></image>
+      <view class="list_imgbk3" style="margin-top:-30rpx;">商家暂未发布任何券哦！</view>
+    </view> -->
+    <view wx:if="{{yhqlist.length!=0}}">
+      <block wx:for="{{yhqlist}}">
+        <navigator url="yhqdl?yhqid={{item.id}}&imgurl={{url}}" class="yhq">
+          <image src="../../img/yhg1.png"></image>
+          <view class="yhq-lt">
+            <image mode='aspectFill' src="{{url}}{{sjinfo.md_logo}}"></image>
+          </view>
+          <view class="yhq-bd">
+            <text class="gobyndsingle">{{item.conditions}}</text>
+            <text wx:if="{{item.name=='代金券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>元</text></text>
+            <text wx:if="{{item.name=='折扣券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>折</text></text>
+            <text class="gobyndsingle" wx:if="{{item.name=='通用券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>{{item.kq_name}}</text></text>
+            <text>有效期：{{item.start_time}}至{{item.end_time}}</text>
+          </view>
+          <view wx:if="{{item.islq=='1'}}" class="yhq-rt2">领取过了</view>
+          <view wx:else class="yhq-rt">立即领取</view>
+        </navigator>
+      </block>
+    </view>
+    <view class="text3">
+      <view class="text3-view" bindtap='openmap'>
+        <image src="../../img/ditu1.png"></image>
+        <text style='width:80%' class="gobyndsingle">{{sjinfo.address}}</text>
+        <view class='daoh'>导航</view>
+      </view>
+      <view class="text3-view">
+        <image src="../../img/time.png"></image>
+        <text>营业时间：{{sjinfo.start_time}}-{{sjinfo.end_time}}</text>
+      </view>
+      <view class="text3-view" bindtap='maketel'>
+        <image src="../../img/dianhua.png"></image>
+        <text>{{sjinfo.link_tel}}  ({{sjinfo.link_name}})</text>
+        <image style='width:30rpx;height:30rpx;' src="../../img/jiantou1.png"></image>
+      </view>
+      <view class="text3-view" bindtap='ckgg'>
+        <image src="../../img/mdjj.png"></image>
+        <text>门店简介</text>
+        <image style='width:30rpx;height:30rpx;' src="../../img/jiantou1.png"></image>
+      </view>
+    </view>
+    <view class='zhuye-c'>
+      <!-- <view>{{sjinfo.type_name}}</view> -->
+      <!-- <view class='sjgg'>
+        门店公告： {{sjinfo.notice}}
+      </view> -->
+      <view class="bd">
+        <view class="line"></view>
+        <view class="bd-pl"> 门店图片 </view>
+        <view class="line"></view>
+      </view>
+      <view class='sjimg'>
+        <image wx:for="{{sjinfo.newimg}}" mode='widthFix' src='{{url}}{{item}}'></image>
+      </view>
+      <view class='sjcode'>
+        <view style='color:#999'>点击图中小程序码进行识别，即可进入门店</view>
+        <image bindtap="goodsQrcodeClick" data-src='{{storecode}}' src='{{storecode}}'></image>
+        <view><text>{{sjinfo.md_name}}</text>专属小程序码</view>
+      </view>
+    </view>
+  </view>
+
+  <!--发现  -->
+  <view class="list" hidden="{{activeIndex != 1}}">
+    <!-- 评论 -->
+    <view class="bd">
+      <view class="line"></view>
+      <view class="bd-pl"> 评论 </view>
+      <view class="line"></view>
+    </view>
+    <view wx:if="{{plist.length==0}}" class="list_imgbk2">
+      <image class="list_imgbk" src="../../img/wsj.png"></image>
+      <view class="list_imgbk3" style="margin-top:-30rpx;">商家暂无评论！</view>
+    </view>
+    <view wx:else>
+      <view class="pl" wx:for="{{plist}}">
+        <view class="pl-hd">
+          <image class="pl-hd-lt" src="{{item.logo}}"></image>
+          <text class="pl-hd-bd">{{item.nickname}}</text>
+          <view class="pl-xj">
+            <block wx:if="{{item.score=='1'}}">
+              <image wx:for="{{pjnum1}}" src="{{item}}" style="margin-right:7rpx"></image>
+            </block>
+            <block wx:if="{{item.score=='2'}}">
+              <image wx:for="{{pjnum2}}" src="{{item}}" style="margin-right:7rpx"></image>
+            </block>
+            <block wx:if="{{item.score=='3'}}">
+              <image wx:for="{{pjnum3}}" src="{{item}}" style="margin-right:7rpx"></image>
+            </block>
+            <block wx:if="{{item.score=='4'}}">
+              <image wx:for="{{pjnum4}}" src="{{item}}" style="margin-right:7rpx"></image>
+            </block>
+            <block wx:if="{{item.score=='5'}}">
+              <image wx:for="{{pjnum5}}" src="{{item}}" style="margin-right:7rpx"></image>
+            </block>
+          </view>
+          <view class="pl-hd-rt">
+            {{item.cerated_time}}
+          </view>
+        </view>
+        <view class="pl-bd">
+          {{item.content}}
+        </view>
+        <view class="pl-img" wx:if="{{item.img[0]!=''}}">
+          <block wx:for="{{item.img}}" wx:for-item="imgitem">
+            <image mode="aspectFill" bindtap='previewImage' data-imgarr='{{item.img}}' src="{{url}}{{imgitem}}"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<navigator url='fbpl?sjlogo={{url+sjinfo.md_logo}}&sjid={{sjinfo.id}}'>
+  <!-- <view wx:if="{{ispl}}" class='fbpl'>评论</view> -->
+  <image wx:if="{{ispl}}" class='fbplimg' src='../../img/pl.png'></image>
+</navigator>
+<!-- <view class='fenx' bindtap='showShareModal'>分享</view> -->
+<image class='fenximg' src='../../img/fenx.png' bindtap='showShareModal'></image>
+<navigator open-type='switchTab' url='index'>
+  <image class='moreimg' src='../../img/fanh.png'></image>
+</navigator>
+<!-- <view class='fbpl1' bindtap='ckgg'>
+  <image src='../../img/sz.png'></image>
+  <view>公告</view>
+</view> -->
+<view class="drawer_screen" bindtap='yczz' wx:if="{{showModal}}"></view>
+<!--content-->
+<view class="drawer_box" wx:if="{{showModal}}">
+  <!--drawer content-->
+  <view class="drawer_title">门店简介</view>
+  <view class="drawer_title1">{{sjinfo.notice}}</view>
+  <view class="btn_ok" bindtap="yczz">确定</view>
+</view>
+<!-- 分享 -->
+<view class="share-modal {{share_modal_active}}">
+  <view class="share-modal-body">
+    <view class="flex-row">
+      <view class="flex-grow-1 flex-x-center">
+        <button open-type="share" class="share-bottom">
+          <image src="../../img/wxfx.png"></image>
+          <view>分享给朋友</view>
+        </button>
+      </view>
+      <view class="flex-grow-1 flex-x-center">
+        <view bindtap="getGoodsQrcode" class="share-bottom">
+          <image src="../../img/schb.png"></image>
+          <view>分享商家海报</view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="shareModalClose" class="share-modal-close flex-y-center flex-x-center">关闭</view>
+  </view>
+</view>
+<view class="goods-qrcode-modal {{goods_qrcode_active}}">
+  <view class="goods-qrcode-body flex-col">
+    <view class="flex-grow-1" style="position: relative">
+      <view style="position: absolute;left: 0;top:0;width: 100%;height: 100%;padding: 100rpx 100rpx 60rpx">
+        <view class="goods-qrcode-box">
+          <view class="goods-qrcode-loading flex-x-center flex-y-center">
+            <view class="flex-x-center flex-col">
+              <image style="width: 150rpx;height: 150rpx" src="../../img/loading2.svg"></image>
+              <view style="color: #888">海报生成中</view>
+            </view>
+          </view>
+          <image bindtap="goodsQrcodeClick" mode="aspectFit" class="goods-qrcode {{goods_qrcode?'active':''}}" data-src="{{goods_qrcode}}" src="{{goods_qrcode}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="flex-grow-0 flex-col flex-x-center" style="padding: 0 60rpx 80rpx">
+      <view style="margin-bottom: 20rpx;padding: 0 40rpx">
+        <button wx:if="{{goods_qrcode}}" bindtap="saveGoodsQrcode" data-src="{{goods_qrcode}}" style="background: #f44444;color: #fff;">
+          保存图片
+        </button>
+        <button wx:else style="opacity: .4">保存图片</button>
+      </view>
+      <view style="color: #888;font-size: 10pt;text-align: center">保存至相册可以分享到朋友圈</view>
+    </view>
+    <view class="goods-qrcode-close" bindtap="goodsQrcodeClose">
+      <image src="../../img/icon-close2.png" style="width: 70rpx;height: 70rpx;display: block"></image>
+    </view>
+  </view>
+</view>

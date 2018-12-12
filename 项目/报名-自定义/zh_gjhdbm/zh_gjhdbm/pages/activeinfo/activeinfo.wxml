@@ -1,0 +1,273 @@
+<!--pages/activeinfo/activeinfo.wxml-->
+<import src="../wxParse/wxParse.wxml" />
+
+<view class='index'>
+  <view class='achimg'>
+    <image bindload='image' mode='aspectFill' data-logo='{{activity.logo}}' src='{{url}}{{activity.logo}}'></image>
+  </view>
+  <view class='achneirong rel'>
+    <view class='achtitle'>{{activity.title}}</view>
+    <view class='suspension' bindtap='guanzhu' wx:if="{{guanzhu==false}}" style='background:{{color}}'>关注</view>
+    <view class='suspension' bindtap='quxiaogz' wx:if="{{guanzhu==true}}" style='background:#e5e5e5;'>取消关注</view>
+    <view class='hdboxlabel'>
+      <view class='hdlabel' style='border:2rpx solid {{color}};color:{{color}}'>{{activity.type_id}}</view>
+      <view class='hdlabel' wx:if="{{activity.activity_type==1}}" style='border:2rpx solid {{color}};color:{{color}}'>线上活动</view>
+      <view class='hdlabel' wx:if="{{activity.activity_type==2}}" style='border:2rpx solid {{color}};color:{{color}}'>线下活动</view>
+      <view>浏览量:
+        <text style='background:{{color}}'>{{activity.views}}</text>
+      </view>
+      <view>已报名:
+        <text style='background:{{color}}'>{{bm_people}}</text>
+      </view>
+    </view>
+    <view class='count_down rel' wx:if="{{clock!='已经截止'}}">
+      <view class='ab'>
+        <image mode='aspectFit' src='../img/count_down.png'></image>
+      </view>
+      <view class='ab'>
+        <view>火爆中</view>
+        <view>
+          <text>{{clock.day}}</text>
+          <text>天</text>
+          <text>{{clock.hr}}</text>
+          <text>时</text>
+          <text>{{clock.min}}</text>
+          <text>分</text>
+          <text>{{clock.sec}}</text>
+          <text>秒</text>
+        </view>
+        <view>距离报名结束</view>
+      </view>
+    </view>
+    <view class='achlist' bindtap='zhubanf' data-sponsor='{{activity.sponsor}}' data-user_id='{{activity.user_id}}'>
+      <view class='flex_center'>
+        <image class='achlistimg' src='../img/acuser.png'></image>
+        <view>{{activity.sponsor}}
+          <text class='back_color_none' wx:if="{{rz_type==0&&activity.user_id!=0}}">未认证</text>
+          <text class='back_color' wx:if="{{rz_type==1&&activity.user_id!=0}}" style='background:{{color}}'>个人认证</text>
+          <text class='back_color' wx:if="{{rz_type==2&&activity.user_id!=0}}" style='background:{{color}}'>企业认证</text>
+          <text class='back_color' wx:if="{{activity.user_id==0}}" style='background:{{color}}'>官方发布</text>
+        </view>
+      </view>
+      <image class='achlistrit' src='../img/acright.png' wx:if="{{activity.user_id!=0}}"></image>
+    </view>
+    <view class='achlist'>
+      <view class='flex_center'>
+        <image class='achlistimg' src='../img/acrmb.png'></image>
+        <view>￥{{activity.zd_money}} 起</view>
+      </view>
+    </view>
+    <view class='achlist'>
+      <view class='flex_center'>
+        <image class='achlistimg' src='../img/actime.png'></image>
+        <view>{{activity.start_time}} —— {{activity.end_time}}</view>
+      </view>
+    </view>
+    <view class='achlist' bindtap='openlocation'>
+      <view class='flex_center'>
+        <image class='achlistimg2' src='../img/acaddress.png'></image>
+        <view>{{activity.address}}</view>
+      </view>
+      <image class='achlistrit' src='../img/acright.png'></image>
+    </view>
+    <view class='achlist' bindtap='make_phone'>
+      <view class='flex_center'>
+        <image class='achlistimg2' src='../img/dianhuahui.png'></image>
+        <view>{{activity.link_tel}}</view>
+      </view>
+      <image class='achlistrit' src='../img/acright.png'></image>
+    </view>
+  </view>
+  <!--参加活动人数  -->
+  <view class='auserbox' wx:if="{{close==false}}" bindtap='bmlist'>
+    <view class='ausertitle' wx:if="{{bmlist!=1}}">参加活动的人有这些
+      <image style='float:right' class='achlistrit' src='../img/acright.png'></image>
+    </view>
+    <view class='auserlist' wx:if="{{bmlist!=1}}">
+      <image mode='aspectFill' wx:for="{{bmlist}}" wx:key="*this" class='auserimg' src='{{item.img}}'></image>
+    </view>
+  </view>
+  <!--  活动详情  -->
+  <view class='infocontent' wx:if="{{close==false}}">
+    <!--  详情列表  -->
+    <view class='infoheader'>
+      <view class='infoheader_color' wx:if="{{index==0}}">详情</view>
+      <view wx:if="{{index==1}}" bindtap='hide1'>详情</view>
+      <view class='infoheader_color' wx:if="{{index==1}}">留言</view>
+      <view wx:if="{{index==0}}" bindtap='hide2'>留言</view>
+    </view>
+    <view class='infobox' style='margin-top:20rpx;'>
+      <view class='infoboxin' wx:if="{{index==0}}">
+        <!--没有详情  -->
+        <view class='none_assess' wx:if="{{activity.content==''&&activity.content.hd_imgs==''&&activity.video!=''}}">
+          <image mode='aspectFill' mode='aspectFill' src='../img/none_count.png'></image>
+          管理员没有设置详情
+        </view>
+        <view>
+          <view class='video' style='z-index:-10;'  wx:if="{{activity.video!='?vkey='&&activity.video!=null}}">
+            <video src="{{activity.video}}"   wx:if="{{activity.video!='?vkey='}}"  controls ></video>
+          </view>
+          <view>
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+          </view>
+          <!-- <text >{{activity.content}}</text>  -->
+          <rich-text style='width:100%;height:auto' nodes="{{activity.content}}"></rich-text>
+        </view>
+        <image mode='widthFix' wx:for="{{activity.hd_imgs}}" wx:key="*this" src='{{url}}{{item}}' bindtap='previewImage' data-inde='{{index}}'></image>
+      </view>
+      <view class='evaluate' wx:if="{{index==1}}">
+        <!--没有留言  -->
+        <view class='none_assess' wx:if="{{assess.length<=0}}">
+          <image mode='aspectFill' mode='aspectFill' src='../img/none_assess.png'></image>
+          还没有人留言
+        </view>
+        <view style='border-bottom:2rpx solid #e5e5e5' wx:for="{{assess}}" wx:for-item="itemName" wx:key="*this">
+          <view class='evaluate_head'>
+            <view class='rel'>
+              <image mode='aspectFill' src='{{itemName.img}}' class='ab ud'></image>
+            </view>
+            <view class='user'>
+              <view class='gobyndsingle'>{{itemName.name}}</view>
+              <view>{{itemName.cerated_time}}</view>
+            </view>
+          </view>
+          <view class='evaluate_content'>
+            <text>{{itemName.content}}</text>
+          </view>
+          <view class='evaluate_content' style='background:#f9f9f9;' wx:if="{{itemName.reply!=''}}">
+            <text>管理员回复：{{itemName.reply}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  底部导航栏  -->
+  <view class='infofoot2'></view>
+  <view class='infofoot'>
+    <view class='infofbox1' bindtap='index'>
+      <image class='infofimg' src='../img/taoxin.png'></image>
+      <view>首页</view>
+    </view>
+    <view class='infofbox1 rel' bindtap='hide'>
+      <image class='infofimg' src='../img/huifuhei.png'></image>
+      <view>留言</view>
+    </view>
+    <view class='infofbox2 rel' bindtap='share'>
+      <image class='infofimg' src='../img/shares.png'></image>
+      <view>转发</view>
+    </view>
+    <view class='infofbox3' bindtap='delete_ticket' wx:if="{{activity.activity_over==1}}" style='background:{{color}}'>我要参加</view>
+    <view class='infofbox3' wx:if="{{activity.activity_over==2}}" style='background:#ccc'>活动已结束</view>
+  </view>
+</view>
+<!--  底部弹出票券选择框  -->
+<view class='ticket' wx:if="{{ticket==true}}">
+  <view></view>
+  <view>
+    <view class='select_ticket rel'>
+      选择票券
+      <image bindtap='delete_ticket' mode='aspectFill' class='ab ud' src='../img/delete_ticket.png'></image>
+    </view>
+    <view class='ticket_select rel' wx:for="{{tickets}}" wx:key="*this">
+      <view>
+        <text>{{item.tk_name}}</text>
+        <text style='color:{{color}}'>￥{{item.money}}</text>
+      </view>
+      <view wx:if="{{item.sy_num<1}}">余票不足</view>
+      <view wx:else>剩余{{item.sy_num}}(每人限购{{item.limit_num}}张)</view>
+      <view class='add_delete ab'>
+        <view class='rel' bindtap='reduce' data-index='{{index}}'>
+          <image mode='aspectFill' class='ab udlr' src='../img/reduce.png'></image>
+        </view>
+        <view>{{item.num}}</view>
+        <view class='rel' bindtap='plus' data-index='{{index}}'>
+          <image mode='aspectFill' class='ab udlr' src='../img/plus.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='next_step ab'>
+      <button class='ab udlr button_one' wx:if="{{num==0}}">下一步</button>
+      <button class='ab udlr button_two' bindtap='next_step' wx:if="{{num>0}}" style='background:{{color}}'>下一步</button>
+    </view>
+  </view>
+</view>
+<!-- 转发给好友或者朋友圈  -->
+<view class='share' wx:if="{{share==true}}">
+  <view class='ab share_mode'>
+    <view class='rel'>
+      <view class='ab udlr'>
+        <image mode='aspectFill' src='../img/wxfx.png'></image>
+        <text>发送给好友</text>
+        <button open-type='share'></button>
+      </view>
+    </view>
+    <view class='rel'>
+      <view class='ab udlr' bindtap='Preservation'>
+        <image mode='aspectFill' src='../img/schb.png'></image>
+        <text>分享到朋友圈</text>
+      </view>
+    </view>
+    <view bindtap='share'>关闭</view>
+  </view>
+  <view class='ab'></view>
+</view>
+<!-- <view class='acticity_poster' wx:if="{{Preservation==true}}">
+  <view>
+    <image mode='aspectFill' src='{{acticity_poster}}'></image>
+  </view>
+  <view class='' style='background:{{color}}' bindtap='totemp'>保存图片到相册</view>
+</view> -->
+<!--  这是生成转发图片  -->
+<view class='generateImage' hidden='{{Preservation}}'>
+  <view class='ab'></view>
+  <view class='ab udlr'>
+    <view style='overflow:hidden'>
+      <image mode='aspectFill' src='{{acticity_poster}}'></image>
+    </view>
+    <button class='fon_30' bindtap='totemp' style='background:{{color}};color:#fff'>保存图片</button>
+    <view class='color_e fon_24 t_c pa'>保存至相册可以分享至朋友圈</view>
+    <view class='ab t_c' bindtap='close_share'>×</view>
+  </view>
+</view>
+<!--保存评论  -->
+<view class='leaving' wx:if="{{hide==true}}">
+  <view class='ab'></view>
+  <view class='ab lr'>
+    <view class='rel'>
+      发表留言
+      <text bindtap='hide' class='ab ud'>×</text>
+    </view>
+    <view>
+      <textarea bindinput='textarea' maxlength='540' placeholder='请输入留言'></textarea>
+    </view>
+    <view>
+      <button bindtap='saves' style='background:{{color}}'>确定</button>
+    </view>
+  </view>
+</view>
+<!--保存个人信息  -->
+<view class='per_info' wx:if="{{per_info==true}}">
+  <view class='ab' bindtap='per_info'></view>
+  <view class='ab lr'>
+    <view class='rel'>
+      为了方便主办方能联系到您，请填写正确的信息
+    </view>
+    <view>
+      <view>姓名：</view>
+      <view class='rel'>
+        <input bindinput='link_name' class='ab udlr' placeholder='请输入您的真实姓名'></input>
+      </view>
+    </view>
+    <view>
+      <view>联系方式：</view>
+      <view class='rel'>
+        <input bindinput='link_tel' type='number' class='ab udlr' placeholder='请输入您的真实手机号'></input>
+      </view>
+    </view>
+    <view>
+      <button bindtap='save_perinfo' style='background:{{color}}'>确定</button>
+    </view>
+  </view>
+</view>
+<canvas style="width: 100%; height: 100%;top:-1200000rpx;" canvas-id="ctx"></canvas>
+<canvas style="width: 100%; height: 100%;top:-1200000rpx;" canvas-id="cb"></canvas>

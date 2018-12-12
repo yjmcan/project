@@ -1,0 +1,55 @@
+<!--zh_qygw/pages/mould2/we/we.wxml-->
+<view class="home">
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit='true'>
+  <view class="iheader">
+    <image src="../../images/zixun.png"></image>
+  </view>
+  <view class="wbanner">
+    <view class="wbtitle">预约定制立享优惠</view>
+    <!-- <view class="wbfu">已有133人提交预约</view> -->
+    <view class="wbkuang">
+      <image class="wbkuser" src="../../images/user.png"></image>
+      <input class="wbkinp" type="text" name="username" placeholder="请输入您的姓名" placeholder-style="color:#ccc;"/>
+    </view>
+    <view class="wbkuang">
+      <image class="wbkuser" src="../../images/phone.png"></image>
+      <input class="wbkinp" type="text" name="tel" bindblur="huoquyz" placeholder="请输入您的手机号" placeholder-style="color:#ccc;"/>
+    </view>
+
+    <view class="wbkbox">
+      <view class="wbkuang2">
+        <image class="wbkuser" src="../../images/code.png"></image>
+        <input class="wbkinp" bindblur="yzcode" type="text" name="numyan" placeholder="验证码" placeholder-style="color:#ccc;"/>      
+      </view>
+      <view class="abyan" bindtap="yanzheng">获取验证码</view>
+    </view> 
+
+    <button class="tijiao" formType="submit">提交</button>
+    <view class="flex-center">
+      <image class="tell" src="../../images/dianhualan.png"></image>
+      <view class="phonenum">客服热线</view>
+      <view class="phonenum">{{aboutus.link_tel}}</view>
+      <view class="phonenum2" bindtap="phone">点击免费拨打</view>
+    </view>
+    <view class="banquan">技术支持：{{copyrit.support}}</view>
+  </view>
+
+  <!--————————底部部分————————-->
+  <view class="footbox"></view>
+  <view class="foot">
+    <view class="footlist flex3" bindtap="home">
+      <image src="../../images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="footlist flex3" bindtap="fangan">
+      <image src="../../images/fangan.png"></image>
+      <view>解决方案</view>
+    </view>
+    <view class="footlist flex3">
+      <image src="../../images/guanyusele.png"></image>
+      <view style="color:#28B3E5;">咨询我们</view>
+    </view>
+  </view>
+</form>
+</view>
+

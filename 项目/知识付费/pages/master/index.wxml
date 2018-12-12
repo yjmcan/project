@@ -1,0 +1,5 @@
+<view class='container'>
+    <view wx:for="{{list}}" bindtap='curriculum'>
+        <image mode='aspectFill' src='http://img3.imgtn.bdimg.com/it/u=713640963,563239764&fm=214&gp=0.jpg'></image>
+    </view>
+</view>

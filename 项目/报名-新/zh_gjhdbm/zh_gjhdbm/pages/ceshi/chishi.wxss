@@ -1,0 +1,91 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+}
+.Already_connected{
+   width: 100%;
+  height: 400rpx;
+  background: #fff;
+}
+.nearby{
+  width: 100%;
+  height: auto;
+  min-height: 500rpx;
+}
+.nearby_wifi{
+  width: 100%;
+  height: 70rpx;
+  font-size: 24rpx;
+  text-indent: 40rpx;
+  line-height: 70rpx;
+  background: #f9f9f9;
+}
+.Already_connected>view:nth-child(1){
+  width: 100%;
+  height: 60rpx;
+  color: #fff;
+  line-height: 60rpx;
+}
+.make text{
+  padding:0 40rpx;
+  background: #00d292;
+  width: auto;
+  float: right;
+}
+.Already_connected>view:nth-child(2){
+  width: 100%;
+  height: 240rpx;
+}
+.Already_connected_info>view:first-child{
+  width: 100%;
+  height: 180rpx;
+  line-height: 200rpx;
+  text-align: center;
+  font-size: 50rpx;
+}
+.Already_connected_info>view:last-child{
+  width: 100%;
+  height: 60rpx;
+  line-height: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+.see_details{
+  display: flex;
+}
+.see_details>view{
+  flex: 2;
+  text-align: center;
+  line-height: 100rpx;
+  color: #00d292;
+}
+.wifi_list{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #f9f9f9;
+  box-sizing: border-box;
+  background: #fff;
+}
+.wifi_list>view{
+  height: 100%;
+  float: left;
+}
+.wifi_list>view:nth-child(1){
+  text-indent: 40rpx;
+  font-size: 30rpx;
+  color: #2b2b2b;
+  width: 70%;
+}
+.wifi_list>view:nth-child(2){
+  text-indent: 40rpx;
+  font-size: 30rpx;
+  color: #2b2b2b;
+  text-align: center;
+  width: 30%;
+}

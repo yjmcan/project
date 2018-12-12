@@ -1,0 +1,11 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class='index'>
+  <view class='cenbanner' bindtap='myedit'>
+    <view class='cenbox'>
+      <image class='cenuserimg' src='{{userInfo.img}}'></image>
+      <view class='cenusername'>{{userInfo.name}}</view>
+    </view>
+    <image class='cenright' src='../img/acright.png'></image>
+  </view>
+   <!-- <button class='cenbutton'>添加主办方</button>  -->
+</view>

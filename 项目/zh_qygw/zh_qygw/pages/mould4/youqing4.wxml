@@ -1,0 +1,5 @@
+<!--zh_qygw/pages/mould4/youqing4.wxml-->
+<view class="index">
+  <image src="{{url}}/addons/zh_qygw/template/images/youqing1.jpg"></image>
+  <image src="{{url}}/addons/zh_qygw/template/images/youqing2.jpg"></image>
+</view>

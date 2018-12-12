@@ -1,0 +1,3 @@
+<view>
+    <button bindtap='add_market'>确认成为核销员</button>
+</view>

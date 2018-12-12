@@ -1,0 +1,4 @@
+/* zh_gjhdbm/pages/fill_info/notice.wxss */
+page{
+  padding: 20rpx;
+}

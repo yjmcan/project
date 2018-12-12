@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "zh_jd/pages/shouye/shouye",
+    "zh_jd/pages/132/123",
+    "zh_jd/pages/check/check",
+    "zh_jd/pages/merchant/merchant",
+    "zh_jd/pages/dingdan/dingdan",
+    "zh_jd/pages/dingevaluate/dingevaluate",
+    "zh_jd/pages/daodianzhifu/daodianzhifu",
+    "zh_jd/pages/yuding/yuding",
+    "zh_jd/pages/coupon/coupon",
+    "zh_jd/pages/ruzhu/ruzhu",
+    "zh_jd/pages/wode/index",
+    "zh_jd/pages/logs/logs",
+    "zh_jd/pages/mylist/mylist",
+    "zh_jd/pages/calendar/calendar",
+    "zh_jd/pages/pinglun/pinglun",
+    "zh_jd/pages/introduce/introduce",
+    "zh_jd/pages/logs/member/mine_integral",
+    "zh_jd/pages/logs/rurle",
+    "zh_jd/pages/logs/content/content",
+    "zh_jd/pages/logs/insider/insider",
+    "zh_jd/pages/wode/room",
+    "zh_jd/pages/logs/refund/refund"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F9882B",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#F9882B",
+    "color": "#000000",
+    "list": [
+      {
+        "pagePath": "zh_jd/pages/shouye/shouye",
+        "text": "首页",
+        "iconPath": "zh_jd/images/shouye1.png",
+        "selectedIconPath": "zh_jd/images/shouye.png"
+      },
+      {
+        "pagePath": "zh_jd/pages/logs/logs",
+        "text": "我的",
+        "iconPath": "zh_jd/images/wode1.png",
+        "selectedIconPath": "zh_jd/images/wode.png"
+      }
+    ]
+  }
+}

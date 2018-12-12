@@ -1,0 +1,148 @@
+/* zh_hyk/pages/my/wdzd.wxss */
+.selsect {
+  color: #333;
+}
+
+.default {
+  color: #ff7f46;
+}
+.head{
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+.bd{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.bdimg{
+  width: 100%;
+  height: 300rpx;
+  position: absolute;
+}
+.sx{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  color: #fff;
+}
+.sx image{
+  width: 30rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+.bdtext{
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 35rpx;
+}
+.bdtext view:first-child{
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+.banner{
+  background-color: white;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.b-head{
+  font-size: 35rpx;
+  padding: 0 20rpx;
+  border-left: 10rpx solid #ff7f46;
+}
+.sxrq{
+  color: #ff7f46;
+  font-size: 28rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+/**/
+.list{
+  margin-top: 460rpx;
+  border-top: 1rpx solid #d9d9d9;
+}
+.jf1{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #6AC20B;
+}
+.jf1 text{
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+.jf2{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #ff7f46;
+}
+.jf2 text{
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+.sj{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+.weui-cells{
+  margin: 20rpx 0;
+}
+.weui-cell{
+  font-size: 30rpx;
+}
+.weui-cell::before{
+  border-top: 1rpx solid #e7e7e7;
+}
+.zd .weui-cell:before{
+  border-top: none;
+}
+.weui-cell__ft{
+  font-size: 28rpx;
+  color: #999;
+}
+.weui-cell__hd{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.md{
+  padding: 0 0 0 30rpx;
+}
+.mdimg{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+}
+.mdbj{
+  box-sizing: border-box;
+  height: 150rpx;
+  background: #FBFBFB;
+  padding: 30rpx 20rpx;
+  color: #666;
+  font-size: 28rpx;
+
+}
+.fkxl{
+  width: 35rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.zxmd{
+  font-size: 28rpx;
+  color: #999;
+}
+.mdname{
+  font-size: 32rpx;
+  font-weight: bold;
+}

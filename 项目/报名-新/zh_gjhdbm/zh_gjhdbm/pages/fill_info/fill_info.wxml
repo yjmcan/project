@@ -1,0 +1,52 @@
+<form  bindsubmit="formSubmit"  report-submit="true" bindreset="formReset">
+  <view>
+    <view class='etitle'>
+      <view class='exian'></view>
+      <view>已选票券</view>
+    </view>
+    <view class='ticket' wx:for="{{tickets}}">
+      <view>{{item.tk_name}}</view>
+      <view>×{{item.num}}</view>
+      <view style='color:{{color}}'>￥{{item.money}}</view>
+    </view>
+    <view class='total'>
+      <view style='color:{{color}}'>￥{{price}}</view>
+      <view>总计：</view>
+    </view>
+  </view>
+  <view class='sign'>
+    <view class='etitle'>
+      <view class='exian'></view>
+      <view>报名信息</view>
+    </view>
+    <view class='sign_up' wx:for="{{sign_up}}">
+      <view>{{item.name}}
+        <text>*</text>
+      </view>
+      <view>
+        <input name="name{{index}}" placeholder='请输入您的{{item.name}}' value=''></input>
+      </view>
+    </view>
+    <view class='etitle' wx:if="{{upload==1}}">
+      <view class='exian'></view>
+      <view>上传图片</view>
+    </view>
+    <view class='upload_img' wx:if="{{upload==1}}">
+        <view class='upload_img_show' wx:for="{{upload_img}}" bindtap='cancel_img' data-index='{{index}}'>
+            <image mode='aspectFill' src='{{item}}'></image>
+        </view>
+        <view class='sele_upload_img rel' bindtap='uploadImg' wx:if="{{upload_img.length<9}}">
+            <image mode='widthFix' class='ab udlr' src='../image/upload.png'></image>
+        </view>
+    </view>
+  </view>
+    <view class='rel notice pa_0 fon_28 color_9'>
+        <icon bindtap='select' class='ab icon' wx:if="{{select==true}}" type="success" color='{{color}}' size= "16"></icon>
+        <view bindtap='select' class='ab icon' wx:else style='width:16px;height:16px;'></view>
+        <text class='mar_40'>请先阅读</text>
+        <text style='color:{{color}}' bindtap='notice'>《用户须知》</text>
+    </view>
+  <view style='height:120rpx;'></view>
+  <button form-type='submit' style='background:{{color}}' wx:if="{{select==true}}">提交报名</button>
+  <button style='background:#ccc' wx:else>提交报名</button>
+</form>

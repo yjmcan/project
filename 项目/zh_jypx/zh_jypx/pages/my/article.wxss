@@ -1,0 +1,18 @@
+/* pages/my/article.wxss */
+page{
+  background: #fff;
+}
+.title{
+  font-size: 38rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.recond{
+  padding:0 30rpx;
+}
+.list_recond{
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}

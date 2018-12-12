@@ -1,0 +1,103 @@
+<!--zh_hyk/pages/my/wdzd.wxml-->
+<include src="/zh_vip/pages/commons/navbar/navbar.wxml" />
+<view class='head'>
+  <view class='list_header'>
+    <block wx:for="{{tabs}}">
+      <view class="list_title {{activeIndex==index?'default':'selsect'}}" id="{{index}}" bindtap="tabClick">
+        <view>{{item}}</view>
+        <view class='list_border' style="background-color:#ff7f46;" hidden='{{activeIndex!=index}}'></view>
+      </view>
+    </block>
+  </view>
+  <view class='bd'>
+    <image class='bdimg' src='../../img/zdbgimg.png'></image>
+    <picker mode="date" value="{{date}}" end="{{end}}" bindchange="bindDateChange">
+      <view class='sx flex5'>
+        <view>筛选</view>
+        <image src='../../img/sjx.png'></image>
+      </view>
+    </picker>
+    <view class='bdtext'>
+      <view>{{htext}}</view>
+      <view>{{bdtext}}</view>
+    </view>
+  </view>
+  <view class="banner">
+    <view class="b-head">{{banertext}}</view>
+    <view class='sxrq' wx:if="{{issx}}">筛选日期：{{date}}</view>
+    <view class='sxrq' wx:else>全部账单</view>
+  </view>
+</view>
+<view class="list" hidden="{{activeIndex != 0}}">
+  <view class="list_imgbk2" hidden="{{qbmx.length!=0}}">
+    <image class="list_imgbk" src="../../img/wzdmx.png"></image>
+    <view class="list_imgbk3">此时段您暂时没有钱包明细哦！</view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{qbmx}}">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view wx:if="{{item.type=='1'}}" class='jf1'>+{{item.money}}
+            <text>元</text>
+          </view>
+          <view wx:if="{{item.type=='2'}}" class='jf2'>-{{item.money}}
+            <text>元</text>
+          </view>
+          <view class="sj">{{item.note}}</view>
+        </view>
+        <view class="weui-cell__ft">
+          {{item.time}}
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='kong' hidden="{{qbmx.length==0}}">
+    <image src='../../img/wushuju.png'></image>
+    <view>没有更多了~</view>
+  </view>
+</view>
+<view class="list" hidden="{{activeIndex != 1}}">
+  <view class="list_imgbk2" hidden="{{zfzd.length!=0}}">
+    <image class="list_imgbk" src="../../img/wzdmx.png"></image>
+    <view class="list_imgbk3">此时段您暂时没有账单明细哦！</view>
+  </view>
+  <block wx:for="{{zfzd}}">
+    <view class="weui-cells weui-cells_after-title zd">
+      <navigator url='zdxq?zdid={{item.id}}'>
+        <view class="weui-cell">
+          <view class="weui-cell__bd mdname">{{item.store_name}} ></view>
+          <view class="weui-cell__ft" style='color:#ff7f46'>支付已完成</view>
+        </view>
+        <view class="weui-cell md">
+          <view class="weui-cell__hd">
+            <image class='mdimg' src="{{url}}{{item.store_logo}}"></image>
+          </view>
+          <view class="weui-cell__bd mdbj">
+            <view>{{item.time}}</view>
+            <view style='margin-top:20rpx;'>
+              <text wx:if="{{item.price!='0.00'}}">总价：￥{{item.price}}</text>
+              <text style='margin-left:30rpx;'>实付：￥{{item.money}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image wx:if="{{item.pay_type=='1'}}" class='fkxl' src="../../img/weixin.png"></image>
+            <image wx:if="{{item.pay_type=='2'}}" class='fkxl' src="../../img/yeqb.png"></image>
+            <image style='height:35rpx;' wx:if="{{item.pay_type=='3'}}" class='fkxl' src="../../img/cost.png"></image>
+          </view>
+          <view class="weui-cell__bd">
+            <view class='zxmd' wx:if="{{item.pay_type=='1'}}">微信支付</view>
+            <view class='zxmd' wx:if="{{item.pay_type=='2'}}">余额支付</view>
+            <view class='zxmd' wx:if="{{item.pay_type=='3'}}">积分支付</view>
+            <view class='zxmd' style='color:#ff7f46' wx:if="{{item.pay_type=='0'}}">{{item.pay_type2}}</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+  <view class='kong' hidden="{{zfzd.length==0}}">
+    <image src='../../img/wushuju.png'></image>
+    <view>没有更多了~</view>
+  </view>
+</view>

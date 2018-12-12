@@ -1,0 +1,24 @@
+<!--zh_qygw/pages/mould3/promise3/promise3.wxml-->
+<view class="promise3">
+  <view class="content">
+    <view class="flex3 probox">
+      <image class="proimg" src="../../images/mou3img4.png"></image>
+      <view class="protitle">信誉保障</view>
+      <view class="procontent">选择本公司，就是选择最好的售后服务，最大的质量保障。
+      我们承诺，给您合理的价格，优质的产品，满意的售后服务，为您的小程序保驾护航。</view>
+    </view>
+    <view class="flex3 probox">
+      <image class="proimg" src="../../images/mou3img3.png"></image>
+      <view class="protitle">效率保障</view>
+      <view class="procontent">从需求分析，到UI设计，再到功能模块开发，一周后完成小程序开发制作和测试验收，
+      3天内通过微信官方审核上线。
+      </view>
+    </view>
+    <view class="flex3 probox">
+      <image class="proimg" src="../../images/mou3img5.png"></image>
+      <view class="protitle">安全保障</view>
+      <view class="procontent">出现故障第一时间修复，系统安全级别高，资金账户安全保障，我们一直在你身边。</view>
+    </view>
+  </view>
+  <view class="fuwuremark">——亲，我是有底线的——</view>
+</view>

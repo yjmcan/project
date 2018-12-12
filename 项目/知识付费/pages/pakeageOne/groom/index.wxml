@@ -1,0 +1,34 @@
+<view class='container'>
+  <view class='list ba_f fon_26 pa bor_bottom'>
+    <scroll-view scroll-x>
+      <view wx:for="{{remmoed}}" class="{{ac_index_0==index?'sele':''}}" bindtap='remmod' data-index='{{index}}'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+  <view class='list ba_f fon_26 pa bor_bottom'>
+    <scroll-view scroll-x>
+      <view wx:for="{{price}}" class="{{ac_index_1==index?'sele':''}}" bindtap='price' data-index='{{index}}'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+  <view class='list ba_f fon_26 pa'>
+    <scroll-view scroll-x>
+      <view wx:for="{{type}}" class="{{ac_index_2==index?'sele':''}}" bindtap='types' data-index='{{index}}'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+  <view class='total_list'>
+    <view class='dis_in rel ba_f mar_t' wx:for="{{imgs}}">
+      <image mode='aspectFill' src='{{item.img}}'></image>
+      <view class='fon_30'>
+        设计点评
+      </view>
+      <view class='fon_24 color_9'>
+        <text>海报设计</text>
+        <text class='mar_l'>2.1万人已经学习</text>
+      </view>
+      <view class="ab dis_in pa_1 fon_24 color_f {{item.charge==0?'charge':''}} {{item.charge==1?'free':''}} {{item.charge==2?'vip':''}}">
+        <text wx:if="{{item.charge==0}}">收费</text>
+        <text wx:if="{{item.charge==1}}">免费</text>
+        <text wx:if="{{item.charge==2}}">VIP</text>
+      </view>
+    </view>
+  </view>
+</view>

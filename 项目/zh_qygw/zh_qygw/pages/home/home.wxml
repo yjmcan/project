@@ -1,0 +1,460 @@
+<!--pages/index/home.wxml-->
+<view class="home">
+  <!--————————第四个模板部分结束————————-->
+  <view class="windex" wx:if="{{style==4}}">
+    <image src="{{urlwf}}/addons/zh_qygw/template/images/fanwei1.gif" bindtap="youqing4"></image>
+    <view class='fanwe1' bindtap="women4"></view>
+    <view class='fanwe2' bindtap="youqing4"></view>
+    <view class='fanwe3' bindtap="you4"></view>
+    <!-- <image src="{{urlwf}}/addons/zh_qygw/template/images/home1.gif" bindtap="women4"></image>
+    <image src="{{urlwf}}/addons/zh_qygw/template/images/home2.gif" bindtap="youqing4"></image>
+    <image src="{{urlwf}}/addons/zh_qygw/template/images/home3.gif" bindtap="you4"></image> -->
+  </view>
+  <!--————————第四个模板部分结束————————-->
+  
+  <!--—————————————————第一个模板开始—————————————————  -->
+  <view class="muban1" wx:if="{{style==1}}">
+    <view class="swiper-container">
+      <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{yswiper}}" wx:key="unique">
+          <swiper-item>
+            <image mode="aspectFill" src="{{url}}{{item.logo}}" class="img"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--—————————————————首页轮播部分结束—————————————————  -->
+
+    <!--—————————————————分类部分开始—————————————————  -->
+    <view class="icontent" bindtap="product1">
+      <view class="bannerlist" wx:for="{{fenlei}}" wx:key="unique">
+        <image src="{{url}}{{item.logo}}"></image>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+
+    <!--—————————关于我们的部分———————————-->
+    <view class="habout" bindtap="about1">
+      <image class="haboutimg" mode='aspectFill' src="{{url}}{{aboutus.bg_logo}}"></image>
+      <view class="haboutbox">
+        <view class="habouttext">
+        <rich-text nodes="{{aboutus.about}}"/> 
+        </view>
+        <view class="">
+          <view>关于我们</view>
+          <view class="haboutfont">ABOUT US</view>
+          <view class="hxian"></view>
+          <view class="hmore">了解更多</view>
+        </view>
+      </view>
+    </view>
+
+    <!--————————————产品中心部分开始————————————-->
+    <view class="hproduct" bindtap="product1">
+      <view class="flex-bet hptitle">
+        <view class="flex-center">
+          <view class="hpxian"></view>
+          <view>产品中心</view>
+        </view>
+        <view class="flex-center">  
+          <view>more</view>
+          <image class="moreimg" src="../images/addright.png"></image>
+        </view>
+      </view>
+      <scroll-view class="hpcbox" scroll-x="true">
+        <view class="hpcboxlist" wx:for="{{product}}" wx:key="unique">
+          <image class="hpcbimg" src="{{url}}{{item.logo}}"></image>
+          <view>{{item.title}}</view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!--————————————解决方案部分开始————————————-->
+    <view class="hproduct" bindtap="program1">
+      <view class="flex-bet hptitle">
+        <view class="flex-center">
+          <view class="hpxian"></view>
+          <view>解决方案</view>
+        </view>
+        <view class="flex-center">        
+          <view>more</view>
+          <image class="moreimg" src="../images/addright.png"></image>
+        </view>
+      </view>
+      <view class="hpcontent" wx:for="{{program}}" wx:key="unique">
+        <image class="hpconimg" src="{{url}}{{item.logo}}"></image>
+        <view class="">
+          <view class="hpcname">{{item.title}}</view>
+          <view class="hpctext">
+            <rich-text nodes="{{item.content1}}"/>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--—————————————————企业动态部分———————————————  -->
+    <view class="hproduct" bindtap="dynamic1">
+      <view class="flex-bet hptitle">
+        <view class="flex-center">
+          <view class="hpxian"></view>
+          <view>企业动态</view>
+        </view>
+        <view class="flex-center">        
+          <view>more</view>
+          <image class="moreimg" src="../images/addright.png"></image>
+        </view>
+      </view>
+      <view class="dynamic">
+        <view class="isecdong flex-bet" wx:for="{{dynamic}}" wx:key="unique">
+          <view class="isectime">
+            <view class="isectimefont1">{{dynamicday}}</view>
+            <view>{{dynamicyear}}</view>
+          </view>
+          <view>{{item.title}}</view>        
+        </view>
+      </view>
+    </view>
+
+    <view class="hcopyright">技术支持：{{copyrit.support}}</view>
+    <!--—————————————————底部部分开始———————————————  -->
+    <view class="footbox1"></view>
+    <view class="foot1">
+      <view class="footlist1 flex3">
+        <image src="../images/homesele.png"></image>
+        <view style="color:#28B3E5;">首页</view>
+      </view>
+      <view class="footlist1 flex3" bindtap="product1">
+        <image src="../images/pro.png"></image>
+        <view>产品</view>
+      </view>
+      <view class="footlist1 flex3" bindtap="program1">
+        <image src="../images/fangan.png"></image>
+        <view>方案</view>
+      </view>
+      <view class="footlist1 flex3" bindtap="dynamic1">
+        <image src="../images/dong.png"></image>
+        <view>动态</view>
+      </view>
+      <view class="footlist1 flex3" bindtap="ahout1">
+        <image src="../images/guanyu.png"></image>
+        <view>联系</view>
+      </view>
+    </view>
+  </view>
+  <!--—————————————————第一个模板结束—————————————————  -->
+
+  <!--—————————————————第二个模板开始—————————————————  -->
+  <view class="muban2" wx:if="{{style==2}}">
+  <view class="iheader">
+    <image src="../images/back1.png"></image>
+  </view>
+  <view class="ibanner">
+    <view class="ibtitle">什么是小程序?</view>
+    <view class="ibxian"></view>
+    <view class="ibtext">小程序是一种不需要下载安装即可使用的应用，背靠微信这个超级流量入口
+      和快速繁荣的及巨大生态系统，将取代80%的APP应用。
+    </view>
+  </view>
+
+  <!--————————推广部分————————-->
+  <view class="isection">
+    <view class="ibtitle">小程序的营销推广功能?</view>
+    <view class="ibxian"></view>
+    <view class="iseclist">
+
+      <view class="isecbox">
+        <image src="../images/mou3nav5.png"></image>
+        <view class="isecfont1">附近的小程序</view>
+        <view class="isecfont2">LBS定位附近的5公里展示</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../images/xcx1.png"></image>
+        <view class="isecfont1">线下扫码</view>
+        <view class="isecfont2">打通线上线下消费场景</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../images/mou3nav4.png"></image>
+        <view class="isecfont1">公众号关联</view>
+        <view class="isecfont2">同意主题可互相关联</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../images/mou3nav2.png"></image>
+        <view class="isecfont1">分享传播</view>
+        <view class="isecfont2">一键分享微信群和好友</view>
+      </view>
+
+      <view class="isecbox">
+        <image src="../images/mou3nav1.png"></image>
+        <view class="isecfont1">丰富的组件和API</view>
+        <view class="isecfont2">功能丰富，满足个性需求</view>
+      </view>
+      <view class="isecbox">
+        <image src="../images/xcx5.png"></image>
+        <view class="isecfont1">完善的用户体验</view>
+        <view class="isecfont2">微信账号体系，降低使用门槛</view>
+      </view>
+      <view class="isecbox">
+        <image src="../images/mou3nav3.png"></image>
+        <view class="isecfont1">多钟社交功能</view>
+        <view class="isecfont2">交友、社区/论坛、直播等</view>
+      </view>
+    </view>
+  </view>
+
+  <!--————————优势部分————————-->
+  <view class="advantage">
+    <view class="ibtitle">小程序的优势</view>
+    <view class="ibxian"></view>
+    <view class="advlist">
+      <image src="../images/back0.png"></image>
+      <image src="../images/back2.png"></image>
+      <image src="../images/back3.png"></image>
+      <image src="../images/back4.png"></image>
+    </view>
+  </view>
+
+  <!--————————他们都在使用小程序部分————————-->
+  <view class="advantage">
+    <view class="ibtitle">他们都在使用小程序</view>
+    <view class="ibxian"></view>
+    <view class="uselist">
+      <view class="usebox">
+        <image src="../images/kendeji.png"></image>
+        <view>肯德基</view>
+      </view>
+      <view class="usebox">
+        <image src="../images/mobai.png"></image>
+        <view>摩拜单车</view>
+      </view>
+      <view class="usebox">
+        <image src="../images/weibo.png"></image>
+        <view>微博热门</view>
+      </view>
+    </view>
+  </view>
+
+  <!--————————底部部分————————-->
+  <view class="footbox2"></view>
+  <view class="foot2">
+    <view class="footlist2 flex3">
+      <image src="../images/homesele.png"></image>
+      <view style="color:#28B3E5;">首页</view>
+    </view>
+    <view class="footlist2 flex3" bindtap="fangan2">
+      <image src="../images/fangan.png"></image>
+      <view>解决方案</view>
+    </view>
+    <view class="footlist2 flex3" bindtap="we2">
+      <image src="../images/guanyu.png"></image>
+      <view>咨询我们</view>
+    </view>
+  </view>
+</view>
+ <!--————————第二个模板部分结束————————-->
+
+  <!--————————第三个模板部分开始————————-->
+  <view class="muban3" wx:if="{{style==3}}">
+    <!--——————————————————首页轮播图——————————————————  -->
+    <view class="swiper-container">
+      <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{yswiper}}" wx:key="unique">
+          <swiper-item>
+            <image mode="aspectFill" src="{{url}}{{item.logo}}" class="img"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!--公告部分开始  -->
+    <view class='ad'>
+      <image mode='scaleToFill' class='ad-icon' src='../images/guangbo.png'></image>
+      <swiper class="newest_content gobyndsingle" vertical="true" autoplay="true" circular="true" interval="2000">
+        <block wx:for="{{msgList}}" wx:key="*this">
+          <swiper-item>
+            <view class='adinfo gobyndsingle' bindtap='notice' data-id='{{item.id}}'>
+              <rich-text nodes="{{item.title}}"></rich-text>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--公告部分结束  -->
+
+    <view class="navlist">
+      <view class="navbox">
+        <view class="flex3" bindtap="kaifa3">
+          <image class="navimg zhuanimg" src="../images/mou3nav5.png"></image>
+          <view>开发制作</view>
+        </view>
+        <view class="flex3" bindtap="anli3">
+          <image class="navimg" src="../images/mou3nav1.png"></image>
+          <view>案例展示</view>
+        </view>
+        <view class="flex3" bindtap="yunying3">
+          <image class="navimg" src="../images/mou3nav2.png"></image>
+          <view>营销运营</view>
+        </view>
+        <view class="flex3" bindtap="promise3">
+          <image class="navimg" src="../images/mou3nav3.png"></image>
+          <view>服务承诺</view>
+        </view>
+        <view class="flex3" bindtap="contact3">
+          <image class="navimg" src="../images/mou3nav4.png"></image>
+          <view>联系我们</view>
+        </view>
+      </view>
+      <image class="wxback" src="../images/mou3back1.png"></image>
+    </view>
+
+    <view class="hcontent">
+      <view class="hctitle">一站式解决方案\n\r助力商户好生意</view>
+      <view class="hctext">微信小程序的推出，将开启一个全新时代：找商家，找服务，
+      就上微信小程序！新时代，新机遇，新红利，您准备好了吗？武汉志汇科技有限公司，为您提供
+      专业的微信小程序开发运营服务：从需求分析，功能分析、UI设计、开发制作、附近小程序，关键词搜索、微信支付等，
+      全方位为您提供最完美的解决方案！
+      </view>
+    </view>
+
+    <view class="hcbanner">
+      <image src="../images/mou3back2.png"></image>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>开发制作与价格</view>
+      </view>
+      <view class="hsecbox">
+        <view class="flex3">
+          <image bindtap="kaifa3" class="hsecimg" src="../images/mou3back3.png"></image>
+          <view class="">开发制作</view>
+        </view>
+        <view class="flex3">
+          <image bindtap="guanggao3" class="hsecimg" src="../images/mou3back4.png"></image>
+          <view class="">价格套餐</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>微营销与代运营</view>    
+      </view>
+      <view class="hsecbox">
+        <view class="flex3">
+          <image class="hsecimg" src="../images/mou3back5.png"></image>
+          <view class="">腾讯公众号底部广告</view>
+        </view>
+        <view class="flex3">
+          <image class="hsecimg" src="../images/mou3back6.png"></image>
+          <view class="">微信官方朋友圈广告</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>案例展示</view>    
+      </view>
+      <view class="hsecprogram">
+        <view class="flex3">
+          <image class="hsecprimg" src="../images/mou3img1.png"></image>
+          <view>三亚一号跨境购物</view>
+        </view>
+        <view class="flex3">
+          <image class="hsecprimg" src="../images/mou3img1.png"></image>
+          <view>三亚一号跨境购物</view>
+        </view>
+        <view class="flex3">
+          <image class="hsecprimg" src="../images/mou3img1.png"></image>
+          <view>三亚一号跨境购物</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>客户评价</view>    
+      </view>
+      <view class="comment">
+        <view class="combox">
+          <image class="comimg" src="../images/mou3back5.png"></image>
+          <view class="comtext">
+            <view class="comtitle">海南三宝艺术收藏馆</view>
+            <view class="comneirong">非常满意和志汇科技的合作，认可志汇科技的专业和敬业，我们餐饮小程序的开发交给你们很放心。
+            </view>
+            <view class="comfoot">——王呵呵</view>
+          </view>
+        </view>
+        <view class="commore" bindtap="more">查看更多</view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>服务承诺</view>    
+      </view>
+      <view class="hsecprogram2">
+        <view class="flex3" bindtap="promise3">
+          <image class="hsecprimg2" src="../images/mou3img3.png"></image>
+          <view>效率保障</view>
+        </view>
+        <view class="flex3" bindtap="promise3">
+          <image class="hsecprimg2" src="../images/mou3img4.png"></image>
+          <view>信誉保障</view>
+        </view>
+        <view class="flex3" bindtap="promise3">
+          <image class="hsecprimg2" src="../images/mou3img5.png"></image>
+          <view>安全保障</view>
+        </view>
+      </view>
+      <view class="diancha">（点击查阅）</view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>联系我们</view>    
+      </view>
+      <view class="hsecprogram3">
+        <view class="hsecplist">
+          <view class="hsecname" bindtap="phone">{{aboutus.name}}\n\r{{aboutus.link_tel}}</view>
+          <image src="../images/mou3shouzhi.png"></image>
+        </view>
+      </view>
+      <view class="hsremark">
+        <view class="">上班时间：8：30-18：00</view>
+        <view class="">备注：点击电话直接拨号</view>
+      </view>
+      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300rpx;"></map>
+    </view>
+    <!--————————底部部分————————-->
+    <view class="footbox3"></view>
+    <view class="foot3">
+      <view class="footlist3 flex3">
+        <image src="../images/homesele.png"></image>
+        <view style="color:#28B3E5;">首页</view>
+      </view>
+      <view class="footlist3 flex3" bindtap="fuwu3">
+        <image src="../images/fangan.png"></image>
+        <view>服务</view>
+      </view>
+      <view class="footlist3 flex3" bindtap="news3">
+        <image src="../images/pro.png"></image>
+        <view>新闻</view>
+      </view>
+    </view>
+  </view>
+  <!--————————第三个模板部分结束————————-->
+  
+  
+</view>
+  
+

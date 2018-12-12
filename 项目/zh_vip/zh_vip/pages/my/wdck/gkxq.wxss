@@ -1,0 +1,42 @@
+/* zh_vip/pages/my/wdck/gkxq.wxss */
+.head{
+  background: #fff;
+  padding: 30rpx 50rpx;
+  box-sizing: border-box;
+}
+.headimg{
+  width: 100%;
+  height: 350rpx;
+  border-radius: 10rpx;
+}
+.footer{
+  position: fixed;bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #fff;
+}
+.footer button{
+  width: 100%;
+  color: #fff;
+}
+.body{
+  padding: 0 30rpx 20rpx;
+  background: #fff;
+}
+.kname{
+  font-weight: bold;
+}
+.yxq{
+  font-size: 22rpx;
+  color: #999;
+}
+.money{
+  font-size: 40rpx;
+  color: #ff7f46;
+}
+.xxxq{
+  margin-top: 30rpx;
+  background: #fff;
+  padding: 20rpx 30rpx;
+}

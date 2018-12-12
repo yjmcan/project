@@ -1,0 +1,24 @@
+<!--zh_vip/pages/my/wdck/gkzx.wxml-->
+<view class='main'>
+  <view wx:for="{{list}}" class="block flex-row flex-y-center" style='filter: {{item.isgm?"grayscale(100%)":""}}'>
+    <image class='mdlogo' src='{{url}}{{item.img}}'></image>
+    <view class="flex-grow-1">
+      <view class="flex-grow-1" class='kname'>{{item.name}}</view>
+      <view class="flex-grow-1" class='sysl'>使用次数{{item.number}}次</view>
+      <view class="flex-grow-1" class='yxq'>有效期至：{{item.time}}</view>
+    </view>
+    <block>
+      <view class="flex-grow-0 flex-col flex-y-center">
+        <view class='money'>￥{{item.money}}</view>
+        <navigator wx:if="{{!item.isgm}}" url='gkxq?xqid={{item.id}}' class='ljgm'>立即购买</navigator>
+        <navigator url='wdck' wx:else class='ljgm'>已经购买</navigator>
+      </view>
+    </block>
+    <view class='zhiding' wx:if="{{item.type=='1'}}">次卡</view>
+  </view>
+</view>
+<view class='jzwb'>
+  <view class='hx'></view>
+  <view class='wz'>没有更多了</view>
+  <view class='hx'></view>
+</view>

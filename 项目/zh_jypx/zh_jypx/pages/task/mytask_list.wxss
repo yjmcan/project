@@ -1,0 +1,38 @@
+/* zh_jypx/pages/task/mytask_list.wxss */
+page{
+  background: #fff;
+}
+.classes{
+  font-size: 38rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+.title{
+  font-size: 36rpx;
+}
+.con{
+  margin:50rpx
+}
+.task_t{
+  margin-bottom: 20rpx;
+}
+.con .img{
+  width:500rpx;
+  height:200rpx;
+
+}
+.tip{
+  background: #ccc;
+  border-radius: 100%;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.none{
+  text-align: center;
+  width: 100%;
+  font-size: 36rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}

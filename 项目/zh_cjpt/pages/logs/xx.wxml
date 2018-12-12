@@ -1,0 +1,14 @@
+<view class='head'>
+    <view class='list bor_bottom'>
+      <view class='dis_in'>
+          <text></text>
+      </view>
+      <view class='dis_in color_9 fon_24'>
+          系统派单
+      </view>
+      <view class='dis_in fon_28' style='color:{{color}}'>
+          取货地址:湖北省武汉市洪山区珞喻路26号湖北省武汉市洪山区珞喻路26号
+      </view>
+      <view class=' fon_24 color_9'>2018-05-08 12:32</view>
+    </view>
+</view>

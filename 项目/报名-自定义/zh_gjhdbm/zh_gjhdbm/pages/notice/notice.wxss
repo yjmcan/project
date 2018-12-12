@@ -1,0 +1,36 @@
+/* pages/notice/notice.wxss */
+.index{
+  width: 100%;
+  overflow-x: hidden;
+}
+.noheader{
+  font-size: 22rpx;
+  color: #666;
+  padding: 15rpx 40rpx;
+}
+.nocontent{
+  background-color: white;
+  padding: 20rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  color: #666;
+}
+.noconimg{
+  width: 34rpx;
+  height: 35rpx;
+  margin-right: 15rpx;
+  margin-top: 5rpx;
+}
+
+
+
+
+
+
+
+
+
+
+

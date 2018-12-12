@@ -1,0 +1,42 @@
+/* pages/logs/shouruinfo.wxss */
+.home{
+  border-top: 2rpx solid #eee;
+}
+.sheader{
+  background-color: white;
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;  
+}
+.sheader  text{
+  float: right;
+}
+.sfont1{
+  color: #999;
+}
+.sfont2{
+  color: #44AA95;
+}
+.sfont3{
+  color: #F34B4A;
+}
+.sheadertime{
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.none image{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 150rpx 0 50rpx;
+  display: block;
+}
+.color_1{
+  color: #f66825;
+}
+.color_2{
+  color: #44AA95;
+}
+.color_3{
+  color: gray;
+}

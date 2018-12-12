@@ -1,0 +1,20 @@
+<!--pages/logs/shouruinfo.wxml-->
+<view class='home'>
+  <view class='sheader' wx:for="{{list}}">
+    <view>提现
+        <text wx:if="{{item.state==1}}" class='color_1'>审核中</text>
+        <text wx:if="{{item.state==2}}" class='color_2'>已通过</text>
+        <text wx:if="{{item.state==3}}" class='color_3'>已拒绝</text>
+    </view>
+    <view class='flex_bet sheadertime'>
+      <view class='sfont1'>{{item.time}}</view>
+      <view class='sfont2'>+{{item.tx_cost}}元</view>
+    </view>
+  </view>
+
+  <!--没有数据的时候-->
+  <view class="flex3 none" wx:if="{{list.length==0}}">
+    <image src="../img/zhanwei.png"></image>
+    <view>暂无数据</view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="list pa" wx:for="{{nav}}" wx:key="*this">
+    <view class='dis_in'>
+        <image mode='aspectFill' src=''></image>
+    </view>
+    <view class='dis_in'>
+        <view class='fon_30 color_6' style='padding-bottom:20rpx;'>睡过安其拉</view>
+        <view class='fon_24 color_9'>2018-03-26 15:32</view>
+    </view>
+    <view class='dis_in fon_30'>
+        <view>打赏
+            <text style='color:{{color}}'>1.00</text>
+            元
+        </view>
+    </view>
+</view>

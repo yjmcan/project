@@ -1,0 +1,127 @@
+/* zh_qygw/pages/mould2/we/we.wxss */
+.home{
+  width: 100%;
+  overflow-x: hidden;
+}
+.iheader{
+  width: 100%;
+  height: 250rpx;
+}
+.iheader>image{
+  width: 100%;
+  height: 100%;
+}
+.wbanner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 90rpx 0rpx;
+  background-color: white;
+  margin-top: 15rpx;
+}
+.wbtitle{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 80rpx;
+}
+.wbfu{
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 10rpx;
+  margin-bottom: 80rpx;
+}
+.wbkuang{
+  border: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 5rpx 15rpx;
+  width: 400rpx;
+  border-radius: 6rpx;
+  margin-bottom: 40rpx;
+}
+.wbkuser{
+  width: 40rpx;
+  height: 40rpx;
+}
+.wbkinp{
+  margin-left: 20rpx;
+}
+.wbkbox{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.wbkuang2{
+  border: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 5rpx 15rpx;
+  width: 300rpx;
+  border-radius: 6rpx;
+}
+.abyan{
+  padding: 0rpx 15rpx;
+  line-height: 55rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+  margin-left: 15rpx;
+  background-color: #28B3E5;
+  color: white;
+}
+.tijiao{
+  background-color: #28B3E5;
+  color: white;
+  width: 425rpx;
+  font-size: 28rpx;
+  margin-bottom: 50rpx;
+}
+.tell{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.phonenum{
+  font-weight: bold;
+  color: #666;
+}
+.phonenum2{
+  color: #28B3E5;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+.banquan{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+/*—————————————底部—————————————*/
+.footbox{
+  width: 100%;
+  height: 115rpx;
+}
+.foot{
+  width: 100%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+}
+.footlist{
+  width: 33.3%;
+}
+.footlist>image{
+  width: 45rpx;
+  height: 45rpx;
+}
+
+

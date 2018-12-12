@@ -1,0 +1,82 @@
+<!--pages/bangdan/bangdan.wxml-->
+<view class="bangdan">
+<view class="tab">
+  <block wx:for="{{nav}}" wx:key="*this">
+    <view data-index="{{index}}" id="{{item.id}}" class="{{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+      {{item.title}}
+    </view>
+  </block>
+</view>
+
+<!--土豪榜-->
+<view class="mian1">
+  <view class="top"> 
+  <image src="../img/beijing@2x.png" class="bg"></image>
+    <!--第二名-->
+    <view class="left" wx:if="{{all[1]!=null}}">
+      <view class="lt speciel" style='height:150rpx;'>
+        <image src="../img/dier@2x.png" class="gold" style='top:15rpx;'></image>
+        <image class="headimg" src="{{all[1].img}}"></image>
+      </view>
+      <view class="name">{{all[1].nickname}}</view>
+      <view class="num">{{all[1].amount}}</view>
+    </view>
+    <!--第一名-->
+    <view class="min" wx:if="{{all[0]!=null}}">
+      <view class="lt">
+        <image src="../img/diyi@2x.png" class="gold"></image>
+        <image class="headimg" src="{{all[0].img}}"></image>
+      </view>
+      <view class="name">{{all[0].nickname}}</view>
+      <view class="num">{{all[0].amount}}</view>
+    </view>
+    <!--第三名-->
+    <view class="right" wx:if="{{all[2]!=null}}">
+      <view class="lt speciel" style='height:160rpx;'>
+        <image src="../img/disan@2x.png" class="gold" style='top:20rpx;'></image>
+        <image class="headimg" src="{{all[2].img}}"></image>
+      </view>
+      <view class="name">{{all[2].nickname}}</view>
+      <view class="num">{{all[2].amount}}</view>
+    </view>
+  </view>
+
+  <view>
+    <view class="flex_center list" wx:for="{{list}}" wx:if="{{all.length>3}}">
+      <!-- <view class="paiming">No.4</view> -->
+      <image class="img" src="{{item.img}}"></image>
+      <view class="name">{{item.nickname}}</view>
+      <view class="num num1">{{item.amount}}</view>
+    </view>
+  </view>
+
+</view>
+
+  <!--没有数据的情况-->
+  <view wx:if="{{all.msg=='暂无数据'}}" class="flex3 none">
+    <image src="../img/zhanwei.png"></image>
+    <view>暂无数据</view>
+  </view>
+
+    <!--————————————底部固定导航栏————————————————  -->
+    <view class='ifootbox'></view>
+    <view class='ifoot'>
+      <view class='flex3 ifootfont2' bindtap='index'>
+        <image class='ifoothome' src='../img/shouyee@2x.png'></image>
+        <view>主页</view>
+      </view>
+      <view class='flex3 ifootfont2' bindtap='fabu'>
+        <image class='ifootwode' src='../img/fabuu@2x.png'></image>
+        <view>发布</view>
+      </view>
+      <view class='flex3 ifootfont1'>
+        <image class='ifootwode' src='../img/bangdan@2x.png'></image>
+        <view>榜单</view>
+      </view>
+      <view class='flex3 ifootfont2' bindtap='wode'>
+        <image class='ifootwode' src='../img/wo@2x.png'></image>
+        <view>我的</view>
+      </view>
+    </view>
+
+</view>

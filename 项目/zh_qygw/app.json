@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "zh_qygw/pages/home/home",
+    "zh_qygw/pages/mould4/women4",
+    "zh_qygw/pages/mould4/index",    
+    "zh_qygw/pages/mould4/youqing4",
+    "zh_qygw/pages/mould4/you4",
+    "zh_qygw/pages/mould2/home/home",    
+    "zh_qygw/pages/mould3/home3/home3",
+    "zh_qygw/pages/mould3/yemian3/comment3",
+    "zh_qygw/pages/mould3/yemian3/guanggao3",    
+    "zh_qygw/pages/mould3/contact3/contact3",
+    "zh_qygw/pages/mould3/promise3/promise3",
+    "zh_qygw/pages/mould3/yunying3/yunying3",
+    "zh_qygw/pages/mould3/anli3/anli3",
+    "zh_qygw/pages/mould3/kaifa3/kaifa3",
+    "zh_qygw/pages/mould3/news3/news3",
+    "zh_qygw/pages/mould3/fuwu3/fuwu3",
+    "zh_qygw/pages/mould2/we/we",
+    "zh_qygw/pages/mould2/fangan2/fangan2",
+    "zh_qygw/pages/about/success",
+    "zh_qygw/pages/about/about",
+    "zh_qygw/pages/about/consult",
+    "zh_qygw/pages/dynamic/dynamicinfo",
+    "zh_qygw/pages/program/program",
+    "zh_qygw/pages/program/programinfo",
+    "zh_qygw/pages/product/productinfo",
+    "zh_qygw/pages/product/product",
+    "zh_qygw/pages/dynamic/dynamic"    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2083C9",
+    "navigationBarTitleText": "企业官网",
+    "navigationBarTextStyle":"#fffff"
+  }
+}

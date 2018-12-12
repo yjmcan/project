@@ -1,0 +1,53 @@
+<!--pages/program/program.wxml-->
+<view class="program">
+
+  <!-- 热门模块开始 -->
+  <scroll-view class="marry" scroll-x="true">
+    <block wx:for="{{infortype}}" wx:key="*this">
+      <view data-index="{{index}}" id="{{item.id}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view>{{item.name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!--——————————————————方案部分————————————————————-->
+   
+  <view class="" wx:for="{{infortypelist}}" wx:key="unique">
+    <view class="pheader" bindtap="proinfo"  data-id="{{index}}" wx:for-index="index" wx:key="id">
+      <image class="phimg" src="{{url}}{{item.logo}}"></image>
+      <view class="phbox">
+        <view class="phboxtitle">{{item.title}}</view>
+        <view class="yghidden2">
+          <rich-text nodes="{{item.content1}}"/>
+        </view>
+        <view class="phbtime">发布时间：2017-11-12</view>
+      </view>
+    </view>
+  </view>
+  <view class="pfoot">没有数据了</view>
+  <!--—————————————————底部部分开始———————————————  -->
+  <view class="footbox1"></view>
+  <view class="foot1">
+    <view class="footlist1 flex3">
+      <image src="../images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="product1">
+      <image src="../images/pro.png"></image>
+      <view>产品</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="program1">
+      <image src="../images/fangansele.png"></image>
+      <view style="color:#28B3E5;">方案</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="dynamic1">
+      <image src="../images/dong.png"></image>
+      <view>动态</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="ahout1">
+      <image src="../images/guanyu.png"></image>
+      <view>联系</view>
+    </view>
+  </view>
+
+</view>

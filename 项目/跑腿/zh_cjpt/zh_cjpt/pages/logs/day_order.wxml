@@ -1,0 +1,86 @@
+<!-- <view class='fon_36 pa head'>
+  <view class='t_l dis_in'>{{days}}</view>
+  <view class='t_r dis_in'>￥{{money}}</view>
+</view>
+<view class='fon_30 color_6 pa head ba_f'>
+  <view class='t_l dis_in'>外卖订单共{{count}}笔</view>
+  <view class='t_r dis_in'>￥{{money}}</view>
+</view>
+<view class='fon_30 color_6 pa head'>
+  <view class='t_l dis_in'>历史订单</view>
+</view>
+<view class='fon_30 pa head ba_f bor_bottom order_info'>
+    <view class=''>编号</view>
+    <view class=''>交易状态</view>
+    <view class=''>配送费</view>
+</view>
+<view class='fon_30 pa head ba_f bor_bottom order_info' wx:for="{{nav}}" wx:key="*this" bindtap='day_order'>
+    <view class='color_6'>{{item.ps_num}}</view>
+    <view class='color_6'>外卖订单</view>
+    <view style='color:{{color}}'>￥{{item.ps_money}}</view>
+</view> -->
+<view class='body rel'>
+  <view class='bg ab' style='height:160rpx;width:100%;background:{{color}}'>
+
+  </view>
+  <view class='pa_1'>
+    <view class='pa_0 rel ba_f search fon_30'>
+      <input type='' placeholder='搜索订单编号' bindinput="input"></input>
+      <icon type='search' class='ab ud' size='16' bindtap='search'></icon>
+    </view>
+    <view class='mar_t pa_0 ba_f fon_30 order_census'>
+      <view class='t_c'>
+        <view style='color:{{color}}' class='fon_36 wei'>{{options.num}}
+            <text class='fon_24'>单</text>
+        </view>
+        <view class='color_6 fon_24' wx:if="{{options.type==0}}">今日单量</view>
+        <view class='color_6 fon_24' wx:if="{{options.type==1}}">本月单量</view>
+        <view class='color_6 fon_24' wx:if="{{options.type==2}}">总单量</view>
+      </view>
+      <view class='t_c'>
+        <view style='color:{{color}}' class='fon_36 wei'>{{options.price}} <text class='fon_24'>元</text></view>
+        <view class='color_6 fon_24' wx:if="{{options.type==0}}">今日进账</view>
+        <view class='color_6 fon_24' wx:if="{{options.type==1}}">本月进账</view>
+        <view class='color_6 fon_24' wx:if="{{options.type==2}}">总进账</view>
+      </view>
+    </view>
+    <view class='mar_t fon_28 ba_f order_list' wx:for="{{nav}}" bindtap='order_infos' data-id='{{item.id}}'>
+      <view class='dis_in'>
+        <view class='order_num pa_0'>
+          <view class='dis_in fon_24 color_f' style='background:{{color}}'>
+              <text>#</text>
+              <text>{{item.origin_id}}</text>
+         </view>
+          <view class='dis_in mar_l'>运单号：{{item.ps_num}}</view>
+        </view>
+        <view class='order_num color_9'>
+          <view class='dis_in fon_24 color_f'>
+               <text>#</text>
+              <text>{{item.origin_id}}</text>
+          </view>
+          <view class='dis_in mar_l fon_24'>订单时间：{{item.jd_time}}</view>
+        </view>
+      </view>
+      <view class='dis_in statu_img rel'>
+        <image mode='widthFix' class='ab udlr' src='../img/qucan.png' wx:if="{{item.state==2}}"></image>
+        <image mode='widthFix' class='ab udlr' src='../img/quxiao.png' wx:if="{{item.state==5}}"></image>
+        <image mode='widthFix' class='ab udlr' src='../img/wancheng.png' wx:if="{{item.state==4}}"></image>
+        <image mode='widthFix' class='ab udlr' src='../img/peisong.png' wx:if="{{item.state==3}}"></image>
+      </view>
+      <view class='dis_in t_c color_f' style='background:{{item.color}}'>
+        <view class='fon_24 pa_0'  wx:if="{{item.state==2}}">待入账</view>
+        <view class='fon_24 pa_0'  wx:if="{{item.state==5}}">已取消</view>
+        <view class='fon_24 pa_0'  wx:if="{{item.state==4}}">已入账</view>
+        <view class='fon_24 pa_0'  wx:if="{{item.state==3}}">待入账</view>
+        <view>
+          <text class='fon_24' wx:if="{{item.state!=5}}">+</text>
+          <text class='fon_24' wx:else>-</text>
+          <text class='fon_40'>{{item.ps_money}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='t_c fon_30 color_9' style='padding:200rpx 0;' wx:if="{{nav.length<=0}}">
+      --- 暂无数据 ---
+    </view>
+  </view>
+</view>

@@ -1,0 +1,139 @@
+/* pages/waste_recovery/waste_recovery.wxss */
+.head{
+  width: 100%;
+  height: auto;
+}
+.select_address{
+  width: 100%;
+  height: 150rpx;
+  text-align: center;
+  color: #fff;
+  padding: 20rpx 0;
+}
+.select_address>view{
+  background:orange;
+  width: 65%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  border-radius: 60rpx;
+}
+.select_info{
+    width: 100%;
+    height: auto;
+}
+.select_info>view{
+  width: 95%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  margin: 0 auto 0;
+  background: #fff;
+}
+.select_info>view:last-child{
+  border: none;
+}
+.man_info>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.man_info>view:nth-child(1){
+  width: 25%;
+  height: 100%;
+  font-size: 26rpx;
+  text-indent: 20rpx;
+}
+.man_info>view:nth-child(2){
+  width: 50%;
+  height: 100%;
+}
+.man_info>view:nth-child(3){
+  position: absolute;
+  right: 0;
+  height: 100%;
+  font-size: 24rpx;
+}
+.man_info>view input{
+  width: 100%;
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.select_buttn{
+  width: 100%;
+  height: 200rpx;
+}
+.select_buttn button{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  margin-top: 40rpx;
+  border-radius: 50rpx;
+}
+button:nth-child(1){
+  color: #fff;
+  background: orange;
+}
+
+button:nth-child(2){
+  background: #fff;
+  color: orange;
+}
+button::after{
+  border: none;
+}
+.make_list{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  margin-top: 40rpx;
+}
+.info{
+  width: 22%;
+  background: #fff;
+  height: auto;
+  margin-top: 30rpx;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+}
+.info>view image{
+  width: 50rpx;
+  height: 60rpx;
+}
+.info>view:nth-child(1){
+  height: 90rpx;
+  width: 100%;
+}
+.company{
+  text-align: center;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+}
+.user_info{
+  padding: 20rpx;
+  height: auto;
+}
+.user_info>view{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.user_info>view view{
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.user_info>view view:nth-child(1){
+  width: 20%;
+}
+.user_info>view view:nth-child(2){
+  width: 80%;
+}

@@ -1,0 +1,27 @@
+<view>
+  <block wx:for="{{payment}}">
+    <form bindsubmit="formSubmit" report-submit="true" bindreset="formReset" data-oid="{{item.id}}">
+      <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+        <view class="mylist_title">
+          <text>{{item.seller_name}}</text>
+          <text class="mylist_title1">待付款</text> 
+        </view>
+        <view class="mylist_title2">订单号：{{item.order_no}}</view>
+        <view class="mylist_title2">
+          <text>入 住：{{item.arrival_time}}</text>
+          <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+        </view>
+        <view class="mylist_title2">房 型：{{item.room_type}}</view>
+      </view>
+      <view class="mylist_banner1 mylist_title2">
+        <view class="mylist_banner2">订单总价：¥{{item.dis_cost}}</view>
+        <view class="mylist_banner3" hidden="{{quxiaodingdan}}">
+          <view class="mylist_banner4" bindtap="click1" data-oid="{{item.id}}">取消订单</view>
+          <view class="mylist_banner5">
+            <button formType="submit" bindtap='click_money'>立即支付</button>
+          </view>
+        </view>
+      </view>
+    </form>
+  </block>
+</view>

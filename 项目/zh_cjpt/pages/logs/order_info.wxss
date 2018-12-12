@@ -1,0 +1,20 @@
+/* pages/logs/order_info.wxss */
+.price{
+  padding:90rpx 0;
+  font-size: 50rpx;
+}
+.shop>view:nth-child(1){
+  width: 70%;
+}
+.shop>view:nth-child(2){
+  width: 8%;
+}
+.shop>view:nth-child(3){
+  width: 22%;
+}
+.order>view:nth-child(1){
+  width: 30%;
+}
+.order>view:nth-child(2){
+  width: 70%;
+}

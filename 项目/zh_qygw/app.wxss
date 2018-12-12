@@ -1,0 +1,76 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+page{
+  background-color: #F2F2F2;
+  font-family: "微软雅黑";
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 28rpx;
+  color:#333;
+}
+.flex-bet{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+}
+.flex1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex2{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex4{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container {
+  height: 100%;
+  box-sizing: border-box;
+  /* border-bottom: 1rpx solid #e5e5e5; */
+  position: relative;
+}
+.yghidden{
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+/**app.wxss**/
+
+.gobyndmulit {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+/*单行文本超出隐藏*/
+.gobyndsingle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

@@ -1,0 +1,138 @@
+/* pages/xuanshang/xscontent.wxss */
+.xscontent{
+  background-color: white;
+  padding: 30rpx;
+  border-top: 2rpx solid #eee;
+}
+.xsname{
+  font-size: 32rpx;
+}
+.xsfont{
+  color: #F34B4B;
+  margin-top: 20rpx;
+}
+.xsbanner{
+  background-color: white;
+  margin-top: 20rpx;
+}
+.bannertext{
+  padding: 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.banfont1{
+  color: #999;
+}
+.xsbantime{
+  padding: 30rpx;
+}
+.xsjoin{
+  background-color: white;
+  padding: 0rpx 20rpx;
+}
+.xsjointop{
+  padding: 20rpx 0rpx;
+  border-bottom: 1rpx solid #eee;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+.xsjoinuser{
+  padding: 20rpx 0rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.userimg{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 10rpx;
+}
+.userimg2{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.xsjoinbox{
+  padding: 15rpx 0rpx;
+  width: 100%;
+}
+
+/* ——————————————底部固定部分———————————— */
+.ifoot{
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 90rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.ifootbox{
+  width: 25%;
+  font-size: 26rpx;
+}
+.ifootshare{
+  width: 35rpx;
+  height: 35rpx;
+  margin-bottom: 5rpx;
+}
+.chakan{
+  background-color: #F34B4B;
+  color: white;
+  text-align: center;
+  line-height: 90rpx;
+  width: 50%;
+}
+
+/* ——————————————弹框部分———————————— */
+.bomb{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.bombox{
+  width: 75%;
+  background-color: white;
+  padding: 30rpx 0rpx;
+  position: relative;
+}
+.bombfont1{
+  color: #999;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  margin-top: 150rpx;
+}
+.bombimg{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx 0rpx;
+}
+.bombshare{
+  background-color: #F34B4B;
+  color: #fff;
+  width: 90%;
+}
+.bombzhuan{
+  background-color: #F8F8F8;
+  color: #333;
+  width: 90%;
+  margin-top: 20rpx;
+  border: none;
+  outline: none;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.bombshanchu{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}

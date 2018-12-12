@@ -1,0 +1,60 @@
+<!--pages/product/product.wxml-->
+<view class="product">
+  <!-- 热门模块开始 -->
+  <scroll-view class="marry" scroll-x="true">
+    <block wx:for="{{protype}}" wx:key="unique">
+      <view data-index="{{index}}" id="{{item.id}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view>{{item.name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+
+   <view class="psearch flex-bet">
+    <input type="text" bindblur="bindblur" bindinput="sousuo" placeholder="输入搜索产品名称" placeholder-style="color:#999;"/>
+     <!-- <view bindtap="search" class="pseabtn">搜索</view>  -->
+  </view>
+  <scroll-view class="prosearch1" hidden="{{hidden}}" scroll-y="true">
+    <block wx:for="{{sousuo}}" wx:key="unique">
+      <view class="prosbox" bindtap="infoYemian1" data-id="{{index}}" wx:for-index="index">{{item.title}}</view>
+    </block>    
+  </scroll-view>
+  
+  <view hidden="{{meiyou}}" class="prosearch2">没有搜到相关内容</view> 
+
+  <view wx:for="{{prolist}}" wx:key="unique">
+    <view class="productbox" bindtap="pcinfo" data-id="{{index}}" wx:for-index="index" wx:key="id">
+      <image src="{{url}}{{item.logo}}"></image>
+      <view class="pright">
+        <view class="prightitle">{{item.title}}</view>
+        <view class="pmoney">价格：¥<text>{{item.money}}</text>元</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="pfoot">没有数据了</view>
+  <!--—————————————————底部部分开始———————————————  -->
+  <view class="footbox1"></view>
+  <view class="foot1">
+    <view class="footlist1 flex3" bindtap="home">
+      <image src="../images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="footlist1 flex3">
+      <image src="../images/prosele.png"></image>
+      <view style="color:#28B3E5;">产品</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="program1">
+      <image src="../images/fangan.png"></image>
+      <view>方案</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="dynamic1">
+      <image src="../images/dong.png"></image>
+      <view>动态</view>
+    </view>
+    <view class="footlist1 flex3" bindtap="ahout1">
+      <image src="../images/guanyu.png"></image>
+      <view>联系</view>
+    </view>
+  </view>
+
+</view>

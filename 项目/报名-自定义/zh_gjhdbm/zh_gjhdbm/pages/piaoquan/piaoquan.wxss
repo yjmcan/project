@@ -1,0 +1,122 @@
+/* pages/logs/piaoquan/piaoquan.wxss */
+
+.index{
+  width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 80rpx;
+}
+/* —————————————头部开始————————————— */
+.marry {
+  background-color: white;
+  font-size: 30rpx;
+  padding: 0rpx 20rpx;
+  border-bottom: 1rpx solid #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.proitem {
+  padding: 15rpx 0rpx;
+  position: relative;
+  text-align: center;
+}
+.proitem.weuibaron {
+  color: #F66926;
+  position: relative;
+  font-weight: bold;
+  border-bottom: 6rpx solid #F66926;
+  font-size: 36rpx;
+}
+
+.zanwu{
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+.zanwubox{
+  padding-top: 250rpx;
+}
+
+.pheader{
+  background-color: white;
+  margin: 15rpx 15rpx 0rpx;
+  font-size: 23rpx;
+  display: flex;
+  overflow: hidden;
+}
+.phleft{
+  width: 75%;
+  padding: 30rpx 0rpx;
+  text-indent: 3em;
+  border-right: 2rpx dashed #eee;
+  position: relative;
+}
+.phbotyuan,.phtopyuan{
+  position: absolute;
+  right: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+}
+.phtopyuan{
+  top: -10rpx;
+}
+.phbotyuan{  
+  bottom: -10rpx;
+}
+.phright{
+  width: 24%;
+}
+.phfont1{
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  font-size: 28rpx;
+}
+.phfont2{
+  color: #999;
+}
+.phfont3{
+  font-weight: bold;
+  color: #F66926;
+  margin-top: 5rpx;
+}
+.phfont4{
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  font-size: 36rpx;
+  color: #F66926;
+}
+.phfont5{
+  background-color: #08AD06;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 2rpx 10rpx;
+  border-radius: 6rpx;
+  margin-top: 5rpx;
+}
+
+.zanwu{
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+.zanwubox{
+  padding-top: 250rpx;
+}
+.phfont6{
+  font-size: 24rpx;
+}
+.no_many{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+}
+
+
+
+
+

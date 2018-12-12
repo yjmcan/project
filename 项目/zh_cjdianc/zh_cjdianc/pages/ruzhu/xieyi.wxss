@@ -1,0 +1,4 @@
+/* zh_cjdianc/pages/ruzhu/xieyi.wxss */
+view{
+  padding: 20rpx;
+}

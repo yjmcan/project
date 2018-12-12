@@ -1,0 +1,152 @@
+.logs{
+  width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 50rpx;
+}
+
+.fiheaderwai{
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+}
+.fiheaderimg{
+  width: 100%;
+  height: 100%;
+}
+.fiheader{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  position: absolute;
+  z-index: 4;
+  left: 0rpx;
+  top: 0rpx;
+}
+.fihbox1,.fihbox2,.fihbox3{
+  height: 100%;
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 90rpx;
+}
+.fihbox1{  
+  /* background-color: #A8A9AD; */
+  width: 33%;
+  margin-right: 1%;  
+}
+.fihbox2{
+  /* background-color: #EF7023; */
+  width: 32%;
+  margin-right: 1%;
+}
+.fihbox3{
+  /* background-color: #A8A9AD; */
+  width: 33%;
+}
+
+.addheader{
+  padding: 40rpx 0rpx 30rpx;
+  position: relative;
+}
+.agree{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 30rpx;
+}
+.agree_text{
+  color: #333;
+}
+.agree_text2{color: #F66926;}
+.footer{
+  padding: 10rpx 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addhimg{
+  width: 80rpx;
+  height: 80rpx;
+  padding: 30rpx;
+  background-color: white;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+}
+.addhimg>image{
+  width: 100%;
+  height: 100%;
+}
+.addheadertext{
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.fabucontent{
+  background-color: white;
+  padding: 0rpx 20rpx;
+}
+.fabulist{
+  border-bottom: 1rpx solid #eee;
+  padding: 15rpx 0rpx;
+  display: flex;
+  align-items: center;
+}
+.fabulist2{
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fabulistleft{
+  width: 120rpx;
+  text-align: right;
+  margin-right: 30rpx;
+}
+.fabubox2{
+  width: 77%;
+}
+.fabuuser{
+  width: 40rpx;
+  height: 40rpx;
+}
+.fabuname{
+  font-weight: bold;
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+.acright{
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.fabutime{
+  width: 250rpx;
+  text-align: center;
+}
+.fabucontent2{
+  background-color: white;
+  padding: 0rpx 20rpx;
+  margin-top: 15rpx;
+}
+.fabuonline{
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+.nextfabu{
+  background-color: #F66926;
+  color: white;
+  margin-top: 50rpx;
+  width: 80%;
+}
+.selectimg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 11;
+}

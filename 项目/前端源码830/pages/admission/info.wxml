@@ -1,0 +1,173 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='contaienr'>
+    <view class='list mar_t ba_f pa fon_28 bor_bottom'>
+      <view class='list_0 dis_in'>
+        <text style='color:red'>*</text>
+        <text>货站名称</text>
+      </view>
+      <view class='list_1 dis_in'>
+        <input name="name" placeholder='请输入货站名称' value="{{name}}"></input>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28 bor_bottom'>
+      <view class='list_0 dis_in'>
+        <text style='color:red'>*</text>
+        <text>联系电话</text>
+      </view>
+      <view class='list_1 dis_in'>
+        <input name="tel" type='number' placeholder='请输入货站联系电话' value="{{phone}}"></input>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28 bor_bottom'>
+      <view class='list_head'>
+        <text style='color:red'>*</text>
+        <text>货站主图</text>
+        <text class='color_9 mar_l'>(建议尺寸375*175)</text>
+      </view>
+      <view class='choose_img'>
+        <view class='choose dis_in' wx:for="{{imgArray1}}" wx:key="*this" bindtap='delete_img1' data-index='{{index}}'>
+          <image mode='aspectFill' src='{{item}}'></image>
+        </view>
+        <view class='choose dis_in' bindtap='choose_img_0' wx:if="{{imgArray1.length<1}}">
+          <image mode='aspectFill' src='../../img/tj.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28'>
+      <view class=''>
+        <text style='color:red'></text>
+        <text>线路</text>
+        <text class='color_9 mar_l'>(最多可添加三条.且第一条将作为主线路显示)</text>
+      </view>
+      <view class='route' wx:for="{{line}}" wx:key="*this">
+        <view class='mar_t'>
+          <view class='dis_in t_c bor_bottom gobyndsingle' bindtap='route_0' data-index='{{index}}' data-type='0'>
+            <text wx:if="{{item.start.length!=0}}">{{item.start}}</text>
+            <text wx:else>始发地</text>
+          </view>
+          <view class='dis_in t_c'>
+            <image mode='widthFix' src='../../img/fw.png' style='width:100%;'></image>
+          </view>
+          <view class='dis_in t_c bor_bottom gobyndsingle' bindtap='route_0' data-index='{{index}}' data-type='1'>
+            <text wx:if="{{item.end.length!=0}}">{{item.end}}</text>
+            <text wx:else>目的地</text>
+          </view>
+          <view class='dis_in line'>
+            <text bindtap='deletes' data-index='{{index}}'>删除</text>
+            <text wx:if="{{line.length==index+1&&line.length<3}}" style='border:2rpx solid {{color}};color:{{color}}' bindtap='add_line'>添加</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28'>
+      <view class=''>
+        <text style='color:red'></text>
+        <text>现有货源</text>
+        <text class='color_9 mar_l'></text>
+      </view>
+      <!-- <view class='route' wx:for="{{source}}" wx:key="*this">
+      <view class='mar_t'>
+        <view class='dis_in t_c bor_bottom'>
+          <input name="{{item.name}}" value='始发地'></input>
+        </view>
+        <view class='dis_in t_c'>
+          <image mode='widthFix' src='../../img/fw.png' style='width:100%;'></image>
+        </view>
+        <view class='dis_in t_c bor_bottom'>
+          <input name="{{item.termini}}" value='目的地'></input>
+        </view>
+        <view class='dis_in line'>
+          <text>删除</text>
+          <text wx:if="{{source.length==index+1}}" style='border:2rpx solid {{color}};color:{{color}}' bindtap='add_source'>添加</text>
+        </view>
+      </view>
+    </view> -->
+      <view class='text_area pa'>
+        <textarea wx:if="{{route==false}}" name="route" placeholder='请输入您的货源' maxlength="-1" value='{{station.nowSource}}' bindinput='area1'></textarea>
+        <view class='area' wx:else>
+            <rich-text nodes="{{area_one}}"></rich-text>
+        </view>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28 bor_bottom'>
+      <view class='list_head'>
+        <text style='color:red'>*</text>
+        <text>详情多图</text>
+        <text class='color_9 mar_l'>(建议五张以内)</text>
+      </view>
+      <view class='choose_img'>
+        <view class='choose dis_in' wx:for="{{imgArray2}}" wx:key="*this" bindtap='delete_img2' data-index='{{index}}'>
+          <image mode='aspectFill' src='{{item}}'></image>
+        </view>
+        <view class='choose dis_in' bindtap='choose_img_1' wx:if="{{imgArray2.length<5}}">
+          <image mode='aspectFill' src='../../img/tj.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='list ba_f pa fon_28'>
+      <view class=''>
+        <text style='color:red'></text>
+        <text>货站详情介绍</text>
+        <text class='color_9 mar_l'></text>
+      </view>
+      <view class='text_area pa'>
+        <textarea name="texts" placeholder='请输入详情介绍' maxlength="-1" value='{{station.stationDetails}}' bindinput='area2' wx:if="{{route==false}}"></textarea>
+        <view class='area' wx:else>
+            <rich-text nodes="{{area_two}}"></rich-text>
+        </view>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28 bor_bottom'>
+      <view class='list_0 dis_in'>
+        <text style='color:red'>*</text>
+        <text>支付宝账号</text>
+      </view>
+      <view class='list_1 dis_in'>
+        <input name="num" placeholder='请输入货站支付宝账号' value='{{station.alipay}}'></input>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28 bor_bottom'>
+      <view class='list_0 dis_in'>
+        <text style='color:red'>*</text>
+        <text>货站位置</text>
+      </view>
+      <view class='list_1 dis_in'>
+        <view class='dis_in gobyndsingle'>{{address}}</view>
+        <view class='dis_in' bindtap='choose_address'>
+          <image mode='aspectFill' src='../../img/dw.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='list ba_f pa fon_28 bor_bottom'>
+      <view class='list_0 dis_in'>
+        <text style='color:red'>*</text>
+        <text>详细地址</text>
+      </view>
+      <view class='list_1 dis_in'>
+        <input name="address" placeholder='请输入货站详细地址' value='{{station.address}}'></input>
+      </view>
+    </view>
+    <button style='background:{{color}}' formType="submit" class='color_f con_30'>提交</button>
+  </view>
+</form>
+
+<view class='confirm' wx:if="{{route==true}}">
+  <view class='dis_in t_l'>
+    <text class='pa' bindtap='cancel'>取消</text>
+  </view>
+  <view class='dis_in t_r'>
+    <text class='pa' style='color:{{color}}' bindtap='confirm'>确定</text>
+  </view>
+</view>
+<picker-view indicator-style="height: 50px;" style='wdith:100%;height:400rpx;' bindchange="sele_city" wx:if="{{route==true}}">
+  <picker-view-column>
+    <view wx:for="{{province}}" style="line-height: 50px">{{item.cityDesc}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{city}}" style="line-height: 50px">{{item.cityDesc}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{county}}" style="line-height: 50px">{{item.cityDesc}}</view>
+  </picker-view-column>
+</picker-view>

@@ -1,0 +1,4 @@
+<!--zh_cjdianc/pages/car/xydtl.wxml-->
+<view style='padding:20rpx 30rpx;'>
+<rich-text nodes='{{nodes}}'></rich-text>
+</view>

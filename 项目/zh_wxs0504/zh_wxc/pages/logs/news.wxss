@@ -1,0 +1,39 @@
+/* pages/logs/news.wxss */
+.news{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 30rpx;
+  display: flex;
+}
+.newsimg{
+  width: 99rpx;
+  height: 99rpx;
+  margin-right: 20rpx;
+}
+.newsfont1{
+  color: #999;
+  font-size: 18rpx;
+  margin-left: 20rpx;
+}
+.newsbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 530rpx;
+}
+.newmoney{
+  background-color: #F5F5F5;
+  padding: 3rpx 10rpx;
+  color: #888;
+  font-size: 24rpx;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+

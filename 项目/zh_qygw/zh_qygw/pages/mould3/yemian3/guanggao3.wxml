@@ -1,0 +1,10 @@
+<!--zh_qygw/pages/mould3/yemian3/guanggao3.wxml-->
+<view class="guang">
+  <view class="content">
+    <image class="guangimg" src="../../images/back1.png"></image>
+    <image class="guangimg" src="../../images/back1.png"></image>
+    <image class="guangimg" src="../../images/back1.png"></image>
+    <image class="guangimg" src="../../images/back1.png"></image>
+    <image class="guangimg" src="../../images/back1.png"></image>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+<view class='container'>
+  <view class='head'>
+    <swiper indicator-dots="true" indicator-active-color="#fff" autoplay="true" interval="3000" duration="1000" circular="true">
+      <block wx:for="{{banenrlist}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item.url}}" mode='aspectFill' class="img" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='check t_c ba_f fon_30 pa'>
+    <view class='dis_in bor_bottom' bindtap='route_0' data-type='0'>
+      <text wx:if="{{route_0!=''}}">{{route_0}}</text>
+      <text wx:else>始发地</text>
+    </view>
+    <view class='dis_in'>
+      <image mode='aspectFill' src='../../img/jh.png'></image>
+    </view>
+    <view class='dis_in bor_bottom' bindtap='route_0' data-type='1'>
+      <text wx:if="{{route_1!=''}}">{{route_1}}</text>
+      <text wx:else>目的地</text>
+    </view>
+    <button style='background:{{color}}' class='color_f mar_t fon_30' bindtap='search_route'>搜索线路</button>
+  </view>
+  <view class='body pa_1'>
+    <view class='pa_0 recommed'>
+      <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='dis_in mar_l' class='wei fon_30'>精品推荐</text>
+    </view>
+    <view class='logistics' wx:for="{{goodsStationlist}}" wx:key="*this" bindtap='info' data-index='{{item.id}}'>
+      <view class='dis_in'>
+        <image mode='aspectFill' src='{{item.stationMainImg}}' class='img'></image>
+      </view>
+      <view class='dis_in'>
+        <view class='fon_30 wei'>【{{item.name}}】</view>
+        <view class='color_6 fon_26'>{{item.startName}}-{{item.endName}}</view>
+        <view class='fon_26' style='color:{{color}}'>{{item.phone}}</view>
+        <view class='color_6 fon_26 gobyndsingle'>{{item.address}}</view>
+      </view>
+    </view>
+  </view>
+  <view style='height:120rpx;'></view>
+  <view class='fixed_bottom fon_28'>
+    <view class=' t_c dis_in' style='width:49%;' bindtap='index'>
+      <image mode='aspectFill' src='../../img/sy-xz.png'></image>
+      <text style='color:{{color}}'>首页</text>
+    </view>
+    <view class='dis_in bor_right rel' style='width:2%;'>
+      <text class='ab udlr'></text>
+    </view>
+    <view class=' t_c dis_in color_6' style='width:49%;' bindtap='logs'>
+      <image mode='aspectFill' src='../../img/wd.png'></image>
+      <text>我的</text>
+    </view>
+  </view>
+  <view class='confirm' wx:if="{{route==true}}">
+    <view class='dis_in t_l'>
+      <text class='pa' bindtap='cancel'>取消</text>
+    </view>
+    <view class='dis_in t_r'>
+      <text class='pa' style='color:{{color}}' bindtap='confirm'>确定</text>
+    </view>
+  </view>
+  <picker-view indicator-style="height: 50px;" style='wdith:100%;height:500rpx;' value="{{value}}" bindchange="bindChange" wx:if="{{route==true}}">
+    <picker-view-column>
+      <view wx:for="{{province}}" bindchange="change_0" data-id='{{item.adCode}}' style="line-height: 50px">{{item.cityDesc}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{city}}" style="line-height: 50px">{{item.cityDesc}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{county}}" style="line-height: 50px">{{item.cityDesc}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

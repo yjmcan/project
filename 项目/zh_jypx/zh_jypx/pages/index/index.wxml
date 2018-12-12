@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="home">
+  <!--轮播-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{url}}{{item.thumb}}" class="slide-image" width="355" height="150" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--消息通知-->
+  <view class="msg_con flex_center">
+    <view class="msg_l flex_center">
+      <view class="head_new">头条</view>
+      <image src="../img/laba.png" mode="aspectFill"></image>
+    </view>
+    <scroll-view class="msg" scroll-x="true">
+      <view wx:for="{{title}}" class="msg_scroll">
+        <view>{{item.title}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!--课程级别-->
+  <view class="level flex_center" wx:if="{{hidden}}">
+    <scroll-view class="msg" scroll-x="true">
+      <view wx:for="{{level}}" class="msg_scroll {{activeIndex == index ? 'on' : ''}}" bindtap='onDetail' data-index="{{index}}" data-id="{{item.id}}">
+        <view>{{item.course_name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="flex1 level_con" wx:for="{{con}}" wx:if="{{none.code==200}}">
+    <view  bindtap='task_list'  data-id="{{item.id}}">{{item.name}}</view>
+  </view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+  
+  <view class='ifootbox'></view>
+  <!--底部-->
+  <view class="foot flex_around">
+    <view class="flex3 active">
+      <image src="../img/index_on.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="flex3" bindtap='onTeacher'>
+      <image src="../img/teacher.png"></image>
+      <view>教师</view>
+    </view>
+    <view class="flex3" bindtap='onMy'>
+      <image src="../img/my.png"></image>
+      <view>我的</view>
+    </view>
+  </view>
+</view>

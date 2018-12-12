@@ -1,0 +1,111 @@
+/* zh_wzp/pages/index/info.wxss */
+.head{
+  padding: 0 20rpx;
+  background: #fff;
+}
+.head image{
+  margin-right: 10rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+.head>view:nth-child(1){
+  font-weight: bold;
+  font-size: 35rpx;
+  padding: 20rpx 0;
+}
+.money{
+  right: 70rpx;
+  font-size: 34rpx;
+  color: rgb(255, 84, 80);
+  font-weight: bold;
+  top: 34rpx;
+}
+.head>view:nth-child(2){
+  color: #666;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.head>view:nth-child(3){
+  padding: 20rpx 0 0 0;
+}
+.head>view view{
+  margin-right: 15rpx;
+}
+.body{
+  background: #fff;
+  margin-top: 20rpx;
+}
+.welfare{
+  background: #f1f7ff;
+  color: #666;
+  padding: 5rpx 10rpx;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+  margin-bottom: 20rpx;
+  display: inline-block;
+}
+.info_head{
+  padding: 20rpx;
+  font-weight: bold;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.info_head>text:nth-child(1){
+  background: rgb(47, 143, 245);
+  width: 2rpx;
+}
+.company{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.company>image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+.company>text{
+  vertical-align: middle;
+}
+.company_info{
+  padding: 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 120rpx;
+}
+.company_info>image:nth-child(1){
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.company_info>image:nth-child(3){
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.company_info>view{
+  width: 77%;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+.company_info>view view{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.company_info>view view:nth-child(1){
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.company_info>view view:nth-child(2){
+  font-size: 24rpx;
+  color: #999;
+}
+.share{
+  width: 100%;
+  height: 100%;
+  z-index: 5000000;
+  background: none;
+  top: 0;
+}

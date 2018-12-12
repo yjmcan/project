@@ -1,0 +1,150 @@
+<view class='head_0 border_t border_bo mar'>
+  <view class='rel'>
+    <image mode='aspectFill' src='{{url}}{{info.header}}' class='logo'></image>
+    <image mode='aspectFill' src='../img/nan.png' class='sex ab' wx:if="{{info.sex==1}}"></image>
+    <image mode='aspectFill' src='../img/nv.png' class='sex ab' wx:else></image>
+  </view>
+  <view>
+    {{info.username}}
+  </view>
+  <view class='info_0'>
+    <image mode='aspectFill' src=''></image>
+    <text>{{info.area[1]}}</text>
+    <image mode='aspectFill' src=''></image>
+    <text>{{info.work_life}}年</text>
+    <image mode='aspectFill' src=''></image>
+    <text>{{info.degree_name}}</text>
+  </view>
+  <view>
+    <view>
+      <text>应聘职位</text>
+      <text>{{info.type_name}}</text>
+    </view>
+    <view>
+      <text>期望薪资</text>
+      <text>{{info.salary_name}}/月</text>
+    </view>
+  </view>
+</view>
+<view class='head_1 border_t border_bo mar'>
+  <view class='title'>
+    <image mode='aspectFill' src='../img/me_0.png'></image>
+    <text style='color:{{color}}'>基本信息</text>
+  </view>
+  <view>
+    <view>
+      <text>年龄</text>
+      <text>{{info.birthday}}</text>
+    </view>
+    <view>
+      <text>毕业院校</text>
+      <text>{{info.graduation_school}}</text>
+    </view>
+    <view>
+      <text>工作年限</text>
+      <text>{{info.work_life}}年</text>
+    </view>
+    <view>
+      <text>参加工作时间</text>
+      <text>{{info.work_part}}</text>
+    </view>
+    <view>
+      <text>联系电话</text>
+      <text>{{info.contact}}</text>
+    </view>
+  </view>
+</view>
+<view class='head_2 border_t border_bo mar'>
+  <view class='title'>
+    <image mode='aspectFill' src='../img/me_2.png'></image>
+    <text style='color:{{color}}'>工作经验</text>
+  </view>
+  <view>
+    <view class='rel info_1' style='border-left:2rpx solid {{color}}' wx:for="{{info.work}}">
+      <text class='ab left_b' style='border:2rpx solid {{color}}'></text>
+      <text class='ab left_o' style='background: {{color}}'></text>
+      <view class='experience'>
+        <view class='job_0'>
+          <text>{{item.work_company}}</text>
+        </view>
+        <view>
+          {{item.work_time1}}-{{item.work_time2}}
+        </view>
+        <view>
+          {{item.work_position}}
+        </view>
+        <view>
+          {{item.work_content}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='head_2 border_t border_bo mar'>
+  <view class='title'>
+    <image mode='aspectFill' src='../img/xiangmu.png'></image>
+    <text style='color:{{color}}'>项目经验</text>
+  </view>
+  <view>
+    <view class='rel info_1' style='border-left:2rpx solid {{color}}' wx:for="{{info.project}}">
+      <text class='ab left_b ' style='border:2rpx solid {{color}}'></text>
+      <text class='ab left_o' style='background: {{color}}'></text>
+      <view class='experience'>
+        <view class='job_0'>
+          <text>{{item.project_name}}</text>
+
+        </view>
+        <view>{{item.project_time1}}-{{item.project_time2}}</view>
+        <view>
+          {{item.project_role}}
+        </view>
+        <view>
+          {{item.project_introducation}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='head_2 border_t border_bo mar' style='margin-bottom:120rpx;'>
+  <view class='title'>
+    <image mode='aspectFill' src='../img/me_4.png'></image>
+    <text style='color:{{color}}'>教育经历</text>
+  </view>
+  <view>
+    <view class='rel info_1' style='border-left:2rpx solid {{color}}' wx:for="{{info.education}}">
+      <text class='ab left_b ' style='border:2rpx solid {{color}}'></text>
+      <text class='ab left_o' style='background: {{color}}'></text>
+      <view class='experience'>
+        <view class='job_0'>
+          <text>{{item.education_school}}</text>
+        </view>
+        <view>{{item.education_time1}}-{{item.education_time2}}</view>
+        <view>
+          {{item.education_major}}
+        </view>
+        <view>
+          {{item.education_experience}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='bottom_tab'>
+  <view bindtap='collections'>
+    <image wx:if="{{coll==true}}" mode='aspectFill' src='../img/shoucang.png'></image>
+    <image wx:else mode='aspectFill' src='../img/yishoucang.png'></image>
+    <view wx:if="{{coll==true}}">收藏</view>
+    <view wx:else style='color:{{color}}'>已收藏</view>
+  </view>
+  <view class='rel'>
+    <image mode='aspectFill' src='../img/share.png'></image>
+    <view>分享</view>
+    <button open-type='share' class='share' class='ab share'></button>
+  </view>
+  <view style='background:{{color}}' bindtap='choise' wx:if="{{IsResume!=1}}">
+    发送邀请
+  </view>
+  <view style='background:#ccc' wx:else>
+    发送邀请
+  </view>
+</view>

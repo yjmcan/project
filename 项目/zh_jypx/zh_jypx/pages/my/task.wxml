@@ -1,0 +1,31 @@
+<!--pages/my/task.wxml-->
+<view class="home">
+
+  <!--作业是否批改-->
+  <view class="level flex_center"  wx:if='{{hidden}}'>
+    <scroll-view class="msg" scroll-x="true">
+      <view wx:for="{{task_title}}" class="msg_scroll {{activeIndex == index ? 'on' : ''}}" bindtap='onDetail' data-index="{{index}}" data-id="{{item.id}}">
+        <view>{{item.con}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="ready_list" wx:for="{{task}}" wx:if="{{none.code==200}}">
+    <view wx:if="{{item.state==1}}" class="flex_around">
+      <view>{{item.create_time}}</view>
+      <view>{{item.course_name}}{{item.unit_name}}</view>
+      <view>作业正在批改中</view>
+    </view>
+    <view wx:if="{{item.state==2}}" class="flex_around">
+      <view>{{item.create_time}}</view>
+      <view>{{item.course_name}}{{item.unit_name}}</view>
+      <view bindtap='onrevise' class="good" wx:if="{{item.status==1}}" data-index="{{item.unit_id}}" data-status="{{item.status}}">你太棒了</view>
+      <view bindtap='onrevise' class="revise" wx:if="{{item.status==2}}" data-index="{{item.unit_id}}" data-status="{{item.status}}">点击修订</view>
+    </view>
+  </view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+
+</view>

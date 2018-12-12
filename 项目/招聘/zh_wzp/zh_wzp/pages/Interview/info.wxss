@@ -1,0 +1,80 @@
+/* zh_wzp/pages/Interview/info.wxss */
+.head{
+  background: #fff;
+  padding: 30rpx 0;
+}
+.head image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto 0;
+  display: block;
+}
+.head view{
+  text-align: center;
+}
+.head view:nth-child(2){
+  color: #666;
+  margin-top: 40rpx;
+  font-size: 35rpx;
+  /* padding: 20rpx 0; */
+}
+.head view:nth-child(3){
+  font-size: 24rpx;
+  color: #999;
+}
+.mar{
+  margin-top: 20rpx;
+}
+.list{
+  padding: 20rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.list image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.list text{
+  vertical-align: middle;
+}
+.info{
+  /* padding: 20rpx; */
+  background: #fff;
+}
+.info>view{
+  padding: 10rpx 20rpx;
+}
+.info>view text:nth-child(1){
+  color: #999;
+}
+.info>view text:nth-child(2){
+  color: #666;
+}
+.info>view image{
+  width: 25rpx;
+  height: 40rpx;
+  float: right;
+}
+.butt{
+  position: fixed;
+  height: 100rpx;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+}
+.butt>view{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  background: rgb(47, 143, 243);
+  line-height: 100rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.butt>view:nth-child(1){
+  border-right: 2rpx solid #fff;
+}

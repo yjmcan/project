@@ -1,0 +1,16 @@
+<!--pages/logs/shouruinfo.wxml-->
+<view class='home'>
+  <view class='sheader' wx:for="{{list}}">
+    <view>提现</view>
+    <view class='flex_bet sheadertime'>
+      <view class='sfont1'>{{item.time}}</view>
+      <view class='sfont2'>+{{item.money}}元</view>
+    </view>
+  </view>
+
+  <!--没有数据的时候-->
+  <view class="flex3 none" wx:if="{{list.length==0}}">
+    <image src="../img/zhanwei.png"></image>
+    <view>暂无数据</view>
+  </view>
+</view>

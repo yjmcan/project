@@ -1,0 +1,82 @@
+<!--zh_qygw/pages/mould3/fuwu3/fuwu3.wxml-->
+<view class="fuwu3">
+  <view class="header">
+    <image src="../../images/zixun.png"></image>
+  </view>
+
+  <view class="fbanner">
+    <view class="fbtitle">六大核心服务\n\r助力商户发展</view>
+    <view class="fbcontent">微信小程序注册与认证；微信小程序代码开发与审核；附近小程序；
+    微信小程序与公众号贯通；公众号搭建与代运营；腾讯模板消息；搜索关键词设置；腾讯云服务器、
+    企业宣传视频、商品拍摄、LOGO制作等。
+    </view>
+  </view>
+
+  <view class="boxlist">
+    <view class="fuwulist">
+      <view class="fuwulbox">
+        <image src="../../images/mou3nav5.png"></image>
+      </view>
+      <view class="fuwutext">
+        各行业小程序开发制作。例如：餐饮外卖、水电维修、鲜花绿植、酒店预订、培训教育等。附近小程序更能为商家带来源源不断的客流。
+      </view>
+    </view>
+    <view class="fuwulist">
+      <view class="fuwulbox">
+        <image src="../../images/mou3nav1.png"></image>
+      </view>
+      <view class="fuwutext">
+        公众号注册、认证、深度开发，手机网站开发、APP开发，H5海报、投票微营销工具等。
+      </view>
+    </view>
+    <view class="fuwulist">
+      <view class="fuwulbox">
+        <image src="../../images/mou3nav2.png"></image>
+      </view>
+      <view class="fuwutext">
+        朋友圈广告代理、制作。有房一站式服务，让您的广告轻松占领朋友圈，超越传统广告的性价比看得见。
+      </view>
+    </view>
+    <view class="fuwulist">
+      <view class="fuwulbox">
+        <image src="../../images/mou3nav3.png"></image>
+      </view>
+      <view class="fuwutext">
+        公众号底部广告代理、制作、投放一站式服务，让您的广告轻松占领公众号文章，被千万读者浏览点击。
+      </view>
+    </view>
+    <view class="fuwulist">
+      <view class="fuwulbox">
+        <image src="../../images/mou3nav4.png"></image>
+      </view>
+      <view class="fuwutext">
+       小程序代运营、公众号代运营、微营销策划与执行，让您的小程序和公众号获得更多用户。
+      </view>
+    </view>
+    <view class="fuwuremark">——亲，我是有底线的——</view>
+  </view>
+  
+  <!--—————版权部分—————-->
+  <view class="banquan">
+    <view>COPYRIGHT@{{copyrit.support}}</view>
+    <view class="bqfont1">微信搜索：{{aboutus.name}} | <text bindtap="phone">一键拨号</text></view>
+  </view>
+
+  <!--————————底部部分————————-->
+  <view class="footbox"></view>
+  <view class="foot">
+    <view class="footlist flex3" bindtap="home3">
+      <image src="../../images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="footlist flex3">
+      <image src="../../images/fangansele.png"></image>
+      <view style="color:#28B3E5;">服务</view>
+    </view>
+    <view class="footlist flex3" bindtap="news3">
+      <image src="../../images/pro.png"></image>
+      <view>新闻</view>
+    </view>
+  </view>
+  
+</view>

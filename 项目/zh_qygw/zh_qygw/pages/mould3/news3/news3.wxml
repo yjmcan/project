@@ -1,0 +1,56 @@
+<!--zh_qygw/pages/mould3/news3/news3.wxml-->
+<view class="fuwu3">
+  <view class="header">
+    <image src="../../images/zixun.png"></image>
+  </view>
+
+  <!--————内容部分——————-->
+  <view class="news">
+    <view class="newslist">
+      <image class="newsimg" src="../../images/mou3back3.png"></image>
+      <view class="newsbox">
+        <view class="newstitle">不需要钥匙！有150万个家庭已经能使用小程序开门了；</view>
+        <view class="newstime">2017.11.03\n\r来源：微信公众课</view>
+      </view>
+    </view>
+    <view class="newslist">
+      <image class="newsimg" src="../../images/mou3back4.png"></image>
+      <view class="newsbox">
+        <view class="newstitle">小程序可以打开网页和关联500个公众号；</view>
+        <view class="newstime">2017.11.02\n\r来源：微信号</view>
+      </view>
+    </view>
+    <view class="newslist">
+      <image class="newsimg" src="../../images/mou3back5.png"></image>
+      <view class="newsbox">
+        <view class="newstitle">小程序帮公众号盈利？这里有个变现的例子；</view>
+        <view class="newstime">2017.11.20\n\r来源：微信公众课</view>
+      </view>
+    </view>
+    <view class="newsdi">——亲，我是有底线的——</view>
+  </view>
+
+  <!--—————版权部分—————-->
+  <view class="banquan">
+    <view>COPYRIGHT@{{copyrit.support}}</view>
+    <view class="bqfont1">微信搜索：{{aboutus.name}} | <text bindtap="phone">一键拨号</text></view>
+  </view>
+
+  <!--————————底部部分————————-->
+  <view class="footbox"></view>
+  <view class="foot">
+    <view class="footlist flex3" bindtap="home3">
+      <image src="../../images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="footlist flex3" bindtap="fuwu3">
+      <image src="../../images/fangan.png"></image>
+      <view>服务</view>
+    </view>
+    <view class="footlist flex3">
+      <image src="../../images/prosele.png"></image>
+      <view style="color:#28B3E5;">新闻</view>
+    </view>
+  </view>
+  
+</view>

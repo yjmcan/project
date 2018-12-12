@@ -1,0 +1,101 @@
+<!--zh_hyk/pages/index/qhmd.wxml-->
+<view>
+  <view class='dqwz flex4'>
+    <image src='../../img/dqdw.png'></image>
+    <view class='gobyndsingle'>当前位置：{{weizhi}}</view>
+  </view>
+  <view class='head'>
+    <image class='headimg' src='{{url}}{{lbarr[0].logo}}'></image>
+    <view class="page__bd">
+      <view class="weui-panel__hd">
+        <view class="weui-search-bar">
+          <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+              <icon class="weui-icon-search_in-box" type="search" size="16"></icon>
+              <input type="text" class="weui-search-bar__input" placeholder-style='font-size:26rpx;' placeholder="请输入分店名称" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+              <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+              </view>
+            </view>
+            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+              <icon class="weui-icon-search" type="search" size="18"></icon>
+              <view class="weui-search-bar__text">搜索</view>
+            </label>
+          </view>
+          <view class="weui-search-bar__cancel-btn" style='color:{{xtxx.link_color}}' hidden="{{!inputShowed}}" bindtap="searchData">搜索</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bd'>
+    <view class="paixu">
+      <block wx:for="{{listarr}}" wx:key="*this">
+        <view id="{{index}}" class="{{activeIndex == index ? 'selected' : 'default'}}" bindtap="tabClick">{{item}}
+          <!-- <image class='xsjt-img' src='../images/xsjt.png'></image> -->
+        </view>
+      </block>
+    </view>
+    <view class='jzz' hidden='{{qqsj}}'>
+      <image class='Rotation' src='../../img/jzz.png'></image>
+      <view>加载中...</view>
+    </view>
+    <view class='mdlist' hidden="{{activeIndex == 1}}">
+      <block wx:if="{{qqsj}}">
+        <view wx:if="{{tjstorelist.length!=0}}" class='md' wx:for="{{tjstorelist}}" data-appid='{{item.appid}}' data-type='{{item.type}}' data-sjid='{{item.id}}' bindtap='tzsj'>
+          <image class='mdbgimg' src='{{url}}{{item.md_img2}}'></image>
+          <view class='mdzz'></view>
+          <view class='mdxx'>
+            <view class='mdname'>{{item.name}}</view>
+            <view class='mdjl'>距您{{item.aa}}，访问量{{item.sentiment}}</view>
+          </view>
+          <view class='dz flex-center'>
+            <image class='dzimg' src='../../img/dz.png'></image>
+            <view class='gobyndsingle'>{{item.address}}</view>
+          </view>
+        </view>
+        <view class='jzz' hidden='{{mygd}}'>
+          <image class='Rotation' src='../../img/jzz.png'></image>
+          <view>加载中...</view>
+        </view>
+        <view wx:if="{{tjstorelist.length==0}}" class='kong'>
+          <image src='../../img/wushuju.png'></image>
+          <view>暂无符合您搜索的数据</view>
+        </view>
+        <view wx:if="{{mygd}}" class='jzwb'>
+          <view class='hx'></view>
+          <view class='wz'>加载完毕</view>
+          <view class='hx'></view>
+        </view>
+      </block>
+    </view>
+    <view class='mdlist' hidden="{{activeIndex != 1}}">
+      <block wx:if="{{qqsj}}">
+        <view wx:if="{{jlstorelist.length!=0}}" class='md' wx:for="{{jlstorelist}}" data-appid='{{item.appid}}' data-type='{{item.type}}' data-sjid='{{item.id}}' bindtap='tzsj'>
+          <image class='mdbgimg' src='{{url}}{{item.md_img2}}'></image>
+          <view class='mdzz'></view>
+          <view class='mdxx'>
+            <view class='mdname'>{{item.name}}</view>
+            <view class='mdjl'>距您{{item.aa}}，访问量{{item.sentiment}}</view>
+          </view>
+          <view class='dz flex-center'>
+            <image class='dzimg' src='../../img/dz.png'></image>
+            <view class='gobyndsingle'>{{item.address}}</view>
+          </view>
+        </view>
+        <view class='jzz' hidden='{{mygd}}'>
+          <image class='Rotation' src='../../img/jzz.png'></image>
+          <view>加载中...</view>
+        </view>
+        <view wx:if="{{jlstorelist.length==0}}" class='kong'>
+          <image src='../../img/wushuju.png'></image>
+          <view>暂无符合您搜索的数据</view>
+        </view>
+        <view wx:if="{{mygd}}" class='jzwb'>
+          <view class='hx'></view>
+          <view class='wz'>加载完毕</view>
+          <view class='hx'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+/* zh_cjdianc/pages/sjzx/wmddxq.wxss */
+@import "/zh_cjdianc/pages/wddd/ddxq.wxss";
+.ddxh{
+  font-size: 38rpx;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,6 @@
+<!--zh_qygw/pages/mould4/women4.wxml-->
+<view class="index">
+  <image src="{{url}}/addons/zh_qygw/template/images/we1.jpg"></image>
+  <image src="{{url}}/addons/zh_qygw/template/images/we2.jpg"></image>
+  <image src="{{url}}/addons/zh_qygw/template/images/we3.jpg"></image>
+</view>

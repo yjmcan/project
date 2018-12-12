@@ -1,0 +1,26 @@
+<!--pages/my/change_detail.wxml-->
+<view class="home">
+    <!-- <view class="title flex1">积分兑换</view> -->
+    <view class="change_con flex3">
+      <image mode="aspectFill"></image>
+      <view>1600积分兑换</view>
+    </view>
+
+  <!--下拉选择学校-->
+  <view class="flex3">
+    <view class="flex1 school">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker flex_center">
+          <view>选择学校：</view>
+          <input type='text' value='{{array[s_index]}}' placeholder='点击选择学校' disabled='true'></input>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+    <view class="check flex3" bindtap='onCode'>
+      <image class="" mode="aspectFill"></image>
+      <view>核销二维码</view>
+    </view>
+
+</view>

@@ -1,0 +1,156 @@
+/* pages/activeinfo/zhubanf.wxss */
+
+.index {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.rz {
+  color: #fff;
+  background: #f66926;
+  padding: 5rpx 10rpx;
+  border-radius: 8rpx;
+  font-size: 22rpx;
+}
+
+.zhuban {
+  background-color: white;
+  margin-top: 15rpx;
+  font-size: 26rpx;
+}
+
+.zbheaderbox {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.touxiang {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1rpx solid #eee;
+  margin-right: 15rpx;
+}
+
+.zbheader {
+  font-weight: bold;
+}
+
+.zbguanzhu {
+  color: #f66926;
+  border: 3rpx solid #f66926;
+  padding: 3rpx 10rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}
+
+.zbguanzhu2 {
+  color: #fff;
+  border: 3rpx solid #f66926;
+  padding: 3rpx 10rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  background-color: #f66926;
+}
+
+.zbjianjie {
+  padding: 20rpx 30rpx;
+  display: flex;
+}
+
+.zbfont1 {
+  font-size: 20rpx;
+  color: #999;
+  margin-left: 20rpx;
+  width: 620rpx;
+  padding-top: 6rpx;
+}
+
+.zbsection {
+  background-color: white;
+  margin-top: 15rpx;
+}
+
+.zbsecbox {
+  padding: 18rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.zbxian {
+  width: 7rpx;
+  height: 30rpx;
+  background-color: #f66926;
+  margin-right: 10rpx;
+}
+
+/* —————————————活动内容部分——————————— */
+
+.mybanner {
+  background-color: white;
+  margin-top: 20rpx;
+}
+
+.mybtop {
+  padding: 20rpx;
+  display: flex;
+}
+
+.mybimg {
+  width: 35%;
+  height: 160rpx;
+  border-radius: 6rpx;
+}
+
+.mybtopinfo {
+  width: 63%;
+  padding-left: 2%;
+}
+
+.mybtitle {
+  font-weight: bold;
+  font-size: 26rpx;
+  width: 420rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.mybicon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.mybfont1 {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.myjinxing {
+  border: 3rpx solid #f66926;
+  padding: 0rpx 10rpx;
+  color: #f66926;
+  font-size: 18rpx;
+  font-weight: bold;
+  line-height: 27rpx;
+  border-radius: 6rpx;
+}
+
+.myjinxingbox {
+  margin-top: 10rpx;
+}
+
+.mybfont2 {
+  color: #f66926;
+  font-size: 26rpx;
+}
+
+.zbdizhi {
+  width: 420rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}

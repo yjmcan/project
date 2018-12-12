@@ -1,0 +1,51 @@
+/* zh_vip/pages/vipseller/recharge.wxss */
+.recharge{
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 28rpx;
+}
+.rhbox{
+  margin-left: 30rpx;
+  color: #666;
+}
+.rtel{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+.rheader2{
+  background-color: white;
+  padding: 7rpx 40rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.rheader{
+  background-color: white;
+  padding: 35rpx 30rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.rhimg{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.rbanner{
+  background-color: white;
+  border: none;
+  margin-bottom: 30rpx;
+  padding: 5rpx 15rpx;
+}
+.weui-cell::before{
+  border:none;
+}
+.weui-select{
+  border-right: none;
+}
+.rcbtn{
+  font-size: 35rpx;
+}
+.weui-btn-area{
+  margin-top: 90rpx;
+}

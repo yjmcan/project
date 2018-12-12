@@ -1,0 +1,199 @@
+<!--zh_qygw/pages/mould3/home3/home3.wxml-->
+  <!--————————第三个模板部分开始————————-->
+  <view class="muban3">
+    <!--——————————————————首页轮播图——————————————————  -->
+    <view class="swiper-container">
+      <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{yswiper}}" wx:key="unique">
+          <swiper-item>
+            <image mode="aspectFill" src="{{url}}{{item.logo}}" class="img"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!--公告部分开始  -->
+    <view class='ad'>
+      <image mode='scaleToFill' class='ad-icon' src='../../images/guangbo.png'></image>
+      <swiper class="newest_content gobyndsingle" vertical="true" autoplay="true" circular="true" interval="2000">
+        <block wx:for="{{msgList}}" wx:key="*this">
+          <swiper-item>
+            <view class='adinfo gobyndsingle' bindtap='notice' data-id='{{item.id}}'>
+              <rich-text nodes="{{item.title}}"></rich-text>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--公告部分结束  -->
+
+    <view class="navlist">
+      <view class="navbox">
+        <view class="flex3" bindtap="kaifa3">
+          <image class="navimg" src=""></image>
+          <view>开发制作</view>
+        </view>
+        <view class="flex3" bindtap="anli3">
+          <image class="navimg" src=""></image>
+          <view>案例展示</view>
+        </view>
+        <view class="flex3" bindtap="yunying3">
+          <image class="navimg" src=""></image>
+          <view>营销运营</view>
+        </view>
+        <view class="flex3" bindtap="promise3">
+          <image class="navimg" src=""></image>
+          <view>服务承诺</view>
+        </view>
+        <view class="flex3" bindtap="contact3">
+          <image class="navimg" src=""></image>
+          <view>联系我们</view>
+        </view>
+      </view>
+      <image class="wxback" src="../../images/mou3back1.png"></image>
+    </view>
+
+    <view class="hcontent">
+      <view class="hctitle">一站式解决方案\n\r助力商户好生意</view>
+      <view class="hctext">微信小程序的退出，将开启一个全新时代：找商家，找服务，
+      就上微信小程序！新时代，新机遇，新红利，您准备好了吗？武汉志汇科技有限公司，为您提供
+      专业的微信小程序开发运营服务：从需求分析，功能分析、UI设计、开发制作、附近小程序，关键词搜索、微信支付等，
+      全方位为您提供最完美的解决方案！
+      </view>
+    </view>
+
+    <view class="hcbanner">
+      <image src="../../images/mou3back2.png"></image>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>开发制作与价格</view>
+      </view>
+      <view class="hsecbox">
+        <view class="flex3">
+          <image bindtap="kaifa3" class="hsecimg" src="../../images/mou3back3.png"></image>
+          <view class="">开发制作</view>
+        </view>
+        <view class="flex3">
+          <image bindtap="guanggao3" class="hsecimg" src="../../images/mou3back4.png"></image>
+          <view class="">价格套餐</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>微营销与代运营</view>    
+      </view>
+      <view class="hsecbox">
+        <view class="flex3">
+          <image class="hsecimg" src="../../images/mou3back5.png"></image>
+          <view class="">腾讯公众号底部广告</view>
+        </view>
+        <view class="flex3">
+          <image class="hsecimg" src="../../images/mou3back6.png"></image>
+          <view class="">微信官方朋友圈广告</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>案例展示</view>    
+      </view>
+      <view class="hsecprogram">
+        <view class="flex3">
+          <image class="hsecprimg" src="../../images/mou3img1.png"></image>
+          <view>三亚一号跨境购物</view>
+        </view>
+        <view class="flex3">
+          <image class="hsecprimg" src="../../images/mou3img1.png"></image>
+          <view>三亚一号跨境购物</view>
+        </view>
+        <view class="flex3">
+          <image class="hsecprimg" src="../../images/mou3img1.png"></image>
+          <view>三亚一号跨境购物</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>客户评价</view>    
+      </view>
+      <view class="comment">
+        <view class="combox">
+          <image class="comimg" src="../../images/mou3img2.png"></image>
+          <view class="comtext">
+            <view class="comtitle">海南三宝艺术收藏馆</view>
+            <view class="comneirong">非常满意和志汇科技的合作，认可志汇科技的专业和敬业，我们餐饮小程序的开发交给你们很放心。
+            </view>
+            <view class="comfoot">——王呵呵</view>
+          </view>
+        </view>
+        <view class="commore" bindtap="more">查看更多</view>
+      </view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>服务承诺</view>    
+      </view>
+      <view class="hsecprogram2">
+        <view class="flex3" bindtap="promise3">
+          <image class="hsecprimg2" src="../../images/mou3img3.png"></image>
+          <view>效率保障</view>
+        </view>
+        <view class="flex3" bindtap="promise3">
+          <image class="hsecprimg2" src="../../images/mou3img4.png"></image>
+          <view>信誉保障</view>
+        </view>
+        <view class="flex3" bindtap="promise3">
+          <image class="hsecprimg2" src="../../images/mou3img5.png"></image>
+          <view>安全保障</view>
+        </view>
+      </view>
+      <view class="diancha">（点击查阅）</view>
+    </view>
+
+    <view class="hsection">
+      <view class="hsectitle">
+        <view class="hsecxian"></view>  
+        <view>联系我们</view>    
+      </view>
+      <view class="hsecprogram3">
+        <view class="hsecplist">
+          <view class="hsecname" bindtap="phone">武汉\n\r朱经理\n\r{{aboutus.link_tel}}</view>
+          <image src="../../images/mou3shouzhi.png"></image>
+        </view>
+      </view>
+      <view class="hsremark">
+        <view class="">上班时间：8：30-18：00</view>
+        <view class="">备注：点击电话直接拨号</view>
+      </view>
+      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300rpx;"></map>
+    </view>
+    <!--————————底部部分————————-->
+    <view class="footbox3"></view>
+    <view class="foot3">
+      <view class="footlist3 flex3">
+        <image src="../../images/homesele.png"></image>
+        <view style="color:#28B3E5;">首页</view>
+      </view>
+      <view class="footlist3 flex3" bindtap="fuwu3">
+        <image src="../../images/fangan.png"></image>
+        <view>服务</view>
+      </view>
+      <view class="footlist3 flex3" bindtap="news3">
+        <image src="../../images/pro.png"></image>
+        <view>新闻</view>
+      </view>
+    </view>
+  </view>
+  <!--————————第三个模板部分结束————————-->

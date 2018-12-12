@@ -1,0 +1,106 @@
+/* zh_vip/pages/vipseller/vipuserinfo.wxss */
+.info{
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 28rpx;
+}
+.iheader{
+  background-color: white;
+  margin-top: 15rpx;
+  padding: 15rpx 20rpx;
+  display: flex;
+  align-items: center;
+}
+.iheaderimg{
+  width: 117rpx;
+  height: 117rpx;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+}
+.ihcontent{
+  flex: 1;
+  margin-top: 15rpx;
+}
+.bianji{
+  margin-left: 20rpx;
+  width: 100rpx;
+  height: 60rpx;
+  background: #ff7f46;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bianji image{
+  width: 90rpx;
+  height: 30rpx;
+}
+.ihfont1{
+  color: #ff7f46;
+}
+.vsection{
+  margin-top: 20rpx;
+  background-color: white;
+  padding: 15rpx 0rpx;
+  display: flex;
+  color: #999;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}
+.vslist{
+  width: 50%;
+}
+.vsection>.vslist:nth-child(1){
+  border-right: 1rpx solid #eee;
+}
+.vsection>.vslist:nth-child(2){
+  border-right: 1rpx solid #eee;
+}
+.vslist image{
+  width: 60rpx;
+  height: 65rpx;
+}
+.vsfont1{
+  color: #ff7f46;
+  margin-top: 10rpx;
+}
+.vubtitle{
+  padding: 20rpx;
+}
+.vubanner{
+  color: #666;
+  background-color: white;
+  padding: 0rpx 15rpx;
+}
+.vuborder{
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+  padding: 25rpx 20rpx;
+}
+.vuborder2{
+  border-bottom: 1rpx solid #eee;
+  height: 48rpx;
+  padding: 25rpx 20rpx;
+}
+.vuborder2>view{float: left;}
+.vubleft{
+  width: 30%;
+}
+.vubmid{
+  width: 30%;
+  color: #666;
+}
+.vubrit{
+  width: 60%;
+  color: #ff7f46;
+}
+.vubrit1{
+  width: 60%;
+  color: #666;
+}
+.vubmidimg{
+  width: 38rpx;
+  height: 38rpx;
+  float: right;
+}

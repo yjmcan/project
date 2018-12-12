@@ -1,0 +1,120 @@
+<!--zh_zbkq/pages/my/my.wxml-->
+<view class="container">
+  <view class='myhead'>
+    <view class='bgimg'>
+      <image src='../../img/background2.png'></image>
+    </view>
+    <view class="head">
+      <!-- <image class='vipimg' src='../../img/VIP.png'></image> -->
+      <view class="head-img">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view>
+          <view class="head-name">
+            <view wx:if="{{isvip}}" style='color:#f4ea2a'>{{userInfo.nickName}}</view>
+            <view wx:else>{{userInfo.nickName}}</view>
+            <image wx:if="{{isvip}}" src='../../img/VIP1.png'></image>
+          </view>
+          <view wx:if="{{isvip}}" class='dqsj'>会员到期时间：{{userinfo.dq_time}}</view>
+        </view>
+      </view>
+      <view class="head-vip" hidden="{{!(!isvip&&kgvip)}}" bindtap='sjvip'>
+        <view>去升级VIP</view>
+        <image src="../../img/jiantou.png"></image>
+      </view>
+      <view class="head-vip" wx:if="{{isvip&&kgvip}}" bindtap='sjvip'>
+        <view>续费</view>
+        <image src="../../img/jiantou.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="bd">
+    <navigator open-type="switchTab" url="../wdq/wdq" class="bd-view" style="border-right:1rpx solid #d9d9d9">
+      <image src="../../img/wldq.png" style="width:50rpx;height:50rpx;"></image>
+      <text>我领的券</text>
+    </navigator>
+    <navigator url="txzl" class="bd-view" style="border-right:1rpx solid #d9d9d9">
+      <image src="../../img/wdmd.png"></image>
+      <text>我的门店</text>
+    </navigator>
+    <navigator url="fbyhq" class="bd-view" style="border-right:1rpx solid #d9d9d9">
+      <image src="../../img/fabu.png"></image>
+      <text>发布卡券</text>
+    </navigator>
+    <navigator url="glyhq/glyhq" class="bd-view">
+      <image src="../../img/glyhq.png"></image>
+      <text>管理卡券</text>
+    </navigator>
+  </view> -->
+  <view class="weui-cells weui-cells_after-title" style="margin-top: 30rpx;margin-bottom: 30rpx;">
+    <navigator wx:if="{{bqxx.is_rz=='1'}}" url="wyrz" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/wdyhq.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">我要入驻</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator wx:if="{{is_fx=='1'}}" url='distribution/yaoqing' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/fxzx.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">合作中心</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url='xfjl' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/wdxf.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">我的消费</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title" style="margin-bottom: 30rpx;">
+    <navigator url="bzzx/bzzx" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/bzzx.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">帮助中心</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <view url="" bindtap='xszz' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/gzwm.png" style="margin-right: 15rpx;vertical-align: middle;width:45rpx; height: 45rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">关注我们</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+    <navigator url="kfzx" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/kfzx.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">客服中心</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view bindtap='login' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../img/wdmd.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+      </view>
+      <view class="weui-cell__bd">商家中心</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+  <!--尾部版权  -->
+  <view class='copyright'>
+    <view class='copyright_logo' data-appid="{{bqxx.tz_appid}}" bindtap='tzxcx'>
+      <image mode='aspectFill' src="{{url}}{{bqxx.copy_logo}}" class='copyright_img'></image>
+      <view class='copyright_text'>{{bqxx.name}}</view>
+    </view>
+    <view class='copyright_txt'>{{bqxx.wz}}</view>
+  </view>
+</view>
+<view class="drawer_screen" bindtap='yczz' wx:if="{{showModal}}"></view>
+<!--content-->
+<view class="drawer_box" wx:if="{{showModal}}">
+  <!--drawer content-->
+  <view class="drawer_title">保存二维码添加微信</view>
+  <image bindtap='previewImage' data-img='{{url}}{{bqxx.ewm_logo}}' src='{{url}}{{bqxx.ewm_logo}}'></image>
+  <view class="drawer_title1">点击图片预览保存图片</view>
+  <view class="btn_ok" bindtap="yczz">确定</view>
+</view>

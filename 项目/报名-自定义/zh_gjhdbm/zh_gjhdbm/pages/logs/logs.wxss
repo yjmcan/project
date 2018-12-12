@@ -1,0 +1,162 @@
+/* pages/logs/logs.wxss */
+.index{
+  width: 100%;
+  overflow-x: hidden;
+}
+.logheader{  
+  color: white;
+  position: relative;
+  height: 200rpx;
+}
+.logheaderbox{
+  position: absolute;
+  z-index: 2;
+  left: 0rpx;
+  top: 0rpx;
+  padding: 40rpx 30rpx 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+}
+.logheaderback{
+  position: absolute;
+  z-index: 1;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+.loguserimg{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.loguserfont1{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+.logqiandao{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.logqd{
+  background-color: white;
+  border-radius: 50rpx;
+  padding: 15rpx 25rpx;
+  color: #f0a53b;
+  font-size: 22rpx;
+}
+.loglist{
+  background-color: white;
+  margin-top: -20rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  z-index: 5;
+}
+.loglistbox{
+  height: 120rpx;
+  position: relative;
+}
+.loglistin{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  padding: 30rpx 15rpx;
+}
+.lognum{
+  font-weight: bold;
+  font-size: 36rpx;
+  margin-bottom: 5rpx;  
+}
+.logorder{
+  background-color: white;
+  padding: 0rpx 30rpx;
+  margin-top: 20rpx;
+}
+.logtitle{
+  padding: 20rpx 0rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.loglistorder{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  padding: 50rpx 15rpx;
+}
+.lorderimg{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 15rpx;
+}
+.loglistorder2{
+  display: flex;
+  flex-wrap: wrap;
+  color: #666;
+  padding: 10rpx 0rpx;
+}
+.logmenu{
+  width: 25%;
+  margin: 20rpx 0rpx;
+}
+
+/*—————————底部固定部分—————————  */
+/* .bmfoot2{
+  width: 100%;
+  height: 110rpx;
+}
+.bmfoot{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 90rpx;
+  background-color: white;
+  font-size: 24rpx; 
+  z-index: 1000;
+  box-shadow: 0rpx -10rpx 15rpx #c9c9c9;
+}
+.bmfootimg{
+  width: 38rpx;
+  height: 28rpx;
+  margin-bottom: 5rpx;
+}
+.bmfootimg2{
+  width: 30rpx;
+  height: 32rpx;
+  margin-bottom: 5rpx;
+}
+.bmfont1{
+  color: #F66926;
+  width: 50%;
+}
+.bmfont2{
+  color: #999;
+  width: 50%;
+}
+.bmfootbox{
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.bmfootimg3{
+  position: absolute;
+  left: 42%;
+  bottom: 0rpx;
+  width: 120rpx;
+  height: 120rpx;
+  box-shadow: 0rpx -10rpx 15rpx #c9c9c9;
+  border-radius: 50%;
+  z-index: 2;
+} */
+

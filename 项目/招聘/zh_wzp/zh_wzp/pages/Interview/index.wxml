@@ -1,0 +1,26 @@
+<view class='head'>
+    <view style='color:{{item.sele}};border-bottom: 4rpx solid {{item.sele_b}}' wx:for="{{nav}}" bindtap='nav' data-index="{{index}}">{{item.name}}</view>
+</view>
+<view wx:if="{{meet.length>0}}">
+    <view class='inter_list mar rel' bindtap='info' data-id='{{item.id}}' data-state='{{item.state1}}' wx:for="{{meet}}" wx:key="*this">
+        <view>
+            {{item.type_name}}
+        </view>
+        <view>
+            <text>{{item.number}}人</text>
+            <text>{{item.experience_name}}</text>
+            <text>{{item.degree_name}}</text>
+        </view>
+        <view class='gobyndsingle'>
+            <image class='logo' mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+            <text>{{item.company_name}}</text>
+        </view>
+        <view wx:if="{{item.state1==1}}">待接受</view>
+        <view wx:if="{{item.state1==2}}">已接受</view>
+        <view wx:if="{{item.state1==3}}">已拒绝</view>
+        <view class='ab ud'>{{item.salary_name}}</view>
+    </view>
+</view>
+<view class='fixed' wx:if="{{meet.length==0}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+</view>

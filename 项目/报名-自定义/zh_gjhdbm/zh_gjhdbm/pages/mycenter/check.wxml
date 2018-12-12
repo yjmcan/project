@@ -1,0 +1,74 @@
+<!--pages/mycenter/check.wxml-->
+<view class='index'>
+  <view class="marry">
+    <block wx:for="{{luntext}}" wx:key="*this">
+      <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view id="{{index}}">{{item}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view bindtap='check_info' wx:for="{{sign_up_examine}}" wx:key="*this" data-id='{{index}}'>
+    <view class='examine'>
+      <view class='list'>
+        <view class='list_head'>
+          <text></text>
+          <text>{{item.hd_title}}</text>
+        </view>
+        <view class='user_img rel'>
+          <image class='ab udlr' mode='aspectFill' src='{{item.img}}'></image>
+        </view>
+        <view class='user_info'>
+          <view class='info_ticket'>
+            <text class='gobyndsingle'>{{item.name}}</text>
+            <text class='gobyndsingle' style='color:{{color}}'>{{item.tk_name}}</text>
+          </view>
+          <view>{{item.time}}</view>
+        </view>
+        <view class='examine_status rel'>
+          <text class='ab'>审核中</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{sign_up_examine.length<=0}}">
+    <view class='flex3 zanwubox'>
+      <image class='zanwu' src='../img/zwzhubanf.png'></image>
+      <view>这里啥也没有</view>
+    </view>
+  </view>
+
+</view>
+<!-- ————————————底部固定导航栏———————————— -->
+<view class='bmfoot2' wx:if="{{yes!=false}}"></view>
+<view class='bmfoot' wx:if="{{yes!=false}}">
+  <view class='bmfootbox'>
+    <view bindtap='index'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+      </view>
+      <view class='{{db_tab[0].color}}'>{{db_tab[0].name}}</view>
+    </view>
+    <view bindtap='classifination'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+      </view>
+      <view class='{{db_tab[1].color}}'>{{db_tab[1].name}}</view>
+    </view>
+    <view class='fabu rel' bindtap='fabu'>
+      <image class='ab lr' mode='aspectFill' src='../img/jia@2x.png'></image>
+    </view>
+    <view>
+      <view class='rel' bindtap='mine_activity'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+      </view>
+      <view class='{{db_tab[2].color}}'>{{db_tab[2].name}}</view>
+    </view>
+    <view>
+      <view class='rel' bindtap='wode'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+      </view>
+      <view class='{{db_tab[3].color}}'>{{db_tab[3].name}}</view>
+    </view>
+  </view>
+</view>

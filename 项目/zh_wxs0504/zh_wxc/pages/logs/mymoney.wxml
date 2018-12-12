@@ -1,0 +1,13 @@
+<!--pages/logs/mymoney.wxml-->
+<view class='home money'>
+  <image class='moneyimg' src='../img/money.png'></image>
+  <view class='myue'>账户余额</view>
+  <view>
+    <view class='mfont1' wx:if="{{money.code==500}}">¥0.00</view>
+    <view class='mfont1' wx:if="{{hidden}}">¥{{money.wallet.wallet}}</view>
+  </view>
+  <button class='mcash' bindtap='ti_xian'>提现</button>
+  <view class='mremark1'>可提现到微信钱包，单日提现总限额{{money.today_total}}元</view>
+  <view class='mremark2'>每天最多可申请提现{{money.today_num}}次</view>
+  <view class='mchakan' bindtap='shouruinfo'>查看提现明细</view>
+</view>

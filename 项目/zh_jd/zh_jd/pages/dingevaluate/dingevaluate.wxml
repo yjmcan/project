@@ -1,0 +1,18 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="dingevaluate1 font">
+    <view class="dingevaluate">
+      <image src="{{avatarUrl}}" class="dingimg"></image>
+      <view class="dingtext">描述相符</view>
+      <block wx:for="{{stars}}">
+        <image class="star-image" style="left: {{item*50}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+          <view class="item" style="left:0rpx" data-key="{{item+1}}" bindtap="selectLeft"></view>
+        </image>
+      </block>
+      <view wx:if="{{count>=0}}" class="dingtext1">{{count}}分</view>
+    </view>
+    <view class="dingyi">
+      <textarea class="dingtext2" name="text" placeholder="请输入您宝贵的意见" />
+    </view>
+    <button class="ding_fabu" formType="submit" bindtap='payment'>发布</button>
+  </view>
+</form>

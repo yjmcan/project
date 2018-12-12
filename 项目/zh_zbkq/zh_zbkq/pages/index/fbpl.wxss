@@ -1,0 +1,197 @@
+/* pages/comment/comment.wxss */
+page{
+  background-color: #efeff4;
+}
+.comment{
+  padding: 30rpx 30rpx 0rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.comment_logo{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: pink;
+}
+/*星星部分  */
+.dingtext{
+  float: left;
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-indent: 1em;
+  margin-right: 30rpx;
+}
+.dingevaluate{
+  height: 85rpx;
+  background-color: white;
+  padding-top: 25rpx;
+  padding: 30rpx;
+  margin: 0 0 20rpx;
+  border-bottom: 1px solid #DCDBE0;
+  display: flex;
+  align-items: center;
+}
+.dingimg{
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+}
+.image_width{
+  margin: 10rpx;
+}
+.star-image{
+  position: absolute;
+  /* top: 48rpx; */
+  margin-left: 291rpx;
+  width: 40rpx;
+  height: 40rpx;
+  src: "../images/no-star.png";
+}
+.item{
+  position: absolute;
+  top: -2rpx;
+  width: 100%;
+  height:100%;
+}
+/*星星部分  */
+.dingtext1{
+  color: #FF8C00;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  text-indent: 2em;
+  margin-left:200rpx; 
+}
+.comment_text{
+  font-size: 32rpx;
+  color: #333;
+  margin-left: 30rpx;
+}
+.dingyi1{
+  width: 120rpx;
+  height: 120rpx;
+  border: 1rpx dashed #ccc;
+}
+.dingyi_icon{
+  width: 40rpx;
+  height: 30rpx;
+  margin-left: 40rpx;
+  margin-top: 15px;
+}
+.dingyi3{
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+}
+.footer{
+  height: 90rpx;
+  width: 101%;
+  display: flex;
+  position: fixed;
+  bottom: -2rpx;
+  left: -2rpx;
+}
+.footer_left{
+  width: 61%;
+  height: 90rpx;
+  color: white;
+  font-size: 36rpx;
+  background-color: #434343;
+  text-indent: 1em;
+  line-height: 90rpx;
+}
+.footer_right{
+  width: 40%;
+  height: 90rpx;
+  background-color: #f44444;
+  border-radius: 0rpx;
+  color: white;
+}
+.footerji{
+  color: #0097FF;
+}
+/*门店图片*/
+.mdtp {
+  margin-top: 20rpx;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.mdtp .left {
+  font-size: 30rpx;
+  width: 150rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 0 0 15px;
+}
+
+.mdtp .right {
+  flex: 1;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.mdtp .right .tpjy{
+  color: #999;
+  /* height: 80rpx;
+  line-height: 80rpx; */
+}
+.tpsl{
+  color: #b2b2b2;
+  background: white;
+  font-size: 30rpx;
+  text-align: right;
+  padding: 10rpx 15px;
+}
+.mdtp1{
+    overflow-x: hidden;
+}
+.weui-uploader__bd{
+  background: white;
+  padding: 0 0 0 40rpx;
+}
+.weui-uploader__file {
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.weui-uploader__img{
+  margin-top: 20rpx;
+  width:160rpx;
+  height: 160rpx;
+}
+.weui-uploader__input-box{
+  margin-top: 20rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  width:160rpx;
+  height: 160rpx;
+}
+.x{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  z-index: 999;
+}
+.x image{
+  width: 100%;
+  height: 100%;
+}
+/*button*/
+.button{
+  margin:100rpx 40rpx 0;
+}
+.weui-cells:before{
+  border-top: none;
+}
+.weui-cells:after{
+  border-bottom: none;
+}
+.weui-cell{
+  font-size: 30rpx;
+  color: #333;
+}

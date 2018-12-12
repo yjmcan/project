@@ -1,0 +1,15 @@
+<view class="map_box">
+  <map id="navi_map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markers}}" polyline="{{polyline}}" circles="{{circles}}"></map>
+</view>
+<view class="text_box pa_1 fon_28">
+  <view class=" dis_in">距离商家{{distance}}</view>
+  <view class=" dis_in t_r" bindtouchstart="goDetail">
+      <text style='background:{{color}}' class=' color_f'>开启地图导航</text>
+  </view>
+</view>
+<view class="text_box1 pa_1 fon_28">
+  <view class=" dis_in">距离客户{{distance1}}</view>
+  <view class=" dis_in t_r" bindtouchstart="goDetail">
+      <text style='background:{{color}}' class=' color_f'>开启地图导航</text>
+  </view>
+</view>

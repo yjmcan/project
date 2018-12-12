@@ -1,0 +1,43 @@
+<!--pages/jifen/jifeninfo.wxml-->
+<view class='home'>
+  <view class='info'>
+    <image mode='aspectFill' src='{{score_info.imgurl}}'></image>
+  </view>
+  <view class='infoheader'>
+    <view class='flex_center'>
+      <view class='jflabel'></view>
+      <view class='infoname'>{{score_info.productname}}</view>
+    </view>
+    <view>
+      <text class='goodsfont1'>{{score_info.priceintegral}}</text>
+      <text class='goodsfont2'>碳币</text>
+    </view>
+  </view>
+  <view class='infolist flex_center'>
+    <!-- <view class='infoxian'></view> -->
+    <view style='font-size:32rpx;font-weight:bold'>配送地址</view>
+  </view>
+  <view class='flex_bet infobox' bindtap='select_address' wx:if="{{edit==false}}">
+    <view>您还选择收货地址，马上去</view>
+    <image class='inforit' src='../img/acright.png'></image>
+  </view>
+  <view class='address_info'  wx:else bindtap='select_address'>
+    <view>
+      收货人姓名:{{name}}
+    </view>
+    <view>
+      收货人电话:{{tel}}
+    </view>
+    <view>
+      收货人地址:{{address}}
+    </view>
+  </view>
+  <view class='infoimg'>
+    <textarea style='height:300rpx;' bindinput='text' placeholder='备注'></textarea>
+  </view> 
+
+  <view class='infootbox'></view>
+  <view class='infoot'>
+    <button class='infobutton' bindtap='exchange' style='background:#f66925' >立即兑换</button>
+  </view>
+</view>

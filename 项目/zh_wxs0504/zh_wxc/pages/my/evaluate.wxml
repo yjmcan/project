@@ -1,0 +1,12 @@
+<!--zh_wxc/pages/my/evaluate.wxml-->
+<view class="elaluate">
+  <form bindsubmit="formSubmit">
+    <view class="stars flex1">
+      <view bindtap="starTap" data-index="{{index+1}}" wx:for="{{userStars}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+    </view>
+    <textarea class='ftextarea' placeholder-style='color:#c9c9c9;' placeholder='请输入您想说的话' name="content"></textarea>
+    <button formType="submit" class="submit">提交评论</button>
+  </form>
+</view>

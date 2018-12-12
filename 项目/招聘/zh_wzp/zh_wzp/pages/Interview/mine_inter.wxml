@@ -1,0 +1,37 @@
+<view class='head'>
+    <view style='color:{{item.sele}};border-bottom: 4rpx solid {{item.sele_b}}' wx:for="{{nav}}" bindtap='nav' data-index="{{index}}">{{item.name}}</view>
+</view>
+<view wx:if="{{jianli.length>0}}">
+    <view class='inter_list mar rel' bindtap='info' wx:for="{{jianli}}" wx:key="*this" data-id='{{item.id}}'>
+        <view wx:if="{{item.status1==1}}">
+            <image class='icon' mode='aspectFill' src='../img/wait_task.png'></image>
+            <text style='color:#f66925'>待回复</text>
+        </view>
+        <view wx:if="{{item.status1==2}}">
+            <image class='icon' mode='aspectFill' src='../img/yaoqing.png'></image>
+            <text>邀面试</text>
+        </view>
+        <view wx:if="{{item.status1==3}}">
+            <image class='icon' mode='aspectFill' src='../img/jujue.png'></image>
+            <text>已拒绝</text>
+        </view>
+        <view>
+            {{item.type_name}}
+        </view>
+        <view>
+            <text>{{item.number}}人</text>
+            <text>{{item.experience_name}}</text>
+            <text>{{item.degree_name}}</text>
+        </view>
+        <view class='gobyndsingle'>
+            <image class='logo' mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+            <text>{{item.company_name}}</text>
+        </view>
+        <view>投递时间\r\n\r\n\r\n{{item.created_at}}</view>
+        <view class='ab ud'>{{item.salary_name}}</view>
+    </view>
+</view>
+
+<view class='fixed' wx:if="{{jianli.length==0}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+</view>

@@ -1,0 +1,47 @@
+/* pages/mine/zhuce.wxss */
+.logo image{
+  width: 150rpx;
+  height: 150rpx;
+  background: orange;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.zhuce{
+  width: 100%;
+  height: 100%;
+  margin-top:120rpx;
+}
+.yz image{
+  width: 40rpx;
+  height: 40rpx;
+  background: orange;
+}
+.yz input{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.yz{
+  padding: 30rpx 0;
+  width: 72%;
+  margin-left: 14%;
+}
+button{
+  border-radius:260rpx;
+  margin-top: 200rpx;
+  width: 70%;
+  background: orange;
+  color: #fff;
+}
+button::after{
+  border: none;
+}
+.mar{
+  margin-top: 60rpx;
+}
+.mar_4{
+  margin-top: 40rpx;
+}
+.img_b{
+  width: 100%;
+  height: 100%;
+}

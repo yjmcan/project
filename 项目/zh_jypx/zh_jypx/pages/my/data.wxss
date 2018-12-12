@@ -1,0 +1,18 @@
+/* pages/my/data.wxss */
+page{
+  background: #fff;
+}
+.bg{
+  width: 530rpx;
+  height: 240rpx;
+  background: #ccc;
+  margin:50rpx 0;
+}
+.list{
+  width: 80%;
+  border-bottom: 1rpx solid #ccc;
+  margin:0 auto;
+  padding:25rpx 0;
+  font-size:32rpx;
+  color: #888;
+}

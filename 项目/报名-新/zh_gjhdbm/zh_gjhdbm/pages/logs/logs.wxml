@@ -1,0 +1,146 @@
+<!--pages/logs/logs.wxml-->
+<!-- 我的报名，我的关注，分销 -->
+<view class='index'>
+  <view class='logheader'>
+    <image class='logheaderback' src='../img/background.png'></image>
+    <view class='logheaderbox'>
+      <view class='flex_center'>
+        <image class='loguserimg' src='{{userInfo.img}}'></image>
+        <view>
+          <view>{{userInfo.name}}</view>
+          <!-- <view class='loguserfont1'>0积分</view> -->
+        </view>
+      </view>
+      <!-- <view class='flex_center logqd'>
+        <image class='logqiandao' src='../img/qiandao.png'></image>
+        <view>签到得积分</view>
+      </view> -->
+    </view>
+  </view>
+
+  <view class='loglistbox'>
+    <view class='loglist'>
+      <view class='loglistin'>
+        <view class='flex3' bindtap='participate'>
+          <view class='lognum'>{{ticket.dcj}}</view>
+          <view>待参加</view>
+        </view>
+        <view class='flex3' bindtap='audit'>
+          <view class='lognum'>{{ticket.shz}}</view>
+          <view>审核中</view>
+        </view>
+        <view class='flex3' bindtap='ticket_success'>
+          <view class='lognum'>{{ticket.yyp}}</view>
+          <view>已验票</view>
+        </view>
+        <view class='flex3' bindtap='refund_ticket'>
+          <view class='lognum'>{{ticket.ytp}}</view>
+          <view>已退票</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='logorder'>
+    <view class='logtitle'>参与者</view>
+    <view class='loglistorder'>
+      <view class='flex3' bindtap='mypiao'>
+        <image class='lorderimg' src='../img/guanpiao.png'></image>
+        <view>我的票券</view>
+      </view>
+      <view class='flex3' bindtap='myguanzhu'>
+        <image class='lorderimg' src='../img/guantao.png'></image>
+        <view>我的关注</view>
+      </view>
+      <!-- <view class='flex3'>
+        <image class='lorderimg' src='../img/tuijian.png'></image>
+        <view>我的推荐</view>
+      </view> -->
+    </view>
+  </view>
+
+  <view class='logorder'>
+    <view class='logtitle'>主办方</view>
+    <view class='loglistorder2'>
+      <view class='flex3 logmenu' bindtap='myactive'>
+        <image class='lorderimg' src='../img/guanhuo.png'></image>
+        <view>我的活动</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='check'>
+        <image class='lorderimg' src='../img/guanxiang.png'></image>
+        <view>票券审核</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='add_markting'>
+        <image class='lorderimg' src='../img/tianjia.png'></image>
+        <view>添加核销员</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='myyanpiao'>
+        <image class='lorderimg' src='../img/guanxiang.png'></image>
+        <view>验票</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='myshouru'>
+        <image class='lorderimg' src='../img/guantou.png'></image>
+        <view>我的收入</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='mycenter'>
+        <image class='lorderimg' src='../img/guanuser.png'></image>
+        <view>主办方管理</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='myliuyan'>
+        <image class='lorderimg' src='../img/guanliu.png'></image>
+        <view>认证管理</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='liuyan'>
+        <image class='lorderimg' src='../img/assess.png'></image>
+        <view>留言管理</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='fenxiao' wx:if="{{GetFxSet.is_open==1}}">
+        <image class='lorderimg' src='../img/fenxiao.png'></image>
+        <view>分销中心</view>
+      </view>
+      <view class='flex3 logmenu' bindtap='group'>
+        <image class='lorderimg' src='../img/group.png'></image>
+        <view>我的拼团</view>
+      </view>
+    </view>
+  </view>
+  <view class='copyright'>
+    <image mode='aspectFill' src='{{url}}{{system.bq_logo}}'></image>
+    {{system.bq_name}}
+  </view>
+
+  <!-- ————————————底部固定导航栏———————————— -->
+  <view class='bmfoot2'></view>
+  <view class='bmfoot' wx:if="{{yes!=false}}">
+    <view class='bmfootbox'>
+      <view bindtap='index'>
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+        </view>
+        <view class='{{db_tab[0].color}}'>{{db_tab[0].name}}</view>
+      </view>
+      <view bindtap='classifination'>
+        <view class='rel'>
+          <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+        </view>
+        <view class='{{db_tab[1].color}}'>{{db_tab[1].name}}</view>
+      </view>
+      <view class='fabu rel' bindtap='fabu'>
+        <image class='ab lr' mode='aspectFill' src='../img/jia@2x.png'></image>
+      </view>
+      <view>
+        <view class='rel' bindtap='mine_activity'>
+          <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+        </view>
+        <view class='{{db_tab[2].color}}'>{{db_tab[2].name}}</view>
+      </view>
+      <view>
+        <view class='rel' bindtap='wode'>
+          <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+        </view>
+        <view class='{{db_tab[3].color}}'>{{db_tab[3].name}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

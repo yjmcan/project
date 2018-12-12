@@ -1,0 +1,62 @@
+/* zh_hyk/pages/my/zdxq.wxss */
+.page{
+  overflow-y: hidden;
+  height: 100%;
+}
+.main{
+  background: #fff;
+  margin: 0rpx 50rpx;
+  margin-top: 50rpx;
+  border-radius: 30rpx;
+}
+.yhbf{
+  background: #fff;
+  margin: 0rpx 50rpx;
+  margin-top: 50rpx;
+  border-radius: 30rpx;
+}
+.head{
+  margin: 0 0 0 30rpx;
+  padding: 40rpx 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 35rpx;
+  position: relative;
+  border-bottom: 2rpx solid #efeff4;
+}
+.head icon{
+  margin-right: 20rpx;
+}
+.weui-cells{
+  background: none;
+}
+.weui-cell:before{
+  border-top: none;
+}
+.weui-cell__hd{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.weui-cell__bd{
+  color: #999;
+}
+.weui-cell__hd image{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 20rpx;
+}
+.fkje{
+  color: black;
+}
+.skmd{
+  color: black;
+  font-size: 40rpx;
+}
+.fkje1{
+  color: black;
+  font-size: 40rpx;
+}

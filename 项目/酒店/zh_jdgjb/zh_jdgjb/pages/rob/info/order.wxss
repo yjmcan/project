@@ -1,0 +1,29 @@
+/* zh_jdgjb/pages/rob/info/index.wxss */
+@import '../../public.wxss';
+.buy_num text:nth-child(1){
+    padding: 0rpx 0;
+    width: 60rpx;
+    text-align: center;
+    background: #f7f7f7;
+}
+.buy_num text:nth-child(3){
+    padding: 0rpx 0rpx;
+    text-align: center;
+    width: 60rpx;
+    background: #f7f7f7;
+}
+.fixedm{
+    position: fixed;
+    width: 100%;
+    height: 110rpx;
+    bottom: 0;
+}
+.fixedm>view{
+    height: 100%;
+    line-height: 110rpx;
+}
+.fixedm>button{
+    height: 100%;
+    border-radius: 0;
+    line-height: 110rpx;
+}

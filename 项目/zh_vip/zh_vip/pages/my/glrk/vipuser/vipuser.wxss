@@ -1,0 +1,108 @@
+/* zh_vip/pages/vipseller/vipuser.wxss */
+.vip{
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 28rpx;
+}
+.vuheader{
+  background: #fff;
+  border-bottom: 1rpx solid #EAE9ED;
+  padding: 20rpx;
+  font-size: 26rpx;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top:0;
+  left:0;
+}
+.vuhbox{
+  border-radius: 8rpx;
+  border:1rpx solid #DCDBDE;
+  background-color: white;
+  padding: 10rpx 0rpx;
+}
+.vuhboximg{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 25%;
+}
+.vuhboxinput{
+  font-size: 35rpx;
+  height: 2.0rem;
+  line-height: 2.0rem;
+  width: 460rpx;
+  margin-left: 15rpx;
+}
+
+.vubanner{
+  margin-top: 140rpx;
+  margin-bottom: 120rpx;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.vublist{
+  background-color: white;border-radius: 10rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+.vublistimg{
+  width: 100rpx;
+  height:100rpx;
+  border-radius: 10rpx;
+  margin:auto 40rpx auto 20rpx;
+}
+.vublistright{
+  flex: 1;
+}
+.vipnumber{
+  flex-grow:0;
+  flex-shrink: 0; 
+}
+.vublfont1{
+  font-size: 30rpx;
+}
+.vublfont2{
+  color: #999;
+  font-size: 24rpx;
+}
+.vublfont3{
+  font-size: 24rpx;
+  margin-top: 5rpx;
+  color: #999;
+}
+.vublfont4{
+  color: #ff7f46;
+}
+.vublxiao{
+  margin-left: 40rpx;
+}
+
+/*————————————————底部固定部分————————————————*/
+.vfoot{
+  position: fixed;
+  z-index: 100;
+  bottom: 0rpx;
+  left: 0rpx;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 110rpx;
+  background-color: white;
+  color: #666;
+  font-size: 26rpx;
+}
+.vflist{
+  height: 110rpx;
+}
+.vfimg{
+  width: 45rpx;
+  height: 45rpx;
+  margin-bottom: 6rpx;
+  margin-top: 5rpx;
+}
+.vffont{
+  color: #ff7f46;
+}

@@ -1,0 +1,41 @@
+<!-- <view class='search'>
+  <view class='rel'>
+    <icon class='ab ud' type='search' size='19'></icon>
+    <input class='ab ud' bindinput='search' placeholder='搜索城市(支持城市的某个字拼音搜索)'></input>
+  </view>
+</view> -->
+<view class='location_city' wx:if="{{city_search==false&&location_city!=null}}">
+  <view>当前定位城市</view>
+  <view>
+    <text class='citys' bindtap='select' data-city='{{location_city}}'>{{location_city}}</text>
+  </view>
+</view>
+<view class='location_city' wx:if="{{select_city!=null}}">
+  <view>当前选择城市</view>
+  <view>
+    <text class='citys' bindtap='select' data-city='{{select_city}}'>{{select_city}}</text>
+  </view>
+</view>
+<view class='location_city' wx:if="{{city_search==false}}">
+  <view>热门城市
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}"  custom-item="{{customItem}}">
+     更多城市>
+    </picker>
+  </view>
+  <view>
+    <text class='citys' wx:for="{{hot_city}}" wx:key='*this' bindtap='select' data-city='{{item}}'>{{item}}</text>
+  </view>
+</view>
+ <!-- <picker-view wx:if="{{city_search==false}}" indicator-style="height: 50px;" style="width: 100%; height: 200px;background:#fff" value="{{value}}" bindchange="bindChange">
+  <picker-view-column>
+    <view wx:for="{{citys}}" wx:key='*this' style="line-height: 50px;text-align:center">{{item.fullname}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{province}}" wx:key='*this' style="line-height: 50px;text-align:center">{{item.fullname}}</view>
+  </picker-view-column>
+</picker-view> -->
+<!-- <view class='city_search' wx:if="{{city_search==true}}">
+  <view wx:for="{{city_result}}" bindtap='select' data-city='{{item.fullname}}'>{{item.fullname}}</view>
+  <view wx:if="{{city_result.length==0}}">搜索不到结果</view>
+</view> -->
+<!-- <view class='mask' wx:if="{{city_search==false&&picker_city==false}}"></view>  -->

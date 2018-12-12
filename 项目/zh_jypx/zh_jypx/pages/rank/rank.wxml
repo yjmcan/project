@@ -1,0 +1,27 @@
+<!--pages/rank/rank.wxml-->
+<view class="home">
+  <!--排名详情-->
+  <view wx:if="{{none.code==200}}">
+    <view class="title">{{cate_name}}SUNNY英语{{course_name}}排行榜</view>
+    <view class="nav_title">{{name}}{{class_name}}</view>
+    <view class="rank" wx:if="{{none.code==200}}">
+      <view class="rank_detail flex_bet" wx:for="{{list}}">
+        <view>{{item.students_name}}</view>
+        <view>{{item.score}}积分</view>
+      </view>
+    </view>
+
+    <!--规则-->
+    <view class="rule">
+      <view>排名规则 :</view>
+      <view class="con">按本班学员积分由高到低进行排名.</view>
+    </view>
+  </view>
+
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+
+</view>

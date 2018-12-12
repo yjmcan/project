@@ -1,0 +1,52 @@
+<view class='head ba_f rel'>
+  <view>
+    <image class='logo' mode='aspectFill' src='//goss.vcg.com/da8f8a10-7500-11e8-9cb3-bdcaa953d894.jpg'></image>
+  </view>
+  <view class='ab udlr sign_up z_index'>
+    <image mode='aspectFill' src=' ' class='dis_in'></image>
+    <text class='dis_in fon_30 color_f'>报名听课</text>
+  </view>
+  <view class='ab udlr sign_up_0'></view>
+</view>
+<view class='body ba_f mar_t pa'>
+  <view class='fon_36'>你的灵魂有香气</view>
+  <view class=' pa_0 color_9 fon_24'>已开4课\r\n\r\n\r\n|\r\n\r\n\r\n共4课</view>
+
+</view>
+<view class='follow ba_f mar_t pa'>
+  <view class='dis_in'>
+    <image mode='aspectFill' src='//goss.vcg.com/4b976120-2ca8-11e8-82e7-f17469076ddb.jpg'></image>
+  </view>
+  <view class='dis_in fon_30'>
+    生活研究所
+  </view>
+  <view class='dis_in t_r fon_30'>
+    <text class='text1'>+ 关注</text>
+  </view>
+  <view class='color_9 fon_24 pa_0 bor_bottom'>
+    话题数\r\n\r\n\r\n\r\n\r\n\r\n\r\n269\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n关注人数\r\n\r\n\r\n\r\n\r\n402
+  </view>
+</view>
+
+<view class='switch ba_f mar_t'>
+  <view class=" t_c fon_30 {{ac_index==0?'sele':''}}" bindtap='detail'>课程简介</view>
+  <view class=" t_c fon_30 {{ac_index==1?'sele':''}}" bindtap='comment_list'>课程列表</view>
+</view>
+<view wx:if="{{ac_index==0}}" class='pa ba_f mar_t'>
+  <view class='detail ba_f'>
+
+  </view>
+</view>
+<view wx:if="{{ac_index==1}}" class='pa ba_f mar_t'>
+  <view class='list pa_0'>
+    <text class='dis_in'></text>
+    <text class='fon_36'>课程列表</text>
+  </view>
+  <view class='list_name pa_0' wx:for="{{nav}}" wx:key="*this" bindtap='curriculum'>
+    <view class='fon_30'>0{{index+1}}\r\n\r\n\r嗅觉是人类最原始的感官</view>
+    <view class='color_9 fon_24 pa_0 bor_bottom'>
+      6月12日 18：35\r\n\r\n\r\n\r\n\r\n\r\n\r\n269\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n75次学习
+    </view>
+  </view>
+</view>
+<button class='mar_t'>立即学习￥8</button>

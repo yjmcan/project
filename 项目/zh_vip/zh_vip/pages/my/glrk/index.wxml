@@ -1,0 +1,77 @@
+<!--zh_vip/pages/vipseller/vipseller.wxml-->
+<view class="vip">
+  <view class="vheader">
+    <image class="vhimg" src="../../../img/vbackimg.png"></image>
+    <view class="vhbox">
+      <view class="vhtop">
+        <view style='display:flex'>
+          <image src="../../../img/vclocktime.png" class="vhtopimg"></image>
+          <view class="">今日累计</view>
+        </view>
+        <view class='tcdl' bindtap='tcdl'>
+          退出登录
+        </view>
+      </view>
+
+      <view class="vhbottom">
+        <view class="vhblist flex1">
+          <view>消费（元）</view>
+          <view wx:if="{{zmxx.xf==null}}" class="vhbfont1">0.00</view>
+          <view wx:else class="vhbfont1">{{zmxx.xf}}</view>
+          <view>{{zmxx.xfnum}}笔</view>
+        </view>
+        <view class="vhblist flex1">
+          <view>充值（元）</view>
+          <view wx:if="{{zmxx.cz==null}}" class="vhbfont1">0.00</view>
+          <view wx:else class="vhbfont1">{{zmxx.cz}}</view>
+          <view>{{zmxx.cznum}}笔</view>
+        </view>
+        <view class="vhblist flex1">
+          <view>会员（个）</view>
+          <view class="vhbfont1">{{zmxx.jrhy}}</view>
+          <view>累计{{zmxx.hy}}个</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class="vbanner">
+    <navigator bindtap='scan' class="vblist flex1">
+      <image mode='aspectFit' class="vblistimg3" src="../../../img/saom.png"></image>
+      <view>扣次</view>
+    </navigator>
+    <navigator url='xfjl' class="vblist flex1">
+      <image class="vblistimg" src="../../../img/vhand.png"></image>
+      <view>消费</view>
+    </navigator>
+    <navigator url='vipuser/vipuser' open-type='redirect' class="vblist flex1">
+      <image class="vblistimg2" src="../../../img/vreddaim.png"></image>
+      <view>扣费</view>
+    </navigator>
+    <navigator url='vipuser/vipuser' open-type='redirect' class="vblist flex1">
+      <image class="vblistimg3" src="../../../img/vmoneydai.png"></image>
+      <view>充值</view>
+    </navigator>
+  </view>
+
+  <!--—————————————底部固定部分———————————————-->
+  <view class="vfoot">
+    <view class="vflist flex1">
+      <image class="vfimg" src="../../../img/vhomesele.png"></image>
+      <view class="vffont">商户中心</view>
+    </view>
+    <view class="vflist flex1" bindtap="vipuser">
+      <image class="vfimg" src="../../../img/vzuan.png"></image>
+      <view>会员</view>
+    </view>
+    <!-- <view class="vflist flex1" bindtap="jqqd">
+      <image class="vfimg" src="../../../img/vmonedsele.png"></image>
+      <view>收银</view>
+    </view>
+    <view class="vflist flex1" bindtap="jqqd">
+      <image class="vfimg" src="../../../img/vmoney.png"></image>
+      <view>交易</view>
+    </view> -->
+  </view>
+</view>

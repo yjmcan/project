@@ -1,0 +1,80 @@
+<!--zh_cjdianc/pages/sjzx/dndd/dndd.wxml-->
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml" />
+<!--zh_cjdianc/pages/index/xsqg.wxml-->
+<view class="mask {{mask1Hidden?'':'maskactive'}}" bindtap="mask1Cancel">
+  <view class='maskbody'>
+    <view class="navbarlist">
+      <block wx:for="{{navbar}}" wx:key="*this">
+        <view class="navbaritem" data-index='{{index}}' class="toatal_head  {{selectedindex==index?'selsect':'default'}}" bindtap="selectednavbar" style="color:{{selectedindex==index?color:''}}" id='a{{index}}'>{{item.name}}</view>
+      </block>
+      <view class='downpng1' bindtap='onOverallTag'>
+        <image class="{{mask1Hidden?'sortimg':'sortimg1'}}" src='../../../img/down1.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='sjinfonav' wx:if="{{mask1Hidden}}">
+  <!-- <view data-index='{{index}}' class="toatal_head  {{selectedindex==index?'selsect':'default'}}" bindtap="selectednavbar" style="color:{{selectedindex==index?color:''}}" id='a{{index}}'>
+    {{item}}
+    <view wx:if='{{selectedindex==index}}' class="toatal_text" style="background-color: {{color}}"></view>
+  </view> -->
+  <scroll-view class="nav-two" scroll-x="true" scroll-into-view="{{toView}}">
+    <view wx:for='{{navbar}}' wx:key="*this" data-index='{{index}}' class="toatal_head  {{selectedindex==index?'selsect':'default'}}" bindtap="selectednavbar" style="color:{{selectedindex==index?color:''}}" id='a{{index}}'>
+      {{item.name}}
+      <view wx:if='{{selectedindex==index}}' class="toatal_text" style="background-color: {{color}}"></view>
+    </view>
+  </scroll-view>
+  <view class='downpng' bindtap='onOverallTag'>
+    <image src='../../../img/down1.png'></image>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title ddtz">
+  <navigator url="dmfdd" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image mode='aspectFit' src="../../../img/seller/six.png"></image>
+    </view>
+    <view class="weui-cell__bd">当面付订单</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="qgdd" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image mode='aspectFit' src="../../../img/seller/yysj.png"></image>
+    </view>
+    <view class="weui-cell__bd">抢购订单</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="pdlb" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image mode='aspectFit' src="../../../img/seller/eight.png"></image>
+    </view>
+    <view class="weui-cell__bd">排队取号</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class='paddbottom'>
+  <block wx:if="{{order_list.length==0&&mygd}}">
+    <view class="no-data-tip zwdd">
+      <image mode='aspectFit' src='../../../img/list.png'></image>
+      <view>暂无相关数据哦~</view>
+      <!-- <navigator style='border:2rpx solid {{color}};color:{{color}}' open-type='reLaunch' url='../index/index' class='sygg'>去首页逛逛吧</navigator> -->
+    </view>
+  </block>
+  <view class='table'>
+    <block wx:for="{{order_list}}" wx:for-item="item" wx:for-index="index">
+      <navigator url='dnddlb?table_id={{item.id}}&name={{item.name}}&status={{item.status}}' class='tablecell flex-col flex-x-center flex-y-center' style="background-color: {{item.status=='1'?color:''}};color:{{item.status=='1'?'#fff':''}}">
+        <view>{{item.name}}</view>
+        <view wx:if="{{item.status=='1'}}">已开台</view>
+        <view wx:else>未开台</view>
+      </navigator>
+    </block>
+  </view>
+  <view class='jzz' hidden='{{mygd}}'>
+    <image class='Rotation' src='../../../img/jzz.png'></image>
+    <view>加载中...</view>
+  </view>
+  <view wx:if="{{mygd}}" class='jzwb'>
+    <view class='hx'></view>
+    <view class='wz'>加载完毕</view>
+    <view class='hx'></view>
+  </view>
+</view>

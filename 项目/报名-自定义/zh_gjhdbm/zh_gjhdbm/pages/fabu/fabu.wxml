@@ -1,0 +1,161 @@
+<!--logs.wxml-->
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='logs'>
+    <view class='fiheaderwai'>
+      <image class='fiheaderimg' src='../img/jindu1.png'></image>
+      <view class='fiheader'>
+        <view class='fihbox1'>基本信息</view>
+        <view class='fihbox2'>活动详情</view>
+        <view class='fihbox3'>发布成功</view>
+      </view>
+    </view>
+
+    <view class='addheader flex3' bindtap='fabuimg'>
+      <image mode='aspectFill' class='selectimg' src='{{url}}{{uplogo}}'></image>
+      <view class='flex1 addhimg'>
+        <image src='../img/addimg.png'></image>
+      </view>
+      <view class='addheadertext'>添加活动海报</view>
+    </view>
+
+    <view class='fabucontent'>
+      <view class='fabulist'>
+        <view class='fabulistleft'>活动标题</view>
+        <input name="title" placeholder='不超过20个字' maxlength='20' type='text' value='{{title}}'></input>
+      </view>
+      <view class='fabulist2'>
+        <view class='fabulistleft'>活动方式</view>
+        <picker bindchange="selehuodong" value="{{index}}" range="{{array}}" wx:if="{{activity_type==null}}">
+          <view class="picker flex_center">{{array[index]}}
+            <image class='acright' src='../img/acright.png'></image>
+          </view>
+        </picker>
+        <view wx:else>
+          {{activity_type}}
+        </view>
+      </view>
+      <view class='fabulist2'>
+        <view class='fabulistleft'>活动分类</view>
+        <picker bindchange="classification" value="{{index_class}}" range="{{classification}}" wx:if="{{type_id==null}}">
+          <view class="picker flex_center">{{classification[index_class]}}
+            <image class='acright' src='../img/acright.png'></image>
+          </view>
+        </picker>
+<view wx:else>
+          {{type_name}}
+        </view>
+      </view>
+      <!-- <view class='fabulist2'>
+        <view class='fabulistleft'>所属城市</view>
+        <picker bindchange="city" value="{{city_index}}" range="{{city}}" wx:if="{{cityname==null}}">
+          <view class="picker flex_center">{{city[city_index]}}
+            <image class='acright' src='../img/acright.png'></image>
+          </view>
+        </picker>
+        <view wx:else>{{cityname}}</view>
+      </view> -->
+      <view class='fabulist'>
+        <view class='fabulistleft'>开始时间</view>
+        <picker mode="date" value="{{datastart}}" start="{{today}}" bindchange="datastart">
+          <input class="fabutime" placeholder='开始日期' disabled='false' value='{{datastart}}'>
+          </input>
+        </picker>
+        <view>/</view>
+        <picker mode="time" bindchange="bindTimeChange1">
+          <input class="fabutime" placeholder='开始时间' disabled='false' value='{{time1}}'>
+          </input>
+        </picker>
+      </view>
+      <view class='fabulist'>
+        <view class='fabulistleft'>结束时间</view>
+        <picker mode="date" value="{{dataend}}" start="{{today}}" bindchange="dataend">
+          <input class="fabutime" placeholder='结束日期' disabled='false' value='{{dataend}}'>
+          </input>
+        </picker>
+        <view>/</view>
+        <picker mode="time" bindchange="bindTimeChange2">
+          <input class="fabutime" placeholder='结束时间' disabled='false' value='{{time2}}'>
+          </input>
+        </picker>
+      </view>
+    </view>
+    <view class='fabucontent'>
+      <view class='fabulist2' bindtap='address'>
+        <view class='fabulistleft'>活动地点</view>
+        <view class='fabuonline'>
+          <view style='width:400rpx;' class='gobyndsingle'>{{address}}</view>
+          <image class='acright' src='../img/acright.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='fabucontent'>
+      <view class='fabulist2'>
+        <view class='fabulistleft'>联系电话</view>
+        <view class='fabuonline'>
+          <view style='width:500rpx;'>
+            <input bindblur='link_tel' type='number' placeholder='请输入联系电话' value='{{link_tel}}'></input>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='fabucontent'>
+      <view class='fabulist2'>
+        <view class='fabulistleft'>核销码</view>
+        <view class='fabuonline'>
+          <view style='width:500rpx;'>
+            <input name="hx_code" maxlength="8" placeholder='请设置活动核销码(最长为8位)' value='{{hx_code}}'></input>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="agree">
+      <icon wx:if="{{icon==true}}" bindtap='icon' type="success" color="{{color}}" size="16" />
+      <icon wx:if="{{icon==false}}" bindtap='icon' type="success" color="#ccc" size="16" />
+      <view class="agree_text">我已阅读并同意
+        <text class="agree_text2" bindtap='identity' style='color:{{color}}'>《发布须知》</text>
+      </view>
+    </view>
+    <!-- <view class='fabucontent'>
+      <view class='fabulist2' bindtap='baomingset'>
+        <view class='fabulistleft'>参与方式</view>
+        <view class='fabuonline'>
+          <view>在线报名，免费</view>
+          <image class='acright' src='../img/acright.png'></image>
+        </view>
+      </view>
+    </view> -->
+    <button class='nextfabu' form-type='submit' style='background:{{color}}'>下一步</button>
+  </view>
+</form>
+<view class='bmfoot2'></view>
+<view class='bmfoot'>
+  <view class='bmfootbox'>
+    <view bindtap='index'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[0].img}}'></image>
+      </view>
+      <view class='{{db_tab[0].color}}'>{{db_tab[0].name}}</view>
+    </view>
+    <view bindtap='classifination'>
+      <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[1].img}}'></image>
+      </view>
+      <view class='{{db_tab[1].color}}'>{{db_tab[1].name}}</view>
+    </view>
+    <view class='fabu rel' bindtap='fabu'>
+      <image class='ab lr' mode='aspectFill' src='{{db_tab[4].img}}'></image>
+    </view>
+    <view>
+      <view class='rel' bindtap='mine_activity'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[2].img}}'></image>
+      </view>
+      <view class='{{db_tab[2].color}}'>{{db_tab[2].name}}</view>
+    </view>
+    <view>
+      <view class='rel' bindtap='wode'>
+        <image class='ab udlr' mode='aspectFill' src='{{db_tab[3].img}}'></image>
+      </view>
+      <view class='{{db_tab[3].color}}'>{{db_tab[3].name}}</view>
+    </view>
+  </view>
+</view>

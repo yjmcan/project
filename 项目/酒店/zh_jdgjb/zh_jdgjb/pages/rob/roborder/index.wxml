@@ -1,0 +1,38 @@
+<view class='container'>
+    <view class='tabs ba_f'>
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <navigator openType="redirect" class='t_c' url="index?status={{item.status}}">
+                <view class='dis_in t_c fon_30' style="color:{{status==item.status?color:'#666'}};border-bottom:{{status==item.status?4:0}}rpx solid {{color}}">{{item.name}}</view>
+            </navigator>
+        </block>
+    </view>
+    <view class='mar_t' wx:for="{{orderList}}" wx:key="*this">
+        <view class='pa ba_f'>
+            <view class='dis_in wid_50'>
+                <image mode='aspectFill' class='img_logo middle' src='{{url}}{{item.store_logo}}'></image>
+                <text class='mar_l middle color_6'>{{item.store_name}}</text>
+            </view>
+            <view class='t_r dis_in wid_50'>
+                <text style='color:{{color}}' wx:if="{{item.state=='2'}}">审核中</text>
+                <text style='color:{{color}}' wx:if="{{item.state=='3'}}">待核销</text>
+                <text style='color:{{color}}' wx:if="{{item.state=='4'}}">已核销</text>
+            </view>
+        </view>
+        <view class='shopInfo pa'>
+            <image mode='aspectFill' class='dis_t' src='{{url}}{{item.logo}}'></image>
+            <view class='fon_30 color_6 dis_t'>
+                {{item.title}}
+            </view>
+            <view class='dis_t t_r'>
+                <view class='color_6'>￥{{item.money}}</view>
+                <view class='color_9'>x1</view>
+            </view>
+        </view>
+        <view class='pa t_r ba_f color_6 bor_bottom'>
+            合计 ￥{{item.money}}
+        </view>
+        <view class='pa t_r ba_f color_f'>
+            <text class='seeInfo' bindtap='lookInfo' data-id="{{item.id}}">查看详情</text>
+        </view>
+    </view>
+</view>

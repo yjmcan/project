@@ -1,0 +1,16 @@
+<!--zh_qygw/pages/mould3/yemian3/comment3.wxml-->
+<view class="home">
+  <view class="hsection">
+    <view class="comment">
+      <view class="combox">
+        <image class="comimg" src="../../images/mou3back5.png"></image>
+        <view class="comtext">
+          <view class="comtitle">海南三宝艺术收藏馆</view>
+          <view class="comneirong">非常满意和志汇科技的合作，认可志汇科技的专业和敬业，我们餐饮小程序的开发交给你们很放心。
+          </view>
+          <view class="comfoot">——王呵呵</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

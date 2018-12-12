@@ -1,0 +1,51 @@
+<include src="../tabbar/index.wxml" />
+<view class='head rel' style='background:{{color}}'>
+  <view class='ab head_info'>
+    <image class='ab lr' mode='aspectFill' src='{{user.img}}'></image>
+    <view class='center'>
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view class='center' bindtap='user'>查看并编辑个人信息</view>
+    <view class='num' bindtap='deliver'>
+      <view bindtap='mine_iter'>
+        <text>{{count.td_count}}</text>
+        <text>已投递</text>
+      </view>
+      <view bindtap='interview'>
+        <text>{{count.ms_count}}</text>
+        <text>面试</text>
+      </view>
+      <view bindtap='coll'>
+        <text>{{count.xq_count}}</text>
+        <text>感兴趣</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='body_list mar rel' bindtap='resume'>
+  <image mode='aspectFill' src='../img/mine_jinali.png'></image>
+  <text>我的简历</text>
+  <image mode='aspectFill' class='ab ud' src='../img/acright.png'></image>
+  <text>查看并编辑简历</text>
+</view>
+<view class='body_list rel' bindtap='coll'>
+  <image mode='aspectFill' src='../img/shoucang.png'></image>
+  <text>我的收藏</text>
+  <image mode='aspectFill' class='ab ud' src='../img/acright.png'></image>
+  <text>收藏的简历/职位</text>
+</view>
+<view class='body_list rel' bindtap='job_w' wx:if="{{admi==2}}">
+  <image mode='aspectFill' src='../img/ruzhu.png'></image>
+  <text>企业入驻</text>
+  <image mode='aspectFill' class='ab ud' src='../img/acright.png'></image>
+  <text></text>
+</view>
+<!-- <view class='body_list rel'>
+  <image mode='aspectFill' src='../img/acright.png'></image>
+  <text>反馈</text>
+  <image mode='aspectFill' class='ab ud' src='../img/acright.png'></image>
+  <text></text>
+</view> -->
+<view class='mask' wx:if="{{user_info==true}}">
+  <button open-type='getUserInfo' bindgetuserinfo="set_user"></button>
+</view>

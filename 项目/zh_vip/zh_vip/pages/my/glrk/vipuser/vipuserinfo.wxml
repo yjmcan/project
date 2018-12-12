@@ -1,0 +1,76 @@
+<!--zh_vip/pages/vipseller/vipuserinfo.wxml-->
+<view class="info">
+  <view class="iheader">
+    <image class="iheaderimg" src="{{userinfo.img}}"></image>
+    <view class="ihcontent">
+      <view>{{userinfo.name}}</view>
+      <view class="ihfont1">{{userinfo.level_name}} | NO.{{userinfo.vip_number}}</view>
+    </view>
+    <!-- <view class='bianji'>
+      <image src='../../../../img/bj.png'></image>
+    </view> -->
+  </view>
+
+  <view class="vsection">
+    <navigator url='sjdcz?uid={{userinfo.id}}' class="vslist flex1">
+      <image src='../../../../img/vmoneydai.png'></image>
+      <view class="vsfont1">充值</view>
+    </navigator>
+    <navigator url='sjdsy?uid={{userinfo.id}}' class="vslist flex1">
+      <image src='../../../../img/vreddaim.png'></image>
+      <view class="vsfont1">扣费</view>
+    </navigator>
+    <!-- <view class="vslist flex1">
+      <view>累计消费</view>
+      <view class="vsfont1">1200.00</view>
+    </view> -->
+  </view>
+
+  <view class="vubanner">
+    <!-- <view class="vuborder">
+      <view class="vubleft">积分</view>
+      <view class="vubrit">0</view>
+    </view> -->
+    <view class="vuborder">
+      <view class="vubleft">储值</view>
+      <view class="vubrit">{{userinfo.wallet}}</view>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">累计消费</view>
+      <view class="vubrit">{{userinfo.cumulative}}</view>
+    </view>
+  </view>
+
+  <view class="vubtitle">基本信息</view>
+  <view class="vubanner">
+    <view class="vuborder2">
+      <view class="vubleft">手机号</view>
+      <view class="vubmid">{{userinfo.tel}}</view>
+      <image class="vubmidimg" src="../../../../img/vtel.png"></image>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">生日</view>
+      <view class="vubrit1">{{userinfo.birthday}}</view>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">邮箱</view>
+      <view class="vubrit1">{{userinfo.email}}</view>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">学历</view>
+      <view class="vubrit1">{{userinfo.education}}</view>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">行业</view>
+      <view class="vubrit1">{{userinfo.industry}}</view>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">爱好</view>
+      <view class="vubrit1">{{userinfo.hobby}}</view>
+    </view>
+    <view class="vuborder">
+      <view class="vubleft">地址</view>
+      <view class="vubrit1">{{userinfo.address}}</view>
+    </view>
+  </view>
+</view>

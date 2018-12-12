@@ -1,0 +1,139 @@
+<!--pages/about/about.wxml-->
+<view class="product">
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit='true'>
+  <!--—————关于我们—————————  -->
+  <view class="about">
+    <view class="flex-center">
+      <view class="axian"></view>
+      <view class="atitle">关于我们</view>
+    </view>
+    <view class="aboutcon">
+      <rich-text nodes="{{aboutus.about}}"/>
+    </view>
+  </view>
+
+  <!--—————联系我们—————————  -->
+  <view class="about">
+    <view class="flex-center">
+      <view class="axian"></view>
+      <view class="atitle">联系我们</view>
+    </view>
+    <view class="abanner">
+      <view class="ablist flex-center">
+        <view>公司：</view>
+        <view>{{aboutus.name}}</view>
+      </view>
+      <view class="ablist flex-center">
+        <view>地址：</view>
+        <view>{{aboutus.address}}</view>
+      </view>
+      <view class="ablist flex-center">
+        <view>联系人：</view>
+        <view>{{aboutus.link_name}}</view>
+      </view>
+      <view class="ablist flex-center">
+        <view>电话：</view>
+        <view>{{aboutus.link_tel}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!--—————交通信息—————————  -->
+  <view class="about">
+    <view class="flex-center">
+      <view class="axian"></view>
+      <view class="atitle">交通信息</view>
+    </view>
+    <view class="aboutcon">{{aboutus.trafficInfo}}</view>
+  </view>
+
+  <view class="about">
+    <view class="flex-center">
+      <view class="axian"></view>
+      <view class="atitle">交通信息</view>
+    </view>
+    <view class="aboutcon" hidden="{{mapp}}">
+    
+      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300rpx;"></map>
+    </view>
+  </view>
+
+  <!-- <view class="ayanzheng" bindtap="zhuce" wx:if="{{duanxin.is_sms == 2}}">注册</view> -->
+
+  <!--—————————————————旁边固定部分开始———————————————  -->
+  <button class="ahpang flex3" open-type="contact">
+    <view>在线</view>
+    <view>咨询</view>
+  </button>
+
+  <view class="ahpang2 flex3" bindtap="phone">
+    <image src="../images/baidianhua.png"></image>
+    <view>电话</view>
+  </view>
+
+  <view class="ahpang3 flex3" bindtap="zhuce">
+    <view>免费</view>
+    <view>领取</view>
+  </view>
+  
+  <!--—————————————————弹框部分开始———————————————-->
+  <view class="abomb" hidden="{{yanzheng}}">
+    <view class="abombox">
+      <view class="shanchu" bindtap="shanhu">
+        <image src="../images/shanchu.png"></image>
+      </view>
+      <view class="abombtitle">免费体验</view>
+      <view class="flex-center abremark">
+        <!-- <image src="../images/gantan.png"></image> -->
+        <icon class="abgantan" type="warn" size="23" color="#2083C9"/>
+        <view class="">请输入您的联系方式，方便我们稍后联系。</view>
+      </view>
+      <view class="flex-center abinput">
+        <view class="">联系人</view>
+        <input type="number" maxlength="11" placeholder="请输入姓名" name="uname" placeholder-style="color:#999;"/>
+      </view>
+      <view class="flex-center abinput">
+        <view class="">联系手机</view>
+        <input type="number" maxlength="11" placeholder="请输入手机号" bindblur="huoquyz" name="tel" placeholder-style="color:#999;"/>
+      </view>
+      <view class="flex-center abinput2">
+        <view class="abinput3 flex-center">
+          <view class="">验证码</view>
+          <input type="text" placeholder="请输入验证码" name="numyan" bindblur="yzcode" placeholder-style="color:#999;"/>
+        </view>
+         <view class="abyan" bindtap="yanzheng">获取验证码</view> 
+        <!-- <button formType="yanzheng" class="abyan">获取验证码</button> -->
+      </view>
+      <view class="abaohu">我们会保护您的隐私资料</view>
+      <button formType="submit" class="abshenbtn">立即领取</button>
+    </view>
+  </view>
+</form>
+
+<!--—————————————————底部部分开始———————————————  -->
+<view class="footbox1"></view>
+<view class="foot1">
+  <view class="footlist1 flex3" bindtap="home">
+    <image src="../images/home.png"></image>
+    <view>首页</view>
+  </view>
+  <view class="footlist1 flex3" bindtap="product1">
+    <image src="../images/pro.png"></image>
+    <view>产品</view>
+  </view>
+  <view class="footlist1 flex3" bindtap="program1">
+    <image src="../images/fangan.png"></image>
+    <view>方案</view>
+  </view>
+  <view class="footlist1 flex3" bindtap="dynamic1">
+    <image src="../images/dong.png"></image>
+    <view>动态</view>
+  </view>
+  <view class="footlist1 flex3">
+    <image src="../images/guanyusele.png"></image>
+    <view style="color:#28B3E5;">联系</view>
+  </view>
+</view>
+
+</view>
+

@@ -1,0 +1,66 @@
+<view class='head bor_bottom'>
+  <view class='dis_in color_6 fon_30'>
+    <view>可提现余额</view>
+    <view>￥68.00</view>
+  </view>
+  <view class='dis_in fon_30' bindtap='tixian'>
+    <text>提现</text>
+  </view>
+</view>
+<view class='ls fon_30 bor_bottom rel' bindtap='capital'>
+  <image mode='aspectFill' src='../img/yu.png'></image>
+  <text>查看余额流水</text>
+  <image class='ab acright' mode='aspectFill' src='../img/acright.png'></image>
+</view>
+<view class='ls fon_30 rel' bindtap='reward'>
+  <image mode='aspectFill' src='../img/shang.png'></image>
+  <text>查看打赏记录</text>
+  <image mode='aspectFill' class='ab acright' src='../img/acright.png'></image>
+</view>
+<view class='today_price mar_t'>
+  <view class='rel bor_bottom pa'>
+    <text class='fon_30'>今日预计收入</text>
+    <text class='fon_24'>(2018-06-08)</text>
+    <text class='fon_24'></text>
+    <image mode='aspectFill' class='ab ud acright' src='../img/acright.png'></image>
+  </view>
+  <view class='pa bor_bottom'>
+    <view class='color_6'>完成订单</view>
+    <view>共0笔</view>
+    <view>￥0</view>
+  </view>
+  <view class='pa bor_bottom'>
+    <view class='color_6'>退款订单</view>
+    <view>共0笔</view>
+    <view>￥0</view>
+  </view>
+  <view class='pa'>
+    <view class='color_6'>代收款订单</view>
+    <view>共0笔</view>
+    <view>￥0</view>
+  </view>
+</view>
+<view class='history_list pa_1 mar_t'>
+  <view class=' fon_36 pa bor_bottom'>
+    历史账单
+  </view>
+  <view class='list bor_bottom' wx:for="{{nav}}" wx:key="*this" bindtap='bill'>
+    <view class='dis_in'>
+      <view class='month' style='background:{{color}}'>
+        <text class='fon_30'>06月</text>
+        <text class='fon_24'>2018</text>
+      </view>
+    </view>
+    <view class='dis_in'>
+      <view class='fon_36' style='padding-bottom:10rpx;'>￥15.22</view>
+      <view class='fon_24'>
+        <text class='color_6'>外卖订单共</text>
+        <text style='color:{{color}}'>3</text>
+        <text class='color_6'>笔</text>
+      </view>
+    </view>
+    <view class='dis_in'>
+      <image class='acright' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+  </view>
+</view>

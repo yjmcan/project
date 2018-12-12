@@ -1,0 +1,21 @@
+<!--zh_jypx/pages/teacher/t_list.wxml-->
+<view class="home">
+  <!--课程级别-->
+  <view class="level flex_center" wx:if="{{hidden}}">
+    <scroll-view class="msg" scroll-x="true">
+      <view wx:for="{{level}}" class="msg_scroll {{activeIndex == index ? 'on' : ''}}" bindtap='onDetail' data-index="{{index}}" data-id="{{item.cate_id}}">
+        <view>{{item.course_name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="flex1 level_con" wx:for="{{con}}" wx:if="{{none.code==200}}">
+    <view bindtap='task_list' data-id="{{item.id}}">{{item.name}}</view>
+  </view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+
+</view>

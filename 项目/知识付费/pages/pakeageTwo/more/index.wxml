@@ -1,0 +1,16 @@
+<view class='container'>
+  <view class=' fine_3_0 ba_f' wx:for="{{nav}}" wx:key="*this" bindtap='info'>
+    <view class='dis_in'>
+      <image mode='aspectFill' src=''></image>
+    </view>
+    <view class='dis_in'>
+      <view class='fon_30 wei pa yghidden dis_in'>精致生活夏沫海</view>
+      <view class='fon_24 color_9 pa'>大脑派\r\n\r\n|\r\n\r\n共8节课</view>
+      <view class='fon_24 color_9 pa_1'>2.1万次学习</view>
+      <view class='t_r fon_24'>
+        <text class='t_d color_9'>￥299</text>
+        <text style='color:red'>￥9</text>
+      </view>
+    </view>
+  </view>
+</view>

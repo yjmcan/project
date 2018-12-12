@@ -1,0 +1,12 @@
+/* pages/store/money.wxss */
+.input_money{
+  font-size: 60rpx;
+}
+button{
+  margin-top: 50rpx;
+  width: 95%;
+  font-size: 30rpx;
+}
+input{
+  height: 80rpx;
+}

@@ -1,0 +1,137 @@
+/* zh_zbkq/pages/home/homeinfo.wxss */
+.home{
+  width: 100%;
+  overflow-x: hidden;
+}
+.flex_center{
+  display: flex;
+}
+.flex_item{
+  display: flex;
+  align-items: center;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.touxiang{
+  width: 90rpx;
+  height: 90rpx;
+}
+.homebox{
+  padding: 20rpx 30rpx;
+}
+.hzhong{
+  width: 430rpx;
+  margin-left: 15rpx;
+}
+.hzhongview{
+  font-size: 30rpx;
+  /* font-weight: bold; */
+  color: #667494;
+}
+.address{
+  width: 430rpx;
+  color: #667494;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+.fenxiang{
+  color: #f44444;
+  border: 1rpx solid #f44444;
+  font-size: 26rpx;
+  background: #fff;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.hremark{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15rpx;
+  font-size: 28rpx;
+  color: #999999;
+  padding: 0px;
+}
+.watch{
+  width: 34rpx;
+  height: 20rpx;
+  margin-left: 70rpx;
+  margin-right: 10rpx;
+}
+.lianxi{
+  font-size: 22rpx;
+  border: 2rpx solid #667494;
+  color: #667494;
+  padding: 5rpx 20rpx;
+  margin-left: 60rpx;
+  border-radius: 8rpx;
+}
+.talkbox{
+  width: 45rpx;
+  height: 45rpx;
+}
+.zanbox{
+  background-color: #F6F6F6;
+  width: 100%;
+  margin-top: 15rpx;
+  border-radius: 4rpx;
+  position: relative;
+}
+.infozan{
+  padding: 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2rpx solid #ccc;
+}
+.aixin{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 5rpx;
+  margin-right: 10rpx;
+}
+.infotou{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 10rpx;
+  border-radius: 10rpx;
+}
+.userbox{
+  padding: 0rpx 20rpx 20rpx;
+}
+.comment{
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+.comment>text:nth-child(1){
+  color: #667494;
+  font-weight: bold;
+}
+.kuang {
+  position: absolute;
+  content: "";
+  border-width: 15rpx;
+  border-style: solid;
+  border-color: transparent transparent #F6F6F6 #F6F6F6;
+  transform: rotate(135deg);
+  left: 60rpx;
+  top: -10rpx;
+  z-index: 1;
+}
+.banner{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.img{
+  margin: 20rpx 0;
+}
+.img image{
+  width: 100%;
+}
+
+
+
+

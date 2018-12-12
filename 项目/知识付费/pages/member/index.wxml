@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='member pa'>
+    <view class='pa_1'>
+      <view class='pa_0'>
+        <image class='dis_in' mode='aspectFill' src=''></image>
+        <text class='dis_in'>终身VIP</text>
+      </view>
+      <view class='mar_t fon_24 color_f'>全站视频、下载，无限学习、下载</view>
+      <view class='mar_t fon_24 color_f'>限量，仅限每日前6位</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,111 @@
+<include src="../tabbar/index.wxml" />
+<view class='head rel'>
+  <view class='ab'>
+    <!--首页轮播图  -->
+    <swiper class='Sowing' indicator-dots="{{indicatorDots}}" autoplay="true" interval="4000" duration="1500">
+      <block wx:for="{{ad}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{url}}{{item.thumb}}" mode='aspectFill' class="slide-image" bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.url}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--首页搜索  -->
+  <!-- <view class='ab search'>
+    <view>
+      <text>上海</text>
+    </view>
+    <view class='hunt rel'>
+      <view class='ab'></view>
+      <view class='ab'>
+        <image class='search_img ud ab' mode='aspectFill' src='../img/search.png'></image>
+        <input placeholder='搜索你喜欢的兼职' placeholder-style='color:#fff'></input>
+      </view>
+    </view>
+    <view>签到</view>
+  </view> -->
+</view>
+<view class='nav'>
+  <swiper class='classify' style='height:{{height}}rpx' autoplay="true" interval="4000" duration="1000" circular="true">
+    <block wx:for="{{navs}}" wx:key="unique">
+      <swiper-item>
+        <block wx:for="{{item}}" wx:key="*this">
+          <view bindtap='skip' data-index="{{index}}" class='nav_list' bindtap='skip' data-appid='{{item.appid}}' data-wb_src='{{item.wb_src}}' data-src='{{item.src}}'>
+            <view class='classify_logo rel'>
+              <image class='ab lr' mode='aspectFill' src='{{url}}{{item.logo}}'></image>
+            </view>
+            <view class='classify_name gobyndsingle center'>{{item.title}}</view>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='Advertising' wx:if="{{AdPosition.length>0}}">
+  <view>
+    <scroll-view class="marketlist" scroll-x="true">
+      <view class="marketlist_one" wx:for="{{AdPosition}}" wx:key="*this" bindtap='selection_skip' wx:key="this" data-index='{{index}}'>
+        <image mode='aspectFill' style='border-radius:10rpx;' src="{{url}}{{item.thumb}}"></image>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- <view class='Relevant' bindtap='Interview'>
+  <view class='rel'>
+    <text class='text_0'>相关职位</text>
+    <text class='text_1'>换一换</text>
+    <image class='ab ud img_logo'></image>
+  </view>
+  <view>
+    <scroll-view class='scroll_0' scroll-x="true">
+      <view class='scroll_list rel' wx:for="{{nav}}" wx:key="*this">
+        <view class='ab'></view>
+        <view class='ab positions'>
+          <view>大家都在看</view>
+          <view class='gobyndmulit'>j兼职兼职兼职兼职兼职兼职兼职兼职兼职兼职兼职兼职兼职</view>
+          <view>
+            <text>240</text>元/天
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+<view class='recruit'>
+  <view class='recruit_0'>
+    <view>
+      <text class='{{whole}} in_line' bindtap='whole'>全部招聘</text>
+    </view>
+    <view>
+      <scroll-view scroll-x="true">
+        <block wx:for="{{Types}}" wx:key="*this">
+          <view class='{{item.attribute}}' bindtap='classification' data-index='{{index}}'>{{item.name}}</view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='recruit_1' wx:for="{{HomePosition}}" wx:for-item="info" wx:key='*this' bindtap='fabu' data-id='{{info.id}}'>
+    <view class='recruit_left'>
+      <view>{{info.type_name}}</view>
+      <view class='claim'>
+        <text>{{info.experience_name}}</text>
+        <text>{{info.degree_name}}</text>
+      </view>
+      <view>
+        <text class='welfare' wx:for="{{info.tag}}">{{item.name}}</text>
+      </view>
+      <view>
+        <image mode='aspectFill' src='{{url}}{{info.logo}}'></image>
+        <text>{{info.company_name}}</text>
+      </view>
+    </view>
+    <view class='recruit_right'>
+      <view>{{info.salary_name}}</view>
+      <view>{{info.created_at}}发布</view>
+    </view>
+  </view>
+  <view class='center'  style='height:300rpx;color"#999;' wx:if="{{HomePosition.length==0}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list_index'></image>
+    <!-- <text>暂无工作推荐</text> -->
+  </view>
+</view>

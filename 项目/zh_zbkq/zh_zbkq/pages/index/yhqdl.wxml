@@ -1,0 +1,142 @@
+<!--zh_zbkq/pages/index/yhqdl.wxml-->
+<loading wx:if="{{jjz}}">加载中...</loading>
+<view class="container">
+  <navigator url='index' open-type='switchTab' class='backhome'>
+    <image src='../../img/hdsy.png'></image>
+    <view>回到首页</view>
+  </navigator>
+  <view class="top">
+    <image mode='aspectFill' src="{{url}}{{yhq.md_logo}}"></image>
+    <view>{{yhq.md_name}}</view>
+    <view wx:if="{{yhq.name=='代金券'}}">{{yhq.cost}}
+      <text style='font-size:30rpx;margin-left:10rpx;'>元代金券</text>
+    </view>
+    <view wx:if="{{yhq.name=='折扣券'}}">{{yhq.cost}}
+      <text style='font-size:30rpx;margin-left:10rpx;'>折扣券</text>
+    </view>
+    <view wx:if="{{yhq.name=='通用券'}}">{{yhq.cost}}
+      <text style='font-size:30rpx;margin-left:10rpx;'>{{yhq.kq_name}}</text>
+    </view>
+    <view wx:if="{{yhq.conditions=='无门槛'}}">
+      <text>无使用门槛</text>
+      <text>剩余{{sysl}}张</text>
+    </view>
+    <view wx:else>
+      <text>{{yhq.conditions}}</text>
+      <text>剩余{{sysl}}张</text>
+    </view>
+    <view class="lq" wx:if="{{yhq.lq_mode=='0'}}">
+      <form bindsubmit="ljlq" report-submit='true'>
+        <button class='lqbt1' formType="submit">立即领取</button>
+      </form>
+      <form bindsubmit="mflq" report-submit='true'>
+        <button class='lqbt2' formType="submit">免费领券</button>
+      </form>
+    </view>
+    <view class="lq" wx:if="{{yhq.lq_mode=='1'}}">
+      <form bindsubmit="ljlq" report-submit='true'>
+        <button class='lqbt1' formType="submit">立即领取</button>
+      </form>
+      <form bindsubmit="mflq" report-submit='true'>
+        <button class='lqbt2' formType="submit">免费领券</button>
+      </form>
+    </view>
+    <view class="lq" wx:if="{{yhq.lq_mode=='2'}}">
+      <form bindsubmit="ljlq" report-submit='true'>
+        <button class='lqbt1' formType="submit">立即领取</button>
+      </form>
+    </view>
+    <view class="lq" wx:if="{{yhq.lq_mode=='3'}}">
+      <form bindsubmit="mflq" report-submit='true'>
+        <button class='lqbt2' formType="submit">免费领券</button>
+      </form>
+    </view>
+  </view>
+  <view class="xx">
+    <view class="hyuan1"></view>
+    <view class="hyuan2"></view>
+  </view>
+  <view class="bottom">
+    <view class="bt-1">
+      <view>
+        <view class="yuan"></view>
+        <text>同一张券仅可领取1次</text>
+      </view>
+      <!-- <view wx:if="{{fxqnum!='0'}}">
+        <view class="yuan"></view>
+        <text>免费领券需分享到{{fxqnum}}个微信群（分享好友无效）</text>
+      </view> -->
+      <view>
+        <view class="yuan"></view>
+        <text>有效期：{{yhq.start_time}}至{{yhq.end_time}}</text>
+      </view>
+    </view>
+    <navigator open-type='redirect' url="sjdl?sjid={{yhq.md_id}}" class="bt-2">
+      <view>欢迎光临本店，浏览更多优惠</view>
+      <image src="../../img/jiantou1.png"></image>
+    </navigator>
+    <view class="bt-3">
+      <view>使用须知</view>
+      <view>
+        <view class="yuan"></view>
+        <text>付款时出示给收银员核销</text>
+      </view>
+      <view>
+        <view class="yuan"></view>
+        <text>{{yhq.introduce}}</text>
+      </view>
+    </view>
+  </view>
+  <navigator open-type='switchTab' url='../wdq/wdq'>
+    <view class="wdyhq">我的优惠券</view>
+  </navigator>
+</view>
+<view class="drawer_screen" bindtap='yczz' wx:if="{{showModal}}"></view>
+<!--content-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModal}}">
+  <!--drawer content-->
+  <view class="drawer_title" wx:if="{{isnum}}">{{text1}}{{qnum}}{{text2}}</view>
+  <view class="drawer_title" wx:else>{{text1}}{{text2}}</view>
+  <button class="btn_ok" open-type='share'>立即分享</button>
+</view>
+<view class="drawer_screen" bindtap='yczz' wx:if="{{telshowModal}}"></view>
+<view animation="{{animationData}}" class="drawer_box1" wx:if="{{telshowModal}}">
+  <!--drawer content-->
+  <view class="drawer_title1">为了方便您的使用，需验证您的手机号</view>
+  <button class="btn_ok1" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即验证</button>
+</view>
+<!-- 开通会员 -->
+<view class="drawer_screen" bindtap='yckthy' wx:if="{{kthyshowModal}}"></view>
+<view class='kthy {{kthyshowModal?"active":""}}'>
+  <view class='kthytitle'>温馨提示</view>
+  <view class='kthyhd'>
+    <image src='{{userinfo.img}}'></image>
+    <view class='kthyhdwz'>
+      <view>您好,{{userinfo.nickname}}</view>
+      <view bindtap='lookck'>成为会员，享受<text style='color:#f44444;border-bottom:1rpx solid #f44444'>会员特权</text> </view>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="weui-cells weui-cells_after-title">
+    <radio-group bindchange="radioChange" name='radiogroup'>
+      <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+        <radio class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
+        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+          <icon class="weui-icon-checkbox_circle" type="circle" color="#f44444" size="23" wx:if="{{!item.checked}}"></icon>
+          <icon class="weui-icon-checkbox_success" type="success" color='#f44444' size="23" wx:if="{{item.checked}}"></icon>
+        </view>
+        <view class="weui-cell__bd">{{item.money}}元,购买{{item.days}}天会员</view>
+      </label>
+    </radio-group>
+  </view>
+  <button class="weui-btn" formType="submit" type="primary">立即开通</button>
+  </form>
+</view>
+<view class="drawer_screen1" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">会员特权</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 500rpx;">
+    <rich-text nodes="{{hyvip.content}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>

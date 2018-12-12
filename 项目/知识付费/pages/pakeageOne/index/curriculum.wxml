@@ -1,0 +1,90 @@
+<view class='container'>
+<!--头部视频与音频  -->
+  <view class='head rel ba_f' wx:if="{{video==false}}">
+    <view class='ab'>
+      <image mode='aspectFill' src='http://images.gaga.me/photos2/2018/0504/5aec207e05ac8.jpeg?imageView2/2/w/600/h/1000|imageslim'></image>
+    </view>
+    <view class='ab color_f' wx:if="{{Auditions==true}}">
+      <text class='fon_28'>{{control_time}}</text>
+      <slider class='dis_in' bindchange="slider2change" value="{{progress}}" block-size="2" backgroundColor="#ccc" />
+      <text class='fon_28'>{{total_time}}</text>
+    </view>
+    <audio src="{{src}}" id="myAudio" bindtimeupdate="MusicStart"></audio>
+  </view>
+  <!-- 视频播放按钮  -->
+  <view class='head rel ba_f' wx:else>
+    <view class='ab'>
+      <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+        enable-danmu danmu-btn controls="false" bindplay="bindplay"></video>
+    </view>
+    <audio src="{{src}}" id="myAudio" bindtimeupdate="MusicStart"></audio>
+  </view>
+  <!--  课程标题  -->
+  <view class='pa ba_f fon_30 yghidden wei'>
+      吉言老师：3-10岁儿童财商故事《松鼠的仓库》吉言老师：3-10岁儿童财商故事《松鼠的仓库》
+  </view>
+  <!--音频播放按钮  -->
+  <view class='control ba_f mar_t pa' wx:if="{{Auditions==true}}">
+    <view class='dis_in' bindtap='switch_video'>
+      <image class='img_1' mode='aspectFill' src='/pages/img/list.png'></image>
+      <!-- <view class='fon_24 color_6'>课程</view> -->
+      <view class='fon_24 color_6'>切换</view>
+    </view>
+    <view class='dis_in' wx:if="{{video==false}}">
+      <image class='img_2 dis_in' mode='aspectFill' src='/pages/img/music_left.png' bindtap='top_curriculum'></image>
+      <image class='img_3 dis_in' mode='aspectFill' src='/pages/img/music_play.png' bindtap='play' wx:if="{{play==true}}"></image>
+      <image class='img_3 dis_in' mode='aspectFill' src='/pages/img/music_pause.png' bindtap='pause' wx:if="{{play==false}}"></image>
+      <image class='img_2 dis_in' mode='aspectFill' src='/pages/img/music_right.png' bindtap='bottom_curriculum'></image>
+    </view>
+  </view>
+  <!--课程简介  -->
+  <view class='ba_f mar_t pa fon_28'>
+    <rich-text nodes="{{nodes}}"></rich-text>
+  </view>
+  <!--评论列表  -->
+  <view class='ba_f mar_t pa_1 comment'>
+    <view class='pa_0 total_comment fon_30 bor_bottom'>
+      <view class='dis_in'>全部评论</view>
+      <view class='dis_in t_r' bindtap='Comment'>
+        <image class='dis_in' mode='aspectFill' src=''></image>
+        <text class='dis_in'>发表评论</text>
+      </view>
+    </view>
+    <view class='pa_1 comment_list pa_1' wx:for="{{list}}">
+      <view class='dis_in'>
+        <image class='logo' mode='aspectFill' src=''></image>
+      </view>
+      <view class='dis_in'>
+        <view class='fon_30'>记忆中的你</view>
+        <view class='fon_24 color_9'>13小时前</view>
+      </view>
+      <view class='dis_in'>
+        <image class='zan' mode='aspectFill' src=''></image>
+      </view>
+      <view class='fon_26 color_6 bor_bottom pa_0'>
+        真棒
+      </view>
+    </view>
+  </view>
+  <!--  购买课程  -->
+  <view class='sele_fixed buy_curriculum' wx:if="{{buy_title==true}}">
+      <view class='ab' bindtap='close_buy'></view>
+      <view class='ab udlr pa'>
+          <view class='t_r fon_40 color_9' bindtap='close_buy'>×</view>
+          <view class='fon_30 t_c pa_0'>您还没有购买本课程</view>
+          <view class='fon_30 t_c'>购买后可完整收听本课程并进行评论</view>
+          <view class='color_f fon_28'>购买系列课</view>
+      </view>
+  </view>
+  <!--  发表评论  -->
+  <view class='sele_fixed comment_mine' wx:if="{{comment==true}}">
+      <view class='ab' bindtap='close_comment'></view>
+      <view class='ab udlr'>
+          <view class='t_r fon_40 color_9 pa' bindtap='close_comment'>×</view>
+          <textarea class='pa' placeholder='发表评论' placeholder-style='fon-size:30rpx;'></textarea>
+          <view class='color_f fon_28'>
+              发表评论
+          </view>
+      </view>
+  </view>
+</view>

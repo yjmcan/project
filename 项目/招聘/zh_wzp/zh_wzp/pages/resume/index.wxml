@@ -1,0 +1,27 @@
+<include src="../tabbar/index.wxml" />
+<view class='list' wx:for="{{nav}}" wx:key="*this" wx:if="{{nav.length>0}}">
+    <view class='inter'>
+        <text>{{item.title}}</text>
+        <text>{{item.type_name}}</text>
+    </view>
+    <view>
+        <view bindtap='default' data-id='{{item.id}}'>
+            <image class='image1' mode='aspectFill' src='' wx:if="{{item.default==0}}"></image>
+            <image class='image1' mode='aspectFill' src='' wx:else style='background:{{color}}'></image>
+            <text>默认简历</text>
+        </view>
+         <view bindtap='bianji' data-type='0' data-id='{{item.id}}'>
+            <image class='image2' mode='aspectFill' src='../img/bianji.png'></image>
+            <text>编辑</text>
+        </view>
+         <view bindtap='cancel' data-id='{{item.id}}'>
+            <image class='image2' mode='aspectFill' src='../img/shanchu.png'></image>
+            <text>删除</text>
+        </view>
+    </view>
+</view>
+
+<view class='fixed' wx:if="{{nav.length==0}}">
+    <image mode='widthFix' src='../img/none.png' class='none_list'></image>
+</view>
+<button bindtap='bianji' data-type='1' style='background:{{color}}'>新增简历</button>

@@ -1,0 +1,1 @@
+<view class="container"><view class="textContainer"><text class="textStyle">{{text}}</text></view></view><import src="/we7/pages/templates/footer.wxml" /><template  data="{{...tabBar}}" is="footerWx" />

@@ -1,0 +1,18 @@
+<!--pages/my/article.wxml-->
+<!--pages/my/integral.wxml-->
+<view class="home">
+  <!-- <view class="title flex1">历史文章</view> -->
+  <view class="recond">
+    <view class="list_con">
+      <view class="list_recond">
+        <view>2018年04月03日</view>
+      </view>
+      <view class="list_recond">
+        <view>2018年04月03日</view>
+      </view>
+      <view class="list_recond">
+        <view>2018年04月03日</view>
+      </view>
+    </view>
+  </view>
+</view>

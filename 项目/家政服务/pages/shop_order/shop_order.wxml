@@ -1,0 +1,28 @@
+<view class='nav'>
+  <view wx:for="{{nav}}">
+    <text bindtap='tabClick' data-index='{{index}}' class="{{ac_index==index?'select':''}}">{{item}}</text>
+  </view>
+</view>
+<view class='order'  bindtap='order_info' wx:for="{{order}}" wx:key="*this" data-id='{{item.orderid}}' data-productid='{{item.productid}}'>
+  <view class='order_states'>当前状态：
+      <text wx:if="{{item.orderstate==0}}">待发货</text>
+      <text wx:if="{{item.orderstate==1}}">已发货</text>
+      <text wx:if="{{item.orderstate==2}}">已收货</text>
+  </view>
+  <view class='rel img'>
+    <image class='ab' mode='aspectFill' src='{{item.orderimg}}'></image>
+  </view>
+  <view class='info'>
+    <view class='order_name gobyndmulit'>
+      积分商品
+    </view>
+    <view class='remarks rel'>
+      <image class='ab ud' mode='aspectFill' src='../images/hasdf_03.png'></image>
+      <view>
+        <text>{{item.orderintegral}}</text>
+        <text>×1</text>
+      </view>
+    </view>
+    <view class='shop_num'>共一件商品 合计：{{item.orderintegral}}积分</view>
+  </view>
+</view>

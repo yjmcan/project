@@ -1,0 +1,12 @@
+<view class='recommend_list' bindtap='service' wx:for="{{list}}" wx:key="*this" data-id='{{item.productid}}'>
+  <view>
+    <image mode='aspectFill' src='{{item.imgurl}}'></image>
+  </view>
+  <view>{{item.productname}}</view>
+  <view>{{item.productmsg}}</view>
+  <view class='price'>
+    <text>{{item.price}}元/{{item.productunit}}</text>
+    <!-- <text>1</text>
+    <text>可用卡次</text> -->
+  </view>
+</view>

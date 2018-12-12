@@ -1,0 +1,139 @@
+/* zh_hyk/pages/index/cz.wxss */
+page{
+  font-size: 35rpx;
+}
+.head{
+  font-size: 35rpx;
+}
+.headimg{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+.wallet{
+  width: 100%;
+  overflow-x: hidden;
+}
+.mywallet{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 30rpx;
+}
+.title{
+  color: #333;
+  font-size: 30rpx;
+}
+.mywallet_info{
+  margin-top: 20rpx;
+}
+.wallet_img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.flex6 view:nth-child(2){
+  color: #FF9700;
+}
+.wallet_money{
+  color: #333;
+  font-size: 48rpx;
+  margin-left: 20rpx;
+}
+.walletcash{
+  font-size: 30rpx;
+  color: #FF9700;
+  margin-right: 20rpx;
+}
+.list{
+  margin-top: 20rpx;
+  background-color: white;
+  padding: 0rpx 30rpx;
+  height: 90rpx;
+}
+.listimg{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.trade{
+  font-size: 30rpx;
+  color: #666;
+}
+/**/
+.cash{
+  background-color: white;
+  margin-top: 20rpx;
+  padding: 0rpx 30rpx;
+}
+.cash_title{
+  font-size: 30rpx;
+  color: #333;
+  width: 100%;
+  height: 90rpx;
+  border-bottom: 1rpx solid #d5d5d5;
+  line-height: 90rpx;
+}
+.money{
+  margin-left: 50rpx;
+  color: #FF9700;
+}
+.cash_money{
+  font-size: 40rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+.cash_inp{
+  flex: 1;
+  border: none;
+  height: 70rpx;
+  margin-left: 50rpx;
+}
+.tijiao{
+  color: white;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  /* border-radius: 6rpx; */
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 100rpx;
+  background-color: #43B1FF;
+  margin-bottom: 50rpx;
+}
+.addright{
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+.czhd{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size:26rpx;
+  color: #666;
+}
+.czhd view{
+  line-height: 90rpx;
+  text-align: right;
+}
+.czhd text{
+  color: #f44444;
+  margin: 0 10rpx;
+}
+.czhd1{
+  border-top: 1rpx solid #d5d5d5;
+  background: #fff;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.czhd1 text{
+  color: #f44444;
+  margin: 0 10rpx;
+}
+.show{
+  transform: rotate(90deg);
+-ms-transform: rotate(90deg); /* IE 9 */
+-webkit-transform: rotate(90deg)
+}

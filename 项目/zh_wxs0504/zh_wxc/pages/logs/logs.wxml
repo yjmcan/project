@@ -1,0 +1,75 @@
+
+<view class='home'>
+  <view class='logsheader flex3'>
+    <image class='userimg' src="{{avatarUrl}}"></image>
+    <view>{{userInfo}}</view>
+  </view>
+
+  <!-- <view class='logsnew2 flex_bet' bindtap='news'>
+    <view class='flex_center'>
+      <image class='logsimg' src='../img/icono@2x.png'></image>
+      <view>消息通知</view>
+    </view>
+    <image class='logsrit' src='../img/ggengduo03.png'></image>
+  </view> -->
+  <view class='logsnew2 flex_bet' bindtap='mymoney'>
+    <view class='flex_center'>
+      <image class='logsimg' src='../img/icone@2x.png'></image>
+      <view>我的钱包</view>
+    </view>
+    <view class='flex_center'>
+      <view class='logmoney'></view>
+      <image class='logsrit' src='../img/ggengduo03.png'></image>
+    </view>    
+  </view>
+  <view class='logsnew1 flex_bet' bindtap='myfabu'>
+    <view class='flex_center'>
+      <image class='logsimg' src='../img/icondd@2x.png'></image>
+      <view>我发布的</view>
+    </view>
+    <image class='logsrit' src='../img/ggengduo03.png'></image>
+  </view>
+  <view class='logsnew1 flex_bet' bindtap='myjoin'>
+    <view class='flex_center'>
+      <image class='logsimg' src='../img/iconji@2x.png'></image>
+      <view>我参与的</view>
+    </view>
+    <image class='logsrit' src='../img/ggengduo03.png'></image>
+  </view>
+  <view class='logsnew1 flex_bet' bindtap='mywait'>
+    <view class='flex_center'>
+      <image class='logsimg' src='../img/pinlun@2x.png'></image>
+      <view>待评论的</view>
+    </view>
+    <image class='logsrit' src='../img/ggengduo03.png'></image>
+  </view>
+  <view class='logsnew2 flex_bet' bindtap='question'>
+    <view class='flex_center'>
+      <image class='logsimg' src='../img/iconq@2x.png'></image>
+      <view>常见问题</view>
+    </view>
+    <image class='logsrit' src='../img/ggengduo03.png'></image>
+  </view>
+
+  <!--————————————底部固定导航栏————————————————  -->
+  <view class='ifootbox'></view>
+  <view class='ifoot'>
+    <view class='flex3 ifootfont2' bindtap='home'>
+      <image class='ifoothome' src='../img/shouyee@2x.png'></image>
+      <view>主页</view>
+    </view>
+    <view class='flex3 ifootfont2' bindtap='fabu'>
+      <image class='ifootwode' src='../img/fabuu@2x.png'></image>
+      <view>发布</view>
+    </view>
+    <view class='flex3 ifootfont2' bindtap='bangdan'>
+      <image class='ifootwode' src='../img/bangdann@2x.png'></image>
+      <view>榜单</view>
+    </view>
+    <view class='flex3 ifootfont1'>
+      <image class='ifootwode' src='../img/sjouye@2x.png'></image>
+      <view>我的</view>
+    </view>
+  </view>
+
+</view>

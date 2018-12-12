@@ -1,0 +1,67 @@
+<!--zh_zbkq/pages/my/sjvip.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="container1">
+    <view class='head-img'>
+      <image src='{{url}}{{vip.img2}}'></image>
+    </view>
+    <view class='zxtq'>
+      <view class='zxtq1'>vip商家专享特权</view>
+      <view class='zxtq2'>
+        <image src='../../../img/VIP.png'></image>
+        <view>{{vip.content2}}</view>
+      </view>
+      <!-- <view class='zxtq2'>
+      <image src='../../img/VIP.png'></image>
+      <view>2.成为vip会员可免费发布优惠券</view>
+    </view>
+    <view class='zxtq2'>
+      <image src='../../img/VIP.png'></image>
+      <view>3.成为vip会员可免费发布优惠券</view>
+    </view>
+    <view class='zxtq2'>
+      <image src='../../img/VIP.png'></image>
+      <view>4.成为vip会员可免费发布优惠券</view>
+    </view> -->
+    </view>
+    <view class='gm'>
+      <view class='gm1'>直接购买</view>
+      <view class="weui-cells weui-cells_after-title" style='margin-top:20rpx;'>
+        <radio-group bindchange="radioChange" name='radiogroup'>
+          <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+            <radio class="weui-check" value="{{item.id}}" checked="{{item.checked}}" />
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" color="#f44444" size="23" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" type="success" color='#f44444' size="23" wx:if="{{item.checked}}"></icon>
+            </view>
+            <view class="weui-cell__bd">{{item.money}}元,免费发布{{item.days}}天券</view>
+          </label>
+        </radio-group>
+      </view>
+      <view class="read">
+        <radio style='zoom:80%' color='#ff6161' checked='true' />
+        <view>我已阅读并同意
+          <text class="readfont" bindtap='lookck'>《开通商家VIP协议》</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='foot'>
+    <navigator open-type='switchTab' url='../../index/index' class='foot1'>
+      <image src='../../../img/youhuiquan@2x.png'></image>
+      <text>首页</text>
+    </navigator>
+    <button formType="submit">立即开通</button>
+    <navigator open-type='switchTab' url='../my' class='foot1'>
+      <image src='../../../img/wode@2x.png'></image>
+      <text>我的</text>
+    </navigator>
+  </view>
+</form>
+<view class="zhezhao" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">开通商家VIP协议</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 500rpx;">
+    <rich-text nodes="{{vip.info2}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>

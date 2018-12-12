@@ -1,0 +1,22 @@
+<!--pages/my/integral_change.wxml-->
+<view class="home">
+  <!-- <view class="title flex1">积分兑换</view> -->
+  <view wx:if="{{none.code==200}}">
+    <view class="list flex2">
+      <view class="list_con" bindtap='change_detail' wx:for="{{list}}">
+        <image mode="aspectFill" src="{{url}}{{item.pic}}"></image>
+        <view>{{item.need_score}}积分兑换</view>
+      </view>
+    </view>
+
+    <view class="rule">
+      <view>兑换规则:</view>
+      <view>兑换奖品数量有限,先对先得.</view>
+    </view>
+  </view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==500}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+</view>

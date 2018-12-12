@@ -1,0 +1,45 @@
+<!--zh_vip/pages/my/glrk/xfjl.wxml-->
+<view class="list">
+  <view class="list_imgbk2" hidden="{{zfzd.length!=0}}">
+    <image class="list_imgbk" src="../../../img/list.png"></image>
+    <view class="list_imgbk3">此时段您的门店暂时没有消费记录哦！</view>
+  </view>
+  <block wx:for="{{zfzd}}">
+    <view class="weui-cells weui-cells_after-title zd">
+      <navigator url='../zdxq?zdid={{item.id}}'>
+        <view class="weui-cell">
+          <view class="weui-cell__bd mdname">
+            <text>订单编号：</text>{{item.order_num}}</view>
+        </view>
+        <view class="weui-cell md">
+          <view class="weui-cell__hd">
+            <image class='mdimg' src="{{item.img}}"></image>
+          </view>
+          <view class="weui-cell__bd mdbj">
+            <view>消费时间：{{item.time}}</view>
+            <view style='margin-top:20rpx;'>
+              <text wx:if="{{item.price!='0.00'}}">总价：￥{{item.price}}</text>
+              <text style='margin-left:30rpx;'>实付：￥{{item.money}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <image wx:if="{{item.pay_type=='1'}}" class='fkxl' src="../../../img/weixin.png"></image>
+            <image wx:if="{{item.pay_type=='2'}}" class='fkxl' src="../../../img/yeqb.png"></image>
+          </view>
+          <view class="weui-cell__bd">
+            <view class='zxmd' wx:if="{{item.pay_type=='1'}}">微信支付</view>
+            <view class='zxmd' wx:if="{{item.pay_type=='2'}}">余额支付</view>
+            <view class='zxmd' style='color:#ff7f46' wx:if="{{item.pay_type=='0'}}">{{item.pay_type2}}</view>
+          </view>
+          <view class="weui-cell__ft" style='color:#ff7f46'>付款人：{{item.nickname}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+  <view class='kong' hidden="{{zfzd.length==0}}">
+    <image src='../../../img/wushuju.png'></image>
+    <view>没有更多了~</view>
+  </view>
+</view>

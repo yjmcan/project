@@ -1,0 +1,54 @@
+<!--zh_tcwq/pages/distribution/distribution.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="distribution">
+    <view class="header">
+      <image mode='aspectFill' wx:if="{{img!=''}}" src="{{url}}{{img}}"></image>
+    </view>
+    <view class="banner">
+      <view class="huanying">欢迎加入
+        <text>{{pt_name}}</text>，请填写申请信息。</view>
+      <view class="bannerbox">
+        <view class="">邀请人</view>
+        <input type="text" value='{{yqr}}' disabled='true' style='color:#34aaff' placeholder-style="color:#999;" />
+      </view>
+      <view class="bannerbox">
+        <view class="">姓名</view>
+        <input type="text" name='name' placeholder="请填写真实姓名" placeholder-style="color:#999;" />
+      </view>
+      <view class="bannerbox">
+        <view class="">手机号</view>
+        <input type="text" type='number' name='tel' placeholder="请填写手机号码" placeholder-style="color:#999;" />
+      </view>
+      <view class="read">
+        <checkbox-group name="checkbox">
+          <checkbox style='zoom:80%' color='#ff6161' value="1" />
+        </checkbox-group>
+        <view>我已阅读并同意
+          <text class="readfont" bindtap='lookck'>《分销商申请协议》</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="disbox">
+      <button disabled='{{disabled}}' formType="submit" style='background:{{disabled?"#87CEFF":"#34aaff"}};'>{{logintext}}</button>
+    </view>
+
+    <view class="banner">
+      <view class="section">
+        <image class="secimg" src="../image/"></image>
+        <view>分销商优势</view>
+      </view>
+      <view class="section">
+        <rich-text nodes="{{fxset.instructions}}" style='color:#666'></rich-text>
+      </view>
+    </view>
+  </view>
+</form>
+<view class="zhezhao" hidden="{{fwxy}}"></view>
+<view class="kcrzxy" hidden="{{fwxy}}">
+  <view class="kcrzxyhd">分销商申请协议</view>
+  <scroll-view class="kcrzxybd" scroll-y style="height: 600rpx;">
+    <rich-text nodes="{{fx_details}}" />
+  </scroll-view>
+  <view class="queren" bindtap="queren">确定</view>
+</view>

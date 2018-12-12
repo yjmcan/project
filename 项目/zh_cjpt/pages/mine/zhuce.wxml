@@ -1,0 +1,26 @@
+<view class='fixed'>
+  <view class='ab'>
+    <image class='img_b' mode='aspectFill' src='../img/3.jpg'></image>
+  </view>
+  <view class='ab zhuce'>
+    <view class='logo t_c'>
+      <image class='dis_in' mode='aspectFill' src='../img/2.jpg'></image>
+      <view class='mar_4'>
+        <text class='dis_in fon_50 color_f'>配送端</text>
+      </view>
+    </view>
+    <view class='yz bor_bottom mar'>
+      <image class='dis_in' mode='aspectFill' src=''></image>
+      <input class='dis_in' placeholder='请输入手机号' placeholder-style='color:#fff'></input>
+    </view>
+    <view class='yz bor_bottom'>
+      <image class='dis_in' mode='aspectFill' src=''></image>
+      <input class='dis_in' placeholder='请输入密码' placeholder-style='color:#fff'></input>
+    </view>
+    <view class='yz fon_28 color_f'>
+      <text class='fl' bindtap='zhuce'>注册</text>
+      <text class='fr'>忘记密码？</text>
+    </view>
+    <button style='background:{{color}}'>登录</button>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+<!--pages/logs/piaoquaninfo/piaoquaninfo.wxml-->
+<view class='test_ticket' wx:if="{{test_ticket==true}}">
+  <view class='ab'></view>
+  <view class='ab udlr'>
+    <view>核销码</view>
+    <view class='rel'>
+      <input class='ab lr' bindinput='hx_code' placeholder='请输入核销码' placeholder-style='width:100%;'></input>
+    </view>
+    <view>*核销码请向活动主办方索取</view>
+    <view class='ab'>
+      <text bindtap='test_ticket'>取消</text>
+      <text bindtap='Determine'>确定</text>
+    </view>
+  </view>
+</view>
+<view class="font">
+  <view class="code">
+    <view class="code_box">
+      <view class="code_reg flex_bet">
+        <view class='codefont1'>{{details.tk_name}}</view>
+        <view>
+          <view class='codefont2' wx:if="{{state==2}}" style='background:#ccc'>未验票</view>
+          <view class='codefont2' wx:if="{{state==6}}" style='background:#ccc'>已拒绝</view>
+          <view class='codefont2' wx:if="{{state==3}}">已验票</view>
+          <view class='codefont3' wx:if="{{state!=5}}" style='color:{{color}}'>¥{{details.money}}</view>
+        </view>
+      </view>
+      <view class="code_content">
+        <view class="code_img rel">
+          <image mode='widthFix' src='data:image/png;base64,{{bath}}'></image>
+        </view>
+        <view class="code_num">取票码 {{details.code}}</view>
+      </view>
+      <view>
+        <view class="code_time">
+          <view class='phuobox'>活动：</view>
+          <view>{{details.hd_title}}</view>
+        </view>
+        <view class="code_time">
+          <view class='phuobox'>时间：</view>
+          <view>{{details.start_time}}
+            <text class='phuoxian'>/</text> {{details.end_time}}
+          </view>
+        </view>
+        <view class="code_time">
+          <view class='phuobox'>地址：</view>
+          <view class='code_address' wx:if="{{details.hd_place==1}}">线上活动</view>
+          <view class='code_address' wx:else>线下活动</view>
+        </view>
+      </view>
+
+      <view class='phuosec'>
+        <view class='phuotitle'>报名信息</view>
+        <view class='phuonei' wx:for="{{bminfo}}" wx:key="*this" wx:if="{{item.name!='上传图片'}}">{{item.name}}:{{item.value}}</view>
+      </view>
+      <view class='img_list'>
+        <block wx:for="{{img_list}}">
+          <image mode='widthFix' src='{{url}}{{item}}'></image>
+        </block>
+
+      </view>
+    </view>
+    <view class='botton_ticket' wx:if="{{details.state==2}}">
+      <button bindtap='test_ticket' style='background:{{color}}'>输码验票</button>
+      <button bindtap='apply' style='background:{{color}}'>申请退票</button>
+    </view>
+
+  </view>
+
+  <view class='phfoot'></view>
+</view>

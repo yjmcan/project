@@ -1,0 +1,19 @@
+<!--pages/index/task_list.wxml-->
+<view class="home">
+  <view wx:if="{{none.code==200}}">
+    <view class="classes">{{title}}</view>
+    <view class="flex1 title">{{nav_title}}</view>
+    <view class="con" wx:for="{{task_con}}" bindtap='task_detail' data-id="{{item.id}}" data-index="{{index}}">
+      <view class="task_t">{{item.title}}</view>
+      <view class="flex_bet">
+        <image src="{{url}}{{item.thumb}}" mode="aspectFill" class="img"></image>
+        <!-- <image class="tip" src="../img/true.png"></image> -->
+      </view>
+    </view>
+  </view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+</view>

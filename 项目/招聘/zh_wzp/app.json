@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "zh_wzp/pages/index/index",
+    "zh_wzp/pages/r_z/log_index",
+    "zh_wzp/pages/look_wor/info",
+    "zh_wzp/pages/resume/index",
+    "zh_wzp/pages/resume/set_up",
+    "zh_wzp/pages/Interview/index",
+    "zh_wzp/pages/user/index",
+    "zh_wzp/pages/look_wor/index",
+    "zh_wzp/pages/logs/index",
+    "zh_wzp/pages/resume/add_education",
+    "zh_wzp/pages/resume/add_job",
+    "zh_wzp/pages/r_z/index",
+    "zh_wzp/pages/coll/index",
+    "zh_wzp/pages/index/info",
+    "zh_wzp/pages/release/index",
+    "zh_wzp/pages/Interview/info",
+    "zh_wzp/pages/release/info",
+    "zh_wzp/pages/Interview/Interview",
+    "zh_wzp/pages/resume/add_project",
+    "zh_wzp/pages/resume/add_skill",
+    "zh_wzp/pages/look_job/index",
+    "zh_wzp/pages/tabbar/index",
+    "zh_wzp/pages/Interview/mine_inter",
+    "zh_wzp/pages/enterprise/enterprise"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f66925",
+    "navigationBarTextStyle": "#fff"
+  }
+}

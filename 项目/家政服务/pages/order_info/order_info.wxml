@@ -1,0 +1,41 @@
+<view>
+    <view class="order_info">
+        <text>当前状态：</text>
+        <text style='color:#ec8a0d' wx:if="{{order.orderstate==-1}}">待支付</text>
+        <text style='color:#ec8a0d' wx:if="{{order.orderstate==0}}">已支付</text>
+        <text style='color:#ec8a0d' wx:if="{{order.orderstate==1}}">待服务</text>
+        <text style='color:#ec8a0d' wx:if="{{order.orderstate==2}}">已完成</text>
+    </view>
+    <view class='order_num'>订单编号：{{order.orderid}}</view>
+    <view class='shop_info'>
+        <view class='rel'>
+            <image class='ab udlr shop_img' mode='aspectFill' src='{{shop_info.imgurl}}'></image>
+        </view>
+        <view class='infos'>
+            <view class='gobyndmulit'>{{shop_info.productname}}</view>
+            <view></view>
+            <view>
+              <!-- <image mode='aspectFill' src='../images/hasdf_03.png'></image> -->
+              <text>￥{{order.reservemoney}}</text>
+            </view>
+            <!-- <view>共一件商品 合计:231积分</view> -->
+        </view>
+        <view>×1</view>
+    </view>
+    <view class='time'>
+        姓名：{{order.ordername}}
+    </view>
+    <view class='time'>
+        电话：{{order.orderphone}}
+    </view>
+    <view class='time'>
+        地址：{{order.orderaddress}}
+    </view>
+    <view class='time'>
+        创建时间：{{order.createdate}}
+    </view>
+    <!-- <view class='time'>
+        付款时间：2019-20-25 15：38：58
+    </view> -->
+    <!-- <button>取消订单</button> -->
+</view>

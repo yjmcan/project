@@ -1,0 +1,45 @@
+<!--zh_vip/pages/my/wdck/syjl.wxml-->
+<loading wx:if="{{jzsj}}">加载中</loading>
+<block wx:else>
+  <view class='main'>
+    <view bindtap='tzxq' class="block flex-row flex-y-center" style='filter: {{item.is_sx=="1"?"grayscale(100%)":""}}'>
+      <image class='mdlogo' src='{{url}}{{item.img}}'></image>
+      <view class="flex-grow-1">
+        <view class="flex-grow-1" class='kname'>{{item.name}}</view>
+        <view class="flex-grow-1" class='sysl'>剩余次数：{{item.number}}次</view>
+        <view class="flex-grow-1" class='yxq'>有效期至：{{item.time}}</view>
+      </view>
+      <block>
+        <view class="flex-grow-0 flex-col flex-y-center">
+          <view class='money'>￥{{item.money}}</view>
+          <navigator wx:if="{{item.is_sx=='2'}}" url='hxq?kid={{item.id}}' class='ljgm'>立即使用</navigator>
+          <navigator wx:if="{{item.is_sx=='1'}}" class='ljgm'>已经失效</navigator>
+        </view>
+      </block>
+      <view class='zhiding' wx:if="{{item.type=='1'}}">次卡</view>
+    </view>
+  </view>
+  <view class="no_coupons" wx:if="{{score==null||score==''}}">
+    <view class='noe_coupons_img'>
+      <image src='../../../img/integral.png'></image>
+      暂无使用记录
+    </view>
+  </view>
+  <view wx:else>
+    <view class="integral" wx:for="{{score}}">
+      <view class='integral-left'>
+        <view wx:if="{{item.hx_id!='0'}}">{{item.store_name}}（{{item.username}}）</view>
+        <view wx:else>{{xtxx.link_name}}</view>
+        <view>{{item.time}}</view>
+      </view>
+      <view class='integral-right'>
+        <text style='color:#f44444'>-1<text class='integral-right1'>次</text></text>
+      </view>
+      <!-- <view class='integral-right'>
+    <text style='color:#6AC20B' wx:if="{{item.type==1}}">+{{item.score}}<text class='integral-right1'>分</text></text>
+    <text style='color:#f44444' wx:if="{{item.type==2}}">-{{item.score}}<text class='integral-right1'>分</text></text>
+  </view> -->
+    </view>
+    <view class='mygd'>没有更多了哦~</view>
+  </view>
+</block>

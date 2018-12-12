@@ -1,0 +1,35 @@
+<!--zh_tcwq/pages/merchant/cash/cash.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class="list flex-bet" bindtap="tradeinfo" wx:if="{{czhd.length!=0}}">
+    <view class="flex-center trade">
+      <!-- <image class="listimg" src="../images/order.png"></image> -->
+      <view class="">充值活动</view>
+    </view>
+    <view class='czhd'>
+      <swiper style='height:90rpx;width:400rpx;' autoplay='true' interval='2000' duration='500' circular='true' vertical='true'>
+        <swiper-item wx:for="{{czhd}}">
+          <view>充值满
+            <text>{{item.full}}</text>元立即送
+            <text>{{item.reduction}}</text>元</view>
+        </swiper-item>
+      </swiper>
+      <image class="addright {{open ? 'show' : ''}}" src="../images/huise@2x.png"></image>
+    </view>
+  </view>
+  <view class='czhd1' hidden='{{!open}}'>
+    <view wx:for="{{czhd}}">充值满
+      <text>{{item.full}}</text>元立即送
+      <text>{{item.reduction}}</text>元</view>
+  </view>
+  <view class="wallet">
+    <view class="cash">
+      <view class="cash_title">当前余额
+        <text class="money">¥{{wallet}}</text>
+      </view>
+      <view class="cash_title flex-center" style='border:none'>充值金额
+        <input type='digit' name='czje' bindinput='bindInput' placeholder="请输入充值金额" class="cash_inp" placeholder-style="color:#999;" />
+      </view>
+    </view>
+    <button formType="submit" class="tijiao" style='background:{{kong?"#d5d5d5":"#34aaff"}};' disabled='{{kong}}'>提交</button>
+  </view>
+</form>

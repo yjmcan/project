@@ -1,0 +1,35 @@
+<!--pages/mycenter/myshouru.wxml-->
+<view class='index'>
+  <view class='sbanner rel flex3'  style='background:{{color}}'>
+    <text class='ab' wx:if="{{income!=1}}" bindtap='inform'>提现须知</text>
+    <view class='money_price' style='text-align:center' wx:if="{{income!=1}}">账户余额</view>
+    <view class='money_price' style='text-align:center' wx:else>总收入</view>
+    <view class='srfont1' wx:if="{{income!=1}}">¥\r\n{{money}}</view>
+    <view class='srfont1' wx:else>¥\r\n{{total_money}}</view>
+  </view>
+  <view class='flex_bet srcontent' wx:if="{{income!=1}}">
+    <view class='money_price'>待结算</view>
+    <view class='flex_center srfont2'>
+      <view>¥{{djsmoney}}</view>
+      <image class='srright' src='../img/acright.png'></image>
+    </view>
+  </view>
+  <view class='flex_bet srcontent' wx:if="{{income==1}}" bindtap='settled'>
+    <view class='money_price'>待结算</view>
+    <view class='flex_center srfont2'>
+      <view>¥{{djs_money}}</view>
+      <image class='srright' src='../img/acright.png'></image>
+    </view>
+  </view>
+  <view class='flex_bet srcontent' wx:if="{{income==1}}">
+    <view class='money_price'>已结算</view>
+    <view class='flex_center srfont2'>
+      <view>¥{{js_money}}</view>
+      <!-- <image class='srright' src='../img/acright.png'></image> -->
+    </view>
+  </view>
+  <view class='flex_bet srcontent' bindtap='withdrawals' wx:if="{{income!=1}}">
+    <view class='money_price'>提现</view>
+    <image class='srright' src='../img/acright.png'></image>
+  </view>
+</view>

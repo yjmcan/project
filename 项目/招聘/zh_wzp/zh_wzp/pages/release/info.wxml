@@ -1,0 +1,126 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>职位类型</text>
+    </view>
+    <view class='color_0'>
+      <picker bindchange="navs_1" value="{{n_index_0}}" range="{{navs}}">
+        <text wx:if="{{nav_s==true}}">{{navs[n_index_0]}}</text>
+        <text wx:else>{{type_name}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>职位类别</text>
+    </view>
+    <view class='color_0'>
+      <picker bindchange="navs_2" value="{{n_index_1}}" range="{{nav_c}}">
+        <text wx:if="{{nav_s==true}}">{{nav_c[n_index_1]}}</text>
+        <text wx:else>{{type2_name}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text class='color_r'>薪资范围</text>
+    </view>
+    <view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <text class='color_0'>{{array[index]}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>职位性质</text>
+    </view>
+    <view class='color_0'>
+      <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{job}}">
+        <text>{{job[index1]}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='list margin_t'>
+    <view>
+      <text class='color_r'>*</text>
+      <text class='color_r'>上班地点</text>
+    </view>
+    <view bindtap='address' class='gobyndsingle'>
+      <text class='color_9' wx:if="{{address==null}}">请选择上班地点</text>
+      <text wx:else>{{address}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>招聘人数</text>
+    </view>
+    <view>
+      <input name="num" value='' type='number' placeholder='请输入招聘人数'> </input>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>学历要求</text>
+    </view>
+    <view class='color_0'>
+      <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{Education}}">
+        <text>{{Education[index2]}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>工作经验</text>
+    </view>
+    <view class='color_0'>
+      <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{num_years}}">
+        <text>{{num_years[index3]}}</text>
+      </picker>
+    </view>
+  </view>
+  <view class='list border_n' style='overflow:hidden'>
+    <view>
+      <text class='color_r'>*</text>
+      <text>职位描述</text>
+    </view>
+    <view class='color_0'>
+
+    </view>
+  </view>
+  <view class='textarea border_b'>
+    <textarea name="text" placeholder='请输入职位描述' maxlength='540'></textarea>
+  </view>
+  <view class='list border_n'>
+    <view>
+      <!-- <text class='color_r'>*</text> -->
+      <text>福利待遇</text>
+    </view>
+    <view class='color_0'>
+
+    </view>
+  </view>
+  <view class='welfare border_b'>
+    <text wx:for="{{tag}}" wx:key="*this" class="{{item.class}}" bindtap='select' data-index='{{index}}'>{{item.name}}</text>
+  </view>
+  <view class='list border_n'>
+    <view>
+      <!-- <text class='color_r'>*</text> -->
+      <text>简历接收</text>
+    </view>
+    <view class='color_0'>
+
+    </view>
+  </view>
+  <view class='textarea border_b' style='height:80rpx;'>
+    <textarea name="email" placeholder='公司邮箱'></textarea>
+  </view>
+  <button form-type='submit' style='background:{{color}}'>发布</button>
+</form>

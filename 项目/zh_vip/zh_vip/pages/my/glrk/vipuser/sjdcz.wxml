@@ -1,0 +1,41 @@
+<!--zh_vip/pages/vipseller/recharge.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'  report-submit="true">
+  <view class="recharge">
+    <view class="rheader">
+      <image class="rhimg" src="{{userInfo.img}}"></image>
+      <view class="rhbox">
+        <view class="rname">{{userInfo.name}}（{{userInfo.level_name}}）</view>
+        <view class="rtel">{{userInfo.tel}}</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_select rbanner">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">付款方式：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindCountryChange" name="fkfs" value="{{countryIndex}}" range="{{countries}}">
+          <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input rheader2">
+      <view class="weui-cell__hd">
+        <view class="weui-label">充值金额：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input bindinput='bindInput' type='digit' name='czje' class="weui-input" placeholder="0.00" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input rheader2">
+      <view class="weui-cell__hd">
+        <view class="weui-label">备注：</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name='beizhu' placeholder="选填" />
+      </view>
+    </view>
+    <view class="weui-btn-area">
+     <button formType="submit" disabled='{{disabled}}' style='background:{{disabled?"#F7BC6A":"#ff7f46"}};' class="weui-btn rcbtn" type="primary" bindtap="showTopTips">确认充值</button>
+    </view>
+  </view>
+</form>

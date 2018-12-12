@@ -1,0 +1,85 @@
+<view class='user_info'>
+  <view class='rel'>
+    <image class='ab lr user_img' mode='aspectFill' src='{{user_info.headaddress}}'></image>
+  </view>
+  <view class='align'>{{user_info.username}}</view>
+  <view class='align'>ID:{{user_info.userid}}</view>
+  <view class='align rel'>
+    <!-- <text>个人信息</text> -->
+    <view class='ab ud'>
+      <image mode='aspectFill' src='../images/jf_white.png'></image>
+      <view style='text-align:center'>碳币：{{user_info.integral}}</view>
+    </view>
+  </view>
+</view>
+<view class='logs logs_top' bindtap='order_jz'>
+  <view class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/mine.png'></image>
+  </view>
+  <view>我的家政</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' mode='aspectFill' src='../images/right.png'></image>
+  </view>
+</view>
+<view class='logs' bindtap='shop_order'>
+  <view class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/sc.png'></image>
+  </view>
+  <view>商城订单</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' src='../images/right.png'></image>
+  </view>
+</view>
+<view class='logs' bindtap='exchange'>
+  <view class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/hs.png'></image>
+  </view>
+  <view>回收订单</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' mode='aspectFill' src='../images/right.png'></image>
+  </view>
+</view>
+
+
+
+<view class='logs logs_top' bindtap='kaci'>
+  <view class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/ka.png'></image>
+  </view>
+  <view>我的卡次</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' src='../images/right.png'></image>
+  </view>
+</view>
+<view class='logs' bindtap='address'>
+  <view class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/addr.png'></image>
+  </view>
+  <view>地址管理</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' src='../images/right.png'></image>
+  </view>
+</view>
+<view class='logs logs_top rel'>
+  <view class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/share.png'></image>
+  </view>
+  <view>我的推广</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' mode='aspectFill' src='../images/right.png'></image>
+  </view>
+  <button class='ab' open-type='share'></button>
+</view>
+<view class='logs logs_top' bindtap='feed'>
+  <view mode='aspectFill' class='rel'>
+    <image class='ab udlr img_logo' mode='aspectFill' src='../images/textarea.png'></image>
+  </view>
+  <view>用户反馈</view>
+  <view class='rel'>
+    <image class='ab udlr img_right' mode='aspectFill' src='../images/right.png'></image>
+  </view>
+</view>
+<view class='copyright'>
+  <!-- <image mode='aspectFill' src='../images/addr.png'></image> -->
+  纳比熊网络技术支持
+</view>

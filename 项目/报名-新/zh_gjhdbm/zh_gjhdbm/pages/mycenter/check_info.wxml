@@ -1,0 +1,54 @@
+<view class='examine'>
+  <view class='list'>
+    <view class='list_head'>
+      <text></text>
+      <text>{{options.hd_title}}</text>
+    </view>
+    <view class='user_img rel' wx:if="{{options.tk_name!=' '}}">
+      <image class='ab udlr' mode='aspectFill' src='{{options.img}}'></image>
+    </view>
+    <view class='user_info'>
+      <view class='info_ticket'>
+        <text class='gobyndsingle'>{{options.name}}</text>
+        <text class='gobyndsingle' style='color:{{color}}'>{{options.tk_name}}</text>
+      </view>
+      <view>{{options.time}}</view>
+    </view>
+    <view class='examine_status rel' wx:if="{{options.tk_name!=' '}}">
+      <text class='ab'>审核中</text>
+    </view>
+  </view>
+</view>
+<view class='registration'>-----------　报名信息　-----------</view>
+<view class='registration_info'>
+  <view wx:for="{{bminfo}}" bindtap='phone'  wx:if="{{item.name!='上传图片'}}">{{item.name}}：{{item.value}}</view>
+  <view class='img_list'>
+        <block wx:for="{{img_list}}">
+          <image mode='widthFix' src='{{url}}{{item}}'></image>
+        </block>
+
+      </view>
+</view>
+<view class='sign_up_status rel' wx:if="{{options.tk_name!=' '}}">
+  <view>
+    <image mode='aspectFill' src='../img/horm.png'></image>
+    <view>报名审核中</view>
+  </view>
+  <view class='ab'>{{details.time}}</view>
+</view>
+<view class='check_examine' wx:if="{{options.state==1}}">
+  <view class='rel'>
+    <button class='ab udlr button_refuse' bindtap='refuse' style='color:{{color}}'>拒绝报名</button>
+  </view>
+  <view class='rel'>
+    <button class='ab udlr button_agree' bindtap='agree' style='background:{{color}}'>同意报名</button>
+  </view>
+</view>
+<view class='check_examine' wx:if="{{options.state==4}}">
+  <view class='rel'>
+    <button class='ab udlr button_refuse' bindtap='refuse_ticket' style='color:{{color}}'>拒绝退票</button>
+  </view>
+  <view class='rel'>
+    <button class='ab udlr button_agree' bindtap='agree_ticket' style='background:{{color}}'>同意退票</button>
+  </view>
+</view>

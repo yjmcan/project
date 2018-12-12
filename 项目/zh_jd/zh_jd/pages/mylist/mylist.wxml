@@ -1,0 +1,215 @@
+<!--index.wxml-->
+<view class="container font">
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block> 
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <!--未付款  -->
+
+          <view hidden="{{activeIndex != 1}}">
+            <view wx:if="{{payment==null||order==false||payment==''}}">
+              <view class="mylist_back1">
+                <image class="mylist_back2" src="../../images/backg.png"></image>
+              </view>
+              <view class='aaa'>没有订单，定个房间试试吧</view>
+            </view>
+            <block wx:for="{{payment}}" wx:key="*this" wx:if="{{payment!=''}}">
+              <form bindsubmit="formSubmit" report-submit="true" bindreset="formReset" data-oid="{{item.id}}">
+                <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+                  <view class="mylist_title">
+                    <text>{{item.seller_name}}</text>
+                    <text class="mylist_title1">待付款</text>
+                  </view>
+                  <view class="mylist_title2">订单号：{{item.order_no}}</view>
+                  <view class="mylist_title2">
+                    <text>入 住：{{item.arrival_time}}</text>
+                    <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+                  </view>
+                  <view class="mylist_title2">房 型：{{item.room_type}}</view>
+                </view>
+                <view class="mylist_banner1 mylist_title2">
+                  <view class="mylist_banner2">订单总价：¥{{item.dis_cost}}</view>
+                  <view class="mylist_banner3" hidden="{{quxiaodingdan}}">
+                    <view class="mylist_banner4" bindtap="click1" data-oid="{{item.id}}" data-num='{{item.room_num}}'>取消订单</view>
+                  </view>
+                </view>
+              </form>
+            </block>
+          </view>
+
+
+          <!--已经付款  -->
+          <view class="weui-tab__content mylist_back" hidden="{{activeIndex != 2}}">
+            <view wx:if="{{check==null||check==''||orders==false}}">
+              <view class="mylist_back1">
+                <image class="mylist_back2" src="../../images/backg.png"></image>
+              </view>
+              <view class='aaa'>没有已付款的订单</view>
+            </view>
+            <block wx:for="{{check}}" wx:key="*this" wx:if="{{check!=''}}">
+              <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+                <view class="mylist_title">
+                  <text>{{item.seller_name}}</text>
+                  <text class="mylist_title1">待入住</text>
+                </view>
+                <view class="mylist_title2">订单号：{{item.order_no}}</view>
+                <view class="mylist_title2">
+                  <text>入 住：{{item.arrival_time}}</text>
+                  <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+                </view>
+                <view class="mylist_title2">房 型：{{item.room_type}}</view>
+              </view>
+              <view class="mylist_banner1 mylist_title2">
+                <view class="mylist_banner2">订单总价：¥{{item.dis_cost}}</view>
+                <view class="mylist_banner3" hidden="{{quxiaodingdan}}">
+                  <view class="mylist_banner4" bindtap="click6" data-order_no="{{item.out_trade_no}}" data-oid="{{item.id}}" style='margin-right:20rpx;'>申请退款</view>
+                  <!-- <view class="mylist_banner4" bindtap="click5" data-oid="{{item.id}}">订单完成</view> -->
+                </view>
+              </view>
+            </block>
+          </view>
+          <!-----全部订单  -->
+          <view class="mylist_back" hidden="{{activeIndex != 0}}">
+            <view wx:if="{{order==''||order==null||orders==false}}">
+              <view class="mylist_back1">
+                <image class="mylist_back2" src="../../images/backg.png"></image>
+              </view>
+              <view class='aaa'>暂时还没有订单</view>
+            </view>
+            <block wx:for="{{order}}" wx:key="*this" wx:if="{{order!=''}}">
+              <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+                <view class="mylist_title">
+                  <text>{{item.seller_name}}</text>
+                  <text class="mylist_title1" wx:if="{{item.status==0}}">待付款</text>
+                  <text class="mylist_title1" wx:if="{{item.status==1}}">待入住</text>
+                  <text class="mylist_title1" wx:if="{{item.status==2}}">订单已取消</text>
+                  <text class="mylist_title1" wx:if="{{item.status==3}}">入住成功</text>
+                  <text class="mylist_title1" wx:if="{{item.status==4}}">订单已完成</text>
+                  <text class="mylist_title1" wx:if="{{item.status==5}}">待退款</text>
+                  <text class="mylist_title1" wx:if="{{item.status==6}}">已退款</text>
+                  <text class="mylist_title1" wx:if="{{item.status==7}}">退款被拒绝</text>
+                  <text class="mylist_title1" wx:if="{{item.status==8}}">入住成功</text>
+                </view>
+                <view class="mylist_title2">订单号：{{item.order_no}}</view>
+                <view class="mylist_title2">
+                  <text>入 住：{{item.arrival_time}}</text>
+                  <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+                </view>
+                <view class="mylist_title2">房 型：{{item.room_type}}</view>
+              </view>
+              <view class="mylist_banner1 mylist_title2">
+                <view class="mylist_banner2">订单总价：¥{{item.dis_cost}}</view>
+                <view class="mylist_banner3" hidden="{{quxiaodingdan}}">
+                  <view class="mylist_banner4" bindtap="click6" data-order_no="{{item.out_trade_no}}" data-oid="{{item.id}}" style='margin-right:20rpx;' wx:if="{{item.status==1}}">申请退款</view>
+                  <view class="mylist_banner4"  class="mylist_banner4" bindtap="click2" data-oid="{{item.id}}" wx:if="{{item.status==4||item.status==8}}" style='margin-right:20rpx;'>发表评价</view>
+                   <view class="mylist_banner4"  class="mylist_banner4" wx:if="{{item.status==3}}" style='margin-right:20rpx;'>已评价</view>
+                  <view class="mylist_banner4" bindtap="click4"  data-oid="{{item.id}}">删除订单</view>
+                </view>
+              </view>
+            </block>
+          </view>
+          <!--已经完成，去发表评价  -->
+          <view class="mylist_back" hidden="{{activeIndex != 3}}">
+            <view wx:if="{{cancel==null||order==false||cancel==''}}">
+              <view class="mylist_back1">
+                <image class="mylist_back2" src="../../images/backg.png"></image>
+              </view>
+              <view class='aaa'>没有已完成的订单</view>
+            </view>
+            <block wx:for="{{cancel}}" wx:key="*this" wx:if="{{cancel!=''}}">
+              <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+                <view class="mylist_title">
+                  <text>{{item.seller_name}}</text>
+                  <text class="mylist_title1" wx:if="{{item.status==4||item.status==8}}">待评价</text>
+                  <text class="mylist_title1" wx:if="{{item.status==3}}">已评价</text>
+                </view>
+                <view class="mylist_title2">订单号：{{item.order_no}}</view>
+                <view class="mylist_title2">
+                  <text>入 住：{{item.arrival_time}}</text>
+                  <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+                </view>
+                <view class="mylist_title2">房 型：{{item.room_type}}</view>
+              </view>
+              <view class="mylist_banner1 mylist_title2">
+                <view class="mylist_banner2">订单总价：¥{{item.dis_cost}}</view>
+                <view class="mylist_banner3" hidden="{{quxiaodingdan}}" wx:if="{{item.status==4||item.status==8}}">
+                  <view class="mylist_banner4" bindtap="click2" data-oid="{{item.id}}">发表评价</view>
+                </view>
+                <view class="mylist_banner3" hidden="{{quxiaodingdan}}" wx:if="{{item.status==3}}">
+                  <view class="mylist_banner4" data-oid="{{item.id}}">已评价</view>
+                </view>
+              </view>
+            </block>
+          </view>
+
+          <!--已经完成 -->
+          <view class="mylist_back" hidden="{{activeIndex !=4}}">
+            <view wx:if="{{cancels==''||cancels==null||order==false}}">
+              <view class="mylist_back1">
+                <image class="mylist_back2" src="../../images/backg.png"></image>
+              </view>
+              <view class='aaa'>没有取消的订单</view>
+            </view>
+            <block wx:for="{{cancels}}" wx:key="*this" wx:if="{{refund!=''}}">
+              <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+                <view class="mylist_title">
+                  <text>{{item.seller_name}}</text>
+                  <text class="mylist_title1">已取消</text>
+                </view>
+                <view class="mylist_title2">订单号：{{item.order_no}}</view>
+                <view class="mylist_title2">
+                  <text>入 住：{{item.arrival_time}}</text>
+                  <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+                </view>
+                <view class="mylist_title2">房 型：{{item.room_type}}</view>
+              </view>
+              <view class="mylist_banner1 mylist_title2">
+                <view class="mylist_banner2">订单金额：¥{{item.dis_cost}}</view>
+                <view class="mylist_banner3" hidden="{{quxiaodingdan}}">
+                  <view class="mylist_banner4" bindtap="click3" data-oid="{{item.id}}">删除订单</view>
+                </view>
+              </view>
+            </block>
+          </view>
+          <!--待退款  -->
+          <!-- <view class="mylist_back" hidden="{{activeIndex !=5}}">
+            <view wx:if="{{apply==''||apply==null||order==false}}">
+              <view class="mylist_back1">
+                <image class="mylist_back2" src="../../images/backg.png"></image>
+              </view>
+              <view class='aaa'>没有待退款的订单</view>
+            </view>
+            <block wx:for="{{apply}}" wx:if="{{apply!=''}}">
+              <view class="mylist1" bindtap='details' data-xid="{{item.id}}">
+                <view class="mylist_title">
+                  <text>{{item.seller_name}}</text>
+                  <text class="mylist_title1">待退款</text>
+                </view>
+                <view class="mylist_title2">订单号：{{item.order_no}}</view>
+                <view class="mylist_title2">
+                  <text>入 住：{{item.arrival_time}}</text>
+                  <text class="mylist_title4">退 房：{{item.departure_time}}</text>
+                </view>
+                <view class="mylist_title2">房 型：{{item.room_type}}</view>
+              </view>
+              <view class="mylist_banner1 mylist_title2">
+                <view class="mylist_banner2">订单总价：¥{{item.online_price}}</view>
+                <view class="mylist_banner3" hidden="{{quxiaodingdan}}">
+                  <view class="mylist_banner4" bindtap="click3" data-oid="{{item.id}}">删除订单</view>
+                </view>
+              </view>
+            </block>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

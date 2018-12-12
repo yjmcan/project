@@ -1,0 +1,10 @@
+/* pages/logs/capital.wxss */
+.list{
+  background: #fff;
+}
+.list>view:nth-child(1){
+  width: 80%;
+}
+.list>view:nth-child(2){
+  width: 20%;
+}

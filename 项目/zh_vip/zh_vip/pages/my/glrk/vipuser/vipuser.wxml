@@ -1,0 +1,66 @@
+<!--zh_vip/pages/vipseller/vipuser.wxml-->
+<view class="vip">
+  <view class="vuheader">
+    <view class="vuhbox flex-center">
+      <image class="vuhboximg" src="../../../../img/vsearch.png"></image>
+      <input bindinput='bindinput' bindconfirm='confirm' confirm-type='search' class="vuhboxinput" type="text" placeholder="请输入编号/手机号/姓名" placeholder-style="color:#999;font-size: 26rpx;" />
+    </view>
+  </view>
+
+  <view class="vubanner">
+    <view class='jzz' hidden='{{qqsj}}'>
+      <image class='Rotation' src='../../../../img/jzz.png'></image>
+      <view>加载中...</view>
+    </view>
+    <block wx:if="{{qqsj}}">
+      <view class="vublist" wx:for="{{hyarr}}" data-id='{{item.id}}' bindtap="vipuserinfo">
+        <image class="vublistimg" src="{{item.img}}"></image>
+        <view class="vublistright">
+          <view class='flex-bet'>
+            <view>{{item.name}}</view>
+            <view class='vipnumber'>编号:{{item.vip_number}}</view>
+          </view>
+          <!-- <text style='margin-left:50rpx;'>电话：{{item.tel}}</text> -->
+          <view class="vublfont2">卡号:{{item.vip_code}}</view>
+          <view class="vublfont3">会员卡余额：
+            <text class="vublfont4">{{item.wallet}}</text>元
+            <text class="vublxiao">消费次数：</text>
+            <text class="vublfont4">{{item.ordernum}}</text>次
+          </view>
+        </view>
+      </view>
+      <view class='jzz' hidden='{{jzgd}}'>
+        <image class='Rotation' src='../../../../img/jzz.png'></image>
+        <view>加载中...</view>
+      </view>
+      <view wx:if="{{hyarr.length==0}}" class='kong'>
+        <image src='../../../../img/wushuju.png'></image>
+        <view>暂无符合您搜索的数据</view>
+      </view>
+      <view wx:if="{{mygd}}" class='jzwb'>
+        <view class='hx'></view>
+        <view class='wz'>加载完毕</view>
+        <view class='hx'></view>
+      </view>
+    </block>
+  </view>
+  <!--—————————————底部固定部分———————————————-->
+  <view class="vfoot">
+    <view class="vflist flex1" bindtap="vipseller">
+      <image class="vfimg" src="../../../../img/vhome.png"></image>
+      <view>商户中心</view>
+    </view>
+    <view class="vflist flex1">
+      <image class="vfimg" src="../../../../img/vzuansele.png"></image>
+      <view class="vffont">会员</view>
+    </view>
+    <!-- <view class="vflist flex1" bindtap="jqqd">
+      <image class="vfimg" src="../../../../img/vmonedsele.png"></image>
+      <view>收银</view>
+    </view>
+    <view class="vflist flex1" bindtap="jqqd">
+      <image class="vfimg" src="../../../../img/vmoney.png"></image>
+      <view>交易</view>
+    </view> -->
+  </view>
+</view>

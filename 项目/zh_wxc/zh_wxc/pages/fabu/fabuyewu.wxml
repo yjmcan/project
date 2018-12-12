@@ -1,0 +1,104 @@
+<!--pages/fabu/fabuyewu.wxml-->
+<view class='home'>
+  <form bindsubmit="formSubmit" report-submit="true">
+
+    <scroll-view class='fheader' scroll-x="true" wx:if="{{hidden}}">
+      <block wx:for="{{infortype}}">
+        <view class="flabel2 {{activeIndex == index ? 'flabel' : ''}}" bindtap='onTap' data-index="{{index}}" data-id="{{item.id}}" style="display:inline-block">{{item.name}}
+        </view>
+        <!-- <view class='flabel2'>发布产品</view> -->
+      </block>
+    </scroll-view>
+    <input placeholder='请输入悬赏标题' class='ftitle' name="title" value="{{title}}"></input>
+
+    <!-- <view class='ftitle'>悬赏标题</view> -->
+
+    <view class='fbanner'>
+      <textarea class='ftextarea' placeholder-style='color:#c9c9c9;' placeholder='请输入悬赏详情描述' name="detail"></textarea>
+
+      <view class='flex_center' bindtap='upfile'>
+        <image src='../img/shangchuan@2x.png' class='fcarema'></image>
+        <view>点击上传图片</view>
+      </view>
+
+    </view>
+    <view class='kimgbox'>
+      <block wx:for='{{imgArray1}}'>
+        <view class="fankuiimg">
+          <image mode='aspectFill' wx:if="{{item}}" class='upfile' src='{{url}}{{item}}'></image>
+          <image class='shanchu' src='../img/tianjia@2x.png' data-index="{{index}}" catchtap="deleteImg"></image>
+        </view>
+      </block>
+    </view>
+
+    <view class='wuyebox'>
+      <view class='flex_bet wuyelist'>
+        <view class='wuyefont1'>悬赏金额：</view>
+        <input placeholder='¥0.0' class='wuyeinp' placeholder-style='color:#c9c9c9;' name="money" bindinput='xs_cost'></input>
+      </view>
+      <view class='flex_bet wuyelist'>
+        <view class='wuyefont1'>所需人数：</view>
+        <input type='number' placeholder='填写人数' class='wuyeinp' placeholder-style='color:#c9c9c9;' bindinput='need_num' name="num"></input>
+
+      </view>
+      <view class='flex_bet wuyelist'>
+        <view class='wuyefont1'>结束时间：</view>
+        <view class='flex_center'>
+          <picker mode="date" value="{{date}}" start="{{now}}" end="" bindchange="bindDateChange">
+            <input disabled="true" class="picker1" value='{{date}}' placeholder='选择日期' name="date" />
+          </picker>
+          <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+            <input class="picker" value='{{time}}' placeholder='选择时间' name="time" disabled="true" />
+          </picker>
+        </view>
+      </view>
+    </view>
+
+    <view class='wuyebox'>
+      <view class="flex_bet wuyelist" bindtap='more_con'>
+        <view class='wuyefont1'>更多选项</view>
+        <image class='{{wmore}}' src='../img/gengduo.png'></image>
+      </view>
+
+      <view class="{{showView?'show':'hide'}}">
+
+        <view class='flex_bet wuyelist rel'>
+          <button class='ab' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="btn flex_bet ">
+              获取微信手机号
+          </button>
+           <view class='weixin'>手机号</view>
+            <input style='text-align:left' type='number' maxlength="11" class="phone" bindchange="onPhone" name="phone" value="{{phoneNumber}}" placeholder='请输入手机号'></input>
+        </view>
+
+        <view class='flex_bet wuyelist'>
+          <view class='wuyefont1'>微信号</view>
+          <input placeholder='请填写微信号' class='wuyeinp' name="wx_number" placeholder-style='color:#c9c9c9;'></input>
+        </view>
+
+      </view>
+    </view>
+    <button class='fabubtn' formType="submit">发布悬赏 ￥{{total}}</button>
+    <view class='fremark'>注：如果没有人接单或完成任务，则全额退款</view>
+  </form>
+
+  <!--————————————底部固定导航栏————————————————  -->
+  <view class='ifootbox'></view>
+  <view class='ifoot'>
+    <view class='flex3 ifootfont2' bindtap='index'>
+      <image class='ifoothome' src='../img/shouyee@2x.png'></image>
+      <view>主页</view>
+    </view>
+    <view class='flex3 ifootfont1'>
+      <image class='ifootwode' src='../img/fabu@2x.png'></image>
+      <view>发布</view>
+    </view>
+    <view class='flex3 ifootfont2' bindtap='bangdan'>
+      <image class='ifootwode' src='../img/bangdann@2x.png'></image>
+      <view>榜单</view>
+    </view>
+    <view class='flex3 ifootfont2' bindtap='wode'>
+      <image class='ifootwode' src='../img/wo@2x.png'></image>
+      <view>我的</view>
+    </view>
+  </view>
+</view>

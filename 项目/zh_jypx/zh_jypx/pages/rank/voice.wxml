@@ -1,0 +1,15 @@
+<!--zh_jypx/pages/rank/voice.wxml-->
+<!-- <text>zh_jypx/pages/rank/voice.wxml</text> -->
+<audio src="{{img}}" style="width:200rpx;height:100rpx;background:#ccc;" bindtap="audioPlay" id="myAudio"></audio>
+<view bindtap='start'style="width:200rpx;height:100rpx;background:#ccc;margin:30rpx 0">点击录音</view>
+<view bindtap='stop'style="width:200rpx;height:100rpx;background:#ccc;">停止录音</view>
+<view bindtap='play'>点击播放{{src}}</view>
+<scroll-view scroll-x="true" class="scroll">
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+  <view></view>
+</scroll-view>

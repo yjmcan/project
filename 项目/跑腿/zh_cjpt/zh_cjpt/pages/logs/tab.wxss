@@ -1,0 +1,98 @@
+/* .head{
+  padding: 60rpx;
+  background: #fff;
+}
+.head_0{
+  border-radius: 20rpx;
+  border: 2rpx solid #f66925;
+  overflow: hidden;
+  margin-bottom: 100rpx;
+}
+.head>view text{
+  display: inline-block;
+  width: 50%;
+  padding: 30rpx 0;
+  font-size: 30rpx;
+  text-align: center;
+}
+.sele{
+  color: #fff;
+  background: #f66925;
+}
+.no_sele{
+  color: #f66925;
+}
+.num>view{
+  width: 50%;
+  box-sizing: border-box;
+}
+.num>view:nth-child(1){
+  border-top: 2rpx solid #f66925;
+  border-left: 2rpx solid #f66925;
+}
+.num>view:nth-child(2){
+  border-top: 2rpx solid #f66925;
+}
+.num>view:nth-child(3){
+  border-left: 2rpx solid #f66925;
+}
+.num>view:nth-child(odd){
+  border-right: 2rpx solid #f66925;
+  border-bottom: 2rpx solid #f66925;
+}
+.num>view:nth-child(even){
+  border-right: 2rpx solid #f66925;
+  border-bottom: 2rpx solid #f66925;
+}
+.num>view text{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.num>view text:nth-child(1){
+  padding: 20rpx 0;
+}
+.num>view text:nth-child(2){
+  padding: 20rpx 0;
+} */
+.head>view:nth-child(2){
+  width: 100%;
+  height: 100rpx;
+  border-radius: 0 0 50% 50% / 100% ;
+}
+.head>view:nth-child(1){
+  width: 100%;
+  height: 240rpx;
+}
+.order_num{
+  width: 95%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+.order_head{
+  display: flex;
+}
+.order_head>view{
+  flex: 2;
+}
+.order_head>view:nth-child(1){
+  border-right: 2rpx solid #fff;
+}
+.list_0{
+  display: flex;
+  height: 190rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  padding: 40rpx 20rpx;
+}
+.list_0>view{
+  flex: 2;
+}
+.list_0>view:nth-child(1){
+  border-right: 2rpx solid #e5e5e5;
+}
+.list_0>view image{
+  width: 80%;
+  /* background: red; */
+}

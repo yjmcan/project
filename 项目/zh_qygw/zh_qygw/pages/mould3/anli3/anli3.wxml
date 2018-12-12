@@ -1,0 +1,29 @@
+<!--zh_qygw/pages/mould3/anli3/anli3.wxml-->
+<view class="anli">
+  <view class="aheader">
+    <image src="../../images/back1.png"></image>
+  </view>
+  <view class="abanner">
+    <view class="abannerbox flex3">
+      <image src="../../images/mou3img1.png"></image>
+      <view class="">武汉志汇科技</view>
+    </view>
+    <view class="abannerbox flex3">
+      <image src="../../images/mou3img1.png"></image>
+      <view class="">武汉志汇科技</view>
+    </view>
+    <view class="abannerbox flex3">
+      <image src="../../images/mou3img1.png"></image>
+      <view class="">武汉志汇科技</view>
+    </view>
+  </view>
+  <view class="anlimore">更多案例请联系客服...</view>
+
+  <view class="fuwuremark">——亲，我是有底线的——</view>
+  <!--—————版权部分—————-->
+  <view class="banquan">
+    <view>COPYRIGHT@{{copyrit.support}}</view>
+    <view class="bqfont1">微信搜索：{{aboutus.name}} | <text bindtap="phone">一键拨号</text></view>
+  </view>
+
+</view>

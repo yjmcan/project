@@ -1,0 +1,76 @@
+{
+	"pages": [
+		"zh_zbkq/pages/index/index",
+    "zh_zbkq/pages/index/sssj",
+    "zh_zbkq/pages/index/sjdl",
+    "zh_zbkq/pages/index/yhqdl",
+    "zh_zbkq/pages/index/fbpl",
+    "zh_zbkq/pages/index/webhtml",
+    "zh_zbkq/pages/wdq/wdq",
+    "zh_zbkq/pages/wdq/hxq",
+    "zh_zbkq/pages/my/my",
+    "zh_zbkq/pages/my/txzl",
+    "zh_zbkq/pages/my/wyrz",
+    "zh_zbkq/pages/my/fbyhq",
+    "zh_zbkq/pages/my/sjvip",
+    "zh_zbkq/pages/my/glyhq/glyhq",
+    "zh_zbkq/pages/my/glyhq/glyhqdl",
+    "zh_zbkq/pages/my/tjhxy/tjhxy",
+    "zh_zbkq/pages/my/tjhxy/bdhxy",
+    "zh_zbkq/pages/my/tjhxy/hx",
+    "zh_zbkq/pages/my/bzzx/bzzx",
+    "zh_zbkq/pages/my/kfzx",
+    "zh_zbkq/pages/my/xfjl",
+    "zh_zbkq/pages/home/home",
+    "zh_zbkq/pages/home/homeinfo",
+    "zh_zbkq/pages/home/fabu",
+    "zh_zbkq/pages/my/distribution/distribution",
+    "zh_zbkq/pages/my/distribution/yaoqing",
+    "zh_zbkq/pages/my/distribution/fxyj",
+    "zh_zbkq/pages/my/distribution/wdtd",
+    "zh_zbkq/pages/my/distribution/txmx",
+    "zh_zbkq/pages/my/distribution/symx",
+    "zh_zbkq/pages/my/sjzx/merchant",
+    "zh_zbkq/pages/my/sjzx/bbaa",
+    "zh_zbkq/pages/my/sjzx/sjvip",
+    "zh_zbkq/pages/my/sjzx/wdkh"
+	],
+	"window": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "优惠券",
+		"navigationBarBackgroundColor": "#f44444",
+		"backgroundColor": "#f5f5f5"
+	},
+    "tabBar": {
+      "color": "#717171",
+      "selectedColor": "#f44444",
+      "borderStyle": "#E5E5E5",
+      "backgroundColor": "#fff",
+      "list": [
+        { 
+          "selectedIconPath": "zh_zbkq/img/youhuiquan-fill@2x.png",
+          "iconPath": "zh_zbkq/img/youhuiquan@2x.png", 
+          "pagePath": "zh_zbkq/pages/index/index",
+          "text": "优惠券"
+        },
+        {
+          "selectedIconPath": "zh_zbkq/img/zx-fill.png",
+          "iconPath": "zh_zbkq/img/zx.png",
+          "pagePath": "zh_zbkq/pages/home/home",
+          "text": "发现"
+        },
+        {
+          "selectedIconPath": "zh_zbkq/img/wodequan-fill@2x.png",
+          "iconPath": "zh_zbkq/img/wodequan@2x.png",
+          "pagePath": "zh_zbkq/pages/wdq/wdq",
+          "text": "我的券"
+        },
+        { 
+          "selectedIconPath": "zh_zbkq/img/wode-fill@2x.png",
+          "iconPath": "zh_zbkq/img/wode@2x.png",
+          "pagePath": "zh_zbkq/pages/my/my",
+          "text": "我的"
+        }
+      ]
+    }
+}

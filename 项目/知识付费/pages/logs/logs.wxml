@@ -1,0 +1,21 @@
+<view class='container'>
+    <view class='head rel'>
+        <view class='ab'>
+            <image mode='aspectFill' src='' class='back_picture'></image>
+        </view>
+        <view class='ab user_info'>
+            <view class='pa'>
+               <view class='dis_in'>
+                   <image mode='aspectFill' src='' class='logo'></image>
+               </view>
+               <view class='dis_in mar_l'>
+                    <view class='fon_36 color_f'>名字</view>
+                    <view class='vip mar_t'>
+                        <image mode='aspectFill' src='' class='dis_in' style='background:red;width:30rpx;height:30rpx;'></image>
+                        <text class='dis_in wei fon_30 mar_l'>VIP</text>
+                    </view>
+               </view>
+            </view>
+        </view>
+    </view>
+</view>

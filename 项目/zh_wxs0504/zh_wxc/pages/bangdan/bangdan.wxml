@@ -1,0 +1,82 @@
+<!--pages/bangdan/bangdan.wxml-->
+<view class="bangdan">
+<view class="tab">
+  <block wx:for="{{nav}}" wx:key="*this">
+    <view data-index="{{index}}" id="{{item.id}}" class="{{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+      {{item.title}}
+    </view>
+  </block>
+</view>
+
+<!--土豪榜-->
+<view class="mian1" wx:if="{{all.code==200}}">
+  <view class="top">
+  <image src="../img/beijing@2x.png" class="bg"></image>
+    <!--第二名-->
+    <view class="left">
+      <view class="lt speciel">
+        <image src="../img/dier@2x.png" class="gold"></image>
+        <image class="headimg" src="{{two.img}}"></image>
+      </view>
+      <view class="name">{{two.nickname}}</view>
+      <view class="num">{{two.amount}}</view>
+    </view>
+    <!--第一名-->
+    <view class="min">
+      <view class="lt">
+        <image src="../img/diyi@2x.png" class="gold"></image>
+        <image class="headimg" src="{{one.img}}"></image>
+      </view>
+      <view class="name">{{one.nickname}}</view>
+      <view class="num">{{one.amount}}</view>
+    </view>
+    <!--第三名-->
+    <view class="right">
+      <view class="lt speciel">
+        <image src="../img/disan@2x.png" class="gold"></image>
+        <image class="headimg" src="{{three.img}}"></image>
+      </view>
+      <view class="name">{{three.nickname}}</view>
+      <view class="num">{{three.amount}}</view>
+    </view>
+  </view>
+
+  <view>
+    <view class="flex_center list" wx:for="{{reset}}" wx:if="{{all.length>3}}">
+      <!-- <view class="paiming">No.4</view> -->
+      <image class="img" src="{{item.img}}"></image>
+      <view class="name">{{item.nickname}}</view>
+      <view class="num num1">{{item.amount}}</view>
+    </view>
+  </view>
+
+</view>
+
+  <!--没有数据的情况-->
+  <view wx:if="{{all.code==501}}" class="flex3 none">
+    <image src="../img/zhanwei.png"></image>
+    <view>暂无数据</view>
+  </view>
+
+    <!--————————————底部固定导航栏————————————————  -->
+    <view class='ifootbox'></view>
+    <view class='ifoot'>
+      <view class='flex3 ifootfont2' bindtap='index'>
+        <image class='ifoothome' src='../img/shouyee@2x.png'></image>
+        <view>主页</view>
+      </view>
+      <view class='flex3 ifootfont2' bindtap='fabu'>
+        <image class='ifootwode' src='../img/fabuu@2x.png'></image>
+        <view>发布</view>
+      </view>
+      <view class='flex3 ifootfont1'>
+        <image class='ifootwode' src='../img/bangdan@2x.png'></image>
+        <view>榜单</view>
+      </view>
+      <view class='flex3 ifootfont2' bindtap='wode'>
+        <image class='ifootwode' src='../img/wo@2x.png'></image>
+        <view>我的</view>
+      </view>
+    </view>
+
+</view>

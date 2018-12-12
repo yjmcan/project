@@ -1,0 +1,11 @@
+/* zh_gjhdbm/pages/logs/piaoquaninfo/add_mark.wxss */
+button{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #F66926;
+  color: #fff;
+  font-size: 28rpx;
+  margin-top: 200rpx;
+}

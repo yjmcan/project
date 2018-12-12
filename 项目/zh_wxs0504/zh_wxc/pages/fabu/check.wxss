@@ -1,0 +1,66 @@
+/* zh_wxc/pages/fabu/check.wxss */
+.none image{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 150rpx 0 50rpx;
+}
+
+.conbox{
+  position: relative;
+  background-color: white;
+  margin-top: 15rpx;
+  display: flex;
+  padding: 15rpx 20rpx 15rpx 30rpx;
+  flex-direction: row;
+}
+.context{
+  display: flex;
+  flex-direction: column; 
+  margin-left: 30rpx;
+  width: 76%;
+}
+.confont2{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 30rpx;
+  line-height:60rpx;
+}
+.lbottom{
+  position: relative;
+  margin-top:15rpx;
+  font-size: 26rpx;
+}
+.listimg{
+  margin-right: 20rpx;
+}
+.conimg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: pink;
+}
+.more{
+  line-height:60rpx;
+} 
+.pass{
+  background: #25ace3;
+  color: #fff;
+  padding:5rpx 40rpx;
+  border-radius: 10rpx; 
+}
+.refuse{
+  background: #ff5656;
+  color: #fff;
+  padding:5rpx 40rpx;
+  border-radius: 10rpx; 
+}
+.wait{
+  background: #71d652;
+  color: #fff;
+  padding:5rpx 40rpx;
+  border-radius: 10rpx; 
+}

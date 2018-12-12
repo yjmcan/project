@@ -1,0 +1,124 @@
+<!--zh_dianc/pages/takeout/takeoutspxq.wxml-->
+<view class='spxqimg'>
+  <image src='../../img/szy.jpeg'></image>
+  <view class='spsm'>商品说明：商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明商品说明</view>
+</view>
+<view class='spxx'>
+  <view class='cplbright1 flex-bet'>
+    <view class='cplbright1-l'>味道家味道家味道家（街道口店）</view>
+    <!-- <view class='cplbright1-r'>招牌</view>  -->
+  </view>
+  <view class='cplbright3 flex-row flex-y-center'>
+    <view class='cplbright31'>月销100笔</view>
+    <view class='cplbright32'>限1000份</view>
+  </view>
+  <view class='cplbright4 flex-bet'>
+    <view class='cplbright4-l flex-grow-1'>
+      <text>￥13.9</text>
+      <text>￥37.9</text>
+    </view>
+    <view class="cartControl flex-grow-0">
+      <!-- <view class='jrgwc'>加入购物车</view> -->
+      <!-- <view class='cartdec'></view>
+      <view class='goodsnum'>11</view>
+      <view class='cartadd' style='background:{{color}}'></view> -->
+      <view class='xgg' style='background:{{color}}' catchtap='spggck'>选规格</view>
+    </view>
+  </view>
+</view>
+<view class='spxq'>商品详情</view>
+<view class='sqxqv'>
+  <rich-text nodes></rich-text>
+</view>
+<view class='footmj'>
+  下单已满20元，再买
+  <text>4.1</text>元可减
+  <text>4.1</text>元
+</view>
+<!-- <view class='dbgwc flex-row flex-y-center'>
+  <view class='dbgwcl flex-row flex-y-center' catchtap='showcart'>
+    <block wx:if='{{cart_list.res.length==0}}'>
+      <view class='dbgwcl-l flex-grow-0 flex-row flex-y-center'>
+        <image class='gwcimg' src="../../img/kgwc.png"></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='dbgwcl-l flex-grow-0 flex-row flex-y-center'>
+        <image class='gwcimg' src="../../img/fgwc.png"></image>
+        <view class='cart_num'>{{cart_list.num}}</view>
+      </view>
+    </block>
+    <view class='dbgwcl-r flex-grow-1'>
+      <view wx:if="{{cart_list.res.length==0}}" class='kname'>购物车是空的</view>
+      <block wx:else>
+        <view class='gwcmoney'>
+          <text>￥{{cart_list.money}}</text>
+          <text>￥2</text> 
+        </view>
+        <view class='psf'>另需配送费3元</view>
+      </block>
+    </view>
+  </view>
+  <view wx:if="{{cart_list.money>0&&cart_list.money>=start_at}}" class='dbgwcr' style='background:{{color}}' bindtap='submit'>{{subtext}}</view>
+  <view wx:else class='dbgwcr'>{{subtext}}</view>
+</view>
+<view class="share-modal {{share_modal_active?'active':''}}" catchtap='closecart'>
+  <view class="share-modal-body">
+    <view class="shangpin_bomb">
+      <view class='shangpin1' style="border-left:10rpx solid {{color}}">购物车</view>
+      <view wx:if='{{cart_list.res.length>0}}' class='sh_clear flex-row flex-y-center' catchtap='clear'>
+        <image src="../../img/qksj.png"></image>
+        <view>清空</view>
+      </view>
+    </view>
+    <view class='splist'>
+      <view class='dgsp flex-row flex-y-center' wx:for="{{cart_list.res}}" wx:key="*this">
+        <view class='dgspleft flex-grow-1'>
+          <view class='dgspleft1'>{{item.name}}</view>
+          <view class='dgspleft2'>{{item.spec}}</view>
+        </view>
+        <view class='dgspright flex-row flex-y-center flex-grow-0'>
+          <view class='dgspright-l flex-grow-0'>
+            ￥{{item.money}}
+          </view>
+          <view class="cartControl flex-grow-1">
+            <view class='cartdec' data-goodid='{{item.good_id}}' data-num='{{item.num}}' data-id='{{item.id}}' catchtap='gwcdec'></view>
+            <view class='goodsnum'>{{item.num}}</view>
+            <view class='cartadd' data-goodid='{{item.good_id}}' data-num='{{item.num}}' data-id='{{item.id}}' style='background:{{color}}' catchtap='gwcadd'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='dgsp1 flex-row flex-y-center'>
+      <view class='dgspleft flex-grow-1'>
+        <view class='dgspleft1'>包装费</view>
+      </view>
+      <view class='dgspright flex-row flex-y-center flex-grow-0'>
+        <view class='dgspright-l flex-grow-0'>
+          ￥{{cart_list.box_money}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="spggzz" hidden="{{spggtoggle}}" bindtap="gbspgg" catchtouchmove='true'></view>
+<view class="spgg {{spggtoggle?'':'active'}}">
+  <view class='spggbd'>
+    <view class="spgg_title">{{spname}}</view>
+    <view bindtap="gbspgg" class='x'>
+      <image src='../../img/x.png'></image>
+    </view>
+    <view class='spgg_ggbd'>
+      <block wx:for="{{gg}}" wx:for-item="attr_group" wx:for-index="index">
+        <view class='guige'>{{attr_group.spec_name}}：</view>
+        <view class='ggcontent'>
+          <view wx:for="{{attr_group.spec_val}}" wx:for-item="item" wx:for-index="index" class="drawer_gg {{item.checked?'drawer_on' : ''}}" bindtap="attrClick" data-group-id="{{attr_group.spec_id}}" data-id="{{item.spec_val_id}}">{{item.spec_val_name}}</view>
+        </view>
+      </block>
+    </view>
+    <view class='spgg_ft flex-bet'>
+      <view class='spgg_ftjg'>￥{{gginfo.wm_money}}</view>
+      <view class='spgg_ftjr' bindtap='ggaddcart'>加入购物车</view>
+    </view>
+  </view>
+</view> -->

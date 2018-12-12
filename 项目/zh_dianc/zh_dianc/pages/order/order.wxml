@@ -1,0 +1,160 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class="font">
+    <!--头部等待支付开始  -->
+    <view class='order_pay'>
+      <image class='order_payimg' src="{{url}}{{store.logo}}"></image>
+      <view class='order_paywaite'>
+        <view>{{tablename}}</view>
+        <!-- <view>逾期未支付，订单将自动取消</view>
+      <view>再来一单</view> -->
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          备注
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder='口味，偏好等（可不填）' style='text-align:left' bindinput='ddbz' />
+        </view>
+      </view>
+    </view>
+    <!--订单详情开始  -->
+    <view class='order_info'>
+      <view class='order_lei flex'>
+        <text>订单类型</text>
+        <text wx:if="{{store.dn_name!=''}}">{{store.dn_name}}</text>
+        <text wx:else>店内点餐</text>
+      </view>
+      <!--桌位类型部分  -->
+      <view class='order_lei flex'>
+        <text>桌号类型</text>
+        <view class="picker reserve_sele">{{tabletypename}}</view>
+      </view>
+      <!-- <view class='order_lei flex'>
+        <text>桌号</text>
+        <view class="picker reserve_sele">{{tablename}}</view>
+      </view> -->
+      <!-- <view class='order_lei flex'>
+      <text>桌号类型</text>
+      <picker bindchange="bindPickerChange" name='zwpicker' range-key='name' value="{{array[index]}}" range="{{array}}">
+        <view class="picker reserve_sele" wx:if="{{tabletype_id!=null}}">{{array[index].name}}</view>
+         <view class="picker reserve_sele" wx:if="{{tabletype_id==null}}">请选择桌子类型</view>
+      </picker>
+    </view>
+    <view class='order_lei flex' wx:if="{{tabletype_id!=null}}">
+      <text>桌号</text>
+      <picker bindchange="bindPickerChange_one" name='zwpicker' range-key='name' value="{{inde}}" range="{{not_use}}">
+        <text class="picker reserve_sele" wx:if="{{table_id!=null}}">{{not_use[inde].name}}</text>
+        <text class="picker reserve_sele" wx:if="{{table_id==null}}">请选择桌号</text>
+      </picker> -->
+      <!-- <text>{{not_use.name}}</text> -->
+      <!-- </view> -->
+      <view class='order_lei flex' wx:for="{{order}}" wx:if="{{item.num>0}}">
+        <text style='width:500rpx;'>{{item.name}}</text>
+        <view>
+          <text class='order_num'>×{{item.num}}</text>
+          <text>¥ {{item.money}}</text>
+        </view>
+      </view>
+      <view class='order_lei flex' wx:if="{{cut!=0}}">
+        <view>
+          <text class='pai_reduce' style='background:#34aaff'>减</text>满减优惠</view>
+        <view class='order_money' style='color:#34aaff'>-¥{{cut}}</view>
+      </view>
+      <view class='order_lei flex' bindtap='coupon'>
+        <view>
+          <text class='pai_reduce'>惠</text>优惠券</view>
+        <view class='order_money' wx:if="{{pre==0}}">选择优惠券</view>
+        <view class='order_money' wx:if="{{pre!=0}}">-¥{{pre}}</view>
+      </view>
+      <view class='order_money order_lei order_shifu' style='border-bottom:none'>实付 ¥ {{zfmoney}}</view>
+    </view>
+
+    <!--底部固定部分  -->
+
+    <view class='order_confirm'>
+      <view class='order_already'>
+        <text class='already_money'>待支付 ¥ {{zfmoney}} | </text>
+        <text class='already_text'>已优惠 ¥ {{pre+cut}}</text>
+      </view>
+      <button class='order_integral' bindtap='xszz' style="background:{{color}}">确认支付</button>
+    </view>
+    <!-- 支付方式 -->
+    <view class="drawer_screen" bindtap='yczz' wx:if="{{showModal}}"></view>
+    <!--content-->
+    <view class="drawer_box" wx:if="{{showModal}}">
+      <!--drawer content-->
+      <view class="drawer_title">请选择支付方式</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group class="radio-group" name="radiogroup" bindchange="radioChange">
+          <label>
+            <view class="weui-cell">
+              <view class="weui-cell__hd" class='zfimg'>
+                <image src="../images/weixin.png"></image>
+              </view>
+              <view class="weui-cell__bd">微信支付</view>
+              <view class="weui-cell__ft">
+                <radio value="wxzf" checked="{{zffs==1}}" />
+              </view>
+            </view>
+          </label>
+          <label wx:if="{{ptkqyue&&sjkqyue}}">
+            <view class="weui-cell" style='border-top:1rpx solid #e6e6e6;'>
+              <view class="weui-cell__hd" class='zfimg'>
+                <image src="../images/qb.png"></image>
+              </view>
+              <view class="weui-cell__bd">余额支付
+                <text class='yetext'>您的余额{{wallet}}</text>
+              </view>
+              <view class="weui-cell__ft">
+                <radio disabled='{{!(ptkqyue&&sjkqyue)}}' color='#34aaff' value="yezf" checked="{{zffs==2}}" />
+              </view>
+            </view>
+          </label>
+          <label wx:if="{{ptkqjf&&sjkqjf}}">
+            <view class="weui-cell" style='border-top:1rpx solid #e6e6e6;'>
+              <view class="weui-cell__hd" class='zfimg'>
+                <image src="../images/cost.png"></image>
+              </view>
+              <view class="weui-cell__bd">积分支付
+                <text class='yetext' style='color:#FF9700'>您的积分{{total_score}}</text>
+              </view>
+              <view class="weui-cell__ft">
+                <radio disabled='{{!(ptkqjf&&sjkqjf)}}' color='#FF9700' value="jfzf" checked="{{zffs==3}}" />
+              </view>
+            </view>
+          </label>
+          <label wx:if="{{store.is_chzf=='1'}}">
+            <view class="weui-cell" style='border-top:1rpx solid #e6e6e6;'>
+              <view class="weui-cell__hd" class='zfimg'>
+                <image src="../images/loading2.svg"></image>
+              </view>
+              <view class="weui-cell__bd">餐后支付
+                <text class='yetext'>用餐完毕前往前台结算</text>
+              </view>
+              <view class="weui-cell__ft">
+                <radio disabled="{{!store.is_chzf=='1'}}" color='#D1D1D1' value="chzf" checked="{{zffs==4}}" />
+              </view>
+            </view>
+          </label>
+        </radio-group>
+      </view>
+      <view class="drawer_title1">您选择的{{zfwz}}
+        <text wx:if="{{zffs==3}}">({{jf_proportion}}积分可抵1元)</text>
+      </view>
+      <button wx:if="{{!chzf}}"  class="{{btntype}}" disabled='{{zfz}}' formType="submit">
+        <view wx:if="{{!zfz}}">确定支付
+          <text class='zftext'>￥{{zfmoney}}</text>
+        </view>
+        <view wx:if="{{zfz}}">
+          <text class='zfztext'>支付中...</text>
+        </view>
+      </button>
+      <button wx:if="{{chzf}}" class="btn_ok4" formType="submit">
+        <view>餐后支付
+        </view>
+      </button>
+    </view>
+  </view>
+</form>

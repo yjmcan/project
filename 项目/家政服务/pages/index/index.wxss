@@ -1,0 +1,118 @@
+.phone{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  z-index: 50000000;
+  right: 30rpx;
+  bottom: 100rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+.phone image{
+  width: 60%;
+  height: 60%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+}
+.head{
+  width: 100%;
+  height: 300rpx;
+}
+.head image{
+  width: 100%;
+  height: 100%;
+}
+.head swiper{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.nav{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.nav>view{
+  width: 25%;
+  height: 150rpx;
+}
+.nav>view view:nth-child(1){
+  width: 100%;
+  height: 50%;
+}
+.nav>view view:nth-child(2){
+  width: 100%;
+  height: 50%;
+  line-height: 75rpx;
+  font-size: 28rpx;
+}
+.nav>view view image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.recommend{
+  width: 100%;
+  height: auto;
+}
+.recommend_head{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.recommend_head>text:nth-child(1){
+  color: orange;
+  padding-left: 20rpx;
+}
+.recommend_head>text:nth-child(2){
+  color:#333;
+  border-bottom: 2rpx solid orange;
+}
+.recommend_list{
+  width: 95%;
+  height: auto;
+  background: #fff;
+  margin: 0 auto 20rpx;
+}
+.recommend_list>view{
+  width: 100%;
+}
+.recommend_list>view:nth-child(1){
+  height: 300rpx;
+}
+.recommend_list>view:nth-child(2){
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.recommend_list>view:nth-child(3){
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.recommend_list>view image{
+  width: 100%;
+  height: 100%;
+  /* background: red; */
+}
+.price{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+}
+.price>text:nth-child(1){
+  float: left;
+  color: red;
+}
+.price>text:nth-child(2){
+  float: right;
+  color: red;
+}
+.price>text:nth-child(3){
+  float: right;
+}

@@ -1,0 +1,6 @@
+<view class='container'>
+    <view class='head pa ba_f mar_t'>
+        {{options.note}}
+    </view>
+    <button bindtap='fankui'>重新提交</button>
+</view>

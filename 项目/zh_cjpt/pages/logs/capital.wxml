@@ -1,0 +1,12 @@
+<view class='head'>
+    <view class='color_9 fon_30 pa'>最近流水</view>
+    <view class='list pa bor_bottom'>
+        <view class='dis_in'>
+            <view class='fon_30 color_6'>订单配送完成(ID:5472),资金已入对账单</view>
+            <view class='fon_24 color_9' style='padding-top:10rpx;'>2018-06-09 15:32\r\n\r\n转入</view>
+        </view>
+        <view class='dis_in'>
+            <view class='fon_28' style='color:{{color}}'>+6.20</view>
+        </view>
+    </view>
+</view>

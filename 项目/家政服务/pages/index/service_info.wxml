@@ -1,0 +1,117 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class='address rel' wx:if="{{user_info==false}}">
+  <button class='ab udlr' bindtap='choose_address'>+选择地址</button>
+ 
+</view>
+ <view class='user_info' wx:else bindtap='choose_address'>
+    <!-- <view>
+      <view>姓名：</view>
+      <view>{{name}}</view>
+    </view>
+    <view>productmsg</view>
+      <view>{{tel}}</view>
+    </view> -->
+    <view>
+      <view>地址：</view>
+      <view>{{address}}</view>
+    </view>
+  </view>
+<view class='time'>
+  <view>
+    <picker mode="date" value="{{time}}" bindchange="bindDateChange">
+      <view class="picker">
+        选择日期:
+        <text>{{date}}</text>
+      </view>
+    </picker>
+  </view>
+  <view>
+    <picker start="08:00" end="18:00" mode="time" value="{{time}}" bindchange="bindTimeChange">
+      <view class="picker">
+        选择时间:
+        <text>{{time}}</text>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='shop_info'>
+  <view>
+    <image mode='aspectFill' src='{{commodity.imgurl}}'></image>
+  </view>
+  <view>
+    <view>{{commodity.productname}}</view>
+    <view>
+      <text>{{commodity.price}}</text>元
+    </view>
+  </view>
+</view>
+ <view class='form_info top' wx:if="{{productname=='居家保洁'}}">
+  <view>数量：</view>
+  <view class='rel'>
+    <input bindinput='baojie_nums' class='ab udlr' placeholder='请输入数量'></input>
+  </view>
+</view> 
+<view class='form_info none_border rel' wx:if="{{type!=2}}">
+  <view>次数：</view>
+  <view class='rel'>
+    <input disabled='true' class='ab udlr' placeholder='' value='{{buytimes}}'></input>
+  </view>
+  <text class='ab' wx:if="{{type==3}}">{{discount}}折</text>
+  <text class='ab' wx:else>没有折扣</text>
+</view>
+<view class='form_info top'>
+  <view>预约人：</view>
+  <view class='rel'>
+    <input name="name" class='ab udlr' placeholder='请输入预约人的姓名'></input>
+  </view>
+</view>
+<view class='form_info none_border'>
+  <view>手机号码：</view>
+  <view class='rel'>
+    <input name="tel" type='number' class='ab udlr' placeholder='请输入预约人的联系方式'></input>
+  </view>
+</view>
+ <view class='form_info none_border' wx:if="{{integral!=false}}">
+  <view>抵扣积分：</view>
+  <view class='service_title rel'> 
+    <text>
+        <!-- 提示:满{{commodity.deductibleintegral}}可用碳币抵扣 -->
+    </text>
+    <text>此商品可使用{{integral}}碳币</text>
+    <checkbox-group class="ab ud" bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+      </label>
+    </checkbox-group>
+  </view>
+</view> 
+<view class='check_group'>
+  <view>告知商家</view>
+  <view>
+    <checkbox-group bindchange="checkboxChanges">
+      <label class="checkbox" wx:for="{{know}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+</view>
+<view class='remark'>
+  <view>备注：</view>
+  <view>
+    <textarea name="textarea" placeholder='请输入备注'></textarea>
+  </view>
+</view>
+<view class='bottom'>
+  <view>
+    合计:
+    <text wx:if="{{type==2||type==3}}">{{sj_cost}}</text>元
+    <text wx:if="{{type==1}}">0元</text>
+    <text wx:if="{{type==2||type==3}}">{{z_cost}}元</text>
+    <text wx:if="{{type==1}}">0元</text>
+    <text>————</text>
+  </view>
+  <view>
+      <button class='submit' form-type='submit'>立即支付</button>
+  </view>
+</view>
+</form>

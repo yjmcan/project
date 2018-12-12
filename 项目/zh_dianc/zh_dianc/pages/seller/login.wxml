@@ -1,0 +1,37 @@
+<!--zh_dianc/pages/seller/login.wxml-->
+<view class='main'>
+  <image class='bgimg' src='../images/login@3x.png'></image>
+  <view class='headwz'>{{bqxx.pt_name}}</view>
+  <image class='hdimg' src='../images/login1@3x.png'></image>
+  <view class='login'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            <image src='../images/zh@3x.png'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" bindinput='srzh' placeholder="请输入帐号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            <image src='../images/mima@3x.png'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" bindinput='srmm' placeholder="请输入密码" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+      </view>
+    </view>
+    <button class="weui-btn" bindtap='login' type="primary" disabled='{{disabled}}' style='background:{{disabled?"#7EC0EE":"rgb(75,160,228)"}};'>{{logintext}}</button>
+  </view>
+  <view class='ft' bindtap='tel'>
+    <image src='../images/kefu.png'></image>
+    <view>客服电话：{{bqxx.tel}}</view>
+  </view>
+</view>

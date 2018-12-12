@@ -1,0 +1,97 @@
+.user_info{
+  width: 100%;
+  height: 400rpx;
+  background: #f66925;
+  color: #fff;
+}
+.user_info>view:nth-child(1){
+  width: 100%;
+  height: 230rpx;
+}
+.user_img{
+  background: #fff;
+  border-radius: 50%;
+  width: 180rpx;
+  height: 180rpx;
+  bottom: 0;
+}
+.user_info>view:nth-child(2){
+  font-size: 30rpx;
+  height: 70rpx;
+  line-height: 90rpx;
+  font-weight: 600;
+}
+.user_info>view:nth-child(3){
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.user_info>view:nth-child(4){
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 30rpx;
+}
+.user_info>view text{
+  border-bottom: 2rpx solid #fff;
+}
+.logs{
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  background: #fff;
+}
+.logs_top{
+  margin-top: 30rpx;
+}
+.logs_top button{
+  width: 100%;
+  height: 100%;
+  background: none;
+  top: 0;
+}
+.logs_top button::after{
+  border: none;
+}
+.logs>view{
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.logs>view:nth-child(1){
+  width: 10%;
+}
+.logs>view:nth-child(2){
+  width: 80%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+.logs>view:nth-child(3){
+  width: 10%;
+}
+.img_logo{
+  width: 35rpx;
+  height: 36rpx;
+}
+.img_right{
+  width: 20rpx;
+  height: 30rpx;
+}
+.align>view:nth-child(2){
+  width: auto;
+  height: 40rpx;
+  line-height: 40rpx;
+  right: 0;
+}
+.align>view image{
+  width: 40rpx;
+  height: 40rpx;
+  left: 0;
+}
+.align>view view{
+  width: 150rpx;
+  height: 100%;
+  line-height: 40rpx;
+  float: right;
+  font-size: 26rpx;
+  text-align: left;
+}

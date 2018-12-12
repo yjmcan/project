@@ -1,0 +1,92 @@
+<!--pages/myactive/myliuyan.wxml-->
+<view class='index'>
+  <!-- <view class="marry">
+    <block wx:for="{{luntext}}" wx:key="*this">
+      <view id="{{index}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+        <view id="{{index}}">{{item}}</view>
+      </view>
+    </block>
+  </view> -->
+  <!--———————————最新部分—————————————-->
+  <view wx:if="{{activeIndex==0}}">
+    <view class='lybanner' wx:for="{{assess}}" wx:key="*this">
+      <view class='lycontent'>
+        <image class='lyuserimg' src='{{item.img}}'></image>
+        <view class='lycontbox'>
+          <view class='lyfont1'>{{item.name}}</view>
+          <view class='lyfont2'>{{item.cerated_time}}</view>
+          <view class='lyfont3'>{{item.content}}</view>
+          <view class='lyhuifu' wx:if="{{item.reply!=''}}">
+            <view class='lyfont4'>回复：</view>
+            <view class='lyhuifucon'>
+              <view class='lyfont5'>{{item.reply}}</view>
+              <view class='lyfont6'>{{item.reply_time}}</view>
+            </view>
+            <!-- <view class='lyfont4' bindtap='sfshanchu'>删除</view> -->
+          </view>
+        </view>
+      </view>
+      <view class='lybottom'>
+        <view class='lybotbox lybotbox1' bindtap='sfshanchu' data-id='{{item.id}}'>
+          <image class='lybotimg' src='../img/lajit.png'></image>
+          <view>删除</view>
+        </view>
+        <view class='lybotbox' bindtap='hide' data-id='{{item.id}}' wx:if="{{item.reply==''}}">
+          <image class='lybotimg' src='../img/huifu.png'></image>
+          <view>回复</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class='lybanner'>
+      <view class='flex_bet bannertop'>
+        <view class='flex_center'>
+          <view class='lyxian'></view>
+          <view>欢迎来到演唱会</view>
+        </view>
+        <image class='lyright' src='../img/acright.png'></image>
+      </view>
+      <view class='lycontent'>
+        <image class='lyuserimg' src='{{userInfo.avatarUrl}}'></image>
+        <view class='lycontbox'>
+          <view class='lyfont1'>{{userInfo.nickName}}</view>
+          <view class='lyfont2'>02月24日</view>
+          <view class='lyfont3'>你很好啊很不错的你很好啊很不错的你很好啊很不错的你很好啊很不错的你很好啊很不错的你很好啊很不错的你很好啊很不错的</view>
+        </view>
+        <view class='yglabel'>
+          <image class='lystart' src='../img/xingxing.png'></image>
+          <view>精选</view>
+        </view>
+      </view>
+      <view class='lybottom'>
+        <view class='lybotbox lybotbox1' bindtap='lyshanchu'>
+          <image class='lybotimg' src='../img/lajit.png'></image>
+          <view>删除</view>
+        </view>
+        <view class='lybotbox lybotbox1'>
+          <image class='lybotimg' src='../img/jingxuan.png'></image>
+          <view>已精选</view>
+        </view>
+        <view class='lybotbox'>
+          <image class='lybotimg' src='../img/huifu.png'></image>
+          <view>回复</view>
+        </view>
+      </view>
+    </view> -->
+
+  </view>
+  <!--保存评论  -->
+  <view class='leaving' wx:if="{{hide==true}}">
+    <view class='ab'></view>
+    <view class='ab udlr'>
+      <view>
+        <textarea bindinput='textarea' maxlength='540' placeholder='请输入留言'></textarea>
+      </view>
+      <view>
+        <text bindtap='hide'>取消</text>
+        <text bindtap='saves'>确定</text>
+      </view>
+    </view>
+  </view>
+
+</view>

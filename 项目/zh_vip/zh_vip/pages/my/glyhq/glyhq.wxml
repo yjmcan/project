@@ -1,0 +1,67 @@
+<!--zh_zbkq/pages/my/glyhq/glyhq.wxml-->
+<view class="container">
+  <view class='list_header'>
+    <block wx:for="{{tabs}}">
+      <view class="list_title {{activeIndex==index?'default':'selsect'}}" id="{{index}}" bindtap="tabClick">
+        <view>{{item}}</view>
+        <view class='list_border' hidden='{{activeIndex!=index}}'></view>
+      </view>
+    </block>
+  </view>
+  <!--有效的 -->
+  <view class="list" hidden="{{activeIndex != 0}}">
+    <view class="list_imgbk2" hidden="{{items1.length!=0}}">
+      <image class="list_imgbk" src="../../../img/wsj.png"></image>
+      <view class="list_imgbk3" style="margin-top:-20rpx;">您暂无有效的券哦！</view>
+    </view>
+    <block wx:if="{{items1.length!=0}}">
+      <view class='yhsc'>小提示：按住券右滑可删除券哦~</view>
+      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart1" bindtouchmove="touchmove1" wx:for="{{items1}}" wx:key="">
+        <view class="yhq1">
+          <image src="../../../img/yhg1.png"></image>
+          <navigator url="../../index/sjdl?sjid={{item.md_id}}">
+            <view class="yhq1-lt">
+              <image mode='aspectFill' src="{{url}}{{item.md_logo}}"></image>
+            </view>
+            <view class="yhq1-bd">
+              <text class="gobyndsingle">{{item.conditions}}</text>
+              <text wx:if="{{item.name=='代金券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>元</text></text>
+              <text wx:if="{{item.name=='折扣券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>折</text></text>
+              <text>有效期：{{item.start_time}}至{{item.end_time}}</text>
+            </view>
+          </navigator>
+          <view class="yhq1-rt" bindtap="cksj" data-yhqid='{{item.id}}' data-sjid='{{item.md_id}}'>查看数据</view>
+        </view>
+        <view class="del" catchtap="del" data-yhqid='{{item.id}}'>删除</view>
+      </view>
+    </block>
+  </view>
+  <!--失效的  -->
+  <view class="list" hidden="{{activeIndex != 1}}">
+    <view class="list_imgbk2" hidden="{{items.length!=0}}">
+      <image class="list_imgbk" src="../../../img/wsj.png"></image>
+      <view class="list_imgbk3" style="margin-top:-20rpx;">您暂无失效的券哦！</view>
+    </view>
+    <block wx:if="{{items.length!=0}}">
+      <view class='yhsc'>小提示：按住券右滑可删除券哦~</view>
+      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+        <view class="yhq1">
+          <image src="../../../img/yhg1.png"></image>
+          <navigator url="../../index/sjdl?sjid={{item.md_id}}">
+            <view class="yhq1-lt">
+              <image mode='aspectFill' src="{{url}}{{item.md_logo}}"></image>
+            </view>
+            <view class="yhq1-bd">
+              <text class="gobyndsingle">{{item.conditions}}</text>
+              <text wx:if="{{item.name=='代金券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>元</text></text>
+              <text wx:if="{{item.name=='折扣券'}}">{{item.cost}}<text style='color:#f44444;font-size: 30rpx;margin-left:10rpx;'>折</text></text>
+              <text>有效期：{{item.start_time}}至{{item.end_time}}</text>
+            </view>
+          </navigator>
+          <view class="yhq1-rt" style='background:#d5d5d5' data-yhqid='{{item.id}}'>过期失效</view>
+        </view>
+        <view class="del" catchtap="del" data-yhqid='{{item.id}}'>删除</view>
+      </view>
+    </block>
+  </view>
+</view>

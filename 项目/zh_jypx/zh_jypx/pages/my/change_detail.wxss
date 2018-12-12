@@ -1,0 +1,58 @@
+/* pages/my/change_detail.wxss */
+page{
+  background: #fff;
+}
+.title{
+  font-size: 38rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.change_con{
+  width: 80%;
+  margin:30rpx auto;
+  font-size: 30rpx;
+}
+.change_con image{
+  background: #ccc;
+  width: 600rpx;
+  height: 600rpx;
+  margin-bottom: 30rpx;
+}
+.school{
+  position: relative;
+  height: 90rpx;
+  border-bottom: 1rpx solid #ccc;
+  width: 70%;
+  font-size: 30rpx;
+}
+.school picker{
+  height: 90rpx;
+}
+.picker{
+    height: 90rpx;
+}
+.picker input{
+  text-align: center
+}
+.school::after{
+    content: "";
+    position: absolute;
+    right: 10rpx;
+    display: inline-block;  
+    border-right: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;  
+    width: 10px;
+    height: 10px;  
+    transform: rotate(45deg);
+}
+
+.check{
+  margin-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+.check image{
+  width: 240rpx;
+  height: 240rpx;
+  background: #ccc;
+  margin-bottom: 20rpx
+}

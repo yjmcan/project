@@ -1,0 +1,8 @@
+/* pages/logs/day_order.wxss */
+.order_info{
+  display: flex;
+}
+.order_info>view{
+  flex: 3;
+  text-align: center;
+}

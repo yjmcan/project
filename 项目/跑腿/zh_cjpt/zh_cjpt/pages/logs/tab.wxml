@@ -1,0 +1,102 @@
+<!-- <view class='head'>
+  <view class='head_0'>
+    <text bindtap='sele' class="{{ac_index==0?'sele':'no_sele'}}">订单统计</text>
+    <text bindtap='sele' class="{{ac_index==1?'sele':'no_sele'}}">收入统计</text>
+  </view>
+  <view class='num' wx:if="{{ac_index==0}}">
+    <view class='dis_in'>
+      <text class='fon_30 wei'>今日订单量</text>
+      <text class='fon-24'>{{Statistics.jr}}</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>本周订单量</text>
+      <text class='fon-24'>{{Statistics.bz}}</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>本月订单量</text>
+      <text class='fon-24'>{{Statistics.by}}</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>累计订单量</text>
+      <text class='fon-24'>{{Statistics.lj}}</text>
+    </view>
+  </view>
+  <view class='num' wx:else>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>今日收入</text>
+      <text class='fon-24'>{{MoneyStatistics.jr}}</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>本周收入</text>
+      <text class='fon-24'>{{MoneyStatistics.bz}}</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>本月收入</text>
+      <text class='fon-24'>{{MoneyStatistics.by}}</text>
+    </view>
+    <view class='dis_in'>
+      <text class='fon_30 wei'>累计收入</text>
+      <text class='fon-24'>{{MoneyStatistics.lj}}</text>
+    </view>
+  </view>
+</view> -->
+<view class='head'>
+    <view style='background:{{color}}'></view>
+    <view style='background:{{color}}'></view>
+</view>
+<view class='order_num udlr'>
+    <view class='order_head pa_0 mar_t'>
+        <view class='t_c color_f'>
+            <view class='fon_30'>总单量</view>
+            <view class='mar_t'>
+                <text class='fon_50'>{{Statistics.lj}}</text>
+                <text class='fon_30'>单</text>
+            </view>
+        </view>
+         <view class='t_c color_f'>
+            <view class='fon_30'>总收入</view>
+            <view class='mar_t'>
+                <text class='fon_50'>{{MoneyStatistics.lj}}</text>
+                <text class='fon_30'>元</text>
+            </view>
+        </view>
+    </view>
+    <view class='order_list pa_0'>
+        <view class='list_0 ba_f pa mar_t' bindtap='day_order' data-type="0" data-num='{{Statistics.jr}}' data-price='{{MoneyStatistics.jr}}'>
+          <view class='dis_in rel'>
+              <image mode='widthFix' class='ab udlr' src='../img/today.png'></image>
+          </view>
+          <view class='dis_in t_c fon_30'>
+              <view class='pa_0'>
+                <text class='fon_50'>{{Statistics.jr}}</text>
+                <text>单</text>
+              </view>
+              <view class='color_9 mar_t'>今日单量</view>
+          </view>
+        </view>
+          <view class='list_0 ba_f pa mar_t' bindtap='day_order' data-type="1" data-num='{{Statistics.by}}' data-price='{{MoneyStatistics.by}}'>
+          <view class='dis_in rel'>
+              <image mode='widthFix' class='ab udlr' src='../img/month.png'></image>
+          </view>
+          <view class='dis_in t_c fon_30'>
+              <view class='pa_0'>
+                <text class='fon_50'>{{Statistics.by}}</text>
+                <text>单</text>
+              </view>
+              <view class='color_9 mar_t'>本月单量</view>
+          </view>
+        </view>
+          <view class='list_0 ba_f pa mar_t' bindtap='day_order' data-type="2" data-num='{{Statistics.lj}}' data-price='{{MoneyStatistics.lj}}'>
+          <view class='dis_in rel'>
+              <image mode='widthFix' class='ab udlr' src='../img/total.png'></image>
+          </view>
+          <view class='dis_in t_c fon_30'>
+              <view class='pa_0'>
+                <text class='fon_50'>{{Statistics.lj}}</text>
+                <text>单</text>
+              </view>
+              <view class='color_9 mar_t'>总单量</view>
+          </view>
+        </view>
+    </view>
+</view>

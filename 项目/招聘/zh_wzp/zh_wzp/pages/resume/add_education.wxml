@@ -1,0 +1,52 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='list'>
+    <view>
+      学校
+    </view>
+    <view>
+      <input name="name" placeholder='请输入学校名称' value='{{education.education_school}}'></input>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      专业
+    </view>
+    <view>
+      <input name="job" placeholder='请输入的专业' value='{{education.education_major}}'></input>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      学历
+    </view>
+    <view class='rel'>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+      <picker class='picker2' bindchange="bindPickerChange2" value="{{index1}}" range="{{price}}">
+        {{price[index1]}}
+      </picker>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      时间段
+    </view>
+    <view class='rel'>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+      <picker class='picker2' mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{job_w}}">
+         {{job_w[0][multiIndex[0]]}}-{{job_w[1][multiIndex[1]]}} 
+      </picker>
+    </view>
+  </view>
+  <view class='list'>
+    <view>
+      在校经历
+    </view>
+    <view>
+
+    </view>
+    <textarea name="text" placeholder='作为班级团支书主要负责团员、党员的学习工作，积极分子的发展评估，负责班级的团费、党费管理...' maxlength='540' value='{{education.education_experience}}'></textarea>
+  </view>
+  <button form-type='submit' style='background:{{color}}'>保存</button>
+</form>
+<!-- <view wx:for="{{job_w[0]}}">{{item}}</view>  -->
+<!-- <view wx:for="{{job_w[1]}}">{{item}}</view> -->

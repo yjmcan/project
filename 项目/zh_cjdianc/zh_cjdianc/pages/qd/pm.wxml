@@ -1,0 +1,75 @@
+<!--———————————————头部导航开始———————————————  -->
+<view class="weui-navbar flex1">
+  <block wx:for="{{tabs}}" wx:key="*this">
+    <view id="{{index}}" class="weuiitem {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+      <view style="color:{{activeIndex == index ?color:''}}">{{item}}</view>
+    </view>
+  </block>
+  <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);background-color:{{color}};"></view>
+</view>
+<view class='ppxlb' hidden='{{activeIndex!=0}}'>
+  <view class='ppxlbhdwz'>今日手速王</view>
+  <view class='pxlbhd'>
+    <image class='ab bgimg' mode='widthFix' src='../../img/onebgimg.png'></image>
+    <image class='ab udlr tximg' src='{{ranklist[0].img}}'></image>
+  </view>
+  <view class='ppxlbbdwz'>{{ranklist[0].name}}</view>
+  <view class='ppxlbbdwz1' style='color:{{color}}'>今天 {{ranklist[0].time3}}</view>
+  <block wx:for="{{ranklist}}" wx:if="{{index>0}}">
+    <view class='pmlist'>
+      <image wx:if="{{index==1}}" class='pximg' src='../../img/yingpai@2x.png'></image>
+      <image wx:if="{{index==2}}" class='pximg' src='../../img/jiangpai@2x.png'></image>
+      <view wx:if="{{index>2}}" class='pximg'>{{index+1}}</view>
+      <image class='nctximg' src='{{item.img}}'></image>
+      <view class='ncname'>{{item.name}}</view>
+      <view class='qdtiem' style='color:{{color}}'>今天 {{item.time3}}</view>
+    </view>
+  </block>
+  <view class='jzz' wx:if="{{refresh_top==false&&ranklist.length!=0}}">
+    <image class='Rotation' src='../../img/jzz.png'></image>
+    <view>加载中...</view>
+  </view>
+  <view wx:if="{{refresh_top==true&&ranklist.length!=0}}" class='jzwb'>
+    <view class='hx'></view>
+    <view class='wz'>加载完毕</view>
+    <view class='hx'></view>
+  </view>
+</view>
+<view class='ppxlb' hidden='{{activeIndex!=1}}'>
+  <view class='ppxlbhdwz'>签到总榜</view>
+  <view class='pxlbhd'>
+    <image class='ab bgimg' mode='widthFix' src='../../img/onebgimg.png'></image>
+    <image class='ab udlr tximg' src='{{zrank[0].img}}'></image>
+  </view>
+  <view class='ppxlbbdwz'>{{zrank[0].name}}</view>
+  <view class='ppxlbbdwz1' style='color:{{color}}'>累计签到{{zrank[0].day}}次</view>
+  <block wx:for="{{zrank}}" wx:if="{{index>0}}">
+    <view class='pmlist'>
+      <image wx:if="{{index==1}}" class='pximg' src='../../img/yingpai@2x.png'></image>
+      <image wx:if="{{index==2}}" class='pximg' src='../../img/jiangpai@2x.png'></image>
+      <view wx:if="{{index>2}}" class='pximg'>{{index+1}}</view>
+      <image class='nctximg' src='{{item.img}}'></image>
+      <view class='ncname'>{{item.name}}</view>
+      <view class='qdtiem' style='color:{{color}}'>累计签到{{item.day}}次</view>
+    </view>
+  </block>
+  <view class='jzz' wx:if="{{refresh_top1==false&&zrank.length!=0}}">
+    <image class='Rotation' src='../../img/jzz.png'></image>
+    <view>加载中...</view>
+  </view>
+  <view wx:if="{{refresh_top1==true&&zrank.length!=0}}" class='jzwb'>
+    <view class='hx'></view>
+    <view class='wz'>加载完毕</view>
+    <view class='hx'></view>
+  </view>
+</view>
+<view class='grxxt' hidden='{{activeIndex!=0}}'>
+  <image src='{{userinfo.img}}'></image>
+  <view class='grxxtbd'>
+    <view style='color:{{color}}' class='qd'>今天{{MyRank.time3}}
+    </view>
+    <view>累计{{userinfo.day}}次，连续签到{{lxts}}天
+    </view>
+  </view>
+  <view class='grxxtft' bindtap='qqd'>排行{{MyRank.num}}</view>
+</view>

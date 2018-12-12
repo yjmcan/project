@@ -1,0 +1,86 @@
+page{
+  background: #fff;
+}
+.head{
+  width: 100%;
+  height: 350rpx;
+}
+.head swiper{
+  width: 100%;
+  height: 100%;
+}
+.check>view:nth-child(1){
+  padding: 20rpx 0;
+  width: 35%;
+}
+.check>view:nth-child(2){
+  padding: 20rpx 0;
+  width: 10%;
+}
+.check>view:nth-child(3){
+  padding: 20rpx 0;
+  width: 35%;
+}
+.check image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.check button{
+  width: 82%;
+  height: 80rpx;
+  margin-top: 40rpx;
+  line-height: 80rpx;
+  background: rgb(56, 132, 254)
+}
+.recommed>text:nth-child(2){
+  margin-left: 10rpx;
+}
+.recommed>text:nth-child(1){
+  border-radius: 6rpx;
+}
+.logistics{
+  height: 200rpx;
+}
+.logistics>view:nth-child(1){
+  width: 40%;
+  height: 100%;
+  /* background: orange; */
+}
+.logistics>view:nth-child(2){
+  width: 55%;
+  height: 100%;
+  margin-left: 4%;
+}
+.logistics>view view{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.logistics{
+  margin-bottom: 20rpx;
+}
+
+picker-view{
+  width: 100%;
+  height: 500rpx;
+  background: #e5e5e5;
+  font-size: 30rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background: #e5e5e5;
+  z-index: 50000000000000000;
+}
+.confirm{
+  position: fixed;
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  bottom: 500rpx;
+  background: #fff;
+}
+.confirm>view{
+  width: 50%;
+  height: 100%;
+}

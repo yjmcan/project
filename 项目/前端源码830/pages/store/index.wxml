@@ -1,0 +1,95 @@
+<view class='container ba_f'>
+  <view class='pa recommed ba_f'>
+    <view class='dis_in'>
+      <text class='dis_in mar_r' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='dis_in ' class='wei fon_30'>货场管理</text>
+    </view>
+    <view class='dis_in t_r' bindtap='jilu'>
+      <text class='dis_in fon_30 mar_r' style='color:{{color}}'>明细</text>
+      <image class='dis_in' mode='aspectFill' src='../../img/mx.png'></image>
+    </view>
+  </view>
+  <view class='pa_1 fon_24 ba_f color_9'>
+    信誉度
+  </view>
+  <view class='pa fon_50 ba_f' style='color:{{color}}'>
+    {{users.creditAmount||0}}
+  </view>
+  <view class='pa_1 fon_28 ba_f color_9'>
+    入驻期限:{{users.startTime}}-{{users.endTime}}
+  </view>
+  <view class=' pa'>
+    <view class='group fon_30 pa_0' style='border:2rpx solid {{color}};color:{{color}}'>
+      <view class='dis_in t_c' style='border-right:2rpx solid {{color}}' bindtap='money'>充值</view>
+      <view class='dis_in t_c' bindtap='put_forword'>提现</view>
+    </view>
+  </view>
+  <view class='title'>
+    <view class='pa fon_28'>
+      <image mode='aspectFill' src='../../img/tx.png' class='dis_in'></image>
+      <text style='color:orange' class='dis_in'>小提示</text>
+    </view>
+    <view class='Explain fon_28 color_9'>信誉额度由充值押金提升</view>
+    <view class='Explain fon_28 color_9'>押金随时提现，并非消费</view>
+    <view class='Explain fon_28 color_9'>押金提现24小时到账，扣去1%微信支付费用</view>
+    <view class='Explain fon_28 color_9'>信誉额度将决定店铺在推荐列表和搜索列表的排名</view>
+  </view>
+  <view class='store_img mar_t'>
+    <image mode='aspectFill' src='{{users.stationMainImg}}' class='img'></image>
+  </view>
+  <!--  物流公司  -->
+  <view class='pa recommed ba_f'>
+    <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+    <text class='dis_in mar_l' class='wei fon_30'>{{users.name}}</text>
+  </view>
+  <!-- <view class='check t_c ba_f fon_30 pa_1' wx:for="{{users.sourceRouteArray}}">
+    <view class='dis_in bor_bottom'>
+      {{region[1]}}{{region[2]}}
+    </view>
+    <view class='dis_in'>
+      <image mode='aspectFill' src='../../img/jh.png'></image>
+    </view>
+    <view class='dis_in bor_bottom'>
+      {{region1[1]}}{{region1[2]}}
+    </view>
+  </view> -->
+  <view class='check t_c ba_f fon_30 pa_1' wx:for="{{users.sourceRouteArray}}">
+    <view class='dis_in bor_bottom gobyndsingle'>
+      {{item.startAllName}}
+    </view>
+    <view class='dis_in'>
+      <image mode='aspectFill' src='../../immodifyg/jh.png'></image>
+    </view>
+    <view class='dis_in bor_bottom gobyndsingle'>
+      {{item.endAllName}}
+    </view>
+  </view>
+  <!--  现有货源  -->
+  <view class='body pa_1 mar_t ba_f'>
+    <view class='pa_0 recommed'>
+      <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='dis_in mar_l' class='wei fon_30'>现有货源</text>
+    </view>
+  </view>
+  <view class='source pa_1 ba_f'>
+    <text class=' fon_28 pa_0 color_6'>{{users.nowSource}}</text>
+  </view>
+  <!--  详情  -->
+  <view class='body pa_1 mar_t ba_f'>
+    <view class='pa_0 recommed'>
+      <text class='dis_in' style='background:{{color}};width:7rpx;height:24rpx;'></text>
+      <text class='dis_in mar_l' class='wei fon_30'>详情图片</text>
+    </view>
+  </view>
+  <view class='info pa fon_30'>
+      <text>{{users.stationDetails}}</text>
+  </view>
+  <view class='info pa_1'>
+    <image wx:for="{{users.inStorePhoto}}" mode='widthFix' src='{{item}}'></image>
+  </view>
+  <view style='height:110rpx;'></view>
+  <view class='bottom fon_30'>
+    <view class='dis_in t_c' style='color:red' bindtap='modify'>修改</view>
+    <view class='dis_in color_f t_c' style='background:{{color}}' bindtap='renew'>续费</view>
+  </view>
+</view>

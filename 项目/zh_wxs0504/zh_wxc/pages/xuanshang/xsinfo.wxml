@@ -1,0 +1,137 @@
+<!--pages/xuanshang/xsinfo.wxml-->
+<view class='home'>
+  <view class='xscontent'>
+    <view class='xsname'>{{proinfo[0].title}}</view>
+    <view class='xsfont flex_bet'>
+      <view class="money">悬赏¥{{proinfo[0].price}}</view>
+      <view class="reset">剩余{{proinfo[proinfo.length-1].rest}}</view>
+    </view>
+  </view>
+
+  <view class='xsbanner'>
+    <view class='bannertext'>{{proinfo[0].content}}</view>
+    <view class="flex3 imglist {{listimg.length<=0 ? 'weuibaron' : ''}}" wx:for="{{listimg}}" wx:if="{{listimg.length>0}}">
+      <image src="{{url}}{{item}}" mode='aspectFill'></image>
+    </view>
+    <view class='flex_bet xsbantime'>
+      <view class='banfont1'>悬赏结束时间</view>
+      <view class="end_time">{{proinfo[0].end_time}}</view>
+    </view>
+  </view>
+
+  <view class='xsjoin'>
+    <view class='xsjointop'>参与人数({{proinfo[0].join_number}})</view>
+    <view class='xsjoinuser'>
+      <block wx:for="{{imgs}}">
+        <image class='userimg' src='{{item}}'></image>
+      </block>
+    </view>
+  </view>
+  <view class='xsjoin'>
+    <view class='xsjointop'>悬赏发布人</view>
+    <view>
+      <view class='flex_bet xsjoinbox' bindtap='onCall'>
+        <view class='flex_center'>
+          <image class='userimg2' src='{{proinfo[0].img}}'></image>
+          <view>
+            <view>{{proinfo[0].nickname}}</view>
+            <view wx:if="{{proinfo[0].average=='0.00'}}">暂无评分</view>
+            <view wx:else>历史评分 {{proinfo[0].average}}</view>
+          </view>
+        </view>
+        <image class='telimg' src='../img/ansss@2x.png'></image>
+      </view>
+    </view>
+  </view>
+
+  <!--——————————————评论内容部分——————————————  -->
+  <view class='xsping'>
+    <view class='xspingtop'>
+      <view>评论详情</view>
+      <!-- <view class='flex_center xspingtitle' bindtap='onComment'>
+        <image src='../img/pinglun@2x.png'></image>
+        <view>我要评论</view>
+      </view> -->
+    </view>
+    <block wx:for="{{conlist}}">
+      <view class='xspbanner'>
+        <image class='xsptou' src='{{item.img}}'></image>
+        <view class='xspbox'>
+          <view class='flbet xspboxname'>
+            <view>
+              <view>{{item.nickname}}</view>
+              <view class='xspfont1'>{{item.created_time}}
+                <!-- <text>11:30</text> -->
+              </view>
+            </view>
+            <!-- <view>回复</view> -->
+          </view>
+          <view class='xsptext'>{{item.content}}</view>
+          <!-- <view class='xsphui'>
+            <text>{{item.name}}</text>回复
+            <text>王五：</text> {{item.text}}
+          </view> -->
+        </view>
+      </view>
+    </block>
+
+    <!--没有数据的情况-->
+    <view wx:if="{{conlist.length==0}}" class="flex3 none">
+      <image src="../img/zhanwei.png"></image>
+      <view>暂无评论</view>
+    </view> 
+    </view>
+
+  <view class='ifootcon'></view>
+  <!--——————————————底部固定部分——————————————  -->
+  <!--——我自己发布的详情— -->
+  <view class='ifoot' wx:if="{{myid==proinfo[0].s_id}}">
+    <view class='flex3 ifootbox' bindtap='bombox'>
+      <image class='ifootshare' src='../img/fenxiang@2x.png'></image>
+      <button open-type="share" type="primary" hover-class="other-button-hover" class="share">分享</button>
+    </view>
+    <view class='flex3 ifootbox' bindtap='bianji'>
+      <image class='ifootshare' src='../img/bianji.png'></image>
+      <view class="bianji">编辑</view>
+    </view>
+    <!-- <view class='chakan' wx:if="{{proinfo[0].state==2}}">活动已结束</view>
+    <view class='chakan' wx:elif="{{proinfo[proinfo.length-1].rest==0}}">该单已被接完</view>     -->
+    <view class='chakan' bindtap='onfankui'>查看提交反馈</view>
+  </view>
+
+  <!--—————别人发布的详情—— -->
+  <view class='ifoot' wx:else>
+    <view class='flex3 ifootbox' bindtap='bombox'>
+      <image class='ifootshare' src='../img/fenxiang@2x.png'></image>
+      <button open-type="share" type="primary" hover-class="other-button-hover" class="share">分享</button>
+    </view>
+    <view class='chakan' wx:if="{{proinfo[0].state==2}}">活动已结束</view>
+    <view class='chakan' wx:elif="{{proinfo[proinfo.length-1].rest==0}}">该单已接完</view>
+    <view class='chakan' bindtap='renwu' data-id="{{proinfo[0].id}}" wx:else>交任务</view>
+
+  </view>
+
+
+  <!--——————————————分享弹框部分——————————————  -->
+  <!-- <view class='bomb flex1' hidden='{{bomb}}'>
+    <view class='bombox flex3'>
+      <image class='bombshanchu' src='../img/x@2x.png' bindtap='guanbi'></image>
+      <view class='bombfont1'>{{proinfo[0].nickname}}</view>
+      <image class='bombimg' src='../img/zan@2x.png'></image>
+      <button class='bombshare' open-type="share" type="primary" hover-class="other-button-hover">转发给好友</button>
+        <view class='bombzhuan'>生成朋友圈分享图</view>  
+    </view>
+  </view> -->
+</view>
+
+<!--评论弹框-->
+<!-- <view class="bomb flex1 contip" hidden='{{conon}}'>
+  <view class="conbox flex3">
+    <view class="contitle">我要评论</view>
+    <textarea placeholder='请输入您想说的话!' name="text" bindinput="onblur"></textarea>
+    <view class="conbtn">
+      <view class="concancel" bindtap='onCanel' form-type="reset">取消</view>
+      <view class="contrue" bindtap='onTrue' formType="submit">发表</view>
+    </view>
+  </view>
+</view> -->

@@ -1,0 +1,237 @@
+/* pages/logs/piaoquaninfo/piaoquaninfo.wxss */
+.font{
+  width: 100%;
+  overflow-x: hidden;
+}
+.code{
+  padding: 30rpx 20rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.code_box{
+  width: 92%;
+  background-color: white;
+  padding: 30rpx 30rpx 0rpx;
+}
+.codefont1{
+  font-weight: bold;
+  font-size: 36rpx;
+}
+.codefont2{
+  background-color: #08AD06;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 2rpx 10rpx;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.img_list{
+  padding: 20rpx 0;
+}
+.img_list>image{
+  width: 100%;
+}
+.codefont3{
+  color: #F66926;
+  text-align: center;
+  margin-top: 5rpx;
+}
+.code_user{
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  padding-bottom: 20rpx;
+}
+.code_content{
+  padding: 0rpx 30rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 5rpx dashed #eeeeee;
+}
+.code_num{
+  font-size: 36rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+.code_img{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 10rpx;
+  border: 1rpx solid #eeeeee;
+  overflow: hidden;
+}
+.code_img image:nth-child(1){
+  width: 100%;
+  height: 100%;
+
+}
+.code_img image:nth-child(2){
+   width: 46%;
+  height: 46%;
+  z-index: 5000000000;
+  border-radius: 50%;
+}
+.code_join{
+  font-size: 24rpx;
+  color: #0396ff;
+}
+.code_info{
+  padding-right: 30rpx;
+}
+.code_title{
+  padding: 20rpx 0rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.code_title image{
+  width: 20rpx;
+  height: 30rpx;
+}
+.code_time{
+  padding: 20rpx 0rpx;
+  display: flex;
+  font-weight: bold;
+}
+.phuobox{
+  width: 120rpx;
+}
+.code_add image{width: 20rpx;height: 30rpx;}
+.code_address{
+  width: 520rpx;
+}
+.code_contact{
+  padding: 20rpx 0rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.code_impor{
+  display: flex;
+}
+.code_impor>view:nth-child(1){
+  margin-right: 70rpx;
+}
+.code_contactri{display: flex;align-items: center;}
+.code_contactri>image{
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+.phuoxian{
+  margin: 0rpx 20rpx;
+}
+.phuotitle{
+  text-align: center;
+}
+.phuonei{
+  margin-top: 10rpx;
+}
+.phuosec{
+  padding: 30rpx 0rpx;
+  border-top: 5rpx dashed #eee;
+  font-weight: bold;
+}
+
+.phfoot{
+  width: 100%;
+  height: 120rpx;
+  margin-top: 20rpx;
+}
+.phfootbox{
+  padding: 20rpx 20rpx;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  bottom: 0rpx;
+  left: 0rpx;
+  display: flex;
+  width: 95%;
+  font-weight: bold;
+}
+.phfootbut{
+  color: white;
+  background-color: #F66926;
+  width: 45%;
+}
+.apply{
+  width: 90%;
+  background: #F66926;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin:50rpx auto 50rpx;
+}
+.test_ticket{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100000000;
+}
+.test_ticket>view:nth-child(1){
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  z-index: 500;
+}
+.test_ticket>view:nth-child(2){
+  width: 60%;
+  height: 300rpx;
+  z-index: 1000;
+  background: #fff;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.test_ticket>view view:nth-child(1){
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.test_ticket>view view:nth-child(2){
+  width: 100%;
+  height: 60rpx;
+}
+.test_ticket>view view:nth-child(3){
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #999;
+  text-align: center;
+  font-size: 24rpx;
+}
+.test_ticket>view view:nth-child(4){
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 2rpx solid #e5e5e5;
+  height: 80rpx;
+  bottom: 0;
+}
+.test_ticket>view view input{
+  width: 70%;
+  height: 60rpx;
+  border: 2rpx solid #e5e5e5;
+}
+.test_ticket>view view text{
+  display: inline-block;
+  text-align: center;
+width: 50%;
+  line-height: 100rpx;
+}
+.test_ticket>view view text:nth-child(1){
+  box-sizing: border-box;
+  border-right: 2rpx solid #e5e5e5;
+}
+.botton_ticket{
+  width: 100%;
+  height: 80rpx;
+}
+.botton_ticket button{
+  width: 45%;
+  height: 100%;
+  background: #f66925;
+  margin-left: 3.3%;
+  float: left;
+  color: #fff;
+  margin-top: 30rpx;
+}

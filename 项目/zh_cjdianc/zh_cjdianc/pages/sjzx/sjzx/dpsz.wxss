@@ -1,0 +1,11 @@
+/* zh_cjdianc/pages/sjzx/dpgl.wxss */
+@import "sjzx.wxss";
+.dyfs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.dyfs radio{
+  margin-left: 20rpx;
+}

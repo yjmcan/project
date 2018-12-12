@@ -1,0 +1,75 @@
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+  <view class='head'>
+    <image mode='aspectFill' bindtap='choose1' src='{{url}}{{logo}}'></image>
+  </view>
+  <view class='list border'>
+    <view>企业名称</view>
+    <view>
+      <input name="name" placeholder='请输入企业名称'></input>
+    </view>
+  </view>
+  <view class='list border'>
+    <view>企业行业</view>
+    <view>
+      <input name="name1" placeholder='请输入企业行业'></input>
+    </view>
+  </view>
+  <view class='list'>
+    <view>企业官网</view>
+    <view>
+      <input name="name2" placeholder='请输入企业官网'></input>
+    </view>
+  </view>
+  <view class='list_1 mar border'>
+    <view>企业规模</view>
+    <view class='rel'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <text>{{array[index]}}</text>
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+  </view>
+  <view class='list_1'>
+    <view>融资阶段</view>
+    <view class='rel'>
+      <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{arr}}">
+        <text>{{arr[index1]}}</text>
+      </picker>
+      <image class='ab ud' mode='aspectFill' src='../img/acright.png'></image>
+    </view>
+  </view>
+  <view class='list mar'>
+    <view>联系人</view>
+    <view>
+      <input name="contact_name" placeholder='请输入联系人姓名'></input>
+    </view>
+  </view>
+  <view class='list'>
+    <view>联系电话</view>
+    <view>
+      <input name="contact" placeholder='请输入联系人电话'></input>
+    </view>
+  </view>
+  <view class="list_2">
+    <view>
+      公司简介
+    </view>
+    <view>
+      <textarea name="text" placeholder='请输入公司简介' maxlength='540'></textarea>
+    </view>
+  </view>
+  <view class="list_2">
+    <view>
+      公司图片
+    </view>
+    <view>
+      <view class='rel' wx:for="{{imgArray1}}">
+        <image class='ab udlr thumb' mode='aspectFill' src='{{url}}{{item}}'></image>
+      </view>
+      <view class='rel' bindtap='choose'>
+        <image class='ab udlr thumb' mode='aspectFill' src='../img/upload.png'></image>
+      </view>
+    </view>
+  </view>
+  <button form-type='submit' style='background:{{color}}'>提交入驻</button>
+</form>

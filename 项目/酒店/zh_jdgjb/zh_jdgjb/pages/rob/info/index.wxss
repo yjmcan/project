@@ -1,0 +1,57 @@
+/* zh_jdgjb/pages/rob/info/index.wxss */
+@import '../../public.wxss';
+page{
+    background: #f7f7f7;
+}
+.slide-image{
+    width: 100%;
+    height: 350rpx;
+}
+swiper{
+    width: 100%;
+    height: 400rpx;
+}
+.robPrice{
+    height: 60rpx;
+    background: #FEF9A3;
+    border-radius: 6rpx;
+    line-height: 60rpx;
+}
+.timelimit{
+    padding:0rpx 10rpx;
+    border-radius: 5rpx;
+    border:2rpx solid #C29945;
+    color: #C29945;
+}
+.left_border{
+    height: 32rpx;
+    width: 6rpx;
+    background: #FEF9A3;
+}
+.fixedTime{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 110rpx;
+    z-index: 1000;
+}
+.times{
+    padding: 0rpx 8rpx;
+    background: #AF6F01;
+    border-radius: 8rpx;
+}
+.times{
+    margin-right: 5rpx;
+}
+.fixedTime>view:nth-child(1){
+    width: 70%; 
+    height: 100%;
+    background: linear-gradient(to right, #FDA003 , #F16F0F); /* Safari 5.1 - 6.0 */
+}
+.fixedTime>view:nth-child(2){
+    width: 30%;
+    height: 100%;
+    line-height: 110rpx;
+    background: linear-gradient(to right, #B562FA , #854CF3); /* Safari 5.1 - 6.0 */
+}

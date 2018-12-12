@@ -1,0 +1,89 @@
+/* zh_wzp/pages/logs/index.wxss */
+
+.head {
+  width: 100%;
+  height: 300rpx;
+  background: #f66925;
+}
+
+.head>view {
+  width: 90%;
+  height: 330rpx;
+  background: #fff;
+  top: 125rpx;
+  box-shadow: 0rpx 10rpx 0rpx 10rpx #f9f9f9;
+  border-radius: 15rpx;
+  left: 5%;
+}
+.head_info image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  top: -75rpx;
+}
+.head_info>view:nth-child(2){
+  margin-top: 90rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.head_info>view:nth-child(3){
+  color: #666;
+}
+.head_info>view:nth-child(4){
+ width: 100%;
+ display: flex;
+ margin-top: 50rpx;
+ height: 100rpx;
+}
+.num>view{
+  flex: 3;
+}
+.num>view text{
+  display: block;
+  text-align: center;
+}
+.num>view text:nth-child(1){
+  color: #333;
+  font-size: 32rpx;
+}
+.num>view text:nth-child(2){
+  color: #999;
+  font-size: 26rpx;
+}
+.body_list{
+  padding: 30rpx 20rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.body_list>image:nth-child(1){
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.body_list>text:nth-child(2){
+  margin-left: 20rpx;
+}
+.body_list>text:nth-child(4){
+  float: right;
+  margin-right: 40rpx;
+  color: #999;
+}
+.body_list>image:nth-child(3){
+  width: 20rpx;
+  height: 35rpx;
+  right: 20rpx;
+  vertical-align: middle;
+}
+.mar{
+  margin-top: 200rpx;
+}
+.border_n{
+  border: none;
+}
+.mar_0{
+  margin-top: 50rpx;
+}
+.mask button{
+  width: 100%;
+  height: 100%;
+}

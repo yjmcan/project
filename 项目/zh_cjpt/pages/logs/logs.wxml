@@ -1,0 +1,21 @@
+<view class='head'>
+      <!-- <image mode='aspectFill' src=''></image> -->
+      <open-data type="userAvatarUrl"></open-data>
+      <view><open-data type="userNickName"></open-data></view>
+</view>
+<view class='list bor_bottom mar_t' bindtap='zj'>
+    <image mode='aspectFill' src='../img/zi.png'></image>
+    <text>资金管理</text>
+</view>
+<view class='list bor_bottom' bindtap='xx'>
+    <image mode='aspectFill' src='../img/xiaoxi.png'></image>
+    <text>消息管理</text>
+</view>
+<view class='list bor_bottom' bindtap='tj'>
+    <image mode='aspectFill' src='../img/tongji.png'></image>
+    <text>统计</text>
+</view>
+<view class='list' bindtap='sz'>
+    <image mode='aspectFill' src='../img/shezhi.png'></image>
+    <text>工作设置</text>
+</view>

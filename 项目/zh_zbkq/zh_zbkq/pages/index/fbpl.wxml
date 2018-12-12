@@ -1,0 +1,51 @@
+<view class="font">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+
+    <view class="dingevaluate">
+      <image mode='aspectFill' src="{{mdlogo}}" class="dingimg"></image>
+      <view class="dingtext">相关描述</view>
+      <block wx:for="{{stars}}">
+        <image class="star-image" style="left: {{item*50}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+          <view class="item" style="left:0rpx" data-key="{{item+1}}" bindtap="selectLeft"></view>
+        </image>
+      </block>
+      <view wx:if="{{count>=0}}" class="dingtext1">{{count}}分</view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" bindinput='pl' name='content' maxlength='100' placeholder="请输入您宝贵的建议" style="height: 6em" />
+          <view class="weui-textarea-counter"><text style='color:#f44444'>{{zsnum}}</text>/100</view>
+        </view>
+      </view>
+    </view>
+    <view class="mdtp">
+      <view class="left">上传图片：</view>
+      <view class="right">
+        <view class='tpjy'>最多上传9张图片（此项可为空）</view>
+      </view>
+    </view>
+    <view class='mdtp1'>
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files" id="uploaderFiles">
+          <block wx:for="{{images}}" wx:key="*this">
+            <view class="weui-uploader__file">
+              <view class='x' bindtap='delete' data-index='{{index}}'>
+                <image src='../../img/x.png'></image>
+              </view>
+              <image class="weui-uploader__img" bindtap="previewImage" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view>
+        <view class="weui-uploader__input-box" wx:if="{{images.length<9}}">
+          <view class="weui-uploader__input" bindtap="chooseImage"></view>
+        </view>
+      </view>
+      <view class='tpsl'><text style='color:#f44444'>{{images.length}}</text>/9</view>
+    </view>
+    <view class="button">
+      <button class="weui-btn" formType="submit" type="primary" style="background-color:#f44444">发布评论</button>
+      <!-- <button class="weui-btn" type="primary" disabled="true">页面主操作 Disabled</button> -->
+    </view>
+  </form>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/my/integral.wxml-->
+<view class="home">
+  <view class="title flex1">我的积分 :1300</view>
+  <view class="recond">
+    <view class="recond_head">积分记录</view>
+    <view class="list_con">
+      <view class="list_recond flex_bet">
+        <view>2018年04月03日</view>
+        <view>入门级48课:10分</view>
+        <view>累计1290分</view>
+      </view>
+      <view class="list_recond flex_bet">
+        <view>2018年04月03日</view>
+        <view>入门级48课:10分</view>
+        <view>累计1290分</view>
+      </view>
+      <view class="list_recond flex_bet">
+        <view>2018年04月03日</view>
+        <view>入门级48课:10分</view>
+        <view>累计1290分</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,105 @@
+/* zh_wxc/pages/fabu/checkdetail.wxss */
+.main{
+  background-color: white;
+  margin-top: 15rpx;
+  display: flex;
+  padding: 30rpx 20rpx 15rpx 30rpx;
+  flex-direction: column;
+}
+.title{
+  font-size: 36rpx;
+}
+.context{
+  display: flex;
+  flex-direction: column; 
+  margin-left: 30rpx;
+  width: 76%;
+}
+.confont2{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 30rpx;
+  line-height:60rpx;
+}
+.lbottom{
+  position: relative;
+  margin-top:15rpx;
+  font-size: 26rpx;
+}
+.listimg{
+  margin-right: 20rpx;
+}
+.conimg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: pink;
+}
+.con{
+  padding:30rpx 0;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.pass{
+  background: #25ace3;
+  color: #fff;
+  padding:20rpx 0;
+  border-radius: 10rpx; 
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.refuse{
+  background: #ff5656;
+  color: #fff;
+  padding:20rpx 0;
+  border-radius: 10rpx; 
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+}
+.imgs image{
+  width:100%;
+  height:690rpx;
+  margin-top: 10rpx;
+}
+.time{
+  color: #ccc;
+}
+.msg{
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.fixed>view:nth-child(2){
+  width: 90%;
+  height: 500rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.fixed>view textarea{
+  width: 95%;
+  height: 350rpx;
+  margin: 20rpx auto 0;
+  padding: 20rpx 0;
+}
+.fixed>view view{
+  width: 100%;
+  height: 90rpx;
+}
+.fixed>view view text{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #999;
+  line-height: 90rpx;
+  border-top: 2rpx solid #e5e5e5;
+}
+.fixed>view view text:nth-child(1){
+  border-right: 2rpx solid #e5e5e5;
+}

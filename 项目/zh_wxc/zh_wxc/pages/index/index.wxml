@@ -1,0 +1,134 @@
+<block hidded="{{speed}}">
+  <view wx:if="{{users==true}}">
+    <view class='home' wx:if="{{bqxx.yx_mode==2}}">
+      <view class='header' wx:if="{{movies.length>0}}">
+        <!-- <image class='headerimg' src=''></image> -->
+        <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" current="{{swiperCurrent}}">
+          <block wx:for="{{movies}}" wx:for-index="index">
+            <swiper-item>
+              <image src="{{url}}{{item.thumb}}" class="slide-image" mode="aspectFill" bindtap="swiperChange" data-src="{{url}}{{item.thumb}}" data-url="{{url}}" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='searchbox'>
+          <image class='searchimg' src='../img/sousuoicon@2x.png'></image>
+          <input class='searchinp' type='text' bindinput='onSearch'></input>
+        </view>
+
+      </view>
+      <!-- 热门模块开始 -->
+      <scroll-view class="marry" scroll-x="true">
+        <view bindtap="tabClick" class="all {{activeIndex==-1?'weuibaron' : ''}}" data-index="-1">全部</view>
+        <block wx:for="{{infortype}}" wx:key="unique">
+          <view data-index="{{index}}" id="{{item.id}}" style='display:inline-block' class="proitem {{activeIndex == index ? 'weuibaron' : ''}}" bindtap="tabClick">
+            <view>{{item.name}}</view>
+          </view>
+        </block>
+
+      </scroll-view>
+
+      <view wx:for="{{prolist}}" wx:key="unique">
+        <view class='conbox' bindtap='xsinfo' data-id="{{index}}" wx:for-index="index" wx:key="id" bindtap='pcinfo'>
+          <view class="listimg">
+            <image class='conimg' src='../img/sss.png' wx:if="{{item.end_time<now}}"></image>
+            <image class='conimg' src='{{item.img}}' wx:else></image>
+          </view>
+          <view class="flex_center">
+            <view class='flex3 msg'>
+              <view wx:if="{{item.average=='0.00'}}">暂无评分</view>
+              <view wx:else>历史评分 {{item.average}}</view>
+              <view class='confont2'>{{item.title}}</view>
+              <view class="money">¥{{item.price}}</view>
+            </view>
+            <view class='flex3 jilu'>
+              <view class="flex_center">
+                <image src="../img/yan@2x.png" class="conzan"></image>
+                <view>{{item.read}}</view>
+              </view>
+              <view>需求人数:{{item.number}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!--没有数据的情况-->
+      <view wx:if="{{prolist.length==0}}" class="flex3 none">
+        <image src="../img/zhanwei.png"></image>
+        <view>暂无数据</view>
+      </view>
+
+      <!--————————————底部固定导航栏————————————————  -->
+      <view class='ifootbox'></view>
+      <view class='ifoot'>
+        <view class='flex3 ifootfont1'>
+          <image class='ifoothome' src='../img/shouye@2x.png'></image>
+          <view>主页</view>
+        </view>
+        <view class='flex3 ifootfont2' bindtap='fabu'>
+          <image class='ifootwode' src='../img/fabuu@2x.png'></image>
+          <view>发布</view>
+        </view>
+        <view class='flex3 ifootfont2' bindtap='bangdan'>
+          <image class='ifootwode' src='../img/bangdann@2x.png'></image>
+          <view>榜单</view>
+        </view>
+        <view class='flex3 ifootfont2' bindtap='wode'>
+          <image class='ifootwode' src='../img/wo@2x.png'></image>
+          <view>我的</view>
+        </view>
+      </view>
+
+    </view>
+
+    <!-- wx:if="{{bqxx.sh_state==1}}"  -->
+    <view class='home' wx:if="{{bqxx.yx_mode==1}}">
+      <!--———————————轮播图部分———————————————-->
+      <view class="swiper-container">
+        <swiper autoplay="true" circular='true' indicator-dots='true' interval="5000" duration="500" current="{{swiperCurrent}}" class="swiper">
+          <block wx:for="{{zxlb.gs_img}}" wx:key="*this">
+            <swiper-item>
+              <image mode="aspectFill" src="{{item}}" class="img"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
+      <!-- ——————————————资讯部分———————————— -->
+      <view class='yzixun'>
+        <view class='zxlist'>
+          <!-- <image class='zximg' src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=216046280,462181605&fm=27&gp=0.jpg'></image> -->
+          <view class='zxcontent' style="width: 100%;">
+            <!-- <view class='zxmenu'>个税起征点预期提至5000 官员回应何时提高</view> -->
+            <rich-text class='zxmenu2' nodes="{{zxlb.gs_details}}" bindtap="tap"></rich-text>
+          </view>
+        </view>
+      </view>
+
+      <!-- —————————————电话和地址部分————————————— -->
+      <view class='ytelbox'>
+        <view class='flex3' catchtap='dadianhua'>
+          <image class='ytelimg1' src='../img/disan.png'></image>
+          <view>电话</view>
+        </view>
+        <view class='flex3' bindtap='address'>
+          <image class='ytelimg' src='../img/bottom_p.png'></image>
+          <view>地址</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='authorization fixed' wx:if="{{users==false}}">
+    <view class='ab'>
+    </view>
+    <view class='ab udlr'>
+      <view class='hydl'>
+        <icon type='success' size='50'></icon>
+        <view>欢迎登录</view>
+      </view>
+      <button open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">+微信登录</button>
+    </view>
+  </view>
+</block>
+<view class='img_gif rel' wx:if="{{speed==true}}">
+  <image mode='aspectFill' class='ab udlr' src='../img/one.gif'></image>
+</view>

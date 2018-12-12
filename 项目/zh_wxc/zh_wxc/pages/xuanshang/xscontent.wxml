@@ -1,0 +1,64 @@
+<!--pages/xuanshang/xscontent.wxml-->
+<view class='home'>
+  <view class='xscontent'>
+    <view class='xsname'>王先生</view>
+    <view class='flex_bet xsfont'>
+      <view>悬赏¥0.10</view>
+      <view>剩余1</view>
+    </view>
+  </view>
+
+  <view class='xsbanner'>
+    <view class='bannertext'>详情描述</view>
+    <view class='flex_bet xsbantime'>
+      <view class='banfont1'>悬赏结束时间</view>
+      <view>2018-01-02 12:00:00</view>
+    </view>    
+  </view>
+
+  <view class='xsjoin'>
+    <view class='xsjointop'>参与人数（1）</view>
+    <view class='xsjoinuser'>
+      <image class='userimg' src='../img/zanwei@2x.png'></image>
+      <image class='userimg' src='../img/zanwei@2x.png'></image>
+      <image class='userimg' src='../img/zanwei@2x.png'></image>
+      <image class='userimg' src='../img/zanwei@2x.png'></image>
+      <image class='userimg' src='../img/zanwei@2x.png'></image>
+      <image class='userimg' src='../img/zanwei@2x.png'></image>
+    </view>
+  </view>
+  <view class='xsjoin'>
+    <view class='xsjointop'>悬赏发布人</view>
+    <view>      
+      <view class='flex_center xsjoinbox'>
+        <image class='userimg2' src='../img/zanwei@2x.png'></image>
+        <view>白衣</view>
+      </view>
+    </view>
+  </view>
+
+  <!--——————————————底部固定部分——————————————  -->
+  <view class='ifoot'>
+    <view class='flex3 ifootbox' bindtap='bombox'>
+      <image class='ifootshare' src='../img/fenxiang@2x.png'></image>
+      <view>分享</view>
+    </view>
+    <view class='flex3 ifootbox'>
+      <image class='ifootshare' src='../img/bianji@2x.png'></image>
+      <view>编辑</view>
+    </view>
+    <view class='chakan'>查看提交反馈</view>
+  </view>
+
+  <!--——————————————弹框部分——————————————  -->
+   <view class='bomb flex1' hidden='{{bomb}}'>
+    <view class='bombox flex3'>
+      <image class='bombshanchu' src='../img/x@2x.png' bindtap='guanbi'></image>
+      <view class='bombfont1'>王先生</view>
+      <view class='bombfont2'>魏霞</view>
+      <image class='bombimg' src='../img/zan@2x.png'></image>
+      <button class='bombshare'>转发给好友</button>
+      <view class='bombzhuan'>生成朋友圈分享图</view>
+    </view>
+  </view> 
+</view>

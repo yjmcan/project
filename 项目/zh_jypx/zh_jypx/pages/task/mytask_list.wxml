@@ -1,0 +1,21 @@
+<!--zh_jypx/pages/task/mytask_list.wxml-->
+<!--pages/index/task_list.wxml-->
+<view class="home">
+  <view wx:if="{{none.code==200}}">
+    <view class="classes">{{course_name}}{{name}}</view>
+    <view class="flex1 title">{{unit_name}}</view>
+    <view class="con" bindtap='mytask_detail' wx:for="{{task_list}}" data-taskid="{{item.task_id}}" data-status="{{item.status}}">
+      <view class="task_t">{{item.title}}</view>
+      <view class="flex_bet">
+        <image src="{{url}}{{item.thumb}}" mode="aspectFill" class="img"></image>
+        <image class="tip" src="../img/true.png" wx:if="{{item.status==1}}"></image>
+        <image class="tip" src="../img/error.png" wx:if="{{item.status==2}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <!--暂无数据-->
+  <view wx:if="{{none.code==501}}" class="none_all">
+    <image src="../img/none.png"></image>
+  </view>
+</view>

@@ -1,0 +1,135 @@
+/* zh_wzp/pages/look_wor/index.wxss */
+
+.head {
+  background: #fff;
+}
+
+.head_0 {
+  width: 100%;
+  padding: 20rpx 0;
+  display: flex;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.head_0>view {
+  flex: 4;
+  text-align: center;
+}
+
+.head_0>view text {
+  vertical-align: middle;
+}
+
+.head_0>view image {
+  vertical-align: middle;
+}
+
+.head_0 image {
+  width: 20rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+}
+
+.head_1 {
+  width: 100%;
+  position: fixed;
+  top: 90rpx;
+  z-index: 500000000000;
+}
+.head_1 view{
+  padding: 20rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.body{
+  padding-bottom: 120rpx;
+}
+.body_list{
+  background: #fff;
+  padding-top:20rpx;
+  margin-bottom: 20rpx;
+}
+.body_list>view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.body_list>view:nth-child(1){
+  width: 24%;
+}
+.body_list>view:nth-child(2){
+  width: 60%;
+  margin-left: 2%;
+}
+.body_list>view:nth-child(3){
+  line-height: 142rpx;
+  right: 50rpx;
+}
+.oper{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-top: 2rpx solid #e5e5e5;
+}
+.logo{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.sex{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+.list_left>image{
+  display: block;
+  margin: 0 auto 0;
+}
+.list_left view{
+  padding: 10rpx 0;
+  text-align: center;
+}
+.list_left view text{
+  vertical-align: middle;
+  color: #666;
+  font-size: 28rpx;
+}
+.list_left view image{
+  vertical-align: middle;
+}
+.list_right{
+  color: rgb(255, 86, 86);
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.list_middle>view:nth-child(1){
+  color: #000;
+  font-size: 35rpx;
+  font-weight: bold;
+  padding-bottom: 10rpx;
+}
+.list_middle>view:nth-child(2){
+  color: #999;
+}
+.ask image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.ask text{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.label{
+  margin-top: 10rpx;
+}
+.label text{
+  padding: 8rpx 10rpx;
+  background: rgb(241, 247, 255);
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}

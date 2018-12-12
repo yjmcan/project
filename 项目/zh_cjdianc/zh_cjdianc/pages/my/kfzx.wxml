@@ -1,0 +1,14 @@
+<!--zh_zbkq/pages/my/kfzx.wxml-->
+<!-- <view class="container">
+  <button class="kf" open-type="contact">
+    <image src="../../img/zxkf1.png"></image>
+    <view>在线客服</view>
+  </button>
+  <button class="kf" bindtap="tel">
+    <image src="../../img/telephone.png"></image>
+    <view>联系电话</view>
+  </button>
+</view> -->
+<view class='main'>
+<rich-text nodes="{{answer}}"></rich-text>
+</view>

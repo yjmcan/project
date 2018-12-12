@@ -1,0 +1,16 @@
+<!--zh_gjhdbm/pages/index/city.wxml-->
+
+<view class='citys'>
+    <!-- <view class='current_city'>
+        <view class='location'>当前定位城市</view>
+        <view class='location_city'>
+            <text>武汉市</text>
+        </view>
+    </view>  -->
+    <view class='other_city'>
+        <view>选择城市</view>
+         <view class='location_city'>
+            <text wx:for="{{city}}" bindtap='city' data-index='{{index}}'>{{item.cityname}}</text>
+        </view>
+    </view>
+</view>

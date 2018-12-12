@@ -1,0 +1,7 @@
+<!--zh_qygw/pages/about/success.wxml-->
+<view class="flex3 suheader">
+  <icon type="success"color="#2083C9" size="120"/>
+  <text class="sutext">申请成功!</text>
+  <view class="sufanhui" bindtap="home">返回首页</view>
+</view>
+

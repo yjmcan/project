@@ -1,0 +1,14 @@
+
+  <view class='body pa_1'>
+    <view class='logistics mar_t' wx:for="{{list}}" wx:key="*this"  bindtap='info' data-index='{{item.id}}'>
+      <view class='dis_in'>
+        <image mode='aspectFill' src='{{item.stationMainImg}}' class='img'></image>
+      </view>
+      <view class='dis_in'>
+        <view class='fon_30 wei'>【{{item.name}}】</view>
+        <view class='color_6 fon_26'>{{item.startName}}-{{item.endName}}</view>
+        <view class='fon_26' style='color:{{color}}'>{{item.phone}}</view>
+        <view class='color_6 fon_26 gobyndsingle'>{{item.address}}</view>
+      </view>
+    </view>
+  </view>

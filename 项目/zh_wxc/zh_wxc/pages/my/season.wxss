@@ -1,0 +1,23 @@
+/* zh_wxc/pages/my/season.wxss */
+.container{
+  overflow: hidden;
+  width: 100%;
+}
+button{
+  margin-top: 100rpx;
+  height: 90rpx;
+  color: #fff;
+  background: #F34B4B;
+  width: 90%;
+  line-height: 90rpx;
+  font-size: 30rpx;
+}
+.pa{
+  padding: 20rpx;
+}
+.ba_f{
+  background: #fff;
+}
+.mar_t{
+  margin-top: 20rpx;
+}

@@ -1,0 +1,119 @@
+<!--zh_zbkq/pages/home/home.wxml-->
+<view class="home">
+  <view class="header">
+    <image class="headerimg" src="{{url}}{{headinfo.bg_logo}}"></image>
+    <view class="headerbox">
+      <view class="htitle">{{headinfo.name}}</view>
+      <view class="hbetweer hlist">
+        <!-- <view>活跃：18</view> -->
+        <view>人气：{{headinfo.rq_num}}</view>
+        <view>成员：{{headinfo.cy_num}}</view>
+      </view>
+    </view>
+  </view>
+  <!--上面部分结束  -->
+
+  <view class="marry">
+    <block wx:for="{{luntext}}" wx:key="*this">
+      <view id="{{index}}" style='display:inline-block' class="baritem {{activeIndex == index ? 'itemon' : ''}}" bindtap="tabClick">
+        <view class="lunitem">{{item}}</view>
+        <view id="{{index}}" class="zheline {{activeIndex == index ? 'block' : ''}}"></view>
+      </view>
+    </block>
+  </view>
+  <view class='jzz' hidden='{{qqsj}}'>
+    <image class='Rotation' src='../../img/jzz.png'></image>
+    <view>加载中...</view>
+  </view>
+  <block wx:if="{{qqsj}}">
+    <view class="content" wx:if="{{zxlist.length!=0}}" wx:for="{{zxlist}}">
+      <view class="conlist">
+        <image wx:if="{{item.user_id!='0'}}" class="touxiang" src="{{url}}{{item.md_logo}}"></image>
+        <image wx:else class="touxiang" src="{{url}}{{ptxx.logo}}"></image>
+        <view class="conritbox">
+
+          <!--———————用户姓名部分—————————-->
+          <view class="conlistright">
+            <view class="contitle">
+              <view wx:if="{{item.user_id!='0'}}" class="contentname gobyndsingle">{{item.md_name}}</view>
+              <view wx:else class="contentname gobyndsingle">{{ptxx.name}}</view>
+              <view wx:if="{{item.is_zd=='1'}}" class="zhiding">置顶</view> 
+            </view>
+            <view class="lianxi" data-tel="{{item.tel}}" bindtap='tel'>联系Ta</view>
+          </view>
+          <!--———————用户姓名部分—————————-->
+          <view class="contentext">
+            <view class="">{{item.content}}</view>
+          </view>
+          <view class="contentimg" wx:if="{{item.imgs!=''}}">
+            <block wx:for="{{item.imgarr}}" wx:for-item="imgitem">
+              <image mode='aspectFill' bindtap='previewImage' data-src='{{imgitem}}' data-imgarr='{{item.imgarr}}' src="{{imgitem}}"></image>
+            </block>
+          </view>
+          <navigator url="homeinfo?zxid={{item.id}}" class="ckxq">查看详情</navigator>
+          <view class="address" bindtap='ckwz' data-lat='{{item.lat}}' data-lng='{{item.lng}}' data-address='{{item.address}}'>
+          <image src='../../img/dianji.png'></image>{{item.address}}</view>
+          <view class="hremark">
+            <view class="flex_item">
+              <view wx:if="{{item.xctime.day!=0}}">{{item.xctime.day}}天前</view>
+              <view wx:if="{{item.xctime.day==0&&item.xctime.hour!=0}}">{{item.xctime.hour}}小时前</view>
+              <view wx:if="{{item.xctime.day==0&&item.xctime.hour==0&&item.xctime.minut!=0}}">{{item.xctime.minute}}分钟前</view>
+              <view wx:if="{{item.xctime.day==0&&item.xctime.hour==0&&item.xctime.minut==0}}">刚刚</view>
+              <image class="watch" src="../../img/view.png"></image>
+              <view>{{item.yd_num}}</view>
+              <view wx:if="{{mdinfo.id==item.user_id}}" bindtap='delete' id="{{item.id}}" class='shanc'>删除</view>
+            </view>
+            <image bindtap='toggle' id='{{item.id}}' class="talkbox" src="../../img/fangduihua.png"></image>
+            <view wx:if="{{acitiveid==item.id}}" class="plbox {{select == 0 ? 'show_one':'show_two'}}">
+              <view class='pl' bindtap='zan' id="{{item.id}}">
+                <image src="../../img/zan.png"></image>
+                <view class='pltext'>{{zantext}}</view>
+              </view>
+              <view class='sx'></view>
+              <view class='pl' bindtap='pl' id="{{item.id}}">
+                <image src="../../img/pl2.png"></image>
+                <view class='pltext'>评论</view>
+              </view>
+            </view>
+          </view>
+
+          <!-- ———————————点赞评论部分——————————————— -->
+          <view class="zanbox" wx:if="{{item.collect.length!=0||item.assess.length!=0}}">
+            <view class="kuang"></view>
+            <view class="infozan">
+              <image class="aixin" src="../../img/aixin.png"></image>
+              <image class="infotou" wx:for="{{item.collect}}" wx:for-item="dzitem" src="{{dzitem.img}}"></image>
+            </view>
+            <view class="userbox" wx:if="{{item.assess.length!=0}}" wx:for="{{item.assess}}" wx:for-item="plitem">
+              <view class="comment">
+                <text>{{plitem.nickname}}:</text>
+                <text>{{plitem.content}}</text>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{zxlist.length==0}}" class='kong'>
+      <image src='../../img/wsj.png'></image>
+      <view>暂无资讯...</view>
+    </view>
+  </block>
+
+  <view class="addbox" bindtap='tzfb'>
+    <image src="../../img/add.png"></image>
+  </view>
+
+</view>
+<view class='zhezhao' bindtouchstart='ycpl' wx:if="{{select==0}}"></view>
+<view class='plzhezhao' bindtap='plxy' hidden='{{xspl}}'></view>
+<view class='srkb' hidden='{{xspl}}'>
+  <view class="weui-cells weui-cells_after-title srk">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindconfirm='fspl' focus='{{!xspl}}' confirm-type='send' placeholder="请输入评论内容" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,127 @@
+<view class='head'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image mode='aspectFill' src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!--自定义导航栏  -->
+<view class='nav_list ba_f'>
+  <view class='t_c fon_28 dis_in' wx:for="{{nav}}" wx:key="*this" bindtap='master'>
+    <image mode='aspectFill' src='{{item.img}}'></image>
+    <view>{{item.name}}</view>
+  </view>
+</view>
+<!--滚动条播放  -->
+<view class='roll pa_1 fon_28 ba_f mar_t'>
+  <swiper vertical circular>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <view>滚动条而已</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!--  列表  -->
+<view class='mar_t ba_f pa'>
+  <view class='fine_0'>
+    <view class='dis_in fon_36 wei'>热门精品</view>
+    <view class='dis_in fon_24 color_9'>
+      更多
+    </view>
+  </view>
+  <view class='fine_1'>
+    <view class='rel fine_1_0 dis_in fine_1_hei_0' bindtap='info'>
+      <view class='ab'>
+        <image mode='aspectFill' src='//goss3.vcg.com/creative/vcg/800/version23/VCG41544531919.jpg'></image>
+      </view>
+      <view class='rel z_index_1000 fon_20 color_f'>主编力荐</view>
+      <view class='rel z_index_1000 fon_30'>变变变</view>
+      <view class='rel z_index_1000 fon_24'>8406次学习</view>
+    </view>
+    <view class='rel fine_1_0 dis_in fine_1_hei_1'>
+      <view class='ab'>
+        <image mode='aspectFill' src='//goss2.vcg.com/creative/vcg/800/version23/VCG41515802141.jpg'></image>
+      </view>
+      <view class='rel z_index_1000 fon_20 color_f'>新课</view>
+      <view class='rel z_index_1000 fon_30'>变变变</view>
+      <view class='rel z_index_1000 fon_24'>8406次学习</view>
+    </view>
+    <view class='rel fine_1_0 dis_in fine_1_hei_1'>
+      <view class='ab'>
+        <image mode='aspectFill' src='http://bpic.588ku.com/master_pic/00/09/54/10565bfc366847d.jpg!r650/fw/800'></image>
+      </view>
+      <view class='rel z_index_1000 fon_20 color_f'>精品</view>
+      <view class='rel z_index_1000 fon_30'>变变变</view>
+      <view class='rel z_index_1000 fon_24'>8406次学习</view>
+    </view>
+  </view>
+</view>
+<view class='mar_t ba_f pa'>
+  <view class='fine_0'>
+    <view class='dis_in fon_36 wei'>限时低价</view>
+    <view class='dis_in fon_24 color_9'>
+      更多
+    </view>
+  </view>
+  <view class='fine_2'>
+    <view class='dis_in' wx:for="{{nav}}" wx:key="*this">
+      <image mode='aspectFill' src='http://bpic.588ku.com/master_pic/00/09/93/38565fda31978ca.jpg!r650/fw/800'></image>
+      <view class='fon_24 pa_1 yghidden'>精致生活夏沫海歌说赶快来网袜价格我挖UI个意外哦哈他挖个图瓦工团委</view>
+      <view class='fon_24 pa_1'>
+        兴趣
+      </view>
+    </view>
+  </view>
+</view>
+<view class='mar_t ba_f pa'>
+  <view class='fine_0'>
+    <view class='dis_in fon_36 wei'>名人讲堂</view>
+    <view class='dis_in fon_24 color_9' bindtap='more'>
+      更多
+    </view>
+  </view>
+  <view class='fine_3'>
+    <view class=' fine_3_0' wx:for="{{nav}}" wx:key="*this">
+      <view class='dis_in'>
+        <image mode='aspectFill' src='http://bpic.588ku.com/back_pic/03/93/30/1257e5ec6c123e5.jpg!r650/fw/800'></image>
+      </view>
+      <view class='dis_in'>
+        <view class='fon_30 wei pa yghidden dis_in'>精致生活夏沫海</view>
+        <view class='fon_28 color_6 pa_1'>张泽峰·世界纪录保持着</view>
+        <view class='fon_24 color_9 pa_1'>大脑派\r\n\r\n|\r\n\r\n共8节课</view>
+        <view class='fon_24 color_9 pa_1'>2.1万次学习</view>
+        <view class='t_r fon_24'>
+          <text class='t_d color_9'>￥299</text>
+          <text style='color:red'>￥9</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='mar_t ba_f pa'>
+  <view class='fine_0'>
+    <view class='dis_in fon_36 wei'>少儿启蒙</view>
+    <view class='dis_in fon_24 color_9'>
+      更多
+    </view>
+  </view>
+  <view class='fine_3'>
+    <view class=' fine_3_0' wx:for="{{nav}}" wx:key="*this">
+      <view class='dis_in'>
+        <image mode='aspectFill' src='http://bpic.588ku.com/back_pic/04/07/21/2858118b5cd0929.jpg!r650/fw/800'></image>
+      </view>
+      <view class='dis_in'>
+        <view class='fon_30 wei pa yghidden dis_in'>少儿必备优秀故事</view>
+        <view class='fon_24 color_9 pa_1'>大脑派|共8节课</view>
+        <view class='fon_24 color_9 pa_1'>2.1万次学习</view>
+        <view class='t_r fon_24'>
+          <text class='t_d color_9'>￥299</text>
+          <text style='color:red'>￥9</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

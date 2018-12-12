@@ -1,0 +1,13 @@
+<!--zh_dianc/pages/takeout/note.wxml-->
+<view class='main'>
+  <view class='mainhead'>
+    <textarea placeholder='请填写额外的备注信息' bindinput='bznr' maxlength='50'></textarea>
+    <view class='zs'>0/50个字</view>
+  </view>
+  <!-- <view class='bz'>
+    <view wx:for="{{bzarr}}" data-index='{{index}}' class="bzitem  {{item.checked?'selsect':'default'}}" bindtap="selected" style="background:{{item.checked?color:''}}">{{item.name}}</view>
+  </view> -->
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" style='background-color:{{color}}' bindtap="submitbz">确定</button>
+  </view>
+</view>

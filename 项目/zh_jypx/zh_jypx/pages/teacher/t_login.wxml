@@ -1,0 +1,32 @@
+<!--zh_jypx/pages/teacher/t_login.wxml-->
+<view class="home">
+  <form bindsubmit="formSubmit">
+    <image src="../img/logo.png" class="logo"></image>
+    <view class="list flex_center">
+      <image src="../img/phones.png"></image>
+      <input type='text' placeholder='请输入您的用户名' name="name"></input>
+    </view>
+    <view class="list flex_center">
+      <image src="../img/code.png"></image>
+      <input type='password' placeholder='请输入密码' name="code"></input>
+    </view>
+    <button formType="submit" class="submit">登录</button>
+  </form>
+
+  <view class='ifootbox'></view>
+  <!--底部-->
+  <view class="foot flex_around">
+    <view class="flex3" bindtap='onIndex'>
+      <image src="../img/index.png"></image>
+      <view>首页</view>
+    </view>
+    <view class="flex3 active">
+      <image src="../img/teacher_on.png"></image>
+      <view>教师</view>
+    </view>
+    <view class="flex3" bindtap='onMy'>
+      <image src="../img/my.png"></image>
+      <view>我的</view>
+    </view>
+  </view>
+</view>

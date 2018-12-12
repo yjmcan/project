@@ -1,0 +1,40 @@
+<!--zh_dianc/pages/seller/login.wxml-->
+<view class='main'>
+  <image class='bgimg' src='../../../img/login@3x.jpg'></image>
+  <view class='headwz'>{{bqxx.link_name}}</view>
+  <image class='hdimg' src='{{url}}{{bqxx.link_logo}}'></image>
+  <view class='login'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            <image src='../../../img/xm.png'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" bindinput='srzh' placeholder="请输入帐号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">
+            <image src='../../../img/rl.png'></image>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" bindinput='srmm' placeholder="请输入密码" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+      </view>
+    </view>
+    
+  <form bindsubmit="form_save" bindreset="formReset" report-submit="true">
+    <button class="weui-btn" bindtap='login' type="primary" disabled='{{disabled}}' style='background:{{disabled?"#FF9968":"#ff7f46"}};'>{{logintext}}</button>
+  </form>
+  </view>
+  <view class='ft' bindtap='tel'>
+    <image src='../../../img/kefu.png'></image>
+    <view>客服电话：{{bqxx.link_tel}}</view>
+  </view>
+</view>

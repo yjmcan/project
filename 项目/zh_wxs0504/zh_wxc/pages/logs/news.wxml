@@ -1,0 +1,13 @@
+<!--pages/logs/news.wxml-->
+<view class='home'>
+  <view class='news'>
+    <image class='newsimg' src='../img/laba.png'></image>
+    <view class='newsbox'>
+      <view class='flex_center'>
+        提现消息
+        <text class='newsfont1'>2017年11月1日 12：12：12</text>
+      </view>
+      <view class='newmoney'>成功提现100元</view>
+    </view>
+  </view>
+</view>

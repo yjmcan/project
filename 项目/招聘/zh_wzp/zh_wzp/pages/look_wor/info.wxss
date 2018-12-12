@@ -1,0 +1,160 @@
+/* zh_wzp/pages/look_wor/info.wxss */
+page{
+  background: #e5e5e5;
+}
+.head_0{
+    padding-top: 30rpx;
+    background: #fff;
+    margin: 30rpx auto 0;
+}
+.logo{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 0;
+}
+.head_0>view:nth-child(2){
+  text-align: center;
+  padding-top: 20rpx;
+}
+.head_0>view:nth-child(3){
+  padding: 20rpx;
+}
+.head_0>view:nth-child(4){
+  border-top: 2rpx solid #e5e5e5;
+}
+.head_0>view view{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+}
+.head_0>view view text:nth-child(1){
+  color: #999;
+  margin-right: 20rpx;
+}
+.head_0>view view text:nth-child(2){
+  color: #333;
+}
+.sex{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  left: 54%;
+  bottom: 0;
+}
+.info_0{
+  text-align: center;
+}
+.info_0 image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.info_0 text{
+  vertical-align: middle;
+  margin-right: 30rpx;
+  color: #999;
+}
+.mar{
+  width: 95%;
+  margin: 20rpx auto 0;
+}
+.head_1,.head_2{
+  /* padding: 20rpx; */
+  background: #fff;
+}
+.title{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.title image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.title text{
+  vertical-align: middle;
+  color: red;
+  font-size: 35rpx;
+}
+.head_1>view view{
+  padding: 15rpx 20rpx;
+}
+.head_1>view view text:nth-child(1){
+  color: #999;
+  width: 28%;
+  display: inline-block;
+}
+.head_1>view view text:nth-child(2){
+  color: #000;
+}
+.head_2 .info_1{
+  width: 92%;
+  margin-left: 5%;
+  /* height: 300rpx; */
+  /* background: orange; */
+  box-sizing: border-box;
+  border-left: 2rpx solid red;
+}
+.info_1:nth-child(1){
+  margin-top: 50rpx;
+}
+.left_b{
+  width: 36rpx;
+  height: 36rpx;
+  display: block;
+  box-sizing: border-box;
+  border: 2rpx solid red;
+  left: -18rpx;
+  top: -18rpx;
+  border-radius: 50%;
+}
+.left_o{
+  width: 20rpx;
+  height: 20rpx;
+  display: block;
+  left: -10rpx;
+  top: -10rpx;
+  border-radius: 50%;
+}
+.experience{
+  padding-left: 30rpx;
+}
+.experience>view:nth-child(2){
+  color: #999;
+  padding:  20rpx 0;
+}
+.experience>view:nth-child(3){
+  color: #999;
+  padding:  20rpx 0;
+}
+.experience>view:nth-child(4){
+  color: #999;
+   padding-bottom:  20rpx; 
+}
+.job_0 text:nth-child(2){
+  text-align: right;
+  font-size: 24rpx;
+  color: #999;
+  display: inline-block;
+  width: 34%;
+}
+.job_0 text:nth-child(1){
+  text-align: left;
+  display: inline-block;
+  width: 66%;
+  font-size: 30rpx;
+}
+.head_2{
+  padding-bottom: 40rpx;
+}
+.share{
+  width: 100%;
+  height: 100%;
+  z-index: 5000000;
+  background: none;
+  top: 0;
+}

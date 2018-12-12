@@ -1,0 +1,29 @@
+<!--zh_wxc/pages/fabu/checkdetail.wxml-->
+<view class='main'>
+  <view class="flex1 title">反馈详情</view>
+  <view class="msg flex_center">
+    <view class="listimg">
+      <image class='conimg' src='{{con.img}}'></image>
+    </view>
+    <view class='flex3'>
+      <view class='confont2'>{{con.nickname}}</view>
+      <view class="flex_center time">{{con.create_time}}</view>
+    </view>
+  </view>
+  <view class="con">{{con.voucher}}</view>
+  <view class="imgs flex1" wx:for="{{listimg}}">
+    <image src="{{url}}{{item}}"></image>
+  </view>
+  <view class="pass" wx:if="{{con.status==0}}" data-passnum="1" bindtap='onpass'>通过</view>
+  <view class="refuse" wx:if="{{con.status==0}}" data-refusenum="2" bindtap='onrefuese'>拒绝</view>
+</view>
+<view class='fixed' hidden='{{refuse_reason}}'>
+  <view class='ab'></view>
+  <view class='ab udlr'>
+    <textarea bindinput='reason' placeholder='请输入拒绝的理由' maxlength='540'></textarea>
+    <view>
+        <text bindtap='cancel'>取消</text>
+        <text  bindtap='onrefuese'>确认拒绝</text>
+    </view>
+  </view>
+</view>

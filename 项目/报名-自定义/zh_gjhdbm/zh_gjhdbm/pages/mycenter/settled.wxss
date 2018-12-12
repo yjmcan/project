@@ -1,0 +1,48 @@
+/* zh_gjhdbm/pages/account/account.wxss */
+.accheader{
+  background-color: #F66926;
+  padding: 30rpx;
+  color: white;
+  font-size: 32rpx;
+}
+.acheabox1{
+  font-size: 70rpx;
+  margin-top: 5rpx;
+}
+.accbox{
+  background-color: white;
+  padding: 0 30rpx;
+}
+.accxian{
+  width: 8rpx;
+  height: 35rpx;
+  background-color: #F66926;
+  margin-right: 10rpx;
+}
+.accboxtop{
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.accboxlist{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.acctime{
+  color: #999;
+  font-size: 26rpx;
+}
+
+
+
+
+
+
+
+
+
+
+

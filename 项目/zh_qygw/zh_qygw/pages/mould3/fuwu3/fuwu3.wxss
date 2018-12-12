@@ -1,0 +1,107 @@
+/* zh_qygw/pages/mould3/fuwu3/fuwu3.wxss */
+.fuwu3{
+  width: 100%;
+  overflow-x: hidden;
+}
+.header{
+  background-color: #abcdef;
+  width: 100%;
+  height: 300rpx;
+}
+.header>image{
+  width: 100%;
+  height: 100%;
+}
+.fbanner{
+  background-color: white;
+  padding: 50rpx 30rpx 70rpx;
+}
+.fbtitle{
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #666;
+}
+.fbcontent{
+  color: #666;
+  line-height: 50rpx;
+  margin-top: 15rpx;
+  font-size: 30rpx;
+}
+.boxlist{
+  background-color: white;
+  padding: 1rpx 0rpx;
+}
+.fuwulist{
+  background-color: #EEEEEE;
+  padding: 0rpx 10rpx;
+  display: flex;
+  margin-bottom: 40rpx;
+}
+.fuwulbox{
+  background-color: #0C5395;
+  width: 160rpx;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fuwulbox>image{
+  width: 140rpx;
+  height: 140rpx;
+}
+.fuwutext{
+  width: 560rpx;
+  margin-left: 10rpx;
+  padding-top: 15rpx;
+  color: #666;
+  line-height: 47rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.fuwuremark{
+  color: #CCCCCC;
+  margin:70rpx 0rpx 40rpx 0rpx;
+  text-align: center;
+}
+.banquan{
+  color: white;
+  text-align: center;
+  background-color: #0C5395;
+  padding: 40rpx 0rpx;
+}
+.bqfont1{
+  font-size: 34rpx;
+  margin-top: 15rpx;
+}
+
+/* ------------底部部分------------- */
+.footbox{
+  width: 100%;
+  height: 115rpx;
+}
+.foot{
+  width: 101%;
+  height: 95rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: -1rpx;
+  background-color: white;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  border-top: 1rpx solid #ddd;
+}
+.footlist{
+  width: 33.3%;
+}
+.footlist>image{
+  width: 45rpx;
+  height: 45rpx;
+}

@@ -1,0 +1,34 @@
+<!--zh_tcwq/pages/merchant/wallet/wallet.wxml-->
+<view class="wallet">
+  <view class="mywallet">
+    <view class="title">我的余额</view>
+    <view class="flex-bet mywallet_info">
+
+      <view class="flex-center">
+        <image class="wallet_img" src="../../img/yeqb.png"></image>
+        <view class="wallet_money">¥{{wallet}}</view>
+      </view>
+      <!-- <view class="flex-center" bindtap="tixian">
+        <view class="walletcash">提现</view>
+        <image class="addright" src="../images/huise@2x.png"></image>
+      </view> -->
+    </view>
+  </view>
+
+  <view class="list flex-bet" bindtap="tradeinfo">
+    <view class="flex-center trade">
+      <image class="listimg" src="../../img/gssj.png"></image>
+      <view class="">交易明细</view>
+    </view>
+    <image class="addright" src="../../img/blackjt.png"></image>
+  </view>
+
+  <view wx:if="{{system.is_cz==1}}" class="list flex-bet" bindtap="cash">
+    <view class="flex-center trade">
+      <image class="listimg" src="../../img/personal/chongzhi.png"></image>
+      <view class="">去充值</view>
+    </view>
+    <image class="addright" src="../../img/blackjt.png"></image>
+  </view>
+
+</view>

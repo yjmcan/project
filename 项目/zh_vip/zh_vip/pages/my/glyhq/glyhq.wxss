@@ -1,0 +1,239 @@
+/* zh_zbkq/pages/my/glyhq/glyhq.wxss */
+page{
+  background: #efeff4;
+}
+/*list*/
+.list{
+  margin-bottom: 10rpx;
+  border-top: 1rpx solid #EEEEEE;
+}
+.list_header{
+  display: flex;
+  font-size: 32rpx;
+  height: 80rpx;
+  background-color: white;
+  line-height: 80rpx;
+  margin-bottom: 10rpx;
+}
+ .list_border{
+  width: 200rpx;
+  height: 5rpx;
+  margin-top: -5rpx;
+  background: #f44444;
+}
+.selsect{
+  color: #999;
+
+}
+.default{
+  color: #f44444;
+  font-weight: bold;
+}
+.list_title{
+  width: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+.list_imgbk{
+  width: 250rpx;
+  height: 250rpx;
+  margin-bottom: 30rpx;
+}
+.list_imgbk2{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 500rpx;
+}
+.list_imgbk3{
+  font-size: 30rpx;
+  color: #999;
+  text-align: center;
+  line-height: 30rpx;
+}
+/*yhq*/
+.yhq{
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx
+}
+.yhq image{
+  width: 94%;
+  height: 180rpx;
+  /* transform: rotateY(180deg); */
+  position: absolute;
+  left: 3%;
+}
+.yhq-lt{
+  position: absolute;
+  left: 50rpx;
+  top:30rpx;
+}
+.yhq-lt image{
+  width: 120rpx;
+  height:120rpx;
+  /* border-radius: 50%; */
+}
+.yhq-bd{
+  width: 380rpx;
+ height: 140rpx;
+ position: absolute;
+ left: 185rpx;
+ top:20rpx;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+}
+.yhq-bd text:nth-child(1){
+  font-size: 25rpx;
+  color: #999;
+}
+.yhq-bd text:nth-child(2){
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.yhq-bd text:nth-child(3){
+  font-size: 25rpx;
+  color: #999;
+}
+.yhq-rt{
+  line-height: 40rpx;
+  position: absolute;
+  right: 40rpx;
+  font-size: 28rpx;
+  height: 40rpx;
+  background: #f44444;
+  color: white;
+  top: 70rpx;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+/**/
+.yhq1 {
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -180rpx;
+}
+
+.yhq1 image {
+  width: 94%;
+  height: 180rpx;
+  /* transform: rotateY(180deg); */
+  position: absolute;
+  left: 3%;
+}
+
+.yhq1-lt {
+  position: absolute;
+  left: 50rpx;
+  top: 50rpx;
+}
+
+.yhq1-lt image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.yhq1-bd {
+  width: 400rpx;
+  height: 160rpx;
+  position: absolute;
+  left: 160rpx;
+  top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.yhq1-bd text:nth-child(1) {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.yhq1-bd text:nth-child(2) {
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.yhq1-bd text:nth-child(3) {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.yhq1-rt {
+  line-height: 40rpx;
+  position: absolute;
+  right: 40rpx;
+  font-size: 28rpx;
+  height: 40rpx;
+  background: #f44444;
+  color: white;
+  top: 70rpx;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+/**/
+
+.touch-item {
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom:1px solid #ccc; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  padding: 10px;
+  line-height: 22px;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -90px;
+}
+
+.del {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #f44444;
+  width: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.touch-move-active .yhq1, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.yhsc{
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+}

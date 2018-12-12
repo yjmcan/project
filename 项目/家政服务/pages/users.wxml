@@ -1,0 +1,17 @@
+<view class='textarea rel'>
+    <textarea maxlength='600' bindinput='textarea' placeholder='感谢您提出的建议'></textarea>
+    <view class='ab'>{{num}}/600</view>
+</view>
+<view class='info' style='margin-top:20rpx;'>
+    <view>姓名</view>
+    <view class='rel'>
+        <input class='ab udlr' placeholder='请输入您的姓名'></input>
+    </view>
+</view>
+<view class='info' style='border-bottom:2rpx solid #f9f9f9;'>
+    <view>手机号</view>
+    <view class='rel'>
+        <input class='ab udlr' placeholder='请输入您的手机号码'></input>
+    </view>
+</view>
+<button>提交</button>

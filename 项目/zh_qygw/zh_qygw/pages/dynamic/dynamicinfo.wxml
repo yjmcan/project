@@ -1,0 +1,15 @@
+
+<view class="home">
+  <view class="info">
+    <view class="infotitle">{{proinfo.title}}</view>
+    <view class="infobanner">
+      <rich-text nodes="{{proinfo.content1}}"/>
+    </view>
+    <view class="infotime">{{proinfo.time}}</view>
+    
+  </view>
+  
+  <view class="hcopyright">技术支持：{{copyrit.support}}</view>
+
+  
+</view>

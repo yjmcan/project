@@ -1,0 +1,6 @@
+<view class='head'>
+  <input placeholder='请输入您的技能标签'>
+  </input>
+  <view class='title'>最多添加3个标签</view>
+</view>
+<button>保存</button>

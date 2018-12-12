@@ -1,0 +1,75 @@
+/* zh_wzp/pages/release/info.wxss */
+.list{
+  padding: 20rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.list>view{
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.list>view:nth-child(1){
+  width: 25%;
+}
+.list>view:nth-child(2){
+  width: 75%;
+}
+.color_9{
+  color: #999;
+}
+.color_0{
+  color: #000;
+}
+.color_r{
+  color: red;
+}
+.margin_t{
+  margin-top: 20rpx;
+}
+.textarea{
+  padding: 20rpx;
+  background: #fff;
+  height: 200rpx;
+}
+.textarea textarea{
+  width: 100%;
+  height: 100%;
+}
+.border_n{
+  border: none;
+}
+.border_b{
+  border-bottom: 2rpx solid #e5e5e5;
+}
+button{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f66925;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  color: #fff;
+  border-radius: 0;
+  font-size: 30rpx;
+}
+.welfare{
+  height: auto;
+  background: #fff;
+  padding: 0 20rpx;
+}
+.welfare text{
+  padding: 5rpx 10rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-bottom: 20rpx;
+  margin-right: 15rpx;
+}
+.select{
+  background: #f66925;
+  color: #fff;
+}
+.no_select{
+  background: #f1f7ff;
+  color: #666;
+}

@@ -1,0 +1,70 @@
+/* zh_jypx/pages/rank/login.wxss */
+page{
+  background: #fff;
+}
+.logo{
+  width: 360rpx;
+  height: 95rpx;
+  margin:80rpx auto 20rpx auto;
+  display: block
+}
+.data{
+  font-size: 36rpx;
+  margin:20rpx;
+  border-bottom: 1rpx solid #ccc;
+  padding-bottom: 20rpx;
+}
+.list,
+.school{
+  border-bottom: 1rpx solid #ccc;
+  width: 90%;
+  font-size: 33rpx;
+  padding: 25rpx 0;
+}
+.school{
+  position: relative;
+}
+.picker input{
+  text-align: left;
+  padding-left: 30rpx;
+  font-size: 33rpx;
+  letter-spacing: 3rpx;
+}
+/* .phone{
+  width: 215rpx;
+} */
+.list input.code{
+  padding-left: 58rpx;
+}
+.school::after{
+    content: "";
+    position: absolute;
+    right: 15rpx;
+    display: inline-block;  
+    border-right: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;  
+    width: 8px;
+    height: 8px;  
+    transform: rotate(45deg);
+}
+.list input{
+  padding-left: 30rpx;
+  font-size: 33rpx;
+  font-family: "微软雅黑";
+}
+.btn{
+  position: absolute;
+  right: 38rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #08a3ff
+}
+.submit{
+  background: #08a3ff;
+  color: #fff;
+  font-size: 36rpx;
+  margin:55rpx auto;
+  text-align: center;
+  border-radius: 15rpx;
+  width: 90%;
+}

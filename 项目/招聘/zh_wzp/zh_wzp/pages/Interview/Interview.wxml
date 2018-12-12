@@ -1,0 +1,27 @@
+<view class='invite' wx:for="{{nav}}">  
+  <view class='head'>
+    <view>
+      <image mode='aspectFill' src=''></image>
+    </view>
+    <view>
+      <view>UI设计师</view>
+      <view>深圳腾讯网络公司</view>
+    </view>
+    <view>4千-8千</view>
+  </view>
+  <view class='info'>
+    <image mode='aspectFill' src=''></image>
+    <text>09月15日 09：30</text>
+  </view>
+  <view class='info'>
+    <image mode='aspectFill' src=''></image>
+    <text>是家中</text>
+  </view>
+  <view class='info'>
+    <image mode='aspectFill' src=''></image>
+    <text>13277915655张先生</text>
+  </view>
+  <view class='accept'>
+    接受邀请
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<view class='markting_code rel' style='background:{{color}}'>
+    <image class='ab udlr' mode='aspectFill' src='data:image/png;base64,{{hx_code}}'></image>
+</view> 
+<view class='markting_man'>
+    <view>核销员列表</view>
+    <view wx:for="{{hx_list}}" class='hx_list'>
+        <view class='rel'>
+            <image class='ab udlr' mode='aspectFill' src='{{item.img}}'></image>
+        </view> 
+        <view>{{item.name}}</view>
+         <view bindtap='delete_hx' data-id='{{item.id}}'>
+            <text style='background:{{color}}'>×</text>
+        </view>
+    </view> 
+</view>
+<view class='none_prompt lr' wx:if="{{hx_list.length==0}}">
+    <image mode='aspectFill' src='../img/none_hx.png'></image>
+</view>

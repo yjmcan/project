@@ -1,0 +1,103 @@
+.sipwer{
+  width: 100%;
+  overflow: hidden;
+  height: 300rpx;
+}
+.sipwer image{
+  width: 100%;
+  height: 100%;
+}
+.info{
+  background: #fff;
+  margin-top:20rpx;
+}
+.info{
+  background: #fff;
+  margin-top:20rpx;
+  padding: 0 20rpx;
+}
+.info>view:nth-child(1){
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.info>view:nth-child(2){
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.info>view:nth-child(3){
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: red;
+}
+.info>view:nth-child(4){
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.info>view:nth-child(5){
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+  display: inline-block;
+  vertical-align: middle;
+}
+.info>view text{
+  color: red;
+}
+.info image{
+  width: 30rpx; height: 30rpx;
+}
+.service_info{
+  font-size: 28rpx;
+  color: #f66925;
+  line-height: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  width: 100%;
+  background: #fff;
+}
+.service{
+  width: 100%;
+  height: 200rpx;
+}
+.service image{
+  width: 134rpx;
+  height: 140rpx;
+}
+.info_img{
+  width: 100%;
+  height: auto;
+  margin-bottom: 120rpx;
+}
+.info_img image{
+  width: 100%;
+  height: 400rpx;
+}
+.bottom_nav{
+  width: 100%;
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+.bottom_nav button{
+  width: 50%;
+  height: 100%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background: red;
+  color: #fff;
+}

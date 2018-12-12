@@ -1,0 +1,57 @@
+/* zh_jypx/pages/rank/login_firset.wxss */
+.home{
+  background: #fff;
+}
+.logo{
+  width: 360rpx;
+  height: 95rpx;
+  margin:80rpx auto 20rpx auto;
+  display: block
+}
+.title{
+  font-size: 38rpx;
+  margin:50rpx auto;
+  text-align: center;
+}
+form{
+  width: 100%;
+}
+.list{
+  width: 70%;
+  margin:30rpx auto;
+}
+.list image{
+  width: 64rpx;
+  height: 64rpx;
+  background: #ccc;
+}
+.list input{
+  font-size: 33rpx;
+  padding: 30rpx;
+  border-bottom:1rpx solid #ccc;
+  margin-left: 20rpx;
+  width: 80%;
+  letter-spacing: 3rpx;
+  font-family: "微软雅黑"
+}
+.submit{
+  background: #08a3ff;
+  width: 70%;
+  color: #fff;
+  letter-spacing: 10rpx;
+  font-size: 36rpx;
+}
+.forget{
+  margin-top: 20rpx;
+  color: #888;
+  font-size: 32rpx;
+  margin-left: 110rpx;
+}
+.ready{
+  position: fixed;
+  bottom: 10rpx;
+  font-size: 32rpx;
+  text-align: center;
+  width: 100%;
+  color: #08a3ff;
+}

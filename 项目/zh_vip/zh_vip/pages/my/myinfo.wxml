@@ -1,0 +1,107 @@
+<!--zh_hyk/pages/my/myinfo.wxml-->
+<view class='head'>
+  <image class='bgimg' src='../../img/juxing.png'></image>
+  <image class='tximg' src='{{userInfo.img}}'></image>
+  <view class="hydj">
+    <view class='hydjimg'>
+      <image src='../../img/jp.png'></image>
+    </view>
+    <text>{{userInfo.level_name}}</text>
+  </view>
+  <view class='hname gobyndsingle'>{{userInfo.name}}</view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class='hd'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/myf.png'></image>
+          <view class="weui-label">姓名
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='xm' value='{{userInfo.name}}' style='text-align:right' type='text' placeholder="会员姓名" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/hm.png'></image>
+          <view class="weui-label">电话
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='sjh' type='number' disabled='true' value='{{userInfo.tel}}' style='text-align:right' type='text' placeholder="电话" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/rl.png'></image>
+          <view class="weui-label">生日
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" name='sr' value="{{date}}" end="{{start}}" bindchange="bindDateChange">
+            <view class="weui-input" style='text-align:right'>{{date}}</view>
+          </picker>
+        </view>
+        <view class="weui-cell__ft" style='margin-left:30rpx;'>
+          <image src='../../img/huise@2x.png'></image>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/yx.png' style='height:35rpx;'></image>
+          <view class="weui-label">邮箱
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='yx' value='{{userInfo.email}}' style='text-align:right' type='text' placeholder="会员邮箱" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/xl.png' style='height:40rpx;'></image>
+          <view class="weui-label">学历
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='xl' value='{{userInfo.education}}' style='text-align:right' type='text' placeholder="学历" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/hy.png'></image>
+          <view class="weui-label">行业
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='hy' value='{{userInfo.industry}}' style='text-align:right' type='text' placeholder="行业" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/ax.png'></image>
+          <view class="weui-label">爱好
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='ah' value='{{userInfo.hobby}}' style='text-align:right' type='text' placeholder="爱好" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <image src='../../img/dt.png'></image>
+          <view class="weui-label">地址
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name='xxdz' value='{{weizhi}}' type='text' placeholder="详细地址" />
+        </view>
+        <view class="weui-cell__ft" style='width:60rpx;' bindtap='dw'>
+          <image src='../../img/huise@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+    <button formType="submit" class='bc'>保存</button>
+</form>

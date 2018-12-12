@@ -1,0 +1,9 @@
+<view class="kaci" wx:for="{{card}}">
+    <view class='rel'>
+        <image class='ab udlr' mode='aspectFill' src='{{item.img}}'></image>
+    </view>
+    <view>{{item.name}}  {{item.cost}}</view>
+    <view>可用卡次
+        <text class='red'>{{item.count}}</text>
+    </view>
+</view>

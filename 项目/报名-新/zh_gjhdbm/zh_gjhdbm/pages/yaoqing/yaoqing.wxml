@@ -1,0 +1,10 @@
+<!--pages/fenxiao/fenxiao.wxml-->
+<view class='fxbox fheader'>
+  <image class='fximg' src='../img/bj.png'></image>
+  <view class='flex3 fxcontent'>
+    <view class='fxtopbox'>好友扫二维码即可分享邀请码16817</view>
+    <view class='fxfont1'>您已成功邀请2位好友，累计奖励100元</view>
+    <view class='fxcode'></view>
+    <view class='fxyaoqing'>邀请好友</view>
+  </view>
+</view>

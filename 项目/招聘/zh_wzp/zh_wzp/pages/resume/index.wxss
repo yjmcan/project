@@ -1,0 +1,62 @@
+/* zh_wzp/pages/resume/index.wxss */
+.list{
+  background: #fff;
+  margin-top: 20rpx;
+}
+.list>view:nth-child(1){
+  padding: 20rpx;
+  height: 50rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.inter text:nth-child(1){
+  float: left;
+}
+.inter text:nth-child(2){
+  float: right;
+}
+.image1{
+  width: 30rpx;
+  height: 30rpx;
+  background: #ccc;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.image2{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+.list>view:nth-child(2){
+  padding: 20rpx;
+}
+.list view view{
+  display: inline-block;
+  vertical-align: middle;
+}
+.list view view:nth-child(1){
+  /* float: left; */
+  width: 68%;
+}
+.list view view:nth-child(2){
+  width: 16%;
+  text-align: right;
+}
+.list view view:nth-child(3){
+  width: 16%;
+  text-align: right;
+}
+.list view view>image{
+  vertical-align: middle;
+}
+.list view view>text{
+  vertical-align: middle;
+}
+button{
+  background: #f66925;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  width: 95%;
+  margin: 80rpx auto 80rpx;
+}
